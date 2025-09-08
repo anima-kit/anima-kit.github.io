@@ -86,6 +86,7 @@ I also ask all contributors to follow the :material-robot-happy-outline:{.icon-d
 Thanks for contributing and making this site better for everyone! :material-hand-heart:{.icon-def-0}
 
 
+<!-- LINKS -->
 [conduct-code]: CODE_OF_CONDUCT.md
 [discussions]: https://github.com/anima-kit/anima-kit.github.io/discussions
-[security]: https://github.com/anima-kit/anima-kit.github.io/blob/main/docs/SECURITY.md
+[security]: https://github.com/anima-kit/anima-kit.github.io/blob/main/SECURITY.md

@@ -40,9 +40,7 @@ I learned how to [fine-tune][fine-tune]{.blank} text-to-image models, how to cre
 
 I was sure of one thing, though. I *really* wanted a GPU with lots of [VRAM][vram]{.blank} :material-head-heart-outline:{ .icon-def-0 }.
 
-Soon after, I started to play around with [text-generation models][models-text-gen]{.blank} (i.e. the designation for most LMs [^1]) and I began to notice the existence of AI agent frameworks that utilized these models to power agents, such as [ChatDev][chatdev]{.blank} and [AutoGen][autogen]{.blank}. At the time, I could do some of the quickstart tutorials for these repos :material-checkbox-marked-outline:{ .icon-def-0 }, but I couldn't get my agents to do anything very useful for me :material-robot-confused-outline:{ .icon-def-0 }. It seemed they were either still in the early stages or I didn't understand how to use them. Either way, I felt something immense was on the precipice :material-volcano-outline:{ .icon-def-0 } and I wanted to join in :material-crowd:{ .icon-def-0 } and learn more :material-robot-excited-outline:{ .icon-def-0 }.
-
-[^1]: Nowadays, LMs are becoming increasingly [multi-modal][multi-modal]{.blank} and aren't prohibited to only generating text, or even taking text as an input for that matter :material-multimedia:{ .icon-def-0 }. These [any-to-any][models-any-to-any]{.blank} models can take in other forms of information and generate through other mediums like audio :material-music-note:{ .icon-def-0 } and images :material-image:{ .icon-def-0 }. At some point, I want to learn how to use these models for agentic purposes, and I'll most likely feel compelled to create tutorials in order to distill my learning :material-wizard-hat:{ .icon-def-0 } :material-flask-round-bottom:{ .icon-def-0 }.
+Soon after, I started to play around with [text-generation models][models-text-gen]{.blank} (i.e. the designation for most LMs [^multi-modal]) and I began to notice the existence of AI agent frameworks that utilized these models to power agents, such as [ChatDev][chatdev]{.blank} and [AutoGen][autogen]{.blank}. At the time, I could do some of the quickstart tutorials for these repos :material-checkbox-marked-outline:{ .icon-def-0 }, but I couldn't get my agents to do anything very useful for me :material-robot-confused-outline:{ .icon-def-0 }. It seemed they were either still in the early stages or I didn't understand how to use them. Either way, I felt something immense was on the precipice :material-volcano-outline:{ .icon-def-0 } and I wanted to join in :material-crowd:{ .icon-def-0 } and learn more :material-robot-excited-outline:{ .icon-def-0 }.
 
 !!! memory-bubble "Memory"
     *Scratch that. Life's throwing you something that requires your utmost presence and emotional stability. Better find your lodestone and better find it quick.*
@@ -96,6 +94,10 @@ So, if you want [code to build specialized AI agents][animakit] :material-file-c
 <hr class="icon-def-1" style="border: 0.01rem solid; width: 30%; margin: 0 auto;">
 
 
+<!-- FOOTNOTES -->
+[^multi-modal]: Nowadays, LMs are becoming increasingly [multi-modal][multi-modal]{.blank} and aren't prohibited to only generating text, or even taking text as an input for that matter :material-multimedia:{ .icon-def-0 }. These [any-to-any][models-any-to-any]{.blank} models can take in other forms of information and generate through other mediums like audio :material-music-note:{ .icon-def-0 } and images :material-image:{ .icon-def-0 }. At some point, I want to learn how to use these models for agentic purposes, and I'll most likely feel compelled to create tutorials in order to distill my learning :material-wizard-hat:{ .icon-def-0 } :material-flask-round-bottom:{ .icon-def-0 }.
+
+<!-- LINKS -->
 [a2c]: https://arxiv.org/pdf/1602.01783
 [agents]: tutorials/agents/index.md
 [animakit]: https://github.com/anima-kit

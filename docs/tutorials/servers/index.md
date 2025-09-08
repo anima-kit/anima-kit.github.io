@@ -3,6 +3,8 @@ title: Servers
 template: pages.html
 ---
 
+<!-- TODO: footnotes appear out of order for some reason (vectorstore numbered as 2 and context note numbered as 1) -->
+
 <div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
@@ -38,7 +40,7 @@ template: pages.html
 
     ---
 
-    Create vectorstores [^1] for all of your documents that can be searched by your agents.
+    Create vectorstores [^vectorstore] for all of your documents that can be searched by your agents.
 
     [:material-arrow-right-thin: Get started with Milvus][milvus-tutorial]
 
@@ -51,8 +53,6 @@ template: pages.html
     [:material-arrow-right-thin: Get started with multi-server setups][multi-server]
 
 </div>
-
-[^1]: A [vectorstore][vectorstore]{.blank} is a special type of database that can be used to store :material-bookshelf:{ .icon-def-0 } and search :material-magnify:{ .icon-def-0 } your data. It stores your data with additional representations called `embeddings` and searches your data based on special variables called `indices`. The type of indices used for the vectorstore and the way your data is embedded result in different types of searches that can be done :material-shape-plus:{ .icon-def-0 }. For example, think of the difference between searching data for a specific keyword :material-key-chain:{ .icon-def-0 } versus searching data based on an abstract embedding that maps nuanced relationships between data :material-molecule:{ .icon-def-0 }. In the first case, we're only going to get the results we expect, whatever contains the specific keyword. In the second case, we can get results based on relationships between the data that aren't immediately apparent. 
 
 <hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
 
@@ -74,9 +74,7 @@ To get them to work their magic :material-crystal-ball:{ .icon-def-0 }, LMs are 
 
 Also, some of the information that we'll want our agents to analyze will be esoteric :material-ghost-outline:{ .icon-def-0 }. It was possibly not available or only in very small doses when the LM was fed its data. This means the LM won't have many connections between our data and its knowledge store :material-head-dots-horizontal-outline:{ .icon-def-0 }, so the rules it built up won't apply well. Its responses will be uninformed and off base or complete gibberish :material-robot-confused-outline:{ .icon-def-0 }. 
 
-As a general rule, the more context our agents have the better their responses will be [^2]. By giving our agents the proper tools :material-hammer-wrench:{ .icon-def-0 }, we can give them the ability to use other stores of information that are relevant to our projects :material-bookshelf:{ .icon-def-0 }. This way our agents will `generate more informed responses` and `make more informed decisions` even when discussing matters unfamiliar to the LM :material-robot-love-outline:{ .icon-def-0 }.
-
-[^2]: I've found that this only works up to a point. Too much context at once can cause confusion :material-robot-confused-outline:{ .icon-def-0 }. To solve this, summarizing the context or breaking the agent task up into smaller tasks to give it less context at a time works pretty well.
+As a general rule, the more context our agents have the better their responses will be [^context]. By giving our agents the proper tools :material-hammer-wrench:{ .icon-def-0 }, we can give them the ability to use other stores of information that are relevant to our projects :material-bookshelf:{ .icon-def-0 }. This way our agents will `generate more informed responses` and `make more informed decisions` even when discussing matters unfamiliar to the LM :material-robot-love-outline:{ .icon-def-0 }.
 
 Ok, giving our agents tools does sound pretty useful :material-checkbox-marked-outline:{ .icon-def-0 }.
 
@@ -114,6 +112,13 @@ For the agent brain, we're going to use LMs served with :simple-ollama:{ .icon-d
 Check out any of tutorials above to get started :material-arrow-up-bold-outline:{ .icon-def-0 }! To see how to pass all these servers over to our agents in order to create assistants that can grab us up to date information or information relevant to our own personal documents, check out the :material-robot-outline:{ .icon-def-0 } [agents tutorials][agents].
 
 
+<!-- FOOTNOTES -->
+[^vectorstore]: A [vectorstore][vectorstore]{.blank} is a special type of database that can be used to store :material-bookshelf:{ .icon-def-0 } and search :material-magnify:{ .icon-def-0 } your data. It stores your data with additional representations called `embeddings` and searches your data based on special variables called `indices`. The type of indices used for the vectorstore and the way your data is embedded result in different types of searches that can be done :material-shape-plus:{ .icon-def-0 }. For example, think of the difference between searching data for a specific keyword :material-key-chain:{ .icon-def-0 } versus searching data based on an abstract embedding that maps nuanced relationships between data :material-molecule:{ .icon-def-0 }. In the first case, we're only going to get the results we expect, whatever contains the specific keyword. In the second case, we can get results based on relationships between the data that aren't immediately apparent. 
+
+[^context]: I've found that this only works up to a point. Too much context at once can cause confusion :material-robot-confused-outline:{ .icon-def-0 }. To solve this, summarizing the context or breaking the agent task up into smaller tasks to give it less context at a time works pretty well.
+
+
+<!-- LINKS -->
 [agents]: ../agents/index.md
 [daemon]: https://en.wikipedia.org/wiki/Daemon_(computing)
 [docker]: https://www.docker.com/

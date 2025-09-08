@@ -103,6 +103,7 @@ After finishing these tutorials, we'll know how to create whatever specialized a
 Check out any of the tutorials above to get started :material-arrow-up-bold-outline:{ .icon-def-0 }, or get a refresher on how to create all the necessary servers to power our agents in the :material-server:{ .icon-def-0 } [servers tutorials][servers]. If you want to learn techniques for improving the information retrieval of your agents, check out the :material-bookshelf:{ .icon-def-0 } [RAG tutorials][rag]. 
 
 
+<!-- LINKS -->
 [agent-memory]: agent-memory.md
 [animakit]: https://github.com/anima-kit
 [chatbot]: chatbot.md

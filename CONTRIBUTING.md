@@ -52,4 +52,4 @@ Thanks for contributing and making this site better for everyone!
 
 [conduct-code]: CODE_OF_CONDUCT.md
 [discussions]: https://github.com/anima-kit/anima-kit.github.io/discussions
-[security]: https://github.com/anima-kit/anima-kit.github.io/blob/main/docs/SECURITY.md
+[security]: https://github.com/anima-kit/anima-kit.github.io/blob/main/SECURITY.md

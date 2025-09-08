@@ -70,14 +70,15 @@ This documentation site is a work in progress. If you'd like to suggest or add i
 This site is [licensed under MIT][license]. However, some of the third-party libraries are licensed differently, [check out the notice][notice] for more details.
 
 
-[agent-memory]: http://github.com/anima-kit.github.io/tutorials/agents/agent-memory/
-[agents]: http://github.com/anima-kit.github.io/tutorials/agents/
+<!-- LINKS -->
+[agent-memory]: http://anima-kit.github.io/tutorials/agents/agent-memory/
+[agents]: http://anima-kit.github.io/tutorials/agents/
 [animakit]: https://anima-kit.github.io/
-[chatbot]: http://github.com/anima-kit.github.io/tutorials/agents/chatbot/
-[code-agent]: http://github.com/anima-kit.github.io/tutorials/agents/code-agent
+[chatbot]: http://anima-kit.github.io/tutorials/agents/chatbot/
+[code-agent]: http://anima-kit.github.io/tutorials/agents/code-agent
 [contributing]: CONTRIBUTING.md
 [discussions]: https://github.com/anima-kit/anima-kit.github.io/discussions
-[doc-agent]: http://github.com/anima-kit.github.io/tutorials/agents/doc-agent/
+[doc-agent]: http://anima-kit.github.io/tutorials/agents/doc-agent/
 [docker]: https://www.docker.com/
 [gradio]: https://www.gradio.app/
 [langchain]: https://www.langchain.com/
@@ -85,18 +86,18 @@ This site is [licensed under MIT][license]. However, some of the third-party lib
 [license]: LICENSE
 [material]: https://squidfunk.github.io/mkdocs-material/
 [milvus]: https://milvus.io/
-[milvus-tutorial]: http://github.com/anima-kit.github.io/tutorials/servers/milvus/ 
-[multi-server]: http://github.com/anima-kit.github.io/tutorials/servers/multi-server/
+[milvus-tutorial]: http://anima-kit.github.io/tutorials/servers/milvus/ 
+[multi-server]: http://anima-kit.github.io/tutorials/servers/multi-server/
 [notice]: NOTICE.md
-[odds-ends]: http://github.com/anima-kit.github.io/tutorials/misc/
+[odds-ends]: http://anima-kit.github.io/tutorials/misc/
 [ollama]: https://ollama.com/
 [ollama-python]: https://github.com/ollama/ollama-python
-[ollama-tutorial]: http://github.com/anima-kit.github.io/tutorials/servers/ollama/
+[ollama-tutorial]: https://anima-kit.github.io/tutorials/servers/ollama/
 [pymilvus]: https://github.com/milvus-io/pymilvus
 [python]: https://www.python.org/
-[rag]: http://github.com/anima-kit.github.io/tutorials/rag/
+[rag]: http://anima-kit.github.io/tutorials/rag/
 [searxng]: https://github.com/searxng/searxng
 [searxng-docker]: https://github.com/searxng/searxng-docker
-[searxng-tutorial]: http://github.com/anima-kit.github.io/tutorials/servers/searxng/
+[searxng-tutorial]: http://anima-kit.github.io/tutorials/servers/searxng/
 [servers]: https://anima-kit.github.io/tutorials/servers
 [tutorials]: https://anima-kit.github.io/tutorials

@@ -3,6 +3,8 @@ title: Ollama Server
 template: pages.html
 ---
 
+<!-- TODO: Update gif -->
+
 <div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
@@ -313,7 +315,7 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 <h4 style="text-align: left;">tests/</h4>
 
-> This folder contains [unit][test-unit]{.blank} and [integration tests][test-integration]{.blank} to make sure the logic of the source code works as expected without calling the Ollama API :material-drama-masks:{ .icon-def-0 }, as well as when the API is available :material-server:{.icon-def-0}. I won't go over these files as they're not important for our results, though I did leave a lot of comments for anyone that's interested :material-comment-question-outline:{.icon-def-0} :material-comment-check-outline:{.icon-def-0}. Learning how to create testing suites has not only helped me better understand how my code works but also to start my code off on the right track so that I don't have as many surprise bugs popping up along the way :material-shield-bug-outline:{.icon-def-0}. You can check out the [best practices bonus info][code-best-practices] to see how to run the tests. 
+> This folder contains [unit][test-unit]{.blank} and [integration tests][test-integration]{.blank} to make sure the logic of the source code works as expected without calling the Ollama API :material-drama-masks:{ .icon-def-0 }, as well as when the API is available :material-server:{.icon-def-0}. I won't go over these files as they're not important for our results, though I did leave a lot of comments for anyone that's interested :material-comment-question-outline:{.icon-def-0} :material-comment-check-outline:{.icon-def-0}. Learning how to create testing suites has not only helped me better understand how my code works but also how to start my code off on the right track so that I don't have as many surprise bugs popping up along the way :material-shield-bug-outline:{.icon-def-0}. You can check out the [best practices bonus info][code-best-practices] to see how to run the tests. 
 
 ---
 
@@ -387,7 +389,7 @@ Above, I show the `ollama_utils.py` file in all its full glory as well as in a s
 
 ??? bonus-code "What about these best practices?"
  
-    Logging :material-notebook-edit-outline:{.icon-def-0}, error handling :material-alert-circle-outline:{.icon-def-0}, type checking :material-shape-plus:{.icon-def-0}, documenting :material-bookshelf:{.icon-def-0}, and using testing suites :material-test-tube:{.icon-def-0} are practices that I didn't fully appreciate while I was learning how to code through finding tutorials online and chatting with LMs, because these sources usually just demonstrate how to get the code working :material-power:{.icon-def-0}. But after I learned how to implement them into my code :material-head-heart-outline:{.icon-def-0}, it made sense why all the :simple-github:{.icon-def-0} repos I had been digging through had these practices (along with testing suites) in spades :material-cards-spade-outline:{.icon-def-0}. They're great for catching early problems, keeping your code working as expected, and for easily keeping yourself (and others) in the loop about how the code is working :material-sync:{.icon-def-0}. I highly suggest trying to implement some or all of these practices into your working code throughout the tutorials :material-monitor-shimmer:{.icon-def-0}. 
+    Logging :material-notebook-edit-outline:{.icon-def-0}, error handling :material-alert-circle-outline:{.icon-def-0}, type checking :material-shape-plus:{.icon-def-0}, documenting :material-bookshelf:{.icon-def-0}, and using testing suites :material-test-tube:{.icon-def-0} are practices that I didn't fully appreciate while I was learning how to code through finding tutorials online and chatting with LMs, because these sources usually just demonstrate how to get the code working :material-power:{.icon-def-0}. But after I learned how to implement them into my code :material-head-heart-outline:{.icon-def-0}, it made sense why all the :simple-github:{.icon-def-0} repos I had been digging through had these practices in spades :material-cards-spade-outline:{.icon-def-0}. They're great for catching early problems, keeping your code working as expected, and for easily keeping yourself (and others) in the loop about how the code is working :material-sync:{.icon-def-0}. I highly suggest trying to implement some or all of these practices into your working code throughout the tutorials :material-monitor-shimmer:{.icon-def-0}. 
 
     I use [mypy][mypy]{.blank} for type checking. If you want to do type checking for the `ollama_utils.py` file:
 
@@ -398,7 +400,7 @@ Above, I show the `ollama_utils.py` file in all its full glory as well as in a s
     I use [pytest][pytest]{.blank}, [pytest-order][pytest-order]{.blank}, and [unittest][unittest]{.blank} for creating and running testing suites. If you want to run the testing suite (the code in the `./tests/` folder): 
       
     1.  Activate the Python environment ([step 3][step-activate] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section)
-    1.  Install [pytest][pytest]{.blank} and [pytest-order][pytest-order]{.blank} and [Requests][requests]{.blank}: `pip install pytest pytest-order requests`
+    1.  Install [pytest][pytest]{.blank}, [pytest-order][pytest-order]{.blank}, and [Requests][requests]{.blank}: `pip install pytest pytest-order requests`
     1.  Run the tests with: `pytest tests/ -v`. The `-v` flag is optional and, again, just gives more information while running.
 
 Notice that all but one of the methods in the class have `_` at the beginning of the name. All of the methods with `_` are *internal* methods :material-tag-hidden:{.icon-def-0}, meaning they were created to help the other methods in the class, but they're not suggested to be used outside of the class. 
@@ -551,7 +553,7 @@ This works great if the LM *always* outputs the thinking phase fully enclosed in
 
 We've already seen that responses with a fully enclosed thinking phase are taken care of with [lines 9 and 19][remove-think-tags], however we also want to make sure no tags remain by replacing any instances of `<think>` or `</think>` with empty strings on [line 21][remove-think-tags] :material-checkbox-marked-outline:{.icon-def-0}. 
 
-To take care of the rest of the instances, we check if the `think_tag_pattern` isn't found on [line 11][remove-think-tags] (i.e. one of the tags were dropped or added accidentally or the message has no thinking tags at all). On [line 14][remove-think-tags], we then follow the same procedure to clean the text as we did on [line 21][remove-think-tags] :material-creation-outline:{.icon-def-0}. 
+To take care of the rest, on [line 11][remove-think-tags] we check if the `think_tag_pattern` isn't found (i.e. one of the tags were dropped or added accidentally or the message has no thinking tags at all). On [line 14][remove-think-tags], we then follow the same procedure to clean the text as we did on [line 21][remove-think-tags] :material-creation-outline:{.icon-def-0}. 
 
 This will sometimes result in some or all of the LM *thinking* phase being output with the final response, but I'd rather have too much than too little context :material-checkbox-marked-outline:{ .icon-def-0 }. Alternatively, I bet there's an approach somewhere out there that ensures only the final response is output :material-help-rhombus-outline:{.icon-def-0}.
 
@@ -587,9 +589,7 @@ Now, how exactly do we create the Ollama server that we'll be pointing to in ord
         --8<--
         ```
 
-The :simple-docker:{.icon-def-0} Docker compose file is a special file that tells [Docker][docker]{target="_blank"} how to create the containers that you want. In our case we want one container, an :simple-ollama:{.icon-def-0} Ollama server, and there are two different ways to create it, for :material-expansion-card-variant:{.icon-def-0} GPU or :material-cpu-64-bit:{.icon-def-0} CPU support [^1]. 
-
-[^1]: Usually, we would only have one :simple-docker:{.icon-def-0} Docker compose file that can handle different user preferences by using something like environment variables (we'll see how to do this when we get into the :simple-searxng:{.icon-def-0} [SearXNG server][searxng-tutorial] and :material-chat-processing-outline:{.icon-def-0} [chatbot][chatbot] tutorials). However, in our case :material-expansion-card-variant:{.icon-def-0} GPU support is built by adding two lines (see [lines 10-11][gpu-piece] of the GPU snippet) while :material-cpu-64-bit:{.icon-def-0} CPU support is built by omitting these two lines. I couldn't figure out a good way to dynamically add or omit these lines when building :material-head-question-outline:{.icon-def-0}, so I just resorted to using two different files.
+The :simple-docker:{.icon-def-0} Docker compose file is a special file that tells [Docker][docker]{target="_blank"} how to create the containers that you want. In our case we want one container, an :simple-ollama:{.icon-def-0} Ollama server, and there are two different ways to create it, for :material-expansion-card-variant:{.icon-def-0} GPU or :material-cpu-64-bit:{.icon-def-0} CPU support [^docker-files]. 
 
 Now, let's take a closer look at the files :material-arrow-down-bold-outline:{.icon-def-0}.
 
@@ -615,9 +615,7 @@ These are typical :simple-docker:{.icon-def-0} Docker compose files starting wit
 
 We want to use the latest Docker image [found here][ollama-docker-image]{target="_blank"}, and we want to interact with the server by using our [localhost][localhost]{target="_blank"} network to send requests to port `11434` :material-send-check-outline:{.icon-def-0} (the designated port where the :simple-ollama:{.icon-def-0} Ollama API can be reached). This is [where we point][client-chat] when we initialize the `OllamaClient` class of the `ollama_utils.py` file and the URL that we pass to the [Ollama Client][ollama-client]{.blank} using the `Client` object :material-checkbox-marked-outline:{.icon-def-0}.
 
-Finally, in this demo we're going to store all of the Ollama data (like the models that we pull) in a local folder called :material-folder-outline:{.icon-def-0} `./ollama_data/`. However, in later tutorials we'll use :simple-docker:{.icon-def-0} Docker volumes for all our data [^2].
-
-[^2]: You can see how to setup using a Docker volume for this project in the [full Docker compose files][docker-compose-full].
+Finally, in this demo we're going to store all of the Ollama data (like the models that we pull) in a local folder called :material-folder-outline:{.icon-def-0} `./ollama_data/`. However, in later tutorials we'll use :simple-docker:{.icon-def-0} Docker volumes for all our data [^docker-volumes].
 
 By switching between [the two code snippets][gpu-piece], you can see that the :material-expansion-card-variant:{.icon-def-0} GPU setup is exactly the same as the :material-cpu-64-bit:{.icon-def-0} CPU setup, only with two extra lines that tell Ollama to use all of our available GPUs :material-message-text-fast-outline:{.icon-def-0}.
 
@@ -644,6 +642,13 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 <hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;">
 
 
+<!-- FOOTNOTES -->
+[^docker-files]: Usually, we would only have one :simple-docker:{.icon-def-0} Docker compose file that can handle different user preferences by using something like environment variables (we'll see how to do this when we get into the :simple-searxng:{.icon-def-0} [SearXNG server][searxng-tutorial] and :material-chat-processing-outline:{.icon-def-0} [chatbot][chatbot] tutorials). However, in our case :material-expansion-card-variant:{.icon-def-0} GPU support is built by adding two lines (see [lines 10-11][gpu-piece] of the GPU snippet) while :material-cpu-64-bit:{.icon-def-0} CPU support is built by omitting these two lines. I couldn't figure out a good way to dynamically add or omit these lines when building :material-head-question-outline:{.icon-def-0}, so I just resorted to using two different files.
+
+[^docker-volumes]: You can see how to setup using a Docker volume for this project in the [full Docker compose files][docker-compose-full].
+
+
+<!-- LINKS -->
 [agents]: ../agents/index.md
 [animakit]: https://github.com/anima-kit
 [chatbot]: ../agents/chatbot.md

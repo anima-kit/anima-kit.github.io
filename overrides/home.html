@@ -1,0 +1,204 @@
+<!-- 
+I learned a lot about how to create my own landing page using Material for MKDocs with:
+https://github.com/squidfunk/mkdocs-material
+https://github.com/squidfunk/mkdocs-material/issues?q=is%3Aissue%20state%3Aclosed
+https://github.com/binbashar/le-ref-architecture-doc 
+Thanks for sharing! 
+-->
+
+
+{% extends "main-styles.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+{{ super() }}
+
+<!-- 1st section -->
+<!-- Create sparkle container for sparkle animations and use landing animation -->
+<!-- Main landing image and button to tutorials landing -->
+<section class="landing-animation">
+  <div class="flex-row sparkle-container" style="position: relative; padding: 0px; margin: 0px;">
+    <div class="flex-col" style="position: absolute; left: 5%; width: 50%; top: 80%;">
+      <div class="flex-col" style="padding-left: 0vw; padding-right: 0vw;">
+        <a href="./tutorials/" title="Tutorials" class="btn-main glimmer-effect" style="width: 60%;">
+           <div class="flex-row" style="padding-left: 0.5vw; padding-right: 0.5vw;">
+              <p style="margin-top: 1.25vw; margin-bottom: 0vw; font-size: 3vw;">
+                  anima-kit
+              </p>
+            </div>
+            <hr style="border-top: 0.35vw solid var(--color-blue-lightest); margin: 1vw; width: 80%;" />
+            <p style="margin-bottom: 0.25vw; margin-top: 1.5vw; padding-left: 1vw; padding-right: 1vw; font-size: 2vw;">
+                Learning AI, building demos, sharing results.
+            </p>
+        </a>
+      </div>
+
+    </div>
+    <div class="flex-col" style="order:0; flex: 100%; overflow:hidden; padding: 0px; margin: 0px;">
+      <img src="assets/lxlgs/logo-0.png"/>
+    </div>
+  </div>
+</section>
+
+
+<!-- 2nd section -->
+<!-- Use card-white and columns-container to create container for buttons (btn-purple) -->
+<!-- Link to servers tutorials landing, agents tutorials landing, and github -->
+<section class="body-background-0">
+  <div class="flex-col" style="margin-top: 10vw; margin-bottom: 1.5vw;">
+    <div class="card-white" style="margin-left: 5vw; margin-right: 5vw;">
+      <div style="text-align: center; padding-bottom: 2vw;">
+          <p style="margin-top: 1.5vw; font-size: 3vw; color: var(--color-blue-darkest)">
+              Learning how to build AI agents.
+          </p>
+          <p style="margin-top: 1.5vw; margin-bottom: 1.5vw; font-size: 3vw; color: var(--color-pink-primary)">
+              One demo at a time.
+          </p>
+      </div>
+
+      <div class="columns-container">
+        <a href="./tutorials/servers/" title="Servers" class="btn-purple">
+          <div style="margin-bottom: 2vw;">
+            <h3 style="font-size: 2.5vw; text-align: center; color: var(--color-blue-darkest)">Tools</h3>
+            <hr style="border-top: 0.35vw solid var(--color-pink-primary); margin: 1vw 1vw;" />
+            <ul>
+              <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Learn how to build the tools needed to power your agents.</li>
+              <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Create local tool servers that are easy to build and deploy.</li>
+              <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Combine servers to create a single stack of tools specific to your needs.</li>
+            </ul>
+          </div>
+        </a>
+        
+        <a href="./tutorials/agents/" title="Agents" class="btn-purple">
+          <div style="margin-bottom: 2vw;">
+              <h3 style="font-size: 2.5vw; text-align: center; color: var(--color-blue-darkest)">Agent Builds</h3>
+              <hr style="border-top: 0.35vw solid var(--color-pink-primary); margin: 1vw 1vw;" />
+              <ul>
+                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Learn how to build different types of agents to fit your needs.</li>
+                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Modular builds starting from simple chatbots to specialized agents.</li>
+                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Interact with agents through easy to use Web UIs.</li>
+              </ul>
+          </div>
+        </a>
+        
+        <a href="https://github.com/anima-kit/" title="anima-kit" class="btn-purple">
+          <div style="margin-bottom: 2vw;">
+              <h3 style="font-size: 2.5vw; text-align: center; color: var(--color-blue-darkest)">Resources</h3>
+              <hr style="border-top: 0.35vw solid var(--color-pink-primary); margin: 1vw 1vw;" />
+              <ul>
+                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Full code and tutorials available for all server and agent builds.</li>
+                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Step-by-step guides and in-depth tutorials for easily digestible modules.</li>
+                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Clean and detailed docs for all code to facilitate understanding.</li>
+              </ul>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+<!-- Create cycling-text to use animated-text to cycle through text items -->
+<!-- Use btn-blue to link to tutorials landing  -->
+  <div class="flex-col"  style="position: relative; padding: 0px; margin: 0px;">
+    <div class="flex-col" style="order:0; flex: 25%; overflow:visible;">
+      <img src="assets/lxlgs/logo-1.png" style="margin-top: 3vw; margin-bottom: 3vw; width: 100%; margin-left: auto;" />
+    </div>
+    <div class="animated-text" style="position: absolute; left: 25%; top: 50%;">
+      <span class="static-text">Learn how to</span>
+      <a href="./tutorials/" title="Tutorials" class="btn-blue glimmer-effect flex-col" 
+         style="width: 35vw; height: 15vw; text-align: center; padding: 1vw; margin: 1vw; align-items: center; justify-content: center;">
+        <div>
+            <span id="cycling-text" class="bordered-text"><i class="mdi mdi-server" style="color: var(--color-pink-primary)"></i> build tool servers</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3rd section -->
+<!-- Show a nice image -->
+<section class="body-background-2">
+  <div class="flex-col" style="margin: 2vw;">
+    <div class="flex-col" style="overflow: hidden; width: 100%;">
+      <img src="assets/lxlgs/logo-2.png"/>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<!-- Use footer-item to link to github, about page, servers tutorials landing, and agents tutorials landing -->
+<footer class="body-background-2">
+  <div class="flex-row" style="margin-top: 0vw; padding-top: 0vw; margin-bottom: 3vw;">
+
+    <div class="flex-row" style="flex:50%; margin-left: 5vw; gap: 8vw;">
+      <div class="flex-col" style="font-size: 2vw; color: var(--color-blue-lightest);">
+        <ul>
+          <li class="footer-item">
+            <a href="https://github.com/anima-kit/" title="anima-kit">Home</a>
+          </li>
+          <li class="footer-item">
+            <a href="./about/" title="About">About</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex-col" style="font-size: 2vw; color: var(--color-blue-lightest);">
+        <ul>
+          <li class="footer-item">
+            <a href="./tutorials/servers/" title="Servers">Servers</a>
+          </li>
+          <li class="footer-item">
+            <a href="./tutorials/agents/" title="Agents">Agents</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+<!-- Use social-item to link to github, linkedin, medium, twitter, and instagram -->
+    <div class="flex-row" style="flex: 50%;">
+      <div style="margin-left: 5vw; margin-top: 2vw;">
+        <a href="https://github.com/anima-kit/">
+          <img
+            src="assets/icons/github.svg"
+            title="Github"
+            class="social-item"
+            width="15%"
+          />
+        </a>
+        <a href="https://www.linkedin.com/in/lauren-street-62a747381/" class="blank">
+          <img
+            src="assets/icons/linkedIn.svg"
+            title="LinkedIn"
+            class="social-item"
+            width="15%"
+          />
+        </a>
+        <a href="https://medium.com/@animakit/" class="blank">
+          <img
+            src="assets/icons/medium.svg"
+            title="Medium"
+            class="social-item"
+            width="15%"
+          />
+        </a>
+        <a href="https://x.com/animakit/" class="blank">
+          <img
+            src="assets/icons/twitter.svg"
+            title="Twitter"
+            class="social-item"
+            width="15%"
+          />
+        </a>
+        <a href="https://www.instagram.com/anima_kit/"  class="blank">
+          <img
+            src="assets/icons/instagram.svg"
+            title="Instagram"
+            class="social-item"
+            width="15%"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}

@@ -1,0 +1,405 @@
+<!-- 
+I learned a lot about how to create my own landing page using Material for MKDocs with:
+https://github.com/squidfunk/mkdocs-material
+https://github.com/squidfunk/mkdocs-material/issues?q=is%3Aissue%20state%3Aclosed
+https://github.com/binbashar/le-ref-architecture-doc 
+Thanks for sharing! 
+-->
+
+{% extends "main.html" %}
+
+{% block tabs %}
+{{ super() }}
+
+<!-- vw = viewport width - sets elements based on screen width -->
+<!-- vh = viewport height - sets elements based on screen height -->
+<!-- rem = root element - sets elements based on font size of root element -->
+<!-- px = pixel - either an absolute unit of length (1/96 of an inch) but more likely depends on device -->
+
+<!-- LINKS -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Brings in icons from Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<!-- Loads Roboto font -->
+
+
+<!-- ANIMATIONS -->
+<style>
+    /* 
+    Landing page fade in and slide up
+    */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .landing-animation {
+        animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    /* 
+    Sparkling effect animation - used to give appearance of ice crystals
+    */
+    @keyframes sparkle {
+        0%   { transform: scale(0) rotate(0deg); opacity: 0.3; }
+        75%  { transform: scale(0.5) rotate(180deg); opacity: 0.5; }
+        100% { transform: scale(1) rotate(360deg); opacity: 0; }
+    }
+    .sparkle {
+        position: absolute;
+        font-size: 0.6vw;
+        color: var(--color-blue-lightest);
+        opacity: 0; /* Start invisible */
+        animation: sparkle 2s infinite ease-in-out; /* Repeat forever with smooth motion */
+        pointer-events: none; /* Don't interfere with interactions */
+    }
+
+    /* 
+    Glowing pulse effect animation - used to give apearance of soft, pulsing shimmer
+    */
+    @keyframes glow {
+        0% {
+            box-shadow: 0 0 4px var(--color-blue-lightest), 0 0 6px var(--color-blue-lighter), 0 0 8px var(--color-blue-light);
+        }
+        50% {
+            box-shadow: 0 0 5px var(--color-blue-lightest), 0 0 56px var(--color-blue-lighter), 0 0 8px var(--color-blue-light);
+        }
+        100% {
+            box-shadow: 0 0 4px var(--color-blue-lightest), 0 0 6px var(--color-blue-lighter), 0 0 8px var(--color-blue-light);
+        }
+    }
+    .glimmer-effect {
+        animation: glow 5s ease-in-out infinite alternate;
+    }
+</style>
+
+<!-- 
+Creates number of icons based on screen resolution 
+Give icons .sparkle class and place randomly on the screen
+Start animation at different times to look more natural
+Handles resize events to recreate sparkles depending on new screen resolution
+-->
+<script>
+  // Function to create sparkles
+  function createSparkles() {
+    const container = document.querySelector('.sparkle-container');
+    
+    if (!container) {
+      console.warn('Sparkle container not found');
+      return;
+    }
+    
+    // Clear existing sparkles
+    const existingSparkles = container.querySelectorAll('.sparkle');
+    const oldCount = existingSparkles.length;
+    
+    existingSparkles.forEach(spark => spark.remove());
+    
+    // Calculate number of sparkles based on screen size
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const baseSparkles = 50; // Base number of sparkles
+    
+    // Adjust based on screen area (smaller screens get fewer sparkles)
+    // Min of 10 and max of 150 sparkles regardless of screen size
+    const area = screenWidth * screenHeight;
+    const sparkleCount = Math.max(10, Math.min(150, Math.floor(area / 10000)));
+    
+    // Make sure calculations are right
+    console.log(`Screen size: ${screenWidth}x${screenHeight}, Area: ${area}, Sparkle count: ${sparkleCount}, Previous count: ${oldCount}`);
+    
+    // Create the sparkles, give them random positions and animation delays
+    for (let i = 0; i < sparkleCount; i++) {
+      const spark = document.createElement('span');
+      spark.className = 'material-icons sparkle';
+      spark.textContent = 'flare';
+      
+      spark.style.left = Math.random() * 100 + '%';
+      spark.style.top = Math.random() * 100 + '%';
+      spark.style.animationDelay = (Math.random() * 2) + 's';
+      
+      container.appendChild(spark);
+    }
+    
+    // Make sure number of created sparkles is correct
+    console.log(`Created ${sparkleCount} sparkles`);
+  }
+  
+  // Initialize sparkles when DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log('DOM loaded - creating initial sparkles');
+    createSparkles();
+  });
+  
+  // Handle window resize
+  // The 100ms timeout controls the following tradeoff:
+  // Don't wait long enough and createSparkles() func is run too many times - becomes slow and unresponsive
+  // Wait too long and disappearance of sparkles is noticeable before createSparkles() is run again, would make page appear slow and unresponsive 
+  window.addEventListener('resize', () => {
+    // Add a small delay to prevent excessive calls during resizing
+    if (window.resizeTimeout) {
+      clearTimeout(window.resizeTimeout);
+    }
+    window.resizeTimeout = setTimeout(() => {
+      // Make sure sparkles are being recreated during resize
+      console.log('Resize event detected - recreating sparkles');
+      createSparkles();
+    }, 100);
+  });
+</script>
+
+
+<!-- BACKGROUNDS -->
+<style>
+    /* 
+    Sets gradient background from green-blue (at top), to pink, to primary blue at bottom.
+    */
+    .body-background-0 {
+        background: linear-gradient(0deg, var(--color-blue-tertiary) 0%, var(--color-pink-primary) 33%, var(--color-blue-secondary) 87%);
+    }
+
+    /* 
+    Sets solid dark blue background
+    */
+    .body-background-2 {
+        background-color: var(--color-blue-darkest);
+    }
+</style>
+
+
+<!-- BUTTONS -->
+<style>
+    /* 
+    Main button with blue gradient
+    */
+    .btn-main {
+        font-weight: 600;
+        color: var(--color-blue-darkest);
+        background: linear-gradient(180deg, var(--color-blue-secondary) 0%, var(--color-blue-darkest) 45%, var(--color-blue-secondary) 87%); 
+        padding: 1vw 1vw;
+        border: solid var(--color-blue-lightest) 0.3vw;
+        box-shadow: rgb(0, 0, 0) 0vw 0vw 0vw 0vw;
+        transition: all 0.3s ease;
+        transform: translateY(0);
+        display: flex;  /* Makes layout flexible */
+        flex-direction: column; /* Stacks content vertically */
+        align-items: center; /* Centers content horizontally */
+        cursor: pointer; /* Shows hand cursor when hovering over button */
+        border-radius: 5vw 1vw 5vw 1vw;
+    }
+    .btn-main:hover {
+        transform: scale(1.1);
+        background: linear-gradient(180deg, var(--color-pink-primary) 0%, var(--color-pink-darkest) 45%, var(--color-pink-primary) 87%);
+        color: var(--color-pink-darkest);
+    }
+
+    /* 
+    White --> Pink button
+    */
+    .btn-purple {
+        font-weight: 200;
+        color: var(--color-pink-darkest);
+        background-color: var(--color-pink-lightest);
+        padding: 1vw;
+        border: 2px solid var(--color-pink-primary);
+        box-shadow: rgb(0, 0, 0) 0vw 0vw 0vw 0vw;
+        border-radius: 1vw;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        cursor: pointer;
+    }
+    .btn-purple:hover {
+        transform: scale(1.1);
+        background-color: var(--color-pink-light);
+        color: var(--color-pink-darkest);
+    }
+
+    /* 
+    White --> Blue button
+    */
+    .btn-blue {
+        font-weight: 200;
+        color: var(--color-blue-darkest);
+        background-color: var(--color-blue-lightest);
+        border: 2px solid var(--color-blue-primary); 
+        box-shadow: rgb(0, 0, 0) 0vw 0vw 0vw 0vw;
+        border-radius: 1vw;
+        transition: all 0.3s ease;
+        align-items: center;
+        cursor: pointer;
+    }
+    .btn-blue:hover {
+        transform: scale(1.1); 
+        background-color: var(--color-blue-light);
+        color: var(--color-blue-darkest);
+    }
+</style>
+
+
+<!-- CONTAINERS -->
+<style>
+    /* 
+    Card display
+    */
+    .card-white {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        padding: 2vw;
+        background-color: var(--color-pink-lightest);
+        border-radius: 1vw;
+        border: 2px solid var(--color-blue-darkest);
+    }
+
+    /* 
+    Grid container to hold columns
+    */
+    .columns-container {
+        display: grid; /* Creates a grid layout */
+        grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr)); 
+        /* Automatically creates columns that are at least 10% wide and fill available space */
+        gap: 1vw; /* Space between grid items */
+        width: 100%;
+        margin-top: 1vw;
+    }
+
+    /* 
+    Flex container for horizontal arrangements
+    */
+    .flex-row {
+        display: flex;
+        flex-flow: row;
+    }
+    
+    /* 
+    Flex container for vertical arrangements
+    */
+    .flex-col {
+        display: flex;
+        flex-flow: column;
+    }
+</style>
+
+
+<!-- FONT -->
+<style>
+    /* 
+    Default font for entire page
+    */
+    body {
+        font-family: 'Roboto', sans-serif; /* Fallback to sans-serif */
+    }
+</style>
+
+
+<!-- FOOTER -->
+<style>
+    /* Change colors during hover */
+    .footer-item:hover {
+        color: var(--color-pink-primary)
+    }
+    
+     /* Change background color and sets round corners during hover */
+    .social-item:hover {
+        background-color: var(--color-pink-primary);
+        border-radius: 10px;
+    }
+    
+    /* Hide default Material for MKDocs footer on this page */
+    .md-footer {
+        display: none;
+    }
+</style>
+
+
+<!-- LISTS -->
+<style>
+  /* Remove default bullet points and padding from unordered lists */
+  ul {
+    list-style: none;
+    padding-left: 0vw;
+  }
+  
+  /* Make default bullet points pink stars */
+  li::before {
+    content: "★";
+    color: var(--color-pink-primary);
+    margin-right: 1vw;
+  }
+</style>
+
+
+<!-- TEXTS -->
+<style>
+  /* This text will cycle through a list of text items */
+  .animated-text {
+    position: absolute; /* Positions the text absolutely */
+    top: 50%; /* Positions it vertically in the middle */
+    left: 50%; /* Positions it horizontally in the middle */
+    transform: translate(-50%, -50%); /* Centers it by moving it back by half its width/height */
+    z-index: 2; /* Puts this element on top of other elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5vw; 
+    color: var(--color-blue-darkest);
+    text-align: center; /* Centers the text content */
+  }
+  
+  /* This text appears above the cycling text */
+  .static-text {
+    white-space: nowrap; /* Prevents text from wrapping to new lines */
+    margin-bottom: 3vh;
+    font-size: 5vw;
+  }
+  
+  /* Border the cycling text */
+  .bordered-text {
+    padding: 1vw 1vw;
+    border-radius: 1vw;
+    font-weight: normal;
+    min-width: 10ch; /* Sets minimum width based on 10 characters */
+    transition: all 0.3s ease-in-out; /* Smoothly transitions all changes over 0.3 seconds */
+    font-size: 5vw;
+    color: var(--color-blue-darkest);
+  }
+</style>
+
+<!-- Cycle through text items -->
+<script>
+  /* Text items to cycle through */
+  const texts = [
+    "<i class='mdi mdi-server' style='color: var(--color-pink-primary);'></i> build tool servers",
+    "<i class='mdi mdi-robot-outline' style='color: var(--color-pink-primary);'></i> build AI agents",
+    "<i class='mdi mdi-hammer-wrench' style='color: var(--color-pink-primary);'></i> give agents tools",
+    "<i class='mdi mdi-wizard-hat' style='color: var(--color-pink-primary);'></i> specialize agents",
+    "<i class='mdi mdi-monitor-shimmer' style='color: var(--color-pink-primary);'></i> build agent apps",
+    "<i class='mdi mdi-robot-love-outline' style='color: var(--color-pink-primary); font-size: 8vw;'></i>"
+  ];
+  
+  let index = 0;
+  
+  /* Change to next text item every 2s */
+  setInterval(() => {
+    document.getElementById("cycling-text").innerHTML = texts[index]; /* Updates the text display */
+    index = (index + 1) % texts.length; /* Moves to the next message */
+  }, 2000);
+</script>
+
+
+<!-- MISC -->
+<style>
+    /* Remove default margin from the main content area on this page */
+    .md-main__inner {
+        margin: 0
+    }
+    
+    /* Remove main content area on this page */
+    .md-content {
+        display: none
+    }
+</style>
+
+{% endblock %}

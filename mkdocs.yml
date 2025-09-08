@@ -1,0 +1,164 @@
+## Site
+site_name: anima-kit
+repo_name: "anima-kit/anima-kit.github.io"
+repo_url: https://github.com/anima-kit/anima-kit.github.io
+site_url: https://anima-kit.github.io/
+site_description: anima-kit | Learning AI, building demos, sharing results
+site_author: Lauren Street
+copyright: Copyright &copy; 2025 <a href="https://github.com/anima-kit">anima-kit</a>
+
+## Theme
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/lxlgs/logo-3.png
+  favicon: assets/lxlgs/logo-3.png
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.footer
+    # TODO: Wanted to use nagivation.index, but get page error:
+    # The label's for attribute doesn't match any element id. 
+    # This might prevent the browser from correctly autofilling the form and accessibility tools from working correctly.
+    # To fix this issue, make sure the label's for attribute references the correct id of a form field.
+    # Violating node:
+    # md-nav__title 
+    #- navigation.indexes
+    - navigation.prune
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - content.tooltips
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+    #- toc.integrate
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-7
+        name: Light mode
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-3
+        name: Dark mode
+
+
+## Markdown
+markdown_extensions:
+- abbr
+- admonition
+- attr_list
+- def_list
+- footnotes
+- md_in_html
+- tables
+- toc:
+    title: On this page
+    permalink: ⚓︎
+    permalink_title: Anchor link to this section for reference
+    toc_depth: 4
+    slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+- pymdownx.blocks.caption
+- pymdownx.details
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+- pymdownx.inlinehilite
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+- pymdownx.snippets:
+    auto_append:
+      - includes/abbreviations.md
+- pymdownx.superfences:
+    custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
+- pymdownx.tabbed:
+    alternate_style: true 
+- pymdownx.critic
+- pymdownx.caret
+- pymdownx.keys
+- pymdownx.mark
+- pymdownx.tilde
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.arithmatex:
+    generic: true
+
+
+## Plugins
+plugins:
+  - search
+
+
+## Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/anima-kit/
+      name: Github
+
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/lauren-street-62a747381/
+      name: LinkedIn
+
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@animakit/
+      name: Medium
+
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/animakit/
+      name: Twitter
+
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/anima_kit/
+      name: Instagram
+
+extra_css:
+  - stylesheets/extra.css
+  - "https://cdn.jsdelivr.net/npm/@mdi/font@7.x/css/materialdesignicons.min.css"
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/animations.js
+  - javascripts/ext-links.js
+
+
+## Navigation
+nav:
+  - Home: index.md
+  - Learning:
+    - Tutorials Guide: tutorials/index.md
+    - Servers: 
+      - Servers Guide: tutorials/servers/index.md
+      - Ollama: tutorials/servers/ollama.md
+      - SearXNG: tutorials/servers/searxng.md
+      - Milvus: tutorials/servers/milvus.md
+      - Multi-Server Setups: tutorials/servers/multi-server.md
+    - Agents:
+      - Agents Guide: tutorials/agents/index.md
+      - Chatbot: tutorials/agents/chatbot.md
+      - Agent with Memory: tutorials/agents/agent-memory.md
+      - Document Agent: tutorials/agents/doc-agent.md
+      - Code Agent: tutorials/agents/code-agent.md 
+    - RAG: 
+      - RAG Guide: tutorials/rag/index.md
+    - Odds and Ends:
+      - Odds and Ends Guide: tutorials/misc/index.md
+  - About: about.md
+  - Contributing: CONTRIBUTING.md
+  - Code of Conduct: CODE_OF_CONDUCT.md
+  - License Notice: NOTICE.md

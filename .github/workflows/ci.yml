@@ -1,0 +1,46 @@
+name: Build & Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main          # Change if your default branch is named differently
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write     # Needed to push to gh-pages
+  pages: write        # Optional, for GitHub Pages deployment feature
+  id-token: write     # Optional, for token‑based auth
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout source
+        uses: actions/checkout@v4   # Pulls the repo content
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"   # Any supported 3.x will work
+
+      - name: Install MkDocs & dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt  # adjust if you use other plugins
+          # If you have any custom requirements, add them here.
+
+      - name: Build MkDocs site
+        run: mkdocs build --strict
+
+      # ------------------------------------------------------------
+      # Deploy to gh-pages branch
+      # ------------------------------------------------------------
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site   # mkdocs outputs the static files here by default

@@ -1,0 +1,35 @@
+<!-- See https://github.com/squidfunk/mkdocs-material/blob/master/material/overrides/main.html -->
+
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  <!-- Set title to page title | If none use site name -->
+  {% if page.meta and page.meta.title %}
+    <title>{{ page.meta.title }}</title>
+  {% elif page.title and not page.is_homepage %}
+    <title>{{ page.title | striptags }}</title>
+  {% else %}
+    <title>{{ config.site_name }}</title>
+  {% endif %}
+{% endblock %}
+
+<!-- Custom front matter -->
+{% block extrahead %}
+
+  <!-- Don't display header on this page -->
+  <style>.md-header {display: none;}</style>
+
+  <!-- Site image for social -->
+  {% set image = config.site_url ~ 'assets/lxlgs/logo-4.png' %}
+
+  <!-- Open graph tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ config.site_description }}" />
+  <meta property="og:url" content="{{ page.canonical_url }}" />
+  <meta property="og:image" content="{{ image }}" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1080" />
+  <meta property="og:image:height" content="568" />
+
+{% endblock %}

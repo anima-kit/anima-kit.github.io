@@ -122,10 +122,6 @@ extra:
       link: https://x.com/animakit/
       name: Twitter
 
-    - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/anima_kit/
-      name: Instagram
-
 extra_css:
   - stylesheets/extra.css
   - "https://cdn.jsdelivr.net/npm/@mdi/font@7.x/css/materialdesignicons.min.css"

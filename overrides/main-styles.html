@@ -51,9 +51,9 @@ Thanks for sharing!
         position: absolute;
         font-size: 0.6vw;
         color: var(--color-blue-lightest);
-        opacity: 0; /* Start invisible */
+        opacity: 0;                                 /* Start invisible */
         animation: sparkle 2s infinite ease-in-out; /* Repeat forever with smooth motion */
-        pointer-events: none; /* Don't interfere with interactions */
+        pointer-events: none;                       /* Don't interfere with interactions */
     }
 
     /* 
@@ -157,7 +157,13 @@ Handles resize events to recreate sparkles depending on new screen resolution
     Sets gradient background from green-blue (at top), to pink, to primary blue at bottom.
     */
     .body-background-0 {
-        background: linear-gradient(0deg, var(--color-blue-tertiary) 0%, var(--color-pink-primary) 33%, var(--color-blue-secondary) 87%);
+        background: linear-gradient(
+          0deg, 
+          var(--color-blue-tertiary) 0%, 
+          var(--color-pink-primary) 33%, 
+          var(--color-blue-secondary) 87%
+        );
+        min-height: 200vh; /* Want this to span two entire screens */
     }
 
     /* 
@@ -181,13 +187,13 @@ Handles resize events to recreate sparkles depending on new screen resolution
         box-shadow: rgb(0, 0, 0) 0vw 0vw 0vw 0vw;
         transition: all 0.3s ease;
         transform: translateY(0);
-        display: flex;  /* Makes layout flexible */
+        display: flex;          /* Makes layout flexible */
         flex-direction: column; /* Stacks content vertically */
-        align-items: center; /* Centers content horizontally */
+        align-items: center;    /* Centers content horizontally */
         justify-content: center;
-        cursor: pointer; /* Shows hand cursor when hovering over button */
+        cursor: pointer;        /* Shows hand cursor when hovering over button */
         border-radius: 1vw;
-        width: 100%; /* Ensure full width */
+        width: 100%;            /* Ensure full width */
         font-weight:bold;
         height: 8vw;
         font-size: 4vw;
@@ -215,6 +221,7 @@ Handles resize events to recreate sparkles depending on new screen resolution
         flex-direction: column;
         align-items: center; 
         cursor: pointer;
+        width: 100%;  /* Full width of grid cell */
     }
     .btn-purple:hover {
         transform: scale(1.1);
@@ -241,6 +248,16 @@ Handles resize events to recreate sparkles depending on new screen resolution
         background-color: var(--color-blue-light);
         color: var(--color-blue-darkest);
     }
+
+    .cycle-text-btn {
+      width: 25vw; 
+      height: 10vw; 
+      text-align: center; 
+      padding: 1vw; 
+      margin: 1vw; 
+      align-items: center; 
+      justify-content: center;
+    }
 </style>
 
 
@@ -250,13 +267,17 @@ Handles resize events to recreate sparkles depending on new screen resolution
     Card display
     */
     .card-white {
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      padding: 2vw;
-      background-color: var(--color-pink-lightest);
-      border-radius: 1vw;
-      border: 2px solid var(--color-blue-darkest);
+      flex:1; /* grow to fill remaining vertical space */
+      width:100%;
+      max-width:none;
+      background-color:var(--color-pink-lightest);
+      border-radius:1vw;
+      border:2px solid var(--color-blue-darkest);
+      box-sizing:border-box;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding: 1vw 1vh;
     }
 
     /* 
@@ -264,11 +285,11 @@ Handles resize events to recreate sparkles depending on new screen resolution
     */
     .columns-container {
         display: grid; /* Creates a grid layout */
-        grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr)); 
+        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr)); 
         /* Automatically creates columns that are at least 10% wide and fill available space */
         gap: 1vw; /* Space between grid items */
         width: 100%;
-        margin-top: 1vw;
+        padding: 1vw;
     }
 
     /* 
@@ -287,6 +308,30 @@ Handles resize events to recreate sparkles depending on new screen resolution
         flex-flow: column;
     }
 
+    .full-screen{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:start;
+      height: 100vh;
+      width: 100%;
+      overflow:auto;    /* allow scrolling if content overflows */
+      padding: 5vh 5vw; /* gives reasonable margin */
+      box-sizing:border-box;
+    }
+
+    .full-screen-two{
+      position: relative;          
+      display:flex;
+      justify-content:center;
+      align-items:center; 
+      height: 100vh;
+      width: 100%;
+      overflow:hidden;
+      padding: 0px; 
+      margin: 0px;
+    }
+
     .title-flex {
       position: absolute;
       left: 5%;
@@ -301,6 +346,28 @@ Handles resize events to recreate sparkles depending on new screen resolution
       top: 30%;
       transform: translateY(50%);
     }
+
+    .column-flex {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      width: 100%;
+    }
+
+    .img-wrapper{
+      max-width: 80vw;  /* keep it from overflowing horizontally */
+      max-height: 80vh; /* keep it from overflowing vertically */
+      display:flex;
+      justify-content:top;
+      align-items:top;
+    }
+
+    .img-wrapper img{
+      width:100%;
+      height:auto;        /* keeps aspect ratio */
+      object-fit:contain; /* fit entire image inside */
+    }
+
 </style>
 
 
@@ -335,6 +402,19 @@ Handles resize events to recreate sparkles depending on new screen resolution
 </style>
 
 
+<!-- LINES -->
+<style>
+  .separator {
+    display: block; /* make it behave like an <hr> */
+    border-top: 2px solid var(--color-pink-primary);
+    margin: 0;
+    flex-shrink: 0; /* don’t let it shrink to zero width */
+    width: 90%;
+    min-width: 1rem;
+  }
+</style>
+
+
 <!-- LISTS -->
 <style>
   /* Remove default bullet points and padding from unordered lists */
@@ -354,28 +434,55 @@ Handles resize events to recreate sparkles depending on new screen resolution
 
 <!-- TEXTS -->
 <style>
-  .main-title {font-size: 4vw; font-weight: 600;}
-  .main-subtitle {font-size: 2vw;}
+  .main-title {
+    font-size: 4vw; 
+    font-weight: 600;
+  }
+  .main-subtitle {
+    font-size: 2vw;
+  }
+  .card-title {
+    margin-top: 3vh;
+    font-size: 2.25vw; 
+    color: var(--color-blue-darkest)
+  }
+  .card-subtitle {
+    margin-bottom: 2vh; 
+    font-size: 2vw; 
+    color: var(--color-pink-primary)
+  }
+  .column-title {
+    font-size: 1.75vw; 
+    text-align: center; 
+    color: var(--color-blue-darkest)
+  }
+  .column-text {
+    font-size: 1.75vw; 
+    text-align: left; 
+    color: var(--color-blue-darkest); 
+    margin: 1vh 1vw;
+  }
+
   /* This text will cycle through a list of text items */
   .animated-text {
-    position: absolute; /* Positions the text absolutely */
-    top: 50%; /* Positions it vertically in the middle */
-    left: 50%; /* Positions it horizontally in the middle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%); /* Centers it by moving it back by half its width/height */
-    z-index: 2; /* Puts this element on top of other elements */
+    z-index: 2;                       /* Puts this element on top of other elements */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5vw; 
     color: var(--color-blue-darkest);
-    text-align: center; /* Centers the text content */
+    text-align: center;
   }
   
   /* This text appears above the cycling text */
   .static-text {
     white-space: nowrap; /* Prevents text from wrapping to new lines */
     margin-bottom: 3vh;
-    font-size: 5vw;
+    font-size: 3vw;
   }
   
   /* Border the cycling text */
@@ -383,10 +490,14 @@ Handles resize events to recreate sparkles depending on new screen resolution
     padding: 1vw 1vw;
     border-radius: 1vw;
     font-weight: normal;
-    min-width: 10ch; /* Sets minimum width based on 10 characters */
+    min-width: 10ch;                  /* Sets minimum width based on 10 characters */
     transition: all 0.3s ease-in-out; /* Smoothly transitions all changes over 0.3 seconds */
-    font-size: 5vw;
+    font-size: 3vw;
     color: var(--color-blue-darkest);
+  }
+
+  .icon-text {
+    font-size: 6vw;
   }
 </style>
 
@@ -394,12 +505,12 @@ Handles resize events to recreate sparkles depending on new screen resolution
 <script>
   /* Text items to cycle through */
   const texts = [
-    "<i class='mdi mdi-server' style='color: var(--color-pink-primary);'></i> build tool servers",
-    "<i class='mdi mdi-robot-outline' style='color: var(--color-pink-primary);'></i> build AI agents",
-    "<i class='mdi mdi-hammer-wrench' style='color: var(--color-pink-primary);'></i> give agents tools",
-    "<i class='mdi mdi-wizard-hat' style='color: var(--color-pink-primary);'></i> specialize agents",
-    "<i class='mdi mdi-monitor-shimmer' style='color: var(--color-pink-primary);'></i> build agent apps",
-    "<i class='mdi mdi-robot-love-outline' style='color: var(--color-pink-primary); font-size: 8vw;'></i>"
+    "<i class='mdi mdi-server' style='color: var(--color-pink-primary);'></i> Build tool servers",
+    "<i class='mdi mdi-robot-outline' style='color: var(--color-pink-primary);'></i> Build AI agents",
+    "<i class='mdi mdi-hammer-wrench' style='color: var(--color-pink-primary);'></i> Give agents tools",
+    "<i class='mdi mdi-wizard-hat' style='color: var(--color-pink-primary);'></i> Specialize agents",
+    "<i class='mdi mdi-monitor-shimmer' style='color: var(--color-pink-primary);'></i> Build agent apps",
+    "<i class='mdi mdi-robot-love-outline icon-text' style='color: var(--color-pink-primary);'></i>"
   ];
   
   let index = 0;
@@ -429,30 +540,191 @@ Handles resize events to recreate sparkles depending on new screen resolution
 
 <!-- DEVICE SPECIFIC -->
 <style>
+  @media (max-width: 1440px) {
+    .columns-container {
+        grid-template-columns: 1fr; /* Stack */
+        gap: 2vh;
+    }
+    .column-flex {
+      align-items: flex-start;
+      margin: 0 2vw;
+      padding: 0 2vw;
+    }
+    .card-title {
+      font-size: 2.5vw;
+    }
+    .card-subtitle { 
+      font-size: 2.25vw; 
+    }
+    .column-title {
+      font-size: 2vw; 
+    }
+    .column-text {
+      font-size: 2vw; 
+    }
+  }
+
   @media (max-width: 1024px) {
-    .main-title {font-size: 6vw;}
-    .main-subtitle {font-size: 4vw;}
-    .btn-main {padding: 3vw; height: 10vw; font-size: 5vw;}
+    .main-title {
+      font-size: 6vw;
+    }
+    .main-subtitle {
+      font-size: 4vw;
+    }
+    .btn-main {
+      padding: 3vw; 
+      height: 10vw; 
+      font-size: 5vw;
+    }
+    .column-flex {
+      margin: 0 2vw;
+      padding: 0 2vw;
+    }
+    .card-title {
+      font-size: 3vw;
+    }
+    .card-subtitle { 
+      font-size: 2.75vw; 
+    }
+    .column-title {
+      font-size: 2.5vw; 
+    }
+    .column-text {
+      font-size: 2.5vw; 
+    }
+    .cycle-text-btn {
+      width: 50vw; 
+      height: 25vw;
+    }
+    .bordered-text {
+      font-size: 5vw;
+    }
+    .icon-text {
+      font-size: 10vw;
+    }
   }
 
   @media (max-width: 768px) {
-    .main-title {font-size: 7vw;}
-    .main-subtitle {font-size: 5vw;}
-    .btn-main {padding: 4vw; height: 11vw; font-size: 6vw;}
+    .main-title {
+      font-size: 7vw;
+    }
+    .main-subtitle {
+      font-size: 5vw;
+    }
+    .btn-main {
+      padding: 4vw; 
+      height: 11vw; 
+      font-size: 6vw;
+    }
+    .columns-container {
+        gap: 1.5vh;
+    }
+    .card-title {
+      font-size: 3.5vw;
+    }
+    .card-subtitle { 
+      font-size: 3.25vw; 
+    }
+    .column-title {
+      font-size: 3vw; 
+    }
+    .column-text {
+      font-size: 3vw; 
+    }
+    .cycle-text-btn {
+      width: 50vw; 
+      height: 25vw;
+    }
+    .bordered-text {
+      font-size: 5vw;
+    }
+    .icon-text {
+      font-size: 10vw;
+    }
   }
 
   @media (max-width: 480px) {
-    .main-title {font-size: 2rem;}
-    .main-subtitle {font-size: 1.5rem;}
-    .btn-main {padding: 1rem; height: 4rem; font-size: 2rem;}    
-    .btn-flex {top: 75%; left: 50%; transform: translateX(-50%) translateY(-100%); width: 80%;}
+    .main-title {
+      font-size: 2rem;
+    }
+    .main-subtitle {
+      font-size: 1.5rem;
+    }
+    .btn-main {
+      padding: 1rem; 
+      height: 4rem; 
+      font-size: 2rem;
+    }    
+    .btn-flex {
+      top: 75%; 
+      left: 50%; 
+      transform: translateX(-50%) translateY(-100%); 
+      width: 80%;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+    }
+    .card-subtitle { 
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .column-title {
+      font-size: 1.1rem;
+    }
+    .column-text {
+      font-size: 1.1rem; 
+    }
+    .cycle-text-btn {
+      width: 50vw; 
+      height: 25vw;
+    }
+    .bordered-text {
+      font-size: 1.2rem;
+    }
+    .icon-text {
+      font-size: 2rem;
+    }
   }
 
   @media (max-width: 320px) {
-    .main-title {font-size: 1.5rem;}
-    .main-subtitle {font-size: 1rem;}
-    .btn-main {padding: 0.5rem; height: 3rem; font-size: 1.5rem;}    
-    .btn-flex {top: 75%; left: 50%; transform: translateX(-50%) translateY(-100%); width: 80%;}
+    .main-title {
+      font-size: 1.5rem;
+    }
+    .main-subtitle {
+      font-size: 1rem;
+    }
+    .btn-main {
+      padding: 0.5rem; height: 3rem; font-size: 1.5rem;
+    }    
+    .btn-flex {
+      top: 75%; 
+      left: 50%; 
+      transform: translateX(-50%) translateY(-100%); 
+      width: 80%;
+    }
+    .card-title {
+      font-size: 1.2rem;
+    }
+    .card-subtitle { 
+      font-size: 1.1rem;
+    }
+    .column-title {
+      font-size: 1.1rem;
+    }
+    .column-text {
+      font-size: 1.1rem; 
+    }
+    .cycle-text-btn {
+      width: 50vw; 
+      height: 40vw;
+    }
+    .bordered-text {
+      font-size: 1rem;
+    }
+    .icon-text {
+      font-size: 2rem;
+    }
   }
 </style>
 

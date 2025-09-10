@@ -46,75 +46,71 @@ Thanks for sharing!
 </section>
 
 
-<!-- All other sections should be edited to fit in entire screen -->
-<!-- Should also add device responsiveness -->
-
+<section class="body-background-0">
 <!-- 2nd section -->
 <!-- Use card-white and columns-container to create container for buttons (btn-purple) -->
 <!-- Link to servers tutorials landing, agents tutorials landing, and github -->
-<section class="body-background-0">
-  <div class="flex-col" style="margin-top: 10vw; margin-bottom: 1.5vw;">
-    <div class="card-white" style="margin-left: 5vw; margin-right: 5vw;">
-      <div style="text-align: center; padding-bottom: 2vw;">
-          <p style="margin-top: 1.5vw; font-size: 3vw; color: var(--color-blue-darkest)">
-              Learning how to build AI agents.
-          </p>
-          <p style="margin-top: 1.5vw; margin-bottom: 1.5vw; font-size: 3vw; color: var(--color-pink-primary)">
-              One demo at a time.
-          </p>
+<!-- TODO: I'm not sure I like the scroll, but it'll do for now... -->
+  <div class="full-screen flex-col">
+    <div class="card-white">
+      <div style="text-align: center; padding-bottom: 0;">
+          <h2 class="card-title"> Learn how to build AI agents. </h2>
+          <h3 class="card-subtitle"> One demo at a time. </h3>
       </div>
 
       <div class="columns-container">
-        <a href="./tutorials/servers/" title="Servers" class="btn-purple">
-          <div style="margin-bottom: 2vw;">
-            <h3 style="font-size: 2.5vw; text-align: center; color: var(--color-blue-darkest)">Tools</h3>
-            <hr style="border-top: 0.35vw solid var(--color-pink-primary); margin: 1vw 1vw;" />
+        <a href="./tutorials/servers/" title="Servers" class="btn-purple tools-container">
+          <div class="column-flex">
+            <h3 class="column-title">Tools</h3>
+            <span class="separator"></span>
             <ul>
-              <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Learn how to build the tools needed to power your agents.</li>
-              <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Create local tool servers that are easy to build and deploy.</li>
-              <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Combine servers to create a single stack of tools specific to your needs.</li>
+              <li class="column-text">Learn how to build the tools needed to power your agents.</li>
+              <li class="column-text">Create local tool servers that are easy to build and deploy.</li>
+              <li class="column-text">Combine servers to create a single stack of tools specific to your needs.</li>
             </ul>
           </div>
         </a>
         
-        <a href="./tutorials/agents/" title="Agents" class="btn-purple">
-          <div style="margin-bottom: 2vw;">
-              <h3 style="font-size: 2.5vw; text-align: center; color: var(--color-blue-darkest)">Agent Builds</h3>
-              <hr style="border-top: 0.35vw solid var(--color-pink-primary); margin: 1vw 1vw;" />
+        <a href="./tutorials/agents/" title="Agents" class="btn-purple agents-container">
+          <div class="column-flex">
+              <h3 class="column-title">Agent Builds</h3>
+              <span class="separator"></span>
               <ul>
-                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Learn how to build different types of agents to fit your needs.</li>
-                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Modular builds starting from simple chatbots to specialized agents.</li>
-                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Interact with agents through easy to use Web UIs.</li>
+                <li class="column-text">Learn how to build different types of agents to fit your needs.</li>
+                <li class="column-text">Modular builds starting from simple chatbots to specialized agents.</li>
+                <li class="column-text">Interact with agents through easy to use Web UIs.</li>
               </ul>
           </div>
         </a>
         
-        <a href="https://github.com/anima-kit/" title="anima-kit" class="btn-purple">
-          <div style="margin-bottom: 2vw;">
-              <h3 style="font-size: 2.5vw; text-align: center; color: var(--color-blue-darkest)">Resources</h3>
-              <hr style="border-top: 0.35vw solid var(--color-pink-primary); margin: 1vw 1vw;" />
+        <a href="https://github.com/anima-kit/" title="anima-kit" class="btn-purple github-container">
+          <div class="column-flex">
+              <h3 class="column-title">Resources</h3>
+              <span class="separator"></span>
               <ul>
-                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Full code and tutorials available for all server and agent builds.</li>
-                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Step-by-step guides and in-depth tutorials for easily digestible modules.</li>
-                <li style="font-size: 2vw; text-align: left; color: var(--color-blue-darkest); margin: 1vw;">Clean and detailed docs for all code to facilitate understanding.</li>
+                <li class="column-text">Full code and tutorials available for all server and agent builds.</li>
+                <li class="column-text">Step-by-step guides and in-depth tutorials for easily digestible modules.</li>
+                <li class="column-text">Clean and detailed docs for all code to facilitate understanding.</li>
               </ul>
           </div>
         </a>
       </div>
     </div>
   </div>
+
+<!-- 3rd section -->
 <!-- Create cycling-text to use animated-text to cycle through text items -->
 <!-- Use btn-blue to link to tutorials landing  -->
-  <div class="flex-col"  style="position: relative; padding: 0px; margin: 0px;">
-    <div class="flex-col" style="order:0; flex: 25%; overflow:visible;">
-      <img src="assets/lxlgs/logo-1.png" style="margin-top: 3vw; margin-bottom: 3vw; width: 100%; margin-left: auto;" />
+  <div class="full-screen-two">
+    <div class="img-wrapper">
+      <img src="assets/lxlgs/logo-1.png" alt="logo">
     </div>
-    <div class="animated-text" style="position: absolute; left: 25%; top: 50%;">
-      <span class="static-text">Learn how to</span>
-      <a href="./tutorials/" title="Tutorials" class="btn-blue glimmer-effect flex-col" 
-         style="width: 35vw; height: 15vw; text-align: center; padding: 1vw; margin: 1vw; align-items: center; justify-content: center;">
+    <div class="animated-text">
+      <!-- TODO: Do we want to keep the static text or just leave it out? -->
+      <!-- <span class="static-text">Learn how to</span> -->
+      <a href="./tutorials/" title="Tutorials" class="btn-blue glimmer-effect flex-col cycle-text-btn" >
         <div>
-            <span id="cycling-text" class="bordered-text"><i class="mdi mdi-server" style="color: var(--color-pink-primary)"></i> build tool servers</span>
+            <span id="cycling-text" class="bordered-text"><i class="mdi mdi-server" style="color: var(--color-pink-primary)"></i> Build tool servers</span>
         </div>
       </a>
     </div>
@@ -122,7 +118,10 @@ Thanks for sharing!
 </section>
 
 
-<!-- 3rd section -->
+<!-- All other sections should be edited to fit in entire screen -->
+<!-- Should also add device responsiveness -->
+
+<!-- 4rd section -->
 <!-- Show a nice image -->
 <section class="body-background-2">
   <div class="flex-col" style="margin: 2vw;">
@@ -161,7 +160,7 @@ Thanks for sharing!
       </div>
     </div>
 
-<!-- Use social-item to link to github, linkedin, medium, twitter, and instagram -->
+<!-- Use social-item to link to github, linkedin, medium, twitter -->
     <div class="flex-row" style="flex: 50%;">
       <div style="margin-left: 5vw; margin-top: 2vw;">
         <a href="https://github.com/anima-kit/">
@@ -192,14 +191,6 @@ Thanks for sharing!
           <img
             src="assets/icons/twitter.svg"
             title="Twitter"
-            class="social-item"
-            width="15%"
-          />
-        </a>
-        <a href="https://www.instagram.com/anima_kit/"  class="blank">
-          <img
-            src="assets/icons/instagram.svg"
-            title="Instagram"
             class="social-item"
             width="15%"
           />

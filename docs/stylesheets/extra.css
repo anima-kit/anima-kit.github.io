@@ -1,6 +1,9 @@
 :root {
   /* Pink Colors */
   --color-pink-primary: #E600FF;
+  --color-pink-primary--transparent: hsla(294, 100%, 50%, 0.1);
+  --color-pink-primary--less-transparent: hsla(294, 100%, 50%, 0.25);
+  --color-pink-primary--least-transparent: hsla(294, 100%, 50%, 0.5);
   --color-pink-secondary: #FF0099;
   --color-pink-tertiary: #6600FF;
   --color-pink-dark: #631C6C;
@@ -15,6 +18,8 @@
   --color-blue-primary: #0099FF; 
   --color-blue-secondary: #00FFE5;
   --color-blue-secondary--transparent: hsla(174, 100%, 50%, 0.1);
+  --color-blue-secondary--less-transparent: hsla(174, 100%, 50%, 0.25);
+  --color-blue-secondary--least-transparent: hsla(174, 100%, 50%, 0.5);
   --color-blue-tertiary: #0019FF;
   --color-blue-tertiary--transparent: hsla(234, 100%, 50%, 0.1);
   --color-blue-dark: #1F446C;

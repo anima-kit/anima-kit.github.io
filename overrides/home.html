@@ -1,3 +1,7 @@
+<!-- TODO: Finish editing landing page -->
+<!--       Every section should fit entirely in the screen -->
+<!--       Configure device responsiveness for each section -->
+
 <!-- 
 I learned a lot about how to create my own landing page using Material for MKDocs with:
 https://github.com/squidfunk/mkdocs-material
@@ -17,29 +21,33 @@ Thanks for sharing!
 <!-- Create sparkle container for sparkle animations and use landing animation -->
 <!-- Main landing image and button to tutorials landing -->
 <section class="landing-animation">
-  <div class="flex-row sparkle-container" style="position: relative; padding: 0px; margin: 0px;">
-    <div class="flex-col" style="position: absolute; left: 5%; width: 50%; top: 80%;">
-      <div class="flex-col" style="padding-left: 0vw; padding-right: 0vw;">
-        <a href="./tutorials/" title="Tutorials" class="btn-main glimmer-effect" style="width: 60%;">
-           <div class="flex-row" style="padding-left: 0.5vw; padding-right: 0.5vw;">
-              <p style="margin-top: 1.25vw; margin-bottom: 0vw; font-size: 3vw;">
-                  anima-kit
-              </p>
-            </div>
-            <hr style="border-top: 0.35vw solid var(--color-blue-lightest); margin: 1vw; width: 80%;" />
-            <p style="margin-bottom: 0.25vw; margin-top: 1.5vw; padding-left: 1vw; padding-right: 1vw; font-size: 2vw;">
-                Learning AI, building demos, sharing results.
-            </p>
-        </a>
-      </div>
+  <div class="flex-row sparkle-container" style="position: relative; padding: 0px; margin: 0px; height: 100vh;">
 
+    <!-- Text container -->
+    <!-- Background or no? Not sure which one I like more yet... -->
+    <div class="flex-col title-flex" style="background-color: var(--color-pink-primary--transparent); padding: 1vw; border-radius: 1vw;">
+    <!--<div class="flex-col title-flex">-->
+      <p class="main-title" style="padding: 0vw; margin: 0vw; color: var(--color-pink-lightest);"> Welcome to anima-kit! </p>
+      <p class="main-subtitle" style="padding: 0vw; margin:0vw; color: var(--color-pink-lightest);"> Tutorials for building AI agents </p>
     </div>
-    <div class="flex-col" style="order:0; flex: 100%; overflow:hidden; padding: 0px; margin: 0px;">
-      <img src="assets/lxlgs/logo-0.png"/>
+    
+    <!-- Button container -->
+    <div class="flex-col btn-flex">
+      <a href="./tutorials/" title="Tutorials" class="btn-main glimmer-effect">
+        <p> Get Started </p>
+      </a>
+    </div>
+    
+    <!-- Image container -->
+    <div class="flex-col" style="order:0; flex: 100%; overflow:hidden; padding: 0px; margin: 0px; height: 100%;">
+      <img src="assets/lxlgs/logo-0.png" style="width: 100%; height: 100%; object-fit: cover;" />
     </div>
   </div>
 </section>
 
+
+<!-- All other sections should be edited to fit in entire screen -->
+<!-- Should also add device responsiveness -->
 
 <!-- 2nd section -->
 <!-- Use card-white and columns-container to create container for buttons (btn-purple) -->

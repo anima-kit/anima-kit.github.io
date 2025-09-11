@@ -263,111 +263,150 @@ Handles resize events to recreate sparkles depending on new screen resolution
 
 <!-- CONTAINERS -->
 <style>
-    /* 
-    Card display
-    */
-    .card-white {
-      flex:1; /* grow to fill remaining vertical space */
-      width:100%;
-      max-width:none;
-      background-color:var(--color-pink-lightest);
-      border-radius:1vw;
-      border:2px solid var(--color-blue-darkest);
-      box-sizing:border-box;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      padding: 1vw 1vh;
-    }
+  /* 
+  Card display
+  */
+  .card-white {
+    flex:1; /* grow to fill remaining vertical space */
+    width:100%;
+    max-width:none;
+    background-color:var(--color-pink-lightest);
+    border-radius:1vw;
+    border:2px solid var(--color-blue-darkest);
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding: 1vw 1vh;
+  }
 
-    /* 
-    Grid container to hold columns
-    */
-    .columns-container {
-        display: grid; /* Creates a grid layout */
-        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr)); 
-        /* Automatically creates columns that are at least 10% wide and fill available space */
-        gap: 1vw; /* Space between grid items */
-        width: 100%;
-        padding: 1vw;
-    }
-
-    /* 
-    Flex container for horizontal arrangements
-    */
-    .flex-row {
-        display: flex;
-        flex-flow: row;
-    }
-    
-    /* 
-    Flex container for vertical arrangements
-    */
-    .flex-col {
-        display: flex;
-        flex-flow: column;
-    }
-
-    .full-screen{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:start;
-      height: 100vh;
+  /* 
+  Grid container to hold columns
+  */
+  .columns-container {
+      display: grid; /* Creates a grid layout */
+      grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr)); 
+      /* Automatically creates columns that are at least 10% wide and fill available space */
+      gap: 1vw; /* Space between grid items */
       width: 100%;
-      overflow:auto;    /* allow scrolling if content overflows */
-      padding: 5vh 5vw; /* gives reasonable margin */
-      box-sizing:border-box;
-    }
+      padding: 1vw;
+  }
 
-    .full-screen-two{
-      position: relative;          
-      display:flex;
-      justify-content:center;
-      align-items:center; 
-      height: 100vh;
-      width: 100%;
-      overflow:hidden;
-      padding: 0px; 
-      margin: 0px;
-    }
-
-    .title-flex {
-      position: absolute;
-      left: 5%;
-      top: 5%;
-      padding: 2vw;
-      width: 90%;
-    }
-
-    .btn-flex {
-      position: absolute;
-      left: 5%;
-      top: 30%;
-      transform: translateY(50%);
-    }
-
-    .column-flex {
+  /* 
+  Flex container for horizontal arrangements
+  */
+  .flex-row {
       display: flex;
-      flex-direction: column; 
-      align-items: center;
-      width: 100%;
-    }
+      flex-flow: row;
+  }
+  
+  /* 
+  Flex container for vertical arrangements
+  */
+  .flex-col {
+      display: flex;
+      flex-flow: column;
+  }
 
-    .img-wrapper{
-      max-width: 80vw;  /* keep it from overflowing horizontally */
-      max-height: 80vh; /* keep it from overflowing vertically */
+  .full-screen{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:start;
+    height: 100vh;
+    width: 100%;
+    overflow:auto;    /* allow scrolling if content overflows */
+    padding: 5vh 5vw; /* gives reasonable margin */
+    box-sizing:border-box;
+  }
+
+  .full-screen-two{
+    position:relative;          
+    display:flex;
+    justify-content:center;
+    align-items:center; 
+    height: 100vh;
+    width: 100%;
+    overflow:hidden;
+    padding: 0px; 
+    margin: 0px;
+  }
+
+  .title-flex {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    padding: 2vw;
+    width: 90%;
+  }
+
+  .btn-flex {
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    transform: translateY(50%);
+  }
+
+  .column-flex {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 100%;
+  }
+
+  .img-wrapper{
+    max-width: 80vw;  /* keep it from overflowing horizontally */
+    max-height: 80vh; /* keep it from overflowing vertically */
+    display:flex;
+    justify-content:top;
+    align-items:top;
+  }
+  .img-wrapper img{
+    width:100%;
+    height:auto;        /* keeps aspect ratio */
+    object-fit:contain; /* fit entire image inside */
+  }
+
+  .page-wrapper{
       display:flex;
-      justify-content:top;
-      align-items:top;
-    }
-
-    .img-wrapper img{
+      flex-direction:column;
+      min-height:100vh; 
+  }
+  .background-image{
+      flex:1;
+      overflow:hidden;
+  }
+  .background-image img{
       width:100%;
-      height:auto;        /* keeps aspect ratio */
-      object-fit:contain; /* fit entire image inside */
-    }
-
+      height:100%;
+      object-fit:cover;
+  }
+  footer{
+      margin-top:auto;  /* stays on bottom */
+  }
+  .footer-flex {
+    display: flex;
+    flex-flow: row;
+  }
+  .footer-menu-flex {
+    display: flex;
+    margin-left: 5vw; 
+    gap: 8vw;
+    flex: 100%;
+  }
+  .footer-menu-text {
+    font-size: 2vw; 
+    color: var(--color-blue-lightest);
+  }
+  .footer-social-flex {
+    display: flex;
+    margin-left: 5vw; 
+    margin-top: 2vh;
+    justify-content:center;   /* center icons */
+    align-items: center;    /* vertical centering (optional) */
+    gap: 0;
+    flex: 100%;
+  }
 </style>
 
 
@@ -384,21 +423,33 @@ Handles resize events to recreate sparkles depending on new screen resolution
 
 <!-- FOOTER -->
 <style>
-    /* Change colors during hover */
-    .footer-item:hover {
-        color: var(--color-pink-primary)
-    }
-    
-     /* Change background color and sets round corners during hover */
-    .social-item:hover {
-        background-color: var(--color-pink-primary);
-        border-radius: 10px;
-    }
-    
-    /* Hide default Material for MKDocs footer on this page */
-    .md-footer {
-        display: none;
-    }
+  .footer-social-flex {
+    display: flex;
+    justify-content: center;        /* horizontal centering of icons */
+    align-items: center;            /* optional vertical centering */
+    gap: .75rem;                    /* space between icons – tweak as needed */
+    margin-left: auto;              /* no left offset */
+    margin-right: auto;             /* no right offset */
+  }
+
+  .social-item {
+      width: 6vw;   /* or whatever fits your design */
+      height: auto;  /* keep aspect ratio */
+  }
+  /* Change colors during hover */
+  .footer-item:hover {
+      color: var(--color-pink-primary)
+  }
+  /* Change background color and sets round corners during hover */
+  .social-item:hover {
+      background-color: var(--color-pink-primary);
+      border-radius: 10px;
+  }
+  
+  /* Hide default Material for MKDocs footer on this page */
+  .md-footer {
+      display: none;
+  }
 </style>
 
 
@@ -524,15 +575,18 @@ Handles resize events to recreate sparkles depending on new screen resolution
 
 
 <!-- MISC -->
+<!-- Remove default items not used -->
 <style>
     /* Remove default margin from the main content area on this page */
     .md-main__inner {
-        margin: 0
+      margin: 0
     }
-    
+    .md-main {
+      display: none
+    }
     /* Remove main content area on this page */
     .md-content {
-        display: none
+      display: none
     }
 </style>
 
@@ -601,6 +655,17 @@ Handles resize events to recreate sparkles depending on new screen resolution
     }
     .icon-text {
       font-size: 10vw;
+    }
+    .footer-menu-text {
+      font-size: 3vw;
+    }
+    .footer-menu-flex {
+      gap: 5vw;
+      margin-left: 5vw;
+    }
+    .social-item {
+      width: 8vw;
+      margin-bottom: 2vh;
     }
   }
 
@@ -685,6 +750,22 @@ Handles resize events to recreate sparkles depending on new screen resolution
     .icon-text {
       font-size: 2rem;
     }
+    .footer-flex {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+    }
+    .footer-menu-text {
+      font-size: 1.2rem;
+    }
+    .footer-menu-flex {
+      gap: 2.2rem;
+      margin-left: 1rem;
+    }
+    .social-item {
+      width: 2.5rem;
+      margin-bottom: 1.2rem;
+    }
   }
 
   @media (max-width: 320px) {
@@ -724,6 +805,17 @@ Handles resize events to recreate sparkles depending on new screen resolution
     }
     .icon-text {
       font-size: 2rem;
+    }
+    .footer-menu-text {
+      font-size: 1rem;
+    }
+    .footer-menu-flex {
+      gap: 1rem;
+      margin-left: 1rem;
+    }
+    .social-item {
+      width: 2rem;
+      margin-bottom: 1rem;
     }
   }
 </style>

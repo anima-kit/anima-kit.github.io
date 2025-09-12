@@ -391,17 +391,24 @@ Above, I show the `ollama_utils.py` file in all its full glory as well as in a s
  
     Logging :material-notebook-edit-outline:{.icon-def-0}, error handling :material-alert-circle-outline:{.icon-def-0}, type checking :material-shape-plus:{.icon-def-0}, documenting :material-bookshelf:{.icon-def-0}, and using testing suites :material-test-tube:{.icon-def-0} are practices that I didn't fully appreciate while I was learning how to code through finding tutorials online and chatting with LMs, because these sources usually just demonstrate how to get the code working :material-power:{.icon-def-0}. But after I learned how to implement them into my code :material-head-heart-outline:{.icon-def-0}, it made sense why all the :simple-github:{.icon-def-0} repos I had been digging through had these practices in spades :material-cards-spade-outline:{.icon-def-0}. They're great for catching early problems, keeping your code working as expected, and for easily keeping yourself (and others) in the loop about how the code is working :material-sync:{.icon-def-0}. I highly suggest trying to implement some or all of these practices into your working code throughout the tutorials :material-monitor-shimmer:{.icon-def-0}. 
 
-    I use [mypy][mypy]{.blank} for type checking. If you want to do type checking for the `ollama_utils.py` file:
+    I use [mypy][mypy]{.blank} for type checking and [pytest][pytest]{.blank}, [pytest-order][pytest-order]{.blank}, and [unittest][unittest]{.blank} for creating and running the testing suite. If you want to use type checking and the testing suite be sure to install the necessary Python libraries: 
 
     1.  Activate the python environment ([step 3][step-activate] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section)
-    1.  Install [mypy][mypy]{.blank}: `pip install mypy` 
-    1.  Run the type checker with: `mypy ollama_utils.py --verbose`. The `--verbose` flag is optional and just gives more information while running.
+    1.  Install the development libraries: `pip install -r requirements-dev.txt`   
+    
+    If you want to do type checking for the `ollama_utils.py` file, run the type checker with: 
 
-    I use [pytest][pytest]{.blank}, [pytest-order][pytest-order]{.blank}, and [unittest][unittest]{.blank} for creating and running testing suites. If you want to run the testing suite (the code in the `./tests/` folder): 
-      
-    1.  Activate the Python environment ([step 3][step-activate] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section)
-    1.  Install [pytest][pytest]{.blank}, [pytest-order][pytest-order]{.blank}, and [Requests][requests]{.blank}: `pip install pytest pytest-order requests`
-    1.  Run the tests with: `pytest tests/ -v`. The `-v` flag is optional and, again, just gives more information while running.
+    ```bash
+    mypy ollama_utils.py --verbose
+    ```
+
+    The `--verbose` flag is optional and just gives more information while running. If you want to use the testing suite, run the tests with: 
+    
+    ```bash
+    pytest tests/ -v
+    ```
+    
+    The `-v` flag is, again, optional and just gives more information while running.
 
 Notice that all but one of the methods in the class have `_` at the beginning of the name. All of the methods with `_` are *internal* methods :material-tag-hidden:{.icon-def-0}, meaning they were created to help the other methods in the class, but they're not suggested to be used outside of the class. 
 

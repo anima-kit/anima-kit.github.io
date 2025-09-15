@@ -2,74 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://anima-kit.github.io/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/CODE_OF_CONDUCT/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/CONTRIBUTING/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/NOTICE/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/about/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/agents/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/agents/agent-memory/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/agents/chatbot/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/agents/code-agent/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/agents/doc-agent/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/misc/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/rag/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/servers/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/servers/milvus/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/servers/multi-server/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/servers/ollama/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/servers/searxng/</loc>
-         <lastmod>2025-09-12</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
 </urlset>

@@ -35,7 +35,7 @@ template: pages.html
 
 </div>
 
-In this tutorial, we going to setup a local :simple-searxng:{.icon-def-0} [SearXNG][searxng]{.blank} server in :simple-docker:{.icon-def-0} [Docker][docker]{.blank} for using the [metasearch engine][metasearch-engine]{.blank} on our local machines :material-laptop:{.icon-def-0}. Once setup, the engine can be used in a web browser by navigating to [http://localhost:8080][searxng-url]{.blank}. We're also going to see how to use our server to get web search results with the :simple-langchain:{.icon-def-0} [LangChain library][langchain]{.blank}. 
+In this tutorial, we're going to setup a local :simple-searxng:{.icon-def-0} [SearXNG][searxng]{.blank} server in :simple-docker:{.icon-def-0} [Docker][docker]{.blank} for using the [metasearch engine][metasearch-engine]{.blank} on our local machines :material-laptop:{.icon-def-0}. Once setup, the engine can be used in a web browser by navigating to [http://localhost:8080][searxng-url]{.blank}. We're also going to see how to use our server to get web search results with the :simple-langchain:{.icon-def-0} [LangChain library][langchain]{.blank}. 
 
 The code we learn and use here will serve as the foundation for an indispensable tool to give to our agents :material-hammer-wrench:{.icon-def-0}, allowing them to obtain unfamiliar or up to date information :material-calendar-month-outline:{.icon-def-0}. For a general overview of what we're going to do with these agents, checkout the :material-robot-excited-outline:{.icon-def-0} [next series of tutorials][agents].
 

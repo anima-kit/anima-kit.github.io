@@ -105,7 +105,7 @@ To setup and build the repo follow these steps:
     cp .env.example .env
     ```
 
-1.  Generate a new secret key:
+1.  Generate a new secret key (see the README instructions of the [searxng-docker][searxng-docker]{.blank} repo for similar methods):
 
     === "Windows"
 
@@ -160,7 +160,7 @@ To setup and build the repo follow these steps:
 
 Now that the repo is built and working, let's play around with the code a bit :material-test-tube:{.icon-def-0}. 
 
-After setting up your :simple-searxng:{.icon-def-0} SearXNG server, you can now search the web through the [web browser][searxng-url]{.blank} or through the provided :simple-python:{.icon-def-0} Python methods.
+After setting up your :simple-searxng:{.icon-def-0} SearXNG server, you can now search the web through a [web browser][searxng-url]{.blank} or through the provided :simple-python:{.icon-def-0} Python methods.
 
 ---
 
@@ -186,7 +186,7 @@ To start off, let's do a web search through the command line :material-arrow-dow
 
 To do a web search, follow these steps:
 
-1.  Do [step 3][step-activate] then [step 5][step-start] of the :material-flag-checkered:{.icon-def-0} `Getting Started` section to activate the Python environment and run all the Docker containers to start the SearXNG server.
+1.  Do [step 3][step-activate] then [step 6][step-start] of the :material-flag-checkered:{.icon-def-0} `Getting Started` section to activate the Python environment and run all the Docker containers to start the SearXNG server.
 
 1.  Call the Python environment to the command line:
 
@@ -224,7 +224,7 @@ To do a web search, follow these steps:
 
 1.  Repeat [step 5][step-message] and [step 6][step-response] any number of times for different queries.
 
-1.  Do [step 8][step-stop] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to stop the containers when you're done.
+1.  Do [step 9][step-stop] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to stop the containers when you're done.
 
 Just like with the test script, all logs will be printed in the console and stored in :material-note-edit-outline:{.icon-def-0} `./searxng-docker.log`. The `run` method can also be executed with the default query `Python programming` by running the method with no variables: `client.run()`.
 
@@ -246,7 +246,7 @@ In the next example, I show how to do this by creating and running a custom scri
 
 To do a web search, follow these steps:
 
-1.  Do [step 3][step-activate] then [step 5][step-start] of the :material-flag-checkered:{.icon-def-0} `Getting Started` section to activate the Python environment and run the SearXNG server in Docker.
+1.  Do [step 3][step-activate] then [step 6][step-start] of the :material-flag-checkered:{.icon-def-0} `Getting Started` section to activate the Python environment and run the SearXNG server in Docker.
 
     <a id="rs-create"></a>
 
@@ -277,7 +277,7 @@ To do a web search, follow these steps:
     python my-web-searx-ex.py
     ```
 
-1.  Do [step 8][step-stop] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to stop the containers when you're done.
+1.  Do [step 9][step-stop] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to stop the containers when you're done.
 
 Again, all logs will be printed in the console and stored in :material-note-edit-outline:{.icon-def-0} `./searxng-docker.log`. The name of the Python script doesn't matter as long as you use the same name in [step 2][step-create] and [step 3][step-run]. 
 
@@ -353,7 +353,7 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 > The `limiter.toml` file, for rate limiting and bot protection, is exactly the same as in the [searxng-docker repo][searxng-docker-limiter]{.blank}, just with some extra comments and proper attribution :material-notebook-edit-outline:{.icon-def-0}. 
 
-> The `settings.yml` file is also very similar to the [original file][searxng-docker-settings]{.blank}, except I removed the `secret_key` variable and moved this setup to the `.env` file instead :material-key-outline:{.icon-def-0}. I also added an extra `json` format to the search results :material-code-json:{.icon-def-0} in order to use the SearXNG server with [LangChain's SearxSearchWrapper][searx-search-wrapper]{.blank}.
+> The `settings.yml` file is also very similar to the [original file][searxng-docker-settings]{.blank}, except I removed the `secret_key` variable and moved this setup to the `.env.example` file instead :material-key-outline:{.icon-def-0}. I also added an extra `json` format to the search results :material-code-json:{.icon-def-0} in order to use the SearXNG server with LangChain's [SearxSearchWrapper][searx-search-wrapper]{.blank}.
 
 <h4 style="text-align: left;">searxng_test.py</h4>
 
@@ -453,7 +453,7 @@ Let's look at how we define the `client` attribute of the class more closely :ma
 
 : See [lines 20-29][searxng-utils-skeleton] of `searxng_utils.py`
 
-This method instantiates the [LangChain SearxSearchWrapper][searx-search-wrapper]{.blank} which has the `run` and `results` methods that [we saw above][code-run-results] already built in. All we need to do is properly point to the SearXNG server that we created with Docker. 
+This method instantiates the LangChain [SearxSearchWrapper][searx-search-wrapper]{.blank} which has the `run` and `results` methods that [we saw above][code-run-results] already built in. All we need to do is properly point to the SearXNG server that we created with Docker. 
     
 <a id="code-init"></a>
 
@@ -501,7 +501,7 @@ This retry mechanism works for *server errors* in which the server is available 
 
 ??? bonus-code "How does the `requests_search` method work?"
 
-    The `requests_search` method ([lines 60-73][searxng-utils-skeleton] of `searxng_utils.py`) uses the [Requests][requests]{.blank} library to get the entire HTML output of the search request :material-code-block-tags:{.icon-def-0}. Results are also obtained this way in [LangChain's SearxSearchWrapper][searx-search-wrapper-source]{.blank} (see the `_searx_api_query` method and how it's used in the `run` and `results` methods), but with a lot of extra formatting, error handling, and cleaning to promote more useful results :material-creation-outline:{.icon-def-0}. Might as well stand on the shoulders of giants :material-image-filter-hdr-outline:{.icon-def-0} and utilize the [work that's been gifted to us][searx-search-wrapper]{.blank} :material-gift-open-outline:{.icon-def-0}. However, I wanted to add this method for learning purposes :material-wizard-hat:{.icon-def-0}.
+    The `requests_search` method ([lines 60-73][searxng-utils-skeleton] of `searxng_utils.py`) uses the [Requests][requests]{.blank} library to get the entire HTML output of the search request :material-code-block-tags:{.icon-def-0}. Results are also obtained this way in LangChain's [SearxSearchWrapper][searx-search-wrapper-source]{.blank} (see the `_searx_api_query` method and how it's used in the `run` and `results` methods), but with a lot of extra formatting, error handling, and cleaning to promote more useful results :material-creation-outline:{.icon-def-0}. Might as well stand on the shoulders of giants :material-image-filter-hdr-outline:{.icon-def-0} and utilize the work that's been gifted to us :material-gift-open-outline:{.icon-def-0}. However, I wanted to add this method for learning purposes :material-wizard-hat:{.icon-def-0}.
 
     <a id="code-requests-search"></a>
 
@@ -557,13 +557,13 @@ docs/tutorials/servers/assets/searxng/docker-compose-stripped.yml
 --8<--
 ```
 
-The SearXNG container ([lines 9-34][docker-compose-piece]) is defined similarly to how we defined our :simple-ollama:{.icon-def-0} [Ollama container][ollama-docker-compose] with the image, name, volume, and port that we want to use. In this case, we want to interact with the server by using our [localhost][localhost]{.blank} network to send requests to port `8080` (the designated port that's chosen by default in the [searxng-docker repo][searxng-docker]{.blank}) [^port-8080]. This is [where we point][code-init] when we initialize the `SearxngClient` class of the `searxng_utils.py` file :material-access-point-check:{.icon-def-0} and the URL that we pass to [LangChain's SearxSearchWrapper][searx-search-wrapper]{.blank} :material-search-web:{.icon-def-0}.
+The SearXNG container ([lines 9-34][docker-compose-piece]) is defined similarly to how we defined our :simple-ollama:{.icon-def-0} [Ollama container][ollama-docker-compose] with the image, name, volume, and port that we want to use. In this case, we want to interact with the server by using our [localhost][localhost]{.blank} network to send requests to port `8080` (the designated port that's chosen by default in the [searxng-docker repo][searxng-docker]{.blank}) [^port-8080]. This is [where we point][code-init] when we initialize the `SearxngClient` class of the `searxng_utils.py` file :material-access-point-check:{.icon-def-0} and the URL that we pass to LangChain's [SearxSearchWrapper][searx-search-wrapper]{.blank} :material-search-web:{.icon-def-0}.
 
 ---
 
 Now, there are some new techniques here that we didn't use when building the [Ollama server][ollama-docker-compose] :material-flask-plus-outline:{.icon-def-0}. First, when we set up our Ollama server we didn't need it to interact with any other servers in our Docker network :material-server-network-outline:{.icon-def-0}. However, here we need our SearXNG and Redis containers to talk to each other, so we define a proper network for container communication :material-chat-alert-outline:{.icon-def-0}. 
 
-We also *definitely* need our Caddy and SearXNG services to communicate with each other :material-chat-processing-outline:{.icon-def-0}, but they do so in a different way :material-shape-plus:{.icon-def-0}. Since we set the `network_mode` to `host` for our Caddy service (see [line 37][code-docker-compose] of the full Docker compose file), it's directly ported to our [localhost][localhost]{.blank} network and so the service can communicate with SearXNG directly through the URL we set: [http://localhost:8080][searxng-url]{.blank} :material-checkbox-marked-outline:{.icon-def-0}.
+We also *definitely* need our Caddy and SearXNG services to communicate with each other :material-chat-processing-outline:{.icon-def-0}, but they do so in a different way :material-shape-plus:{.icon-def-0}. Since we set the `network_mode` to `host` for our Caddy service (see [line 38][code-docker-compose] of the full Docker compose file), it's directly ported to our [localhost][localhost]{.blank} network and so the service can communicate with SearXNG directly through the URL we set: [http://localhost:8080][searxng-url]{.blank} :material-checkbox-marked-outline:{.icon-def-0}.
 
 Besides the network, we also want to define Docker volumes to handle all of our configuration and data storage. In the code snippet, we can see how the Docker network ([lines 37-38][docker-compose-piece]) :material-server-network:{.icon-def-0} and volumes ([lines 41-45][docker-compose-piece]) :material-database-outline:{.icon-def-0} are defined with ease, while the SearXNG service is defined to use the proper volume and network ([lines 15 and 20][docker-compose-piece]). The other volume definition on [line 19][docker-compose-piece] tells Docker where to find all of our SearXNG settings in the `./searxng` folder :material-palette-outline:{.icon-def-0}. 
 
@@ -587,7 +587,7 @@ That's it :material-checkbox-marked-outline:{.icon-def-0}! We've gone through al
 
 There are two more tutorials in the [servers series][servers]: one which shows how to build a :simple-milvus:{.icon-def-0} [Milvus server][milvus-tutorial] in order to store and query custom data; and the other to show how to :simple-docker:{.icon-def-0} [combine all the servers][multi-server-tutorial] covered in the series. This last tutorial will show how to build the complete server stack that we'll use for our specialized :material-robot-excited-outline:{.icon-def-0} [agent builds][agents]. 
 
-Continue learning how to build the rest of the servers by following along with another tutorial in the :material-server:{.icon-def-0} [servers series][servers], learn how pass this SearXNG server to an agent and interact with it through a [Gradio][gradio]{.blank} web UI in the :material-file-code-outline:{.icon-def-0} [code agent][code-agent] tutorial, or checkout other agent builds in the rest of the :material-robot-excited-outline:{.icon-def-0} [agents tutorials][agents].
+Continue learning how to build the rest of the servers by following along with another tutorial in the :material-server:{.icon-def-0} [servers series][servers] or learn how pass this SearXNG server to an agent and interact with it through a [Gradio][gradio]{.blank} web UI in the :material-file-code-outline:{.icon-def-0} [code agent][code-agent] tutorial. You can also checkout other agent builds in the rest of the :material-robot-excited-outline:{.icon-def-0} [agents tutorials][agents].
 
 Just like all the other tutorials, :simple-github:{.icon-def-0} [all the source code is available][animakit] so you can plug and play any of tutorial code right away :material-controller-classic:{.icon-def-0}.
 

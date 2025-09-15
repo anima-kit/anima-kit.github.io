@@ -5,7 +5,7 @@ import time
 import requests
 from requests.models import Response
 from langchain_community.utilities import SearxSearchWrapper
-from typing import List, Optional, Any
+from typing import List
 
 from logger import logger, with_spinner
 
@@ -272,7 +272,7 @@ class SearxngClient:
                 logger.error(error_message)
                 raise ValueError(error_message)
         except Exception as e:
-            logger.error(f'❌ Problem getting search run: `{str(e)}`\n')
+            logger.error(f'❌ Problem getting results from `run` method: `{str(e)}`\n')
             raise
 
     
@@ -340,5 +340,5 @@ class SearxngClient:
                 logger.error(error_message)
                 raise ValueError(error_message)
         except Exception as e:
-            logger.error(f'❌ Problem getting search run: `{str(e)}`\n')
+            logger.error(f'❌ Problem getting results from `results` method: `{str(e)}`\n')
             raise

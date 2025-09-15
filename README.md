@@ -51,6 +51,7 @@ Take the code and use it, dive into the code and try to understand it, or just l
 
 This site was made using [Material for MKDocs][material]. The tutorials use various third-party software and libraries including:
 
+- [Caddy][caddy]: Reverse proxy for SearXNG server
 - [Docker][docker]: Building and running local servers
 - [Gradio][gradio]: Building web UIs
 - [LangChain][langchain]: Lots of various uses pertaining to creating tools, chatbots, and agents
@@ -59,13 +60,16 @@ This site was made using [Material for MKDocs][material]. The tutorials use vari
 - [Ollama][ollama]: Local LM server setup and run in Docker
 - [Ollama Python library][ollama-python]: Interacting with the Ollama server via a local Python environment
 - [PyMilvus][pymilvus]: Interacting with the Milvus server via a local Python environment
-- [searxng-docker]: Local metasearch engine setup and run in Docker
+- [Requests][requests]: Interacting with the SearXNG server via a local Python environment
+- [SearXNG][searxng]: Metasearch engine source code
+- [searxng-docker][searxng-docker]: Local metasearch engine setup and run in Docker
+- [Valkey][valkey] (acting through the [Redis][redis] API): Data storage for SearXNG server
 
 ## 🔗 Contributing 
 
 This documentation site is a work in progress. If you'd like to suggest or add improvements, clarify your confusion, help others understand, or share your own relevant projects, feel free to contribute through [discussions][discussions]. Check out the [contributing guidelines][contributing] to get started.
 
-## 📑 Licensce
+## 📑 License
 
 This site is [licensed under MIT][license]. However, some of the third-party libraries are licensed differently, [check out the notice][notice] for more details.
 
@@ -74,6 +78,7 @@ This site is [licensed under MIT][license]. However, some of the third-party lib
 [agent-memory]: http://anima-kit.github.io/tutorials/agents/agent-memory/
 [agents]: http://anima-kit.github.io/tutorials/agents/
 [animakit]: https://anima-kit.github.io/
+[caddy]: https://caddyserver.com/
 [chatbot]: http://anima-kit.github.io/tutorials/agents/chatbot/
 [code-agent]: http://anima-kit.github.io/tutorials/agents/code-agent
 [contributing]: CONTRIBUTING.md
@@ -96,8 +101,10 @@ This site is [licensed under MIT][license]. However, some of the third-party lib
 [pymilvus]: https://github.com/milvus-io/pymilvus
 [python]: https://www.python.org/
 [rag]: http://anima-kit.github.io/tutorials/rag/
+[requests]: https://requests.readthedocs.io/en/latest/
 [searxng]: https://github.com/searxng/searxng
 [searxng-docker]: https://github.com/searxng/searxng-docker
 [searxng-tutorial]: http://anima-kit.github.io/tutorials/servers/searxng/
 [servers]: https://anima-kit.github.io/tutorials/servers
 [tutorials]: https://anima-kit.github.io/tutorials
+[valkey]: https://valkey.io/

@@ -3,8 +3,6 @@ title: Ollama Server
 template: pages.html
 ---
 
-<!-- TODO: Update gif -->
-
 <div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
@@ -140,6 +138,8 @@ To setup and build the repo follow these steps:
 
 <hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
 
+<a id="examples"></a>
+
 ## :material-note-edit-outline:{.icon-def-0} Example Use Cases
 
 Now that the repo is built and working, let's play around with the code a bit :material-test-tube:{.icon-def-0}. 
@@ -264,15 +264,17 @@ Again, all logs will be printed in the console and stored in :material-note-edit
 
 Now, you have the tools to edit the script (or create an entirely new script) to send whichever messages to whichever LMs you wish :material-checkbox-marked-outline:{.icon-def-0}. For more structured chats, you can loop through invoking different LMs for different messages :material-refresh:{.icon-def-0} with something like the following:
 
+<a id="running-scripts-ex"></a>
+
 ```python
 # Define LMs to use
 lm_names = ['deepseek-r1:1.5b', 'qwen3:1.7b']
 
 # Define messages to send
 messages = [
-    'What is the mathematical symbol PI?',
     'Discuss prominent factors in the evolution of humans on Earth.',
-    'What will the weather be like in Houston, TX tomorrow?'
+    'What is the mathematical symbol PI?',
+    'What will the weather be like today in My-Location?'
 ]
 
 # Get response for each message in messages from each LM in lm_names
@@ -305,7 +307,8 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 ├── logger.py               # Python logger for tracking progress
 ├── ollama_test.py          # Python test of methods
 ├── ollama_utils.py         # Python methods to use Ollama server
-├── requirements.txt        # Required Python libraries
+├── requirements.txt        # Required Python libraries for main app
+├── requirements-dev.txt    # Required Python libraries for development
 ├── tests/                  # Testing suite
 │   └── test_integration.py # Integration tests for use with Ollama API
 └── └── test_unit.py        # Unit tests for Python methods
@@ -325,9 +328,9 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 ---
 
-<h4 style="text-align: left;">requirements.txt</h4>
+<h4 style="text-align: left;">requirements*.txt</h4>
 
-> The `requirements.txt` file tells Python what libraries we need to install in our :simple-python:{.icon-def-0} Python environment to use the code. This is the file we used in [step 4][step-requirements] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to install all the libraries that we needed :material-checkbox-marked-outline:{.icon-def-0}.
+> The `requirements.txt` file tells Python what libraries we need to install in our :simple-python:{.icon-def-0} Python environment to use the code. This is the file we used in [step 4][step-requirements] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to install all the libraries that we needed :material-checkbox-marked-outline:{.icon-def-0}. The `requirements-dev.txt` file is for extra libraries to be installed for development (e.g. running the testing suite) :material-file-code-outline:{.icon-def-0}.
 
 ---
 
@@ -337,13 +340,15 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 ---
 
+<a id="ollama-test"></a>
+
 <h4 style="text-align: left;">ollama_test.py</h4>
 
 > The `ollama_test.py` file basically does what we did when [running the script][running-scripts] in the :material-note-edit-outline:{.icon-def-0}`Example Use Cases` section, namely use the code in the `ollama_utils.py` file to get a response :material-checkbox-marked-outline:{ .icon-def-0 }.
 
 ---
 
-<h4 style="text-align: left;">docker-compose-*.yml</h4>
+<h4 style="text-align: left;">docker-compose*.yml</h4>
 
 > Finally, this leaves the :simple-docker:{.icon-def-0} Docker compose files: `docker-compose-gpu.yml` and `docker-compose-cpu.yml`. These are the files that tell Docker how to build the :simple-ollama:{.icon-def-0} Ollama container, one for building with GPU support and one for building with CPU support. We're also going to want to understand how these work because they'll be crucial to all of our agent builds :material-map-marker-star-outline:{.icon-def-0}. 
 

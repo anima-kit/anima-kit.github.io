@@ -44,6 +44,7 @@
 
 *[UI]: User Interface
 *[UIs]: User Interfaces
+*[URI]: Uniform Resource Identifier
 *[URL]: Uniform Resource Locator
 *[URLs]: Uniform Resource Locators
 

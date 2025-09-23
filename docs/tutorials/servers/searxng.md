@@ -3,6 +3,8 @@ title: SearXNG Server
 template: pages.html
 ---
 
+<!-- TODO: update file structure, discuss coverage tests and CI pipeline -->
+
 <div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
@@ -355,6 +357,8 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 > The `settings.yml` file is also very similar to the [original file][searxng-docker-settings]{.blank}, except I removed the `secret_key` variable and moved this setup to the `.env.example` file instead :material-key-outline:{.icon-def-0}. I also added an extra `json` format to the search results :material-code-json:{.icon-def-0} in order to use the SearXNG server with LangChain's [SearxSearchWrapper][searx-search-wrapper]{.blank}.
 
+<a id="searxng-test"></a>
+
 <h4 style="text-align: left;">searxng_test.py</h4>
 
 > Just like in the [Ollama server tutorial][ollama-test], the `searxng_test.py` file basically does what we did when [running the script][running-scripts] in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section, namely use the code in the `searxng_utils.py` file to get results for given queries.
@@ -382,6 +386,8 @@ Ok, that's all the files :material-checkbox-marked-outline:{.icon-def-0}. Let's 
 Here, we're going to look at the relevant files in more detail :material-magnify:{.icon-def-0}. We're going to start with looking at the full files to see which parts of the code we'll want to learn, then we can further probe each of the important pieces to see how they work :material-map-marker-question-outline:{.icon-def-0}.
 
 <hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+
+<a id="searxng-utils"></a>
 
 ### :simple-searxng:{.icon-def-0} File 1 | `searxng_utils.py`
 

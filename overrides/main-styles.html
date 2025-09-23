@@ -163,7 +163,7 @@ Handles resize events to recreate sparkles depending on new screen resolution
           var(--color-pink-primary) 33%, 
           var(--color-blue-secondary) 87%
         );
-        min-height: 200vh; /* Want this to span two entire screens */
+        min-height: 100vh; /* Want this to span two entire screens */
     }
 
     /* 
@@ -206,30 +206,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
     }
 
     /* 
-    White --> Pink button
-    */
-    .btn-purple {
-        font-weight: 200;
-        color: var(--color-pink-darkest);
-        background-color: var(--color-pink-lightest);
-        padding: 1vw;
-        border: 2px solid var(--color-pink-primary);
-        box-shadow: rgb(0, 0, 0) 0vw 0vw 0vw 0vw;
-        border-radius: 1vw;
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        cursor: pointer;
-        width: 100%;  /* Full width of grid cell */
-    }
-    .btn-purple:hover {
-        transform: scale(1.1);
-        background-color: var(--color-pink-light);
-        color: var(--color-pink-darkest);
-    }
-
-    /* 
     White --> Blue button
     */
     .btn-blue {
@@ -264,35 +240,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
 <!-- CONTAINERS -->
 <style>
   /* 
-  Card display
-  */
-  .card-white {
-    flex:1; /* grow to fill remaining vertical space */
-    width:100%;
-    max-width:none;
-    background-color:var(--color-pink-lightest);
-    border-radius:1vw;
-    border:2px solid var(--color-blue-darkest);
-    box-sizing:border-box;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding: 1vw 1vh;
-  }
-
-  /* 
-  Grid container to hold columns
-  */
-  .columns-container {
-      display: grid; /* Creates a grid layout */
-      grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr)); 
-      /* Automatically creates columns that are at least 10% wide and fill available space */
-      gap: 1vw; /* Space between grid items */
-      width: 100%;
-      padding: 1vw;
-  }
-
-  /* 
   Flex container for horizontal arrangements
   */
   .flex-row {
@@ -309,18 +256,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
   }
 
   .full-screen{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:start;
-    height: 100vh;
-    width: 100%;
-    overflow:auto;    /* allow scrolling if content overflows */
-    padding: 5vh 5vw; /* gives reasonable margin */
-    box-sizing:border-box;
-  }
-
-  .full-screen-two{
     position:relative;          
     display:flex;
     justify-content:center;
@@ -345,13 +280,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
     left: 5%;
     top: 30%;
     transform: translateY(50%);
-  }
-
-  .column-flex {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    width: 100%;
   }
 
   .img-wrapper{
@@ -453,19 +381,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
 </style>
 
 
-<!-- LINES -->
-<style>
-  .separator {
-    display: block; /* make it behave like an <hr> */
-    border-top: 2px solid var(--color-pink-primary);
-    margin: 0;
-    flex-shrink: 0; /* don’t let it shrink to zero width */
-    width: 90%;
-    min-width: 1rem;
-  }
-</style>
-
-
 <!-- LISTS -->
 <style>
   /* Remove default bullet points and padding from unordered lists */
@@ -491,27 +406,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
   }
   .main-subtitle {
     font-size: 2vw;
-  }
-  .card-title {
-    margin-top: 3vh;
-    font-size: 2.25vw; 
-    color: var(--color-blue-darkest)
-  }
-  .card-subtitle {
-    margin-bottom: 2vh; 
-    font-size: 2vw; 
-    color: var(--color-pink-primary)
-  }
-  .column-title {
-    font-size: 1.75vw; 
-    text-align: center; 
-    color: var(--color-blue-darkest)
-  }
-  .column-text {
-    font-size: 1.75vw; 
-    text-align: left; 
-    color: var(--color-blue-darkest); 
-    margin: 1vh 1vw;
   }
 
   /* This text will cycle through a list of text items */
@@ -594,30 +488,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
 
 <!-- DEVICE SPECIFIC -->
 <style>
-  @media (max-width: 1440px) {
-    .columns-container {
-        grid-template-columns: 1fr; /* Stack */
-        gap: 2vh;
-    }
-    .column-flex {
-      align-items: flex-start;
-      margin: 0 2vw;
-      padding: 0 2vw;
-    }
-    .card-title {
-      font-size: 2.5vw;
-    }
-    .card-subtitle { 
-      font-size: 2.25vw; 
-    }
-    .column-title {
-      font-size: 2vw; 
-    }
-    .column-text {
-      font-size: 2vw; 
-    }
-  }
-
   @media (max-width: 1024px) {
     .main-title {
       font-size: 6vw;
@@ -629,22 +499,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
       padding: 3vw; 
       height: 10vw; 
       font-size: 5vw;
-    }
-    .column-flex {
-      margin: 0 2vw;
-      padding: 0 2vw;
-    }
-    .card-title {
-      font-size: 3vw;
-    }
-    .card-subtitle { 
-      font-size: 2.75vw; 
-    }
-    .column-title {
-      font-size: 2.5vw; 
-    }
-    .column-text {
-      font-size: 2.5vw; 
     }
     .cycle-text-btn {
       width: 50vw; 
@@ -681,21 +535,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
       height: 11vw; 
       font-size: 6vw;
     }
-    .columns-container {
-        gap: 1.5vh;
-    }
-    .card-title {
-      font-size: 3.5vw;
-    }
-    .card-subtitle { 
-      font-size: 3.25vw; 
-    }
-    .column-title {
-      font-size: 3vw; 
-    }
-    .column-text {
-      font-size: 3vw; 
-    }
     .cycle-text-btn {
       width: 50vw; 
       height: 25vw;
@@ -725,30 +564,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
       left: 50%; 
       transform: translateX(-50%) translateY(-100%); 
       width: 80%;
-    }
-    .card-title {
-      font-size: 1.25rem;
-      margin-top: 1rem;
-    }
-    .card-subtitle { 
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    .column-title {
-      font-size: 1.1rem;
-    }
-    .column-text {
-      font-size: 1.1rem; 
-    }
-    .cycle-text-btn {
-      width: 50vw; 
-      height: 25vw;
-    }
-    .bordered-text {
-      font-size: 1.2rem;
-    }
-    .icon-text {
-      font-size: 2rem;
     }
     .footer-flex {
       display: flex;
@@ -783,28 +598,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
       left: 50%; 
       transform: translateX(-50%) translateY(-100%); 
       width: 80%;
-    }
-    .card-title {
-      font-size: 1.2rem;
-    }
-    .card-subtitle { 
-      font-size: 1.1rem;
-    }
-    .column-title {
-      font-size: 1.1rem;
-    }
-    .column-text {
-      font-size: 1.1rem; 
-    }
-    .cycle-text-btn {
-      width: 50vw; 
-      height: 40vw;
-    }
-    .bordered-text {
-      font-size: 1rem;
-    }
-    .icon-text {
-      font-size: 2rem;
     }
     .footer-menu-text {
       font-size: 1rem;

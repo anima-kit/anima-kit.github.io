@@ -1264,6 +1264,8 @@
   
 
 
+<!-- TODO: update file structure, discuss coverage tests and CI pipeline -->
+
 <div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
@@ -1559,6 +1561,7 @@
 <p>The <code>limiter.toml</code> file, for rate limiting and bot protection, is exactly the same as in the <a class="blank" href="https://github.com/searxng/searxng-docker/blob/master/searxng/limiter.toml">searxng-docker <abbr title="repository">repo</abbr></a>, just with some extra comments and proper attribution <span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg></span>. </p>
 <p>The <code>settings.yml</code> file is also very similar to the <a class="blank" href="https://github.com/searxng/searxng-docker/blob/master/searxng/settings.yml">original file</a>, except I removed the <code>secret_key</code> variable and moved this setup to the <code>.env.example</code> file instead <span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 18h-6v-3h-1.7c-1.1 2.4-3.6 4-6.3 4-3.9 0-7-3.1-7-7s3.1-7 7-7c2.7 0 5.2 1.6 6.3 4H24v6h-3zm-4-2h2v-3h3v-2H11.9l-.2-.7C11 8.3 9.1 7 7 7c-2.8 0-5 2.2-5 5s2.2 5 5 5c2.1 0 4-1.3 4.7-3.3l.2-.7H17zM7 15c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3m0-4c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1"/></svg></span>. I also added an extra <code>json</code> format to the search results <span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 3h2v2H5v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5h2v2H5c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0-2-2H0v-2h1a2 2 0 0 0 2-2V5a2 2 0 0 1 2-2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3zm-7 12a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m8 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"/></svg></span> in order to use the SearXNG server with LangChain's <a class="blank" href="https://python.langchain.com/api_reference/community/utilities/langchain_community.utilities.searx_search.SearxSearchWrapper.html">SearxSearchWrapper</a>.</p>
 </blockquote>
+<p><a id="searxng-test"></a></p>
 <h4 style="text-align: left;">searxng_test.py</h4>
 
 <blockquote>
@@ -1583,6 +1586,7 @@
 <p>Here, we're going to look at the relevant files in more detail <span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg></span>. We're going to start with looking at the full files to see which parts of the code we'll want to learn, then we can further probe each of the important pieces to see how they work <span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1C7.59 1 4 4.59 4 9c0 5.57 6.96 13.34 7.26 13.67l.74.83.74-.83C13.04 22.34 20 14.57 20 9c0-4.41-3.59-8-8-8m0 19.47C9.82 17.86 6 12.54 6 9a6 6 0 0 1 6-6 6 6 0 0 1 6 6c0 3.83-4.25 9.36-6 11.47M11.13 14h1.75v1.75h-1.75M12 5a3.5 3.5 0 0 0-3.5 3.5h1.75A1.75 1.75 0 0 1 12 6.75a1.75 1.75 0 0 1 1.75 1.75c0 1.76-2.62 1.54-2.62 4.38h1.75c0-1.97 2.62-2.19 2.62-4.38A3.5 3.5 0 0 0 12 5"/></svg></span>.</p>
 <hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;">
 
+<p><a id="searxng-utils"></a></p>
 <h3 id="file-1--searxng_utilspy"><span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.716 17.261 6.873 6.582L24 20.282l-6.824-6.536a9.1 9.1 0 0 0 1.143-4.43c0-5.055-4.105-9.159-9.16-9.159S0 4.261 0 9.316s4.104 9.159 9.159 9.159a9.1 9.1 0 0 0 4.557-1.214M9.159 2.773a6.546 6.546 0 0 1 6.543 6.543 6.545 6.545 0 0 1-6.543 6.542 6.545 6.545 0 0 1-6.542-6.542 6.545 6.545 0 0 1 6.542-6.543M7.26 5.713a4.065 4.065 0 0 1 4.744.747 4.06 4.06 0 0 1 .707 4.749l1.157.611a5.38 5.38 0 0 0-.935-6.282 5.38 5.38 0 0 0-6.274-.987z"/></svg></span> File 1 | <code>searxng_utils.py</code><a class="headerlink" href="#file-1--searxng_utilspy" title="Anchor link to this section for reference">⚓︎</a></h3>
 <details class="vis-inst">
 <summary>Toggle file visibility</summary>

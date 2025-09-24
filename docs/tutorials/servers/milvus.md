@@ -67,7 +67,7 @@ The Milvus server will also utilize a :simple-minio:{.icon-def-0} [MinIO][minio]
 
 There are a couple of alternatives that I tried for storing and searching data, both of which bridge nicely with :simple-langchain:{.icon-def-0} [LangChain][langchain]{.blank}. If Milvus doesn't fit your needs, you can also check out [FAISS][faiss]{.blank} or [Chroma][chroma]{.blank}.
 
-For a refresher on how to use :simple-docker:{.icon-def-0} [Docker][docker] to build an LM server that can power the decision making and response generating aspects of our agents, check out the :simple-ollama:{.icon-def-0} [Ollama server][ollama-tutorial] tutorial. To see how to build a [metasearch engine][metasearch-engine]{.blank} tool to search the web, check out the :simple-searxng:{.icon-def-0} [SearXNG server][searxng-tutorial] tutorial. For an idea of what types of agents we'll build with our servers, check out the :material-robot-excited-outline:{.icon-def-0} [agents tutorials][agents].
+For a refresher on how to use :simple-docker:{.icon-def-0} [Docker][docker]{.blank} to build an LM server that can power the decision making and response generating aspects of our agents, check out the :simple-ollama:{.icon-def-0} [Ollama server][ollama-tutorial] tutorial. To see how to build a [metasearch engine][metasearch-engine]{.blank} tool to search the web, check out the :simple-searxng:{.icon-def-0} [SearXNG server][searxng-tutorial] tutorial. For an idea of what types of agents we'll build with our servers, check out the :material-robot-excited-outline:{.icon-def-0} [agents tutorials][agents].
 
 ---
 
@@ -513,7 +513,7 @@ So, we can see that we've initialized a `MilvusClient` on the URI that was defin
 
 ??? bonus-code "How do the other methods work?"
 
-    The `_create_field` and `_create_index` methods are just simple wrappers of built in [PyMilvus][pymilvus]{.blank} methods of the `MilvusClient` :material-candy:{.icon-def-0}:
+    The `_create_field` and `_create_index` methods are also just simple wrappers of built in [PyMilvus][pymilvus]{.blank} methods :material-candy:{.icon-def-0}:
 
     === "_create_field"
         
@@ -854,7 +854,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [milvus-docs]: https://milvus.io/docs
 [milvus-license]: https://github.com/anima-kit/anima-kit.github.io/blob/main/third-party/milvus-LICENSE
 [milvus-metrics]: https://milvus.io/docs/metric.md
-[milvus-types-ak]: https://github.com/anima-kit/milvus-docker/blob/main/milvus_types.py
+[milvus-types-ak]: https://github.com/anima-kit/milvus-docker/blob/main/validators/milvus_types.py
 [milvus-url]: http://localhost:19530
 [milvus-utils-skeleton]: milvus.md#milvus-utils-skeleton
 [milvus-webui]: http://127.0.0.1:9091/webui/

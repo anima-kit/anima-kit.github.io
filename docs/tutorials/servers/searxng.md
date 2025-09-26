@@ -3,8 +3,6 @@ title: SearXNG Server
 template: pages.html
 ---
 
-<!-- TODO: update file structure, discuss coverage tests and CI pipeline -->
-
 <div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
@@ -141,10 +139,12 @@ To setup and build the repo follow these steps:
 
 1.  Head to [http://localhost:8080/][searxng-url]{.blank} to start searching with a web browser.
 
+    <a id="gs-test"></a>
+
 1.  Run the test script to ensure the SearXNG server can be reached through the [Requests][requests]{.blank} and [LangChain][langchain]{.blank} libraries:
 
     ```bash
-    python searxng_test.py
+    python -m scripts.searxng_test
     ```
 
     > All logs from the test script are output in the console and stored in the :material-note-edit-outline:{.icon-def-0} `./searxng-docker.log` file.
@@ -170,7 +170,7 @@ When we first built our :simple-ollama:{.icon-def-0} Ollama server to power our 
 
 ---
 
-This time, we'll also instantiate a main class, but we'll have different methods to choose from depending on the type of results we want :material-newspaper-variant-multiple-outline:{.icon-def-0}. The class we'll use is the `SearxngClient` class of the `./searxng_utils.py` file which is built on the [Requests][requests]{.blank} and :simple-langchain:{.icon-def-0} [LangChain][langchain]{.blank} libraries. Once this class is initialized, there are two potential methods to get search results, each from LangChain's [SearxSearchWrapper][searx-search-wrapper]{.blank}: `run`, and `results` [^requests-search].
+This time, we'll also instantiate a main class, but we'll have different methods to choose from depending on the type of results we want :material-newspaper-variant-multiple-outline:{.icon-def-0}. The class we'll use is the `SearxngClient` class of the `searxng_utils.py` file which is built on the [Requests][requests]{.blank} and :simple-langchain:{.icon-def-0} [LangChain][langchain]{.blank} libraries. Once this class is initialized, there are two potential methods to get search results, each from LangChain's [SearxSearchWrapper][searx-search-wrapper]{.blank}: `run`, and `results` [^requests-search].
 
 The `run` method gives a single result which is a summary of all the aggregated results :material-newspaper-variant-outline:{.icon-def-0} while the `results` method gives a list of results with more details :material-newspaper-variant-multiple-outline:{.icon-def-0}. We still don't have a [nice web UI][agents] setup that facilitates easier interactions with our servers so let's keep using the command line :material-console:{.icon-def-0} and Python scripts :material-script-text-outline:{.icon-def-0}.
 
@@ -199,7 +199,7 @@ To do a web search, follow these steps:
 1.  Now that you're in the Python environment, import the SearxngClient class:
 
     ```bash
-    from searxng_utils import SearxngClient
+    from pyfiles.searxng_utils import SearxngClient
     ```
 
 1.  Initialize the SearxngClient class:
@@ -252,11 +252,11 @@ To do a web search, follow these steps:
 
     <a id="rs-create"></a>
 
-1.  Create a script named `my-web-searx-ex.py` with the following:
+1.  Create a script in the `./scripts` folder named `my_web_searx_ex.py` with the following:
 
     ```python
     # Import SearXNGClient class
-    from searxng_utils import SearxngClient
+    from pyfiles.searxng_utils import SearxngClient
 
     # Initialize client
     client = SearxngClient()
@@ -276,7 +276,7 @@ To do a web search, follow these steps:
 1.  Run the script
 
     ```bash
-    python my-web-searx-ex.py
+    python -m scripts.my_web_searx_ex
     ```
 
 1.  Do [step 9][step-stop] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to stop the containers when you're done.
@@ -320,14 +320,17 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 ```
 ├── Caddyfile               # Caddy reverse proxy configuration
 ├── docker-compose.yml      # Docker configurations
-├── logger.py               # Python logger for tracking progress
+├── pyfiles/                # Python source code
+│   └── logger.py           # Python logger for tracking progress
+│   └── searxng_utils.py    # Python methods to use SearXNG server
 ├── requirements.txt        # Required Python libraries for main app
 ├── requirements-dev.txt    # Required Python libraries for development
 ├── searxng/                # SearXNG configuration directory
 │   └── limiter.toml        # Bot protection and rate limiting settings
 │   └── settings.yml        # Further custom SearXNG settings
-├── searxng_test.py         # Python test of methods
-├── searxng_utils.py        # Python methods to use SearXNG server
+├── scripts/                # Example scripts to use Python methods
+│   └── latency_test.py     # Timing tests for methods
+│   └── searxng_test.py     # Python test of methods
 ├── tests/                  # Testing suite
 ├── third-party/            # searxng-docker licensing
 └── .env.example            # Custom SearXNG environment variables
@@ -357,21 +360,19 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 > The `settings.yml` file is also very similar to the [original file][searxng-docker-settings]{.blank}, except I removed the `secret_key` variable and moved this setup to the `.env.example` file instead :material-key-outline:{.icon-def-0}. I also added an extra `json` format to the search results :material-code-json:{.icon-def-0} in order to use the SearXNG server with LangChain's [SearxSearchWrapper][searx-search-wrapper]{.blank}.
 
-<a id="searxng-test"></a>
-
-<h4 style="text-align: left;">searxng_test.py</h4>
-
-> Just like in the [Ollama server tutorial][ollama-test], the `searxng_test.py` file basically does what we did when [running the script][running-scripts] in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section, namely use the code in the `searxng_utils.py` file to get results for given queries.
-
 <h4 style="text-align: left;">searxng_utils.py</h4>
 
 > Finally, the `searxng_utils.py` defines the class and methods needed in order to get web search results from our SearXNG server :material-search-web:{.icon-def-0}. We're going to spend much of our deep dive on this one :material-map-marker-star-outline:{.icon-def-0}.
 
+<a id="bonus-all-files"></a>
+
 ??? bonus-code "How do all the files work?"
 
-    If you followed :simple-ollama:{.icon-def-0} [the previous tutorial][ollama-project-structure], you should be familar with the `logger.py` and `requirements*.txt` files as well as the `tests/` folder.
+    If you followed :simple-ollama:{.icon-def-0} [the previous tutorial][ollama-project-structure], you should be familar with the `logger.py`, `requirements*.txt`, `latency_test.py`, and `searxng_test.py` files as well as the `tests/` folder.
     
     Here, we also use the `logger.py` file to produce informative :material-chart-timeline:{.icon-def-0} and visually appealing :material-palette:{.icon-def-0} interactions, and the `requirements.txt` file to install all the necessary :simple-python:{.icon-def-0} Python libraries (see [step 4][step-requirements] of the :material-flag-checkered:{.icon-def-0} `Getting Started` section). Similarly, the `requirements-dev.txt` file can be used to install the necessary libraries for development :material-file-code-outline:{.icon-def-0}.
+
+    We use the `latency_test.py` file to check how quickly our methods are working :material-timer-check-outline:{.icon-def-0}, and just like in the [Ollama server tutorial][ollama-test], the `searxng_test.py` file basically does what we did when [running the script][running-scripts] in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section. This is the script that we ran in [step 6][step-test] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to test that our Python methods were working.
 
     The `tests/` folder also contains unit and integration tests for ensuring the code works properly :material-test-tube:{.icon-def-0}. To see how to use the testing suite, check out the [best practices note][ollama-code-best-practices] in the :simple-ollama:{.icon-def-0} Ollama server tutorial.
 
@@ -697,6 +698,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [step-set-environment]: searxng.md#gs-set-env
 [step-start]: searxng.md#gs-start
 [step-stop]: searxng.md#gs-stop
+[step-test]: searxng.md#gs-test
 [tavily]: https://www.tavily.com/
 [tavily-langchain]: https://python.langchain.com/docs/integrations/tools/tavily_search/
 [unittest]: https://docs.python.org/3/library/unittest.html

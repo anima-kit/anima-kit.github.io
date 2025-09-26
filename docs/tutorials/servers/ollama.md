@@ -3,8 +3,6 @@ title: Ollama Server
 template: pages.html
 ---
 
-<!-- TODO: update file structure, discuss coverage tests and CI pipeline -->
-
 <div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
@@ -113,11 +111,13 @@ To setup and build the repo follow these steps:
     > Getting an LM response can be run on your GPU or CPU. Using the GPU will generally be faster :material-flash:{.icon-def-0}, but not all GPUs will be compatible. Also, you may not be able to run certain models regardless of whether you use GPU or CPU.
 
     > After successfully completing this step, the Ollama server should be running on [http://localhost:11434][ollama-url]{.blank}. For me, when everything is setup correctly and I click the URL link, I get a page that says `Ollama is running`.
+
+    <a id="gs-test"></a>
       
 1.  Run the test script to ensure the default LM ([Qwen3 0.6B][qwen3-0.6b]{.blank}) can be invoked:
 
     ```bash
-    python ollama_test.py
+    python -m scripts.ollama_test
     ```
 
     > From the Docker setup, all Ollama data (including models) will be located in the local folder :material-folder-outline:{.icon-def-0} `./ollama_data/`. All logs from the test script are output in the console and stored in the :material-note-edit-outline:{.icon-def-0} `./ollama-docker.log` file.
@@ -150,7 +150,7 @@ Right now, we're only setting up an :simple-ollama:{.icon-def-0} Ollama server t
 
 ---
 
-The main class to interact with an LM is the `OllamaClient` class of the `./ollama_utils.py` file which is built on the [Ollama Python library][ollama-python]{.blank}.  Once this class is initialized, the `get_response` method can be used to get an LM response for a given user message. 
+The main class to interact with an LM is the `OllamaClient` class of the `ollama_utils.py` file which is built on the [Ollama Python library][ollama-python]{.blank}.  Once this class is initialized, the `get_response` method can be used to get an LM response for a given user message. 
 
 To facilitate interactions with the LM, the `get_response` method can be executed in the command line :material-console:{.icon-def-0} or in Python scripts :material-script-text-outline:{.icon-def-0}. However, in later tutorials we'll implement :simple-gradio:{.icon-def-0} [Gradio][gradio]{.blank} web UIs so that we can easily chat with our agents in an intuitive way. For now, we can see how to interact with LMs through these less intutive ways :material-code-block-tags:{.icon-def-0}.
 
@@ -179,7 +179,7 @@ To chat with an LM, follow these steps:
 1.  Now that you're in the Python environment, import the OllamaClient class:
 
     ```bash
-    from ollama_utils import OllamaClient
+    from pyfiles.ollama_utils import OllamaClient
     ```
 
 1.  Initialize the OllamaClient class:
@@ -232,11 +232,11 @@ To chat with an LM, follow these steps:
 
     <a id="rs-create"></a>
 
-1.  Create a script named `my-lm-chat-ex.py` with the following:
+1.  Create a script in the `./scripts` folder named `my_lm_chat_ex.py` with the following:
 
     ```python
     # Import OllamaClient class
-    from ollama_utils import OllamaClient
+    from pyfiles.ollama_utils import OllamaClient
 
     # Initialize client
     client = OllamaClient()
@@ -255,7 +255,7 @@ To chat with an LM, follow these steps:
 1.  Run the script:
 
     ```bash
-    python my-lm-chat-ex.py
+    python -m scripts.my_lm_chat_ex
     ```
 
 1.  Do [step 7][step-stop] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to stop the containers when you're done.
@@ -306,11 +306,14 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 ```
 ├── docker-compose-cpu.yml  # Docker settings for CPU build of Ollama container
 ├── docker-compose-gpu.yml  # Docker settings for GPU build of Ollama container
-├── logger.py               # Python logger for tracking progress
-├── ollama_test.py          # Python test of methods
-├── ollama_utils.py         # Python methods to use Ollama server
+├── pyfiles/                # Python source code
+│   └── ollama_utils.py     # Python methods to use Ollama server
+│   └── logger.py           # Python logger for tracking progress
 ├── requirements.txt        # Required Python libraries for main app
 ├── requirements-dev.txt    # Required Python libraries for development
+├── scripts/                # Example scripts to use Python methods
+│   └── latency_test.py     # Timing tests for methods
+│   └── ollama_test.py      # Python test of methods
 ├── tests/                  # Testing suite
 │   └── test_integration.py # Integration tests for use with Ollama API
 └── └── test_unit.py        # Unit tests for Python methods
@@ -346,9 +349,13 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 <h4 style="text-align: left;">ollama_test.py</h4>
 
-> The `ollama_test.py` file basically does what we did when [running the script][running-scripts] in the :material-note-edit-outline:{.icon-def-0}`Example Use Cases` section, namely use the code in the `ollama_utils.py` file to get a response :material-checkbox-marked-outline:{ .icon-def-0 }.
+> The `ollama_test.py` file basically does what we did when [running the script][running-scripts] in the :material-note-edit-outline:{.icon-def-0}`Example Use Cases` section, namely use the code in the `ollama_utils.py` file to get a response :material-checkbox-marked-outline:{ .icon-def-0 }. This is the script that we ran in [step 6][step-test] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to test that our Python methods were working.
 
 ---
+
+<h4 style="text-align: left;">latency_test.py</h4>
+
+> The `latency_test.py` file is used to check how quickly our methods are working :material-timer-check-outline:{.icon-def-0}. This file can be run the same way the `ollama_test.py` script was run in [step 6][step-test] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section and the example script was run in [step 3][step-run] of the :material-note-edit-outline:{.icon-def-0}`Example Use Cases` section (i.e. `python -m scripts.latency_test`).
 
 <h4 style="text-align: left;">docker-compose*.yml</h4>
 
@@ -722,6 +729,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [step-run]: ollama.md#rs-run
 [step-start]: ollama.md#gs-start
 [step-stop]: ollama.md#gs-stop
+[step-test]: ollama.md#gs-test
 [requests]: https://requests.readthedocs.io/en/latest/
 [test-integration]: https://en.wikipedia.org/wiki/Integration_testing
 [test-unit]: https://en.wikipedia.org/wiki/Unit_testing

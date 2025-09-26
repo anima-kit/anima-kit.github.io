@@ -3,6 +3,8 @@ title: Milvus Server
 template: pages.html
 ---
 
+<!-- TODO: update bm25 scoring, sparse vectors, and inverted indices discussions with new knowledge -->
+
 <div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
@@ -332,21 +334,13 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 > The `milvus_utils.py` file defines the class and methods needed in order to manage and search custom data using our Milvus server. This is the file on which we're going to spend our deep dive :material-map-marker-star-outline:{.icon-def-0}.
 
-<h4 style="text-align: left;">milvus_test.py</h4>
-
-> Just like in the :simple-ollama:{.icon-def-0} [Ollama server][ollama-test] and the :simple-ollama:{.icon-def-0} [SearXNG server][searxng-test] tutorials, the `milvus_test.py` file basically does what we did when [running the script][running-scripts] in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section, namely use the code in the `milvus_utils.py` file to manage and search custom data. 
-
 <h4 style="text-align: left;">milvus_types.py</h4>
 
 > This file performs type validation for the methods in the `milvus_utils.py` file :material-shape-plus:{.icon-def-0}. What this means is that the arguments and results of the methods are checked to make sure they have the correct Python type using [Pydantic][pydantic]{.blank} (see [lines 211-213 & 223-225][milvus-utils-skeleton] of the full version of the `milvus_utils.py` file for an example of how this file is used). This trick is quite helpful for ridding your code of potential bugs related to recieving the wrong types of objects :material-shield-bug-outline:{.icon-def-0}. I won't go into this file in detail, but you can [check it out][milvus-types-ak] if you're interested in learning :material-wizard-hat:{.icon-def-0}.
 
 ??? bonus-code "How do all the files work?"
 
-    If you followed the :simple-ollama:{.icon-def-0} [Ollama][ollama-project-structure] and :simple-searxng:{.icon-def-0} [SearXNG][searxng-project-structure] tutorials, you should be familar with the `logger.py`, `requirements*.txt`, and `latency_test.py` files as well as the `tests/` folder.
-    
-    Here, we also use the `logger.py` file to produce informative :material-chart-timeline:{.icon-def-0} and visually appealing :material-palette:{.icon-def-0} interactions, and the `requirements.txt` file to install all the necessary :simple-python:{.icon-def-0} Python libraries (see [step 4][step-requirements] of the :material-flag-checkered:{.icon-def-0} `Getting Started` section). Similarly, the `requirements-dev.txt` file can be used to install the necessary libraries for development :material-file-code-outline:{.icon-def-0}. Finally, we use the `latency_test.py` file to check how quickly our methods are working :material-timer-check-outline:{.icon-def-0}.
-
-    The `tests/` folder also contains unit and integration tests for ensuring the code works properly :material-test-tube:{.icon-def-0}. To see how to use the testing suite, check out the [best practices note][ollama-code-best-practices] in the :simple-ollama:{.icon-def-0} Ollama server tutorial.
+    For a refresher on the `logger.py`, `requirements*.txt`, `latency_test.py`, and `milvus_test.py` files as well as the `tests/` folder, check out the :simple-ollama:{.icon-def-0} [Ollama][ollama-project-structure] and :simple-searxng:{.icon-def-0} [SearXNG][searxng-bonus-all-files] tutorials.
 
     ---
 
@@ -884,6 +878,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [ranking-algorithm]: https://en.wikipedia.org/wiki/Ranking_(information_retrieval)
 [score-bm25]: milvus.md#score-bm25
 [searxng]: https://docs.searxng.org/
+[searxng-bonus-all-files]: searxng.md#bonus-all-files
 [searxng-docker-compose]: searxng.md#docker-compose
 [searxng-project-structure]: searxng.md#proj-struct
 [searxng-test]: searxng.md#searxng-test

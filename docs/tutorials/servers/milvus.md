@@ -49,7 +49,7 @@ We've gone over how to create an :simple-ollama:{.icon-def-0} [Ollama server][ol
 
 A [vector database][vectorstore]{.blank}, or a vectorstore, is just a special type of database that can be used to store :material-bookshelf:{.icon-def-0} and query :material-magnify:{.icon-def-0} your data. When data is added to the vectorstore, it's stored with additional representations called `embeddings` which map the data in ways that allow relevant information to be obtained in searches :material-map-search-outline:{.icon-def-0}. There are various types of embeddings to represent data differently :material-shape-plus:{.icon-def-0}, and we'll get a look at how to use one of them in this tutorial, the `sparse embedding` or [sparse vector][sparse-vectors]{.blank} [^sparse-vectors]. 
 
-Vectorstores also utilize special variables called `indices` which describe how the data should be searched :material-map-marker-question-outline:{.icon-def-0}. By defining different embeddings and indices, we can represent and search our data in different ways. We can have very different types of data (e.g. images :material-image-outline:{.icon-def-0} or code documents :material-file-code-outline:{.icon-def-0}) and still be able to find relevant information from our queries if we choose proper embeddings and indices :material-checkbox-marked-outline:{.icon-def-0}. 
+Vectorstores also utilize special variables called `indices` which describe how the data should be represented for quick searches :material-map-marker-question-outline:{.icon-def-0}. By defining different embeddings and indices, we can represent and search our data in different ways. We can have very different types of data (e.g. images :material-image-outline:{.icon-def-0} or code documents :material-file-code-outline:{.icon-def-0}) and still be able to find relevant information from our queries if we choose proper embeddings and indices :material-checkbox-marked-outline:{.icon-def-0}. 
 
 One way to search data is to do an `exact keyword filtering` :material-key-chain:{.icon-def-0}. For example, if the search query has the word `Milvus` in it, the most relevant data entries found will be those that contain the word `Milvus`. The search that we'll do in this tutorial, a [full-text search][full-text-search]{.blank}, is similar in that it searches for entire keywords of the query while utilizing sparse vectors for the search :material-tag-search-outline:{.icon-def-0}.
 
@@ -250,7 +250,7 @@ To manage and search your data through a custom script, follow these steps:
 
     <a id="rs-create"></a>
 
-1.  Create a script named `my-data-search-ex.py` with the following:
+1.  Create a script in the `./scripts` folder named `my-data-search-ex.py` with the following:
 
     ```python
     # Import MilvusClientInit class
@@ -295,7 +295,7 @@ To manage and search your data through a custom script, follow these steps:
 1.  Run the script
 
     ```bash
-    python my-data-search-ex.py
+    python -m scripts.my-data-search-ex
     ```
 
 1.  Do [step 8][step-stop] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to stop the containers when you're done.
@@ -413,7 +413,7 @@ Before discussing how the method works, let's discuss the default values that go
 -  `collection_name` ([lines 2 and 7][code-create-collection]) which is just a string defining the name of the collection,
 -  `field_params_list` ([line 8][code-create-collection]) defining the fields with which to represent our data,
 -  `func_bm25` ([line 9][code-create-collection]) defining the embedding function to use for an additional representation of the data,
--  `index_params_list` ([line 10][code-create-collection]) defining the fields to use for searching. 
+-  `index_params_list` ([line 10][code-create-collection]) defining the fields to use for searching and the index type for quick retrieval. 
 
 Let's look at the last three of these together :material-arrow-down-bold-outline:{.icon-def-0}. 
 
@@ -469,11 +469,13 @@ In other words, we start with a list of `text` entries :material-text-box-multip
 
     === "index_params_list"
 
-        This is how we tell Milvus the fields on which we want our documents to be evaluated when searching :material-archive-search-outline:{.icon-def-0}.
+        This is how we tell Milvus the fields on which we want our documents to be evaluated when searching and how to index our data for quick retrieval :material-archive-search-outline:{.icon-def-0}.
 
         We use the [SPARSE_INVERTED_INDEX][sparse-inverted-index]{.blank} value for the `index_type`. What does this mean :material-head-question-outline:{.icon-def-0}? 
         
-        The [INVERTED][inverted-index]{.blank} index type optimizes document retrieval by mapping each term to each document that contains the term :material-relation-one-to-one-or-many:{.icon-def-0}. Here, we're just making sure we use the inverted index for *sparse vectors* specifically :material-checkbox-marked-outline:{.icon-def-0}. I think what's happening is that the text fields are turned into sparse vectors with BM25, then the sparse vectors are stored in an inverted format that allows for quicker fetching of relevant documents :material-flash:{.icon-def-0}. 
+        The [INVERTED][inverted-index]{.blank} index type optimizes document retrieval by mapping each term to each document that contains the term :material-relation-one-to-one-or-many:{.icon-def-0}. Here, we're just making sure we use the inverted index for *sparse vectors* specifically :material-checkbox-marked-outline:{.icon-def-0}. 
+        
+        :simple-milvus:{.icon-def-0} Milvus stores data in `growing segements` which, after reaching some size, are indexed according to the user's choice of indices :material-palette:{.icon-def-0}. So, the text fields are turned into sparse vectors with BM25 and this information is stored in a `growing segment`. Then, when the segment gets large enough the sparse vectors are indexed in an inverted format that allows for quicker fetching of relevant documents :material-flash:{.icon-def-0}. However, we don't want to index every segment before they reach a particular size, because we would then use up too much memory for too small a gain in speed :material-scale-unbalanced:{.icon-def-0}.   
         
         We let Milvus know that we want to use the BM25 metric for evaluation and we tack on some extra parameters for further customization. We can see that we're setting the \(k_1\) and \(b\) constants from the :material-function-variant:{.icon-def-0} [BM25 scoring function][math-bm25]. 
         
@@ -763,17 +765,27 @@ It seems then, that this term is mostly used to *penalize* documents that are mu
 
 What does this all mean :material-head-question-outline:{.icon-def-0}? Well, we see that a document will get a high score for a given term if the term appears in the document frequently and it's one of the few documents that contain the term :material-file-document-check-outline:{.icon-def-0}. As the frequency of the term in the document goes down or as the number of documents that also contain the term goes up, the score will go down :material-file-document-remove-outline:{.icon-def-0}. Furthermore, if the document is very long its score will be penalized, and if the term frequency is very large its score will be capped off.
 
-With all this being said, it seems that a *high* score means a *more relevant* document, and as the score goes down the document becomes less relevant to the search terms. This is the score by which the results are evaluated and chosen when performing the `full_text_search` method :material-checkbox-marked-outline:{.icon-def-0}.
+With all this being said, it seems that a *high* score means a *more relevant* document, and as the score goes down the document becomes less relevant to the search terms. This is helpful to understand, because documents are ranked using this score through a [*cosine-similarity*][cosine-similarity] test :material-sine-wave:{.icon-def-0}. 
+
+This test checks the similarity between two vectors through a simple dot product (comparing the angle between the two) :material-angle-acute:{.icon-def-0}. If the two vectors are the same, the angle between them is equal to zero, and their similarity score is equal to one. As the angle between the two grows, the similarity score gets closer to zero (for strictly positive vector elements) :material-angle-right:{.icon-def-0}. Let's check out the cosine-similarity score for two vectors \(\textbf{A}\) and \(\textbf{B}\) to see what I mean :material-arrow-down-bold-outline:{.icon-def-0}:
+
+<a id="cosine-similarity-score"></a>
+
+\[
+    S_C\left( \textbf{A}, \textbf{B} \right) = \cos\left(\theta_{AB}\right) = \frac{\textbf{A}\cdot\textbf{B}}{\left|\textbf{A}\right|\left|\textbf{B}\right|} = \frac{\sum_{i}^{N}A_i B_i}{\sqrt{\sum_i^N A_i^2} \sqrt{\sum_i^N B_i^2}}
+\]
+
+where \(A_i\) and \(B_i\) are the \(i\)-th components of the vectors \(\textbf{A}\) and \(\textbf{B}\). So, all we need to do is add up all the components for the vectors to get the score :material-checkbox-marked-outline:{.icon-def-0}. 
+
+In our case, the vectors that we want to compare are just the sparse vectors that we've been discussing. But how does the `func_bm25` turn the text fields into sparse vectors :material-arrow-down-bold-outline:{.icon-def-0}? 
 
 ---
 
-Now, how does the `func_bm25` turn the text fields into sparse vectors :material-head-question-outline:{.icon-def-0}? This, I'm a little unsure of, but I *think* this is how it goes. Milvus does a lot of preprocessing to our documents behind the scenes, including [tokenization][tokenization]{.blank} and [stop word removal][stop-word]{.blank}. From this preprocessing, it obtains the set of all [tokens][tokens]{.blank} within all documents :material-clipboard-list-outline:{.icon-def-0}. 
+When we add a document to Milvus, it first does a lot of preprocessing behind the scenes, including [tokenization][tokenization]{.blank} and [stop word removal][stop-word]{.blank}. From this preprocessing, it obtains the set of all [tokens][tokens]{.blank} within the document and the TF value for each token is obtained :material-clipboard-list-outline:{.icon-def-0}. The sparse vector for the document is then created from these TF values and stored.
 
-The sparse vectors for each document will then have a number of dimensions equal to the entire set of tokens. So, there is one dimension for each token in our documents :material-relation-one-to-one:{.icon-def-0}. For a given document's sparse vector, the value of any one of the vector elements will depend on the [BM25 score][score-bm25] for that token. A given document will then have a sparse vector with the first element corresponding to the score for the first token, the second element to the score for the second token, and so forth :material-checkbox-marked-outline:{.icon-def-0}. 
+When a user then invokes the full-text search with a query :material-archive-search-outline:{.icon-def-0}, the query goes through similar preprocessing to obtain the search tokens and a sparse vector representation from the TF values of a given document is obtained. This *query vector* is then combined with the IDF values according to the [BM25 score][score-bm25] and compared to the *stored vector* of the document using the [cosine-similarity score][cosine-similarity-score] :material-angle-acute:{.icon-def-0}. 
 
-We can kind of see now why these vectors will be sparse :material-head-check-outline:{.icon-def-0}. Each document probably only contains a handful of the total set of tokens in all documents, while the tokens that are ubiquitous in every document will give scores close to zero (and hence vector elements that are close to zero for that term) :material-numeric-0-box-outline:{.icon-def-0}. 
-
-You may want to take this particular discussion about how the text fields are turned into sparse vectors with a grain of salt. It seems to make sense, but I don't yet have hard evidence that it's true :material-head-cog-outline:{.icon-def-0}.  
+Notice that when Milvus gives us results from the full-text search, it includes a `distance` parameter :material-vector-line:{.icon-def-0}. This is just the [cosine-similarity score][cosine-similarity-score] between the *query vector* combined with the IDF and the *stored vector* of the document. As expected, higher distances pertain to more relevant documents (both cosine-similarity and IDF increase with increasing relevance) :material-podium-silver:{.icon-def-0}.
 
 ---
 
@@ -821,6 +833,8 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [code-insert]: milvus.md#code-insert
 [command-line]: milvus.md#cl
 [contributing]: ../../CONTRIBUTING.md
+[cosine-similarity]: https://en.wikipedia.org/wiki/Cosine_similarity
+[cosine-similarity-score]: milvus.md#cosine-similarity-score
 [dense-vector]: https://milvus.io/docs/dense-vector.md
 [discussions]: https://github.com/anima-kit/anima-kit.github.io/discussions
 [doc-agent]: ../agents/doc-agent.md

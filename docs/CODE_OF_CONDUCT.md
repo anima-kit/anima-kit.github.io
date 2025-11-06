@@ -6,7 +6,7 @@ hide:
 ---
 
 
-<div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
+<div class="icon-def-1" style="text-align: center; border: 0.1rem dotted; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem; border-radius: 10px;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
   </a>
@@ -14,7 +14,7 @@ hide:
 
 # :material-robot-happy-outline:{.icon-def-0} Code of Conduct
 
-<hr class="icon-def-1" style="border: 0.1rem solid; width: 90%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-shield-sun-outline:{.icon-def-0} Our Pledge
 
@@ -76,7 +76,7 @@ Project maintainers have the right and responsibility :material-compass-outline:
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.0, available at [https://www.contributor-covenant.org/version/2/0/code_of_conduct.html][v2.0].
 
-<hr class="icon-def-1" style="border: 0.01rem solid; width: 30%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 

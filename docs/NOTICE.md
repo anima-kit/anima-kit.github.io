@@ -6,7 +6,7 @@ hide:
 ---
 
 
-<div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
+<div class="icon-def-1" style="text-align: center; border: 0.1rem dotted; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem; border-radius: 10px;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
   </a>
@@ -14,7 +14,7 @@ hide:
 
 # :material-license:{ .icon-def-0  } Notice for Licenses
 
-<hr class="icon-def-1" style="border: 0.1rem solid; width: 90%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 Copyright © 2025 anima-kit
 
@@ -34,7 +34,7 @@ I'll also be showing code from the [searxng-docker][searxng-docker]{.blank} repo
 
 I try to make sure that if any of the third-party source code is shown, I add a notice of the license, attach the full source code file in the [third-party][third-party] folder of this repo, and add any copyright notices to the relevant code-snippet.
 
-<hr class="icon-def-1" style="border: 0.01rem solid; width: 30%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 Licensing isn't really my cup of tea, but I want to be respectful of the choices of others. If you think I've made a mistake in how I handle the licensing or attribution, please let me know through submitting a [discussion][discussion] to this repo. 
 

@@ -3,7 +3,7 @@ title: Ollama Server
 template: pages.html
 ---
 
-<div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
+<div class="icon-def-1" style="text-align: center; border: 0.1rem dotted; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem; border-radius: 10px;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
   </a>
@@ -11,9 +11,9 @@ template: pages.html
 
 # :simple-ollama:{.icon-def-0} Ollama with Docker and Python
 
-<hr class="icon-def-1" style="border: 0.1rem solid; width: 90%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
-![Ollama Python Docker](assets/ollama/ollama-docker-python.png)
+![Ollama Python Docker](assets/ollama/ollama-docker-python.png){ .img-def }
 
 ![Ollama Docker Intro PNG](assets/ollama/ollama-docker-intro.png){.demo-img .png style="display:block;margin:auto;"}
 
@@ -22,7 +22,7 @@ template: pages.html
 !!! tl-dr "TL;DR"
     Learn how to chat with LMs on your local machine :material-laptop:{.icon-def-0}. Then, you can use this setup as a base to [power][agents] locally run AI agents :material-robot-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 <a id="about"></a>
 
@@ -53,7 +53,7 @@ Some alternatives that I've found for chatting with LMs are [LM Studio][lm-studi
 
 Now, let's get building :material-account-hard-hat-outline:{.icon-def-0}!
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-flag-checkered:{.icon-def-0} Getting Started
 
@@ -138,7 +138,7 @@ To setup and build the repo follow these steps:
         docker compose -f docker-compose-cpu.yml down
         ```
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 <a id="examples"></a>
 
@@ -156,7 +156,7 @@ To facilitate interactions with the LM, the `get_response` method can be execute
 
 To start off, let's interact with an LM through the command line :material-arrow-down-bold-outline:{.icon-def-0}. 
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 <a id="cl"></a>
 
@@ -216,7 +216,7 @@ Now that we know how to get responses for different messages :material-checkbox-
 
 In the next example below, I show how to do this by creating and running a custom script to get responses for a given LM :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 <a id="rs"></a>
 
@@ -262,7 +262,7 @@ To chat with an LM, follow these steps:
 
 Again, all logs will be printed in the console and stored in :material-note-edit-outline:{.icon-def-0} `./ollama-docker.log`. The name of the Python script doesn't matter as long as you use the same name in [step 2][step-create] and [step 3][step-run].
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 Now, you have the tools to edit the script (or create an entirely new script) to send whichever messages to whichever LMs you wish :material-checkbox-marked-outline:{.icon-def-0}. For more structured chats, you can loop through invoking different LMs for different messages :material-refresh:{.icon-def-0} with something like the following:
 
@@ -295,7 +295,7 @@ Check out the :simple-ollama:{.icon-def-0} [Ollama library][ollama-library]{.bla
 
 Now that we understand how to use the code, let's open it up to check out the gears :material-cog-outline:{.icon-def-0} :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 <a id="proj-struct"></a>
 
@@ -365,13 +365,13 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 Ok, that's all the files :material-checkbox-marked-outline:{.icon-def-0}. Let's go diving :material-diving-scuba:{.icon-def-0}!
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-file-code-outline:{.icon-def-0} Code Deep Dive
 
 Here, we're going to look at the relevant files in more detail :material-magnify:{.icon-def-0}. We're going to start with looking at the full files to see which parts of the code we'll want to learn, then we can further probe each of the important pieces to see how they work :material-map-marker-question-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 <a id="ollama-utils"></a>
 
@@ -428,7 +428,7 @@ Notice that all but one of the methods in the class have `_` at the beginning of
 
 There is one, and only one, method that was created to be used outside of the class: the `get_response` method. This is what we used when [working in the command line][command-line] and [running scripts][running-scripts] in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section. Let's check this method out :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -456,7 +456,7 @@ As a brief overview, we're first initializing an LM with the `_init_lm` method o
 
 Let's look at each of these aspects in turn :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -498,7 +498,7 @@ docs/tutorials/servers/assets/ollama/ollama-utils-stripped.py:3:4,7:9,33:39
 
 Now that we know the LM will be available :material-checkbox-marked-outline:{.icon-def-0}, we can invoke our Ollama client to get a response. Let's check this method out :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -534,7 +534,7 @@ The `client` attribute of the `OllamaClient` class ([line 10][init] of the `__in
 
 Now that we can get a response from our Ollama client :material-checkbox-marked-outline:{.icon-def-0}, let's see how to clean it up :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -584,7 +584,7 @@ And that's it :material-checkbox-marked-outline:{.icon-def-0}! Those are all the
 
 Now, how exactly do we create the Ollama server that we'll be pointing to in order to get responses :material-arrow-down-bold-outline:{.icon-def-0}?
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 <a id="docker-compose"></a>
 
@@ -644,7 +644,7 @@ By switching between [the two code snippets][gpu-piece], you can see that the :m
 
 That's it :material-checkbox-marked-outline:{.icon-def-0}! We've gone through all the code in this repo that's needed to understand how to setup an :simple-ollama:{.icon-def-0} Ollama server in :simple-docker:{.icon-def-0} Docker and use it to chat with LMs in a local :simple-python:{.icon-def-0} Python environment :material-creation-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-bookshelf:{.icon-def-0} Next Steps & Learning Resources
 
@@ -654,13 +654,13 @@ Continue learning how to build the rest of the servers by following along with a
 
 Just like all the other tutorials, :simple-github:{.icon-def-0} [all the source code is available][animakit] so you can plug and play any of tutorial code right away :material-controller-classic:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 ## :material-link-variant:{.icon-def-0} Contributing 
 
 This tutorial is a work in progress. If you'd like to suggest or add improvements :material-notebook-edit-outline:{.icon-def-0}, fix bugs or typos :material-shield-bug-outline:{.icon-def-0}, ask questions to clarify :material-chat-question-outline:{.icon-def-0}, or discuss your understanding :material-wizard-hat:{.icon-def-0}, feel free to contribute through participating in the site :material-forum-outline:{.icon-def-0} [discussions][discussions]! Check out the :material-link-variant:{.icon-def-0} [contributing guidelines][contributing] to get started.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 
 <!-- FOOTNOTES -->

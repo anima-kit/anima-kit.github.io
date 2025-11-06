@@ -3,7 +3,7 @@ title: Agents
 template: pages.html
 ---
 
-<div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
+<div class="icon-def-1" style="text-align: center; border: 0.1rem dotted; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem; border-radius: 10px;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
   </a>
@@ -14,7 +14,7 @@ template: pages.html
 !!! tl-dr "TL;DR"
     Learn how to create different chatbot and agent builds :material-robot-outline:{ .icon-def-0 } as well as easy to use web UIs to facilitate interactions :material-monitor-shimmer:{.icon-def-0}. Dive into the tutorials below to check them out, or keep scrolling to learn more :material-arrow-down-bold-outline:{ .icon-def-0 }.
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 <div class="grid cards" markdown>
 
@@ -52,7 +52,7 @@ template: pages.html
 
 </div>
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-flask-round-bottom:{ .icon-def-0 } What will we create?
 
@@ -60,7 +60,7 @@ template: pages.html
 
 <h4 style="text-align: center;">Chatbot</h4>
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 First is the :material-chat-processing-outline:{ .icon-def-0 } [chatbot](chatbot.md) without any memory or tools. This will be the local :simple-ollama:{ .icon-def-0 } [Ollama][ollama]{.blank} server that [we created][ollama-tutorial] in :simple-docker:{ .icon-def-0 } [Docker][docker]{.blank} connected to a chat model in :simple-langchain:{ .icon-def-0 } [LangChain][langchain]{.blank} and all packaged up in an easy to interact with :simple-gradio:{ .icon-def-0 } [Gradio][gradio]{.blank} web UI. 
 
@@ -68,7 +68,7 @@ This one will be a blank slate, it'll have no recollection of any conversation h
 
 <h4 style="text-align: center;">Agent with Memory</h4>
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 Next is the :material-memory:{ .icon-def-0 } [agent with memory][agent-memory]. This will be the same as the :material-chat-processing-outline:{ .icon-def-0 } [chatbot][chatbot], but instead of a chat model in LangChain, we're going to use an agent in :simple-langgraph:{ .icon-def-0 } [LangGraph][langgraph]{.blank}. Also, we're going to give our agent *memory* so that it'll have access to our conversation history :material-clipboard-text-clock-outline:{ .icon-def-0 }. This is much more practical and is going to serve as a clean base for all of our more advanced agent builds :material-monitor-shimmer:{ .icon-def-0 }. 
 
@@ -76,7 +76,7 @@ We're also going to package this one up in a Gradio web UI but this time we'll a
 
 <h4 style="text-align: center;">Document Agent</h4>
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 This is where we'll learn how to pass our agents tools and what it looks like when our agents use them: the :material-bookshelf:{ .icon-def-0 } [doc agent](doc-agent.md). This will be the :material-memory:{ .icon-def-0 } [agent with memory][agent-memory] equipped with a tool that can be used to query a :simple-milvus:{ .icon-def-0 } [Milvus][milvus]{.blank} vectorstore [that we created][milvus-tutorial] in Docker. We'll use our Gradio web UI to upload :simple-markdown:{ .icon-def-0 } [Markdown][markdown]{.blank} documents that we want to be analyzed :material-upload-outline:{ .icon-def-0 }, then interact with our agent to gain information about them :material-book-open-outline:{ .icon-def-0 }. 
 
@@ -88,7 +88,7 @@ Remember when we :simple-milvus:{ .icon-def-0 } [created the Milvus server][milv
 
 <h4 style="text-align: center;">Code Agent</h4>
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 Finally, in the last tutorial of the series, we're going to use LangChain to create a metasearch tool using the :simple-searxng:{ .icon-def-0 } [SearXNG][searxng]{.blank} server that [we created][searxng-tutorial] in Docker and pass this tool over to our :material-bookshelf:{ .icon-def-0 } [doc agent][doc-agent]. We're then going to tweak the agent and tool settings a bit :material-cog-outline:{ .icon-def-0 } to get specialized :material-file-code-outline:{ .icon-def-0 } [coding agents][code-agent]. 
 
@@ -96,7 +96,7 @@ We'll interact with our agents through our familar web UI, but we'll also add fu
 
 This agent will not only serve as a workable tool to help you code in :simple-python:{ .icon-def-0 } Python, but also as an example for how to build different types of specialized agents; like a job search agent :material-briefcase-outline:{ .icon-def-0 }, or a global news analyst :material-newspaper-variant-multiple-outline:{ .icon-def-0 }, or a personal journal assistant :material-notebook-edit-outline:{ .icon-def-0 }. 
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 After finishing these tutorials, we'll know how to create whatever specialized agents we like :material-robot-love-outline:{ .icon-def-0 }, as long as we can pass the proper tools and tweak the agent and tool settings to become more specialized. We'll have :simple-github:{ .icon-def-0 } [all the code available][animakit] so that it really is just that easy :material-flash:{ .icon-def-0 }!
 

@@ -5,7 +5,7 @@ template: pages.html
 
 <!-- TODO: update bm25 scoring, sparse vectors, and inverted indices discussions with new knowledge -->
 
-<div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
+<div class="icon-def-1" style="text-align: center; border: 0.1rem dotted; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem; border-radius: 10px;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
   </a>
@@ -13,9 +13,9 @@ template: pages.html
 
 # :simple-milvus:{.icon-def-0} Milvus with Docker and Python
 
-<hr class="icon-def-1" style="border: 0.1rem solid; width: 90%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
-![Milvus Python Docker](assets/milvus/milvus-docker-python.png)
+![Milvus Python Docker](assets/milvus/milvus-docker-python.png){ .img-def }
 
 ![Milvus Docker Intro PNG](assets/milvus/milvus-docker-intro.png){.demo-img .png style="display:block;margin:auto;"}
 
@@ -24,7 +24,7 @@ template: pages.html
 !!! tl-dr "TL;DR"
     Learn how to build and use a [vector database][vectorstore]{.blank} server to store and search your documents on your local machine :material-laptop:{.icon-def-0}. Then, you can use this setup as a tool to give to [locally run AI agents][agents] :material-robot-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-map-marker-star-outline:{.icon-def-0} About This Project
 
@@ -77,7 +77,7 @@ Finally, before you start building, you can also check out the [Docker compose f
 
 Now, let's get building :material-account-hard-hat-outline:{.icon-def-0}!
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-flag-checkered:{.icon-def-0} Getting Started
 
@@ -142,7 +142,7 @@ To setup and build the repo follow these steps:
     docker compose down
     ```
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-note-edit-outline:{.icon-def-0} Example Use Cases
 
@@ -234,7 +234,7 @@ There are lots of variables we can customize here: the collection we use, the da
 
 In the next example, I show how to make these customizations by creating and running a custom script :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 <a id="rs"></a>
 
@@ -302,13 +302,13 @@ To manage and search your data through a custom script, follow these steps:
 
 Again, all logs will be printed in the console and stored in :material-note-edit-outline:{.icon-def-0} `./milvus-docker.log`. The name of the Python script doesn't matter as long as you use the same name in [step 2][step-create] and [step 3][step-run]. 
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 Notice these searches are *full-text*, meaning the data is searched for exact keywords :material-key-chain:{.icon-def-0}. We can improve this search by performing a semantic search simultaneously, picking up on more subtle relationships between the data :material-molecule:{.icon-def-0}. This is exactly what we'll do in the [document agent tutorial][doc-agent] :material-bookshelf:{.icon-def-0} :material-magnify:{.icon-def-0} :material-robot-excited-outline:{.icon-def-0}.
 
 Now that we understand how to use the code, let's open it up to check out the gears :material-cog-outline:{.icon-def-0} :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-view-quilt-outline:{.icon-def-0} Project Structure
 
@@ -350,13 +350,13 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 Ok, that's all the files :material-checkbox-marked-outline:{.icon-def-0}. Let's go diving :material-diving-scuba:{.icon-def-0}!
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-file-code-outline:{.icon-def-0} Code Deep Dive
 
 Here, we're going to look at the relevant files in more detail :material-magnify:{.icon-def-0}. We're going to start with looking at the full files to see which parts of the code we'll want to learn, then we can further probe each of the important pieces to see how they work :material-map-marker-question-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 <a id="milvus-utils"></a>
 
@@ -390,7 +390,7 @@ Before we start, you can also :simple-milvus:{.icon-def-0} [checkout the guide][
 
 Now, let's check these methods out :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -487,7 +487,7 @@ We also initialize the index parameters list to use for searching the collection
 
 Let's discuss how the schema and index parameters are initialized and the collection is created through the `client` attribute of the `MilvusClientInit` class. :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -533,7 +533,7 @@ So, we can see that we've initialized a `MilvusClient` on the URI that was defin
 
 Now that we understand how collections are defined and created with the `create_collection` method :material-checkbox-marked-outline:{.icon-def-0}. Let's check out how data is inserted with the `insert` method :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -555,7 +555,7 @@ When we recall [how the `client` attribute of the class is defined][code-client]
 
 Ok, that one was simple :material-flash:{.icon-def-0}. Now, that we know how to create a collection and insert data into the collection, let's see how to do the full-text search :material-arrow-down-bold-outline:{.icon-def-0}. 
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 --- 
 
@@ -583,7 +583,7 @@ That's it :material-checkbox-marked-outline:{.icon-def-0}! We've gone through al
 
 To get an idea of how documents are scored and retrieved using this method, let's check out the `func_bm25` function in more detail :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 <a id="math-dive"></a>
 
@@ -591,7 +591,7 @@ To get an idea of how documents are scored and retrieved using this method, let'
 
 Here, we're going to look at the relevant math in more detail :material-magnify:{.icon-def-0}. 
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 <a id="math-bm25"></a>
 
@@ -607,7 +607,7 @@ Let's say we want to :material-archive-search-outline:{.icon-def-0} search our d
 
 The TF is just some number, however many times the term appears in the document :material-numeric-3-box-multiple-outline:{.icon-def-0}. The other two terms have more complicated mathematical forms :material-function-variant:{.icon-def-0}. Let's look at these two, then we can see how all the terms go together to get the BM25 score :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -658,7 +658,7 @@ To wrap it all up:
 
 Now, let's look at the DLN term :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -711,7 +711,7 @@ To wrap it all up:
 
 Now that we understand these terms :material-checkbox-marked-outline:{.icon-def-0}, let's check out the BM25 function :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -759,7 +759,7 @@ Now, recall the [limits we examined for the DLN][table-dln]. As the length of th
 
 It seems then, that this term is mostly used to *penalize* documents that are much longer than the average length. We don't want the scores for these terms to blow up just because they're much longer and contain many more words (i.e. TF is potentially larger compared to shorter documents) :material-checkbox-marked-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 
@@ -791,7 +791,7 @@ Notice that when Milvus gives us results from the full-text search, it includes 
 
 And that's it :material-checkbox-marked-outline:{.icon-def-0}! We've gone through all the code and math that's needed to understand how to use :simple-milvus:{.icon-def-0} Miluvs to search our custom data for relevant information :material-creation-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-bookshelf:{.icon-def-0} Next Steps & Learning Resources
 
@@ -801,13 +801,13 @@ Continue learning how to build the final server stack by choosing the :material-
 
 Just like all the other tutorials, :simple-github:{.icon-def-0} [all the source code is available][animakit] so you can plug and play any of tutorial code right away :material-controller-classic:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 ## :material-link-variant:{.icon-def-0} Contributing 
 
 This tutorial is a work in progress. If you'd like to suggest or add improvements :material-notebook-edit-outline:{.icon-def-0}, fix bugs or typos :material-shield-bug-outline:{.icon-def-0}, ask questions to clarify :material-chat-question-outline:{.icon-def-0}, or discuss your understanding :material-wizard-hat:{.icon-def-0}, feel free to contribute through participating in the site :material-forum-outline:{.icon-def-0} [discussions][discussions]! Check out the :material-link-variant:{.icon-def-0} [contributing guidelines][contributing] to get started.
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 
 <!-- FOOTNOTES -->

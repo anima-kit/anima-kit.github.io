@@ -3,7 +3,7 @@ title: Tutorials
 template: pages.html
 ---
 
-<div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
+<div class="icon-def-1" style="text-align: center; border: 0.1rem dotted; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem; border-radius: 10px;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
   </a>
@@ -12,9 +12,9 @@ template: pages.html
 # :material-note-multiple:{ .icon-def-0 } Tutorials
 
 !!! tl-dr "TL;DR"
-    Learn how to build your own `AI agents` :material-robot-outline:{ .icon-def-0 } and interact with them via easy to use web UIs. Dive into the tutorials below or keep scrolling to learn more :material-arrow-down-bold-outline:{ .icon-def-0 }.
+    Learn how to build your own `AI agents` :material-robot-outline:{ .icon-def-2 } and interact with them via easy to use web UIs. Dive into the tutorials below or keep scrolling to learn more :material-arrow-down-bold-outline:{ .icon-def-2 }.
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 <div class="grid cards" markdown>
 
@@ -52,7 +52,7 @@ template: pages.html
 
 </div>
 
-<hr class="icon-def-1", style="border: 0.1rem solid; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 ## :material-hammer-wrench:{ .icon-def-0 } What goes into building an AI agent?
 
@@ -62,7 +62,7 @@ However, LMs are built on static stores of knowledge. Their most recent informat
 
 We can bypass these limitations by also giving our agents `tools` :material-hammer-wrench:{ .icon-def-0 } which will enhance both their knowledge store from which to retrieve and generate information :material-telescope:{ .icon-def-0 } as well as their ability to perform actions that uniquely fit our needs :material-rocket-launch-outline:{ .icon-def-0 }. 
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 <a id="how-power"></a>
 
@@ -81,7 +81,7 @@ For the LMs and tools to pass to the agent, I chose solutions that were able to 
 
 In the end, my favorite picks for the LM and tool servers are an :simple-ollama:{ .icon-def-0 } [Ollama][ollama]{.blank} server for the [LMs][ollama-tutorial], a :simple-searxng:{ .icon-def-0 } [SearXNG][searxng]{.blank} server for a [metasearch engine tool][searxng-tutorial] [^metasearch], and a :simple-milvus:{ .icon-def-0 } [Milvus][milvus]{.blank} server for a [data retrieval tool][milvus-tutorial] that can be used on my personal documents. We'll learn how to create and run each of these servers in turn :material-robot-excited-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 ## :material-stairs:{ .icon-def-0 } What tutorials should we follow?
 
@@ -93,7 +93,7 @@ I suggest starting with the :material-server:{ .icon-def-0 } [servers tutorials]
 
 Check out any of the tutorials above to get started :material-arrow-up-bold-outline:{ .icon-def-0 }. You can also keep reading to see what software you may need or want in order to follow along :material-arrow-down-bold-outline:{ .icon-def-0 }.
 
-<hr class="icon-def-1", style="border: 0.05rem solid; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
 
 ## :material-checkbox-multiple-marked-outline:{ .icon-def-0 } What will we need?
 
@@ -107,7 +107,7 @@ I've also heard good things about :simple-neovim:{.icon-def-0} [NeoVim][neovim]{
 
 All other third-party libraries, etc., that are needed to follow along will be explicitly covered in the tutorials :material-checkbox-marked-outline:{ .icon-def-0 }. 
 
-<hr class="icon-def-1", style="border: 0.01rem solid; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 I made these lessons so that they could be used by a wide variety of people; whether you want to just quickly take the code and use it without having to understand what it does :material-invoice-text-fast-outline:{ .icon-def-0 }, or you want to dive into the code and try to understand how it all works :material-wizard-hat:{ .icon-def-0 }, or you want something in between :material-head-cog-outline:{ .icon-def-0 }. As long as you have a desire to build :material-robot-excited-outline:{ .icon-def-0 } AI agents or the :material-server:{ .icon-def-0 } servers necessary to power these agents, or you just want to learn about AI :material-school-outline:{ .icon-def-0 }, these tutorials were made for you! :material-hand-heart:{ .icon-def-0 }  
 

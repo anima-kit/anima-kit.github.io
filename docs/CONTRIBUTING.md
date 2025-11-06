@@ -6,7 +6,7 @@ hide:
 ---
 
 
-<div class="icon-def-1" style="text-align: center; border: 0.1rem solid; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem;">
+<div class="icon-def-1" style="text-align: center; border: 0.1rem dotted; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem; border-radius: 10px;">
   <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
     <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
   </a>
@@ -14,7 +14,7 @@ hide:
 
 # :material-link-variant:{.icon-def-0} Contributing 
 
-<hr class="icon-def-1" style="border: 0.1rem solid; width: 90%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 
 I welcome contributions from the community :material-crowd:{.icon-def-0} to help improve this site through the use of [discussions][discussions] :material-forum-outline:{.icon-def-0}. This platform is dedicated to guiding myself and others through the field of AI (especially AI agents :material-robot-love-outline:{.icon-def-0}) and your feedback can help me understand what works :material-puzzle-check-outline:{.icon-def-0} and what doesn't :material-puzzle-remove-outline:{.icon-def-0}. It can also help shape the content :material-puzzle-star-outline:{.icon-def-0} and usability of this site for everyone :material-puzzle-heart-outline:{.icon-def-0}. Before contributing, please review the guidelines below to ensure a smooth process :material-creation-outline:{.icon-def-0}. 
 
@@ -79,7 +79,7 @@ I also ask all contributors to follow the :material-robot-happy-outline:{.icon-d
 
 </div>
 
-<hr class="icon-def-1" style="border: 0.01rem solid; width: 30%; margin: 0 auto;">
+<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
 
 ---
 

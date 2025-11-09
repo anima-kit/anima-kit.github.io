@@ -9,14 +9,6 @@ Thanks for sharing!
 -->
 
 
-<!-- 
-I learned a lot about how to create my own landing page using Material for MKDocs with:
-https://github.com/squidfunk/mkdocs-material
-https://github.com/squidfunk/mkdocs-material/issues?q=is%3Aissue%20state%3Aclosed
-https://github.com/binbashar/le-ref-architecture-doc 
-Thanks for sharing! 
--->
-
 <!-- See https://github.com/squidfunk/mkdocs-material/blob/master/material/overrides/main.html -->
 
 
@@ -504,14 +496,13 @@ Thanks for sharing!
         min-height: 100vh;
     }
 
-    /* 
-    Sets solid dark blue background
-    */
     .body-background-2 {
         background-color: var(--color-blue-darkest);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-
-    
 </style>
 
 
@@ -604,6 +595,7 @@ Thanks for sharing!
       display:flex;
       flex-direction:column;
       min-height:100vh; 
+      height: 100vh;
   }
 
   footer{
@@ -872,78 +864,79 @@ Thanks for sharing!
 
 <!-- 2nd section -->
 <div class="page-wrapper" style="height: 100vh;">
-  <section class="body-background-2 title-flex-2">
-    <p class="main-title" style="padding: 0px; margin: 0px; color: var(--color-pink-lightest); text-align: left;"> AI that 
-      <span style="color: var(--color-blue-analog);">works</span> 
-      for you.
-    </p>
-    <p class="main-subtitle" style="padding: 0px; margin-top:1rem; text-align: left;"> 
-      I'm a lifelong learner focused on implementing AI solutions to improve the healthcare industry. 
-    </p>
-    <p class="main-subtitle" style="padding: 0px; margin-top:1rem; text-align: left;"> 
-      Check out my projects for collaborations, or my tutorials for in-depth analyses of AI. 
-    </p>
-  </section>
-
-<!-- Footer -->
-  <footer class="body-background-2">
-    <div class="footer-flex">
-      <div class="footer-menu-flex">
-        <div class="flex-col footer-menu-text">
-          <ul>
-            <li class="footer-item">
-              <a href="https://github.com/anima-kit/" title="anima-kit">Home</a>
-            </li>
-            <li class="footer-item">
-              <a href="./about/" title="About">About</a>
-            </li>
-          </ul>
-        </div>
-        <div class="flex-col footer-menu-text">
-          <ul>
-            <li class="footer-item">
-              <a href="./projects/" title="Servers">Projects</a>
-            </li>
-            <li class="footer-item">
-              <a href="./tutorials/" title="Agents">Tutorials</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-<!-- Use social-item to link to github, linkedin, medium, twitter -->
-      <div class="footer-social-flex">
-        <a href="https://github.com/anima-kit/">
-          <img
-            src="assets/icons/github.svg"
-            title="Github"
-            class="social-item"
-          />
-        </a>
-        <a href="https://www.linkedin.com/in/animakitai/" class="blank">
-          <img
-            src="assets/icons/linkedIn.svg"
-            title="LinkedIn"
-            class="social-item"
-          />
-        </a>
-        <a href="https://medium.com/@animakit/" class="blank">
-          <img
-            src="assets/icons/medium.svg"
-            title="Medium"
-            class="social-item"
-          />
-        </a>
-        <a href="https://x.com/animakit/" class="blank">
-          <img
-            src="assets/icons/twitter.svg"
-            title="Twitter"
-            class="social-item"
-          />
-        </a>
-      </div>
+  <section class="body-background-2">
+    <div class="title-flex-2">
+      <p class="main-title" style="padding: 0px; margin: 0px; color: var(--color-pink-lightest); text-align: left;"> AI that 
+        <span style="color: var(--color-blue-analog);">works</span> 
+        for you.
+      </p>
+      <p class="main-subtitle" style="padding: 0px; margin-top:1rem; text-align: left;"> 
+        I'm a lifelong learner focused on implementing AI solutions to improve the healthcare industry. 
+      </p>
+      <p class="main-subtitle" style="padding: 0px; margin-top:1rem; text-align: left;"> 
+        Check out my projects for collaborations, or my tutorials for in-depth analyses of AI. 
+      </p>
     </div>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-flex">
+        <div class="footer-menu-flex">
+          <div class="flex-col footer-menu-text">
+            <ul>
+              <li class="footer-item">
+                <a href="https://github.com/anima-kit/" title="anima-kit">Home</a>
+              </li>
+              <li class="footer-item">
+                <a href="./about/" title="About">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-col footer-menu-text">
+            <ul>
+              <li class="footer-item">
+                <a href="./projects/" title="Servers">Projects</a>
+              </li>
+              <li class="footer-item">
+                <a href="./tutorials/" title="Agents">Tutorials</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+  <!-- Use social-item to link to github, linkedin, medium, twitter -->
+        <div class="footer-social-flex">
+          <a href="https://github.com/anima-kit/">
+            <img
+              src="assets/icons/github.svg"
+              title="Github"
+              class="social-item"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/animakitai/" class="blank">
+            <img
+              src="assets/icons/linkedIn.svg"
+              title="LinkedIn"
+              class="social-item"
+            />
+          </a>
+          <a href="https://medium.com/@animakit/" class="blank">
+            <img
+              src="assets/icons/medium.svg"
+              title="Medium"
+              class="social-item"
+            />
+          </a>
+          <a href="https://x.com/animakit/" class="blank">
+            <img
+              src="assets/icons/twitter.svg"
+              title="Twitter"
+              class="social-item"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </section>
 </div>
 
 

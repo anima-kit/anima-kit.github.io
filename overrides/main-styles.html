@@ -1,11 +1,3 @@
-<!-- 
-I learned a lot about how to create my own landing page using Material for MKDocs with:
-https://github.com/squidfunk/mkdocs-material
-https://github.com/squidfunk/mkdocs-material/issues?q=is%3Aissue%20state%3Aclosed
-https://github.com/binbashar/le-ref-architecture-doc 
-Thanks for sharing! 
--->
-
 {% extends "main.html" %}
 
 {% block tabs %}
@@ -171,14 +163,13 @@ Thanks for sharing!
         min-height: 100vh;
     }
 
-    /* 
-    Sets solid dark blue background
-    */
     .body-background-2 {
         background-color: var(--color-blue-darkest);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-
-    
 </style>
 
 
@@ -271,6 +262,7 @@ Thanks for sharing!
       display:flex;
       flex-direction:column;
       min-height:100vh; 
+      height: 100vh;
   }
 
   footer{

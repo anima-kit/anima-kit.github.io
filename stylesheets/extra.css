@@ -17,6 +17,7 @@
   /* Blue Colors */
   --color-blue-primary: #0099FF; 
   --color-primary--transparent: hsla(204, 100%, 50%, 0.1);  
+  --color-primary--least-transparent: hsla(204, 100%, 50%, 0.75);  
   /*--color-blue-secondary: #00FFE5;*/
   --color-blue-secondary: #1AFF00;
   --color-blue-secondary-lighter: #BFFFB8;
@@ -32,10 +33,15 @@
   --color-blue-darker: #400047;
   --color-blue-darkest: #0E131A;
   --color-blue-light: #B0CFFF;
+  --color-blue-light--least-transparent: hsla(216, 100%, 85%, 0.5);
   --color-blue-light-2: #E0ECFF;
+  --color-blue-light-3: #2EABFF;
   --color-blue-lighter: #F8B8FF;
   --color-blue-lightest: #F0F5FF;
+  --color-blue-lightest--less-transparent: hsla(220, 100%, 97%, 0.15);
+  --color-blue-lightest--least-transparent: hsla(220, 100%, 97%, 0.1);
   --color-blue-complementary: #FF6600;
+  --color-blue-analog: #0019FF;
 }
 
 /*

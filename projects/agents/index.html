@@ -14,31 +14,31 @@
         <meta name="author" content="Lauren Street">
       
       
-        <link rel="canonical" href="https://anima-kit.github.io/tutorials/agents/chatbot/">
+        <link rel="canonical" href="https://anima-kit.github.io/projects/agents/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../medical/">
       
       
-        <link rel="next" href="../agent-memory/">
+        <link rel="next" href="../servers/">
       
       
-      <link rel="icon" href="../../../assets/lxlgs/logo-3.png">
+      <link rel="icon" href="../../assets/lxlgs/logo-3.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
 
   <!-- Set title to page title | If none use site name -->
   
-    <title>Chatbot</title>
+    <title>Agents</title>
   
   
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -57,11 +57,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.x/css/materialdesignicons.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -86,11 +86,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#simple-chatbot" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -103,9 +98,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="AnimaKit AI" class="md-header__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
+    <a href="../.." title="AnimaKit AI" class="md-header__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
       
-  <img src="../../../assets/lxlgs/logo-3.png" alt="logo">
+  <img src="../../assets/lxlgs/logo-3.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -122,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chatbot
+              Agents
             
           </span>
         </div>
@@ -227,7 +222,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -244,11 +239,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../projects/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -264,13 +261,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../tutorials/" class="md-tabs__link">
           
   
   
@@ -288,7 +283,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -329,9 +324,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="AnimaKit AI" class="md-nav__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
+    <a href="../.." title="AnimaKit AI" class="md-nav__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
       
-  <img src="../../../assets/lxlgs/logo-3.png" alt="logo">
+  <img src="../../assets/lxlgs/logo-3.png" alt="logo">
 
     </a>
     AnimaKit AI
@@ -358,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -369,52 +364,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../../projects/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    Projects
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
     </li>
   
 
@@ -444,15 +393,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Learning
+    Projects
     
   </span>
   
@@ -460,10 +409,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Learning
+            Projects
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -474,12 +423,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Tutorials
+    Projects Guide
     
   </span>
   
@@ -515,12 +464,12 @@
   
   
   
-    <a href="../../servers/" class="md-nav__link">
+    <a href="../medical/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
-    Servers
+    Medical
     
   </span>
   
@@ -559,10 +508,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -575,35 +524,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Agents
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Agents Guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -618,90 +544,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Chatbot
+    Agent Projects
     
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agent-memory/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Agent with Memory
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../doc-agent/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Document Agent
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../code-agent/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Code Agent
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -740,12 +595,12 @@
   
   
   
-    <a href="../../rag/" class="md-nav__link">
+    <a href="../servers/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
-    RAG
+    Servers
     
   </span>
   
@@ -787,12 +642,12 @@
   
   
   
-    <a href="../../misc/" class="md-nav__link">
+    <a href="../../tutorials/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
-    Odds and Ends
+    Tutorials
     
   </span>
   
@@ -809,113 +664,67 @@
 
               
             
-              
-                
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../tutorials/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Learning
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    About
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../CONTRIBUTING/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Contributing
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../CODE_OF_CONDUCT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Code of Conduct
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../NOTICE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    License Notice
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -949,8 +758,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -969,14 +776,9 @@
   
 
 
-<div class="icon-def-1" style="text-align: center; border: 0.1rem dotted; width: 5%; float: right; padding: 0px; margin: 0px; font-size: 0.9rem; border-radius: 10px;">
-  <a onclick="toggleAnimations()" title="Toggle Animations" style="cursor: pointer;">
-    <p style="padding: 0px; margin: 0px;"><i class="mdi mdi-sine-wave"></i></p>
-  </a>
-</div>
+<h1 style="text-align: center;">Agents</h1>
 
-<h1 id="simple-chatbot"><span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.58 2 11a7.22 7.22 0 0 0 2.75 5.5c0 .6-.42 2.17-2.75 4.5 2.37-.11 4.64-1 6.47-2.5 1.14.33 2.34.5 3.53.5 5.5 0 10-3.58 10-8s-4.5-8-10-8m0 14c-4.42 0-8-2.69-8-6s3.58-6 8-6 8 2.69 8 6-3.58 6-8 6m5-5v-2h-2v2zm-4 0v-2h-2v2zm-4 0v-2H7v2z"/></svg></span> Simple Chatbot<a class="headerlink" href="#simple-chatbot" title="Anchor link to this section for reference">⚓︎</a></h1>
-<p><span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2.03v2.02c4.39.54 7.5 4.53 6.96 8.92-.46 3.64-3.32 6.53-6.96 6.96v2c5.5-.55 9.5-5.43 8.95-10.93-.45-4.75-4.22-8.5-8.95-8.97m-2 .03c-1.95.19-3.81.94-5.33 2.2L7.1 5.74c1.12-.9 2.47-1.48 3.9-1.68zM4.26 5.67A9.9 9.9 0 0 0 2.05 11h2c.19-1.42.75-2.77 1.64-3.9zM2.06 13c.2 1.96.97 3.81 2.21 5.33l1.42-1.43A8 8 0 0 1 4.06 13zm5.04 5.37-1.43 1.37A10 10 0 0 0 11 22v-2a8 8 0 0 1-3.9-1.63m9.72-3.18-4.11-4.11c.41-1.04.18-2.26-.68-3.11-.9-.91-2.25-1.09-3.34-.59l1.94 1.94-1.35 1.36-1.99-1.95c-.54 1.09-.29 2.44.59 3.35.86.86 2.08 1.08 3.12.68l4.11 4.1c.18.19.45.19.63 0l1.04-1.03c.22-.18.22-.5.04-.64"/></svg></span> This page is currently under construction.</p>
+<p>This page is currently under construction.</p>
 
 
 
@@ -1017,7 +819,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Agents Guide">
+          <a href="../medical/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Medical Projects">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1027,20 +829,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Agents Guide
+                Medical Projects
               </div>
             </div>
           </a>
         
         
           
-          <a href="../agent-memory/" class="md-footer__link md-footer__link--next" aria-label="Next: Agent with Memory">
+          <a href="../servers/" class="md-footer__link md-footer__link--next" aria-label="Next: Server Projects">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Agent with Memory
+                Server Projects
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1125,18 +927,18 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.tooltips", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.tooltips", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../javascripts/animations.js"></script>
+        <script src="../../javascripts/animations.js"></script>
       
-        <script src="../../../javascripts/ext-links.js"></script>
+        <script src="../../javascripts/ext-links.js"></script>
       
     
   </body>

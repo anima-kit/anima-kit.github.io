@@ -1,4 +1,4 @@
-<!-- TODO: Want to redo 2nd and third sections, but not sure how yet -->
+<!-- TODO: Check device specifics -->
 
 <!-- 
 I learned a lot about how to create my own landing page using Material for MKDocs with:
@@ -27,7 +27,7 @@ Thanks for sharing!
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="anima-kit | Learning AI, building demos, sharing results">
+        <meta name="description" content="AnimaKit AI | Learning AI, building demos, sharing results">
       
       
         <meta name="author" content="Lauren Street">
@@ -37,7 +37,7 @@ Thanks for sharing!
       
       
       
-        <link rel="next" href="tutorials/">
+        <link rel="next" href="projects/">
       
       
       <link rel="icon" href="assets/lxlgs/logo-3.png">
@@ -93,7 +93,7 @@ Thanks for sharing!
   <!-- Open graph tags -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="" />
-  <meta property="og:description" content="anima-kit | Learning AI, building demos, sharing results" />
+  <meta property="og:description" content="AnimaKit AI | Learning AI, building demos, sharing results" />
   <meta property="og:url" content="https://anima-kit.github.io/" />
   <meta property="og:image" content="https://anima-kit.github.io/assets/lxlgs/logo-4.png" />
   <meta property="og:image:type" content="image/png" />
@@ -131,7 +131,7 @@ Thanks for sharing!
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="anima-kit" class="md-header__button md-logo" aria-label="anima-kit" data-md-component="logo">
+    <a href="." title="AnimaKit AI" class="md-header__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
       
   <img src="assets/lxlgs/logo-3.png" alt="logo">
 
@@ -144,7 +144,7 @@ Thanks for sharing!
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            anima-kit
+            AnimaKit AI
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -278,6 +278,26 @@ Thanks for sharing!
     
     
       <li class="md-tabs__item">
+        <a href="projects/" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="tutorials/" class="md-tabs__link">
           
   
@@ -309,63 +329,6 @@ Thanks for sharing!
   
 
       
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="CONTRIBUTING/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Contributing
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="CODE_OF_CONDUCT/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Code of Conduct
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="NOTICE/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  License Notice
-
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -389,6 +352,8 @@ Thanks for sharing!
 <!-- LINKS -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Brings in icons from Google Fonts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css">
+<!-- Material Design Icons -->
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <!-- Loads Roboto font -->
@@ -413,17 +378,57 @@ Thanks for sharing!
     Sparkling effect animation - used to give appearance of ice crystals
     */
     @keyframes sparkle {
-        0%   { transform: scale(0) rotate(0deg); opacity: 0.3; }
-        75%  { transform: scale(0.5) rotate(180deg); opacity: 0.5; }
-        100% { transform: scale(1) rotate(360deg); opacity: 0; }
+        0%   { transform: scale(1); opacity: 0.5; }
+        20%  { transform: scale(1.25) rotateX(10deg) rotateY(36deg); opacity: 0.4; }
+        40%  { transform: scale(1.1); opacity: 0.2; }
+        60%  { transform: scale(1.5) rotateZ(-25deg) rotateY(-36deg); opacity: 0.2; }
+        80%  { transform: scale(1.25) rotateZ(-25deg) rotateY(0deg); opacity: 0.4; }
+        100% { transform: scale(1) rotateX(0deg) rotateY(0deg); opacity: 0.5; }
     }
+
+    .glass-membrane {
+      background: var(--color-blue-lightest-least-transparent);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--color-blue-lightest-less-transparent);
+      box-shadow: 0 4px 20px var(--color-primary--transparent);
+      overflow: hidden; /* Prevents gradient from overflowing */
+    }
+
     .sparkle {
         position: absolute;
-        font-size: 0.6vw;
         color: var(--color-blue-lightest);
         opacity: 0;                                 /* Start invisible */
-        animation: sparkle 2s infinite ease-in-out; /* Repeat forever with smooth motion */
+        animation: sparkle 10s infinite ease-in-out;
         pointer-events: none;                       /* Don't interfere with interactions */
+        width: 25rem;
+    }
+
+    .sparkle-container {
+      width: 50%;
+      align-items: center; 
+      justify-content: center;
+    }
+
+    .sparkle-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200vw;
+      height: 200vh;
+      background: linear-gradient(45deg, 
+        transparent 45%, 
+        var(--color-blue-lightest--less-transparent) 50%, 
+        transparent 55%);
+      transform: rotate(30deg);
+      z-index: -1;
+      animation: shine 5s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      100% { transform: translateX(100%) rotate(30deg); }
     }
 
     /* 
@@ -445,56 +450,38 @@ Thanks for sharing!
     }
 </style>
 
-<!-- 
-Creates number of icons based on screen resolution 
-Give icons .sparkle class and place randomly on the screen
-Start animation at different times to look more natural
-Handles resize events to recreate sparkles depending on new screen resolution
--->
 <script>
   // Function to create sparkles
   function createSparkles() {
     const container = document.querySelector('.sparkle-container');
-    
     if (!container) {
       console.warn('Sparkle container not found');
       return;
     }
-    
-    // Clear existing sparkles
-    const existingSparkles = container.querySelectorAll('.sparkle');
-    const oldCount = existingSparkles.length;
-    
-    existingSparkles.forEach(spark => spark.remove());
-    
-    // Calculate number of sparkles based on screen size
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-    const baseSparkles = 50; // Base number of sparkles
-    
-    // Adjust based on screen area (smaller screens get fewer sparkles)
-    // Min of 10 and max of 150 sparkles regardless of screen size
-    const area = screenWidth * screenHeight;
-    const sparkleCount = Math.max(10, Math.min(150, Math.floor(area / 10000)));
-    
-    // Make sure calculations are right
-    console.log(`Screen size: ${screenWidth}x${screenHeight}, Area: ${area}, Sparkle count: ${sparkleCount}, Previous count: ${oldCount}`);
-    
-    // Create the sparkles, give them random positions and animation delays
-    for (let i = 0; i < sparkleCount; i++) {
-      const spark = document.createElement('span');
-      spark.className = 'material-icons sparkle';
-      spark.textContent = 'flare';
-      
-      spark.style.left = Math.random() * 100 + '%';
-      spark.style.top = Math.random() * 100 + '%';
-      spark.style.animationDelay = (Math.random() * 2) + 's';
-      
-      container.appendChild(spark);
-    }
-    
-    // Make sure number of created sparkles is correct
-    console.log(`Created ${sparkleCount} sparkles`);
+    const spark = document.createElement('span');
+    spark.className = 'sparkle';
+    const svgCode = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <title>dna</title>
+        <defs>
+        <!-- glassy / shining gradient -->
+        <radialGradient id="shine"
+                        cx="50%" cy="30%" r="70%"
+                        fx="60%" fy="40%">
+          <stop offset="0%"   stop-color="var(--color-blue-primary)" stop-opacity="1"/>
+          <stop offset="45%"  stop-color="var(--color-blue-analog)" stop-opacity=".8"/>
+          <stop offset="75%"  stop-color="var(--color-blue-primary)" stop-opacity=".3"/>
+          <stop offset="100%" stop-color="var(--color-blue-light)" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+        <path 
+          d="M4,2H6V4C6,5.44 6.68,6.61 7.88,7.78C8.74,8.61 9.89,9.41 11.09,10.2L9.26,11.39C8.27,10.72 7.31,10 6.5,9.21C5.07,7.82 4,6.1 4,4V2M18,2H20V4C20,6.1 18.93,7.82 17.5,9.21C16.09,10.59 14.29,11.73 12.54,12.84C10.79,13.96 9.09,15.05 7.88,16.22C6.68,17.39 6,18.56 6,20V22H4V20C4,17.9 5.07,16.18 6.5,14.79C7.91,13.41 9.71,12.27 11.46,11.16C13.21,10.04 14.91,8.95 16.12,7.78C17.32,6.61 18,5.44 18,4V2M14.74,12.61C15.73,13.28 16.69,14 17.5,14.79C18.93,16.18 20,17.9 20,20V22H18V20C18,18.56 17.32,17.39 16.12,16.22C15.26,15.39 14.11,14.59 12.91,13.8L14.74,12.61M7,3H17V4L16.94,4.5H7.06L7,4V3M7.68,6H16.32C16.08,6.34 15.8,6.69 15.42,7.06L14.91,7.5H9.07L8.58,7.06C8.2,6.69 7.92,6.34 7.68,6M9.09,16.5H14.93L15.42,16.94C15.8,17.31 16.08,17.66 16.32,18H7.68C7.92,17.66 8.2,17.31 8.58,16.94L9.09,16.5M7.06,19.5H16.94L17,20V21H7V20L7.06,19.5Z" 
+          fill="url(#shine)" 
+        />
+      </svg>
+    `;
+    spark.innerHTML = svgCode; 
+    container.appendChild(spark);
   }
   
   // Initialize sparkles when DOM is loaded
@@ -502,38 +489,19 @@ Handles resize events to recreate sparkles depending on new screen resolution
     console.log('DOM loaded - creating initial sparkles');
     createSparkles();
   });
-  
-  // Handle window resize
-  // The 100ms timeout controls the following tradeoff:
-  // Don't wait long enough and createSparkles() func is run too many times - becomes slow and unresponsive
-  // Wait too long and disappearance of sparkles is noticeable before createSparkles() is run again, would make page appear slow and unresponsive 
-  window.addEventListener('resize', () => {
-    // Add a small delay to prevent excessive calls during resizing
-    if (window.resizeTimeout) {
-      clearTimeout(window.resizeTimeout);
-    }
-    window.resizeTimeout = setTimeout(() => {
-      // Make sure sparkles are being recreated during resize
-      console.log('Resize event detected - recreating sparkles');
-      createSparkles();
-    }, 100);
-  });
 </script>
 
 
 <!-- BACKGROUNDS -->
 <style>
-    /* 
-    Sets gradient background from green-blue (at top), to pink, to primary blue at bottom.
-    */
-    .body-background-0 {
+    .body-background-1 {
         background: linear-gradient(
           0deg, 
-          var(--color-blue-tertiary) 0%, 
-          var(--color-pink-primary) 33%, 
-          var(--color-blue-secondary) 87%
+          var(--color-pink-primary) 0%, 
+          var(--color-blue-light) 30%, 
+          var(--color-blue-primary) 70%
         );
-        min-height: 100vh; /* Want this to span two entire screens */
+        min-height: 100vh;
     }
 
     /* 
@@ -542,7 +510,11 @@ Handles resize events to recreate sparkles depending on new screen resolution
     .body-background-2 {
         background-color: var(--color-blue-darkest);
     }
+
+    
 </style>
+
+
 
 
 <!-- BUTTONS -->
@@ -552,9 +524,9 @@ Handles resize events to recreate sparkles depending on new screen resolution
     */
     .btn-main {
         color: var(--color-blue-darkest);
-        background: var(--color-blue-secondary--least-transparent);
-        border: solid var(--color-blue-lightest) 0.3vw;
-        box-shadow: rgb(0, 0, 0) 0vw 0vw 0vw 0vw;
+        background: var(--color-blue-primary);
+        border: solid var(--color-blue-lightest) 0.3rem;
+        box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
         transition: all 0.3s ease;
         transform: translateY(0);
         display: flex;          /* Makes layout flexible */
@@ -562,47 +534,19 @@ Handles resize events to recreate sparkles depending on new screen resolution
         align-items: center;    /* Centers content horizontally */
         justify-content: center;
         cursor: pointer;        /* Shows hand cursor when hovering over button */
-        border-radius: 1vw;
-        width: 100%;            /* Ensure full width */
+        border-radius: 1rem;
+        width: 12rem;  
         font-weight:bold;
-        height: 8vw;
-        font-size: 4vw;
-        padding: 2vw;
+        height: 6rem;
+        font-size: 2rem;
+        padding: 2rem;
+        text-align: center;
+        margin-top: 3rem;
     }
     .btn-main:hover {
         transform: scale(1.1);
-        background: var(--color-pink-primary--least-transparent);
+        background: var(--color-blue-light--least-transparent);
         color: var(--color-pink-darkest);
-    }
-
-    /* 
-    White --> Blue button
-    */
-    .btn-blue {
-        font-weight: 200;
-        color: var(--color-blue-darkest);
-        background-color: var(--color-blue-lightest);
-        border: 2px solid var(--color-blue-primary); 
-        box-shadow: rgb(0, 0, 0) 0vw 0vw 0vw 0vw;
-        border-radius: 1vw;
-        transition: all 0.3s ease;
-        align-items: center;
-        cursor: pointer;
-    }
-    .btn-blue:hover {
-        transform: scale(1.1); 
-        background-color: var(--color-blue-light);
-        color: var(--color-blue-darkest);
-    }
-
-    .cycle-text-btn {
-      width: 25vw; 
-      height: 10vw; 
-      text-align: center; 
-      padding: 1vw; 
-      margin: 1vw; 
-      align-items: center; 
-      justify-content: center;
     }
 </style>
 
@@ -625,44 +569,35 @@ Handles resize events to recreate sparkles depending on new screen resolution
       flex-flow: column;
   }
 
-  .full-screen{
-    position:relative;          
-    display:flex;
-    justify-content:center;
-    align-items:center; 
-    height: 100vh;
-    width: 100%;
-    overflow:hidden;
-    padding: 0px; 
-    margin: 0px;
-  }
-
   .title-flex {
-    position: absolute;
-    left: 5%;
-    top: 5%;
-    padding: 2vw;
-    width: 90%;
+    padding: 2rem;
+    width: 50%;
+    align-items: center; 
+    justify-content: center;
+    background-image: url('./assets/lxlgs/logo-6.png');
+    background-color: var(--color-pink-primary--transparent);
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    animation: slideBackAndForth 10s ease-in-out infinite;
+    animation-direction: alternate;
+    position: relative;
+    overflow: hidden;
   }
 
-  .btn-flex {
-    position: absolute;
-    left: 5%;
-    top: 30%;
-    transform: translateY(50%);
+  @keyframes slideBackAndForth {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% -100%;
+    }
   }
 
-  .img-wrapper{
-    max-width: 80vw;  /* keep it from overflowing horizontally */
-    max-height: 80vh; /* keep it from overflowing vertically */
-    display:flex;
-    justify-content:top;
-    align-items:top;
-  }
-  .img-wrapper img{
-    width:100%;
-    height:auto;        /* keeps aspect ratio */
-    object-fit:contain; /* fit entire image inside */
+  .title-flex-2 {
+    padding: 2rem;
+    width: 70%;
+    align-items: center; 
+    justify-content: center;
   }
 
   .page-wrapper{
@@ -670,36 +605,26 @@ Handles resize events to recreate sparkles depending on new screen resolution
       flex-direction:column;
       min-height:100vh; 
   }
-  .background-image{
-      flex:1;
-      overflow:hidden;
-  }
-  .background-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-  }
+
   footer{
       margin-top:auto;  /* stays on bottom */
   }
-  .footer-flex {
-    display: flex;
-    flex-flow: row;
-  }
+
   .footer-menu-flex {
     display: flex;
-    margin-left: 5vw; 
-    gap: 8vw;
+    margin-left: 2rem; 
+    gap: 4rem;
     flex: 100%;
+    flex-direction:row;
   }
   .footer-menu-text {
-    font-size: 2vw; 
+    font-size: 2rem; 
     color: var(--color-blue-lightest);
   }
   .footer-social-flex {
     display: flex;
-    margin-left: 5vw; 
-    margin-top: 2vh;
+    margin-left: 2rem; 
+    margin-top: 1rem;
     justify-content:center;   /* center icons */
     align-items: center;    /* vertical centering (optional) */
     gap: 0;
@@ -718,9 +643,15 @@ Handles resize events to recreate sparkles depending on new screen resolution
     }
 </style>
 
-
 <!-- FOOTER -->
 <style>
+  .footer-flex {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+  }
+
   .footer-social-flex {
     display: flex;
     justify-content: center;        /* horizontal centering of icons */
@@ -731,17 +662,17 @@ Handles resize events to recreate sparkles depending on new screen resolution
   }
 
   .social-item {
-      width: 6vw;   /* or whatever fits your design */
+      width: 4rem;   /* or whatever fits your design */
       height: auto;  /* keep aspect ratio */
   }
   /* Change colors during hover */
   .footer-item:hover {
-      color: var(--color-pink-primary)
+      color: var(--color-blue-primary)
   }
   /* Change background color and sets round corners during hover */
   .social-item:hover {
-      background-color: var(--color-pink-primary);
-      border-radius: 10px;
+      background-color: var(--color-blue-primary);
+      border-radius: 10rem;
   }
   
   /* Hide default Material for MKDocs footer on this page */
@@ -756,14 +687,14 @@ Handles resize events to recreate sparkles depending on new screen resolution
   /* Remove default bullet points and padding from unordered lists */
   ul {
     list-style: none;
-    padding-left: 0vw;
+    padding-left: 0px;
   }
   
-  /* Make default bullet points pink stars */
+  /* Make default bullet points stars */
   li::before {
-    content: "★";
-    color: var(--color-pink-primary);
-    margin-right: 1vw;
+    content: "✧";
+    color: var(--color-blue-primary);
+    margin-right: 1rem;
   }
 </style>
 
@@ -771,72 +702,17 @@ Handles resize events to recreate sparkles depending on new screen resolution
 <!-- TEXTS -->
 <style>
   .main-title {
-    font-size: 4vw; 
+    font-size: 5rem; 
     font-weight: 600;
-  }
-  .main-subtitle {
-    font-size: 2vw;
-  }
-
-  /* This text will cycle through a list of text items */
-  .animated-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centers it by moving it back by half its width/height */
-    z-index: 2;                       /* Puts this element on top of other elements */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5vw; 
-    color: var(--color-blue-darkest);
     text-align: center;
   }
-  
-  /* This text appears above the cycling text */
-  .static-text {
-    white-space: nowrap; /* Prevents text from wrapping to new lines */
-    margin-bottom: 3vh;
-    font-size: 3vw;
-  }
-  
-  /* Border the cycling text */
-  .bordered-text {
-    padding: 1vw 1vw;
-    border-radius: 1vw;
-    font-weight: normal;
-    min-width: 10ch;                  /* Sets minimum width based on 10 characters */
-    transition: all 0.3s ease-in-out; /* Smoothly transitions all changes over 0.3 seconds */
-    font-size: 3vw;
-    color: var(--color-blue-darkest);
-  }
-
-  .icon-text {
-    font-size: 6vw;
+  .main-subtitle {
+    font-size: 2rem;
+    font-weight: 550;
+    text-align: center;
+    color: var(--color-pink-lightest); 
   }
 </style>
-
-<!-- Cycle through text items -->
-<script>
-  /* Text items to cycle through */
-  const texts = [
-    "<i class='mdi mdi-server' style='color: var(--color-pink-primary);'></i> Build tool servers",
-    "<i class='mdi mdi-robot-outline' style='color: var(--color-pink-primary);'></i> Build AI agents",
-    "<i class='mdi mdi-hammer-wrench' style='color: var(--color-pink-primary);'></i> Give agents tools",
-    "<i class='mdi mdi-wizard-hat' style='color: var(--color-pink-primary);'></i> Specialize agents",
-    "<i class='mdi mdi-monitor-shimmer' style='color: var(--color-pink-primary);'></i> Build agent apps",
-    "<i class='mdi mdi-robot-love-outline icon-text' style='color: var(--color-pink-primary);'></i>"
-  ];
-  
-  let index = 0;
-  
-  /* Change to next text item every 2s */
-  setInterval(() => {
-    document.getElementById("cycling-text").innerHTML = texts[index]; /* Updates the text display */
-    index = (index + 1) % texts.length; /* Moves to the next message */
-  }, 2000);
-</script>
-
 
 <!-- MISC -->
 <!-- Remove default items not used -->
@@ -860,124 +736,112 @@ Handles resize events to recreate sparkles depending on new screen resolution
 <style>
   @media (max-width: 1024px) {
     .main-title {
-      font-size: 6vw;
+      font-size: 3rem;
     }
     .main-subtitle {
-      font-size: 4vw;
+      font-size: 1.5rem;
     }
     .btn-main {
-      padding: 3vw; 
-      height: 10vw; 
-      font-size: 5vw;
-    }
-    .cycle-text-btn {
-      width: 50vw; 
-      height: 25vw;
-    }
-    .bordered-text {
-      font-size: 5vw;
-    }
-    .icon-text {
-      font-size: 10vw;
+      font-size: 1.25rem;
+      height: 4rem;
+      width: 8rem;
     }
     .footer-menu-text {
-      font-size: 3vw;
+      font-size: 1.5rem;
     }
     .footer-menu-flex {
-      gap: 5vw;
-      margin-left: 5vw;
+      gap: 1.6rem;
+      margin-left: 2rem;
     }
     .social-item {
-      width: 8vw;
-      margin-bottom: 2vh;
+      width: 3rem;
+      margin-bottom: 1rem;
     }
   }
 
   @media (max-width: 768px) {
     .main-title {
-      font-size: 7vw;
-    }
-    .main-subtitle {
-      font-size: 5vw;
-    }
-    .btn-main {
-      padding: 4vw; 
-      height: 11vw; 
-      font-size: 6vw;
-    }
-    .cycle-text-btn {
-      width: 50vw; 
-      height: 25vw;
-    }
-    .bordered-text {
-      font-size: 5vw;
-    }
-    .icon-text {
-      font-size: 10vw;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .main-title {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
     .main-subtitle {
       font-size: 1.5rem;
     }
     .btn-main {
-      padding: 1rem; 
-      height: 4rem; 
-      font-size: 2rem;
-    }    
-    .btn-flex {
-      top: 75%; 
-      left: 50%; 
-      transform: translateX(-50%) translateY(-100%); 
-      width: 80%;
+      font-size: 1rem;
+      height: 3rem;
+      width: 6rem;
+    }
+    .footer-menu-text {
+      font-size: 1.6rem;
+    }
+    .footer-menu-flex {
+      gap: 2rem;
+      margin-left: 0rem;
+    }
+    .social-item {
+      width: 3rem;
+      margin-bottom: 1rem;
     }
     .footer-flex {
       display: flex;
       flex-flow: column;
       align-items: center;
+      justify-content: center;
+    }
+    .title-flex-2 {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .main-title {
+      font-size: 1.6rem;
+    }
+    .main-subtitle {
+      font-size: 1.2rem;
+    }
+    .btn-main {
+      font-size: 1rem;
+      height: 3rem;
+      width: 6rem;
     }
     .footer-menu-text {
       font-size: 1.2rem;
     }
     .footer-menu-flex {
-      gap: 2.2rem;
-      margin-left: 1rem;
+      gap: 1.5rem;
+      margin-left: 0rem;
     }
     .social-item {
-      width: 2.5rem;
-      margin-bottom: 1.2rem;
+      width: 2rem;
+      margin-bottom: 1rem;
+    }
+    .title-flex-2 {
+      width: 100%;
     }
   }
 
   @media (max-width: 320px) {
     .main-title {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
     }
     .main-subtitle {
       font-size: 1rem;
     }
     .btn-main {
-      padding: 0.5rem; height: 3rem; font-size: 1.5rem;
-    }    
-    .btn-flex {
-      top: 75%; 
-      left: 50%; 
-      transform: translateX(-50%) translateY(-100%); 
-      width: 80%;
+      font-size: 1rem;
+      height: 2rem;
+      width: 4rem;
     }
     .footer-menu-text {
       font-size: 1rem;
     }
     .footer-menu-flex {
-      gap: 1rem;
-      margin-left: 1rem;
+      gap: 0px;
+      flex-direction: column;
     }
     .social-item {
-      width: 2rem;
+      width: 1.25rem;
       margin-bottom: 1rem;
     }
   }
@@ -987,70 +851,44 @@ Handles resize events to recreate sparkles depending on new screen resolution
 
 
 <!-- 1st section -->
-<!-- Create sparkle container for sparkle animations and use landing animation -->
-<!-- Main landing image and button to tutorials landing -->
 <section class="landing-animation">
-  <div class="flex-row sparkle-container" style="position: relative; padding: 0px; margin: 0px; height: 100vh;">
-
-    <!-- Text container -->
-    <!-- Background or no? Not sure which one I like more yet... -->
-    <div class="flex-col title-flex" style="background-color: var(--color-pink-primary--transparent); padding: 1vw; border-radius: 1vw;">
-    <!--<div class="flex-col title-flex">-->
-      <p class="main-title" style="padding: 0vw; margin: 0vw; color: var(--color-pink-lightest);"> Welcome to anima-kit! </p>
-      <p class="main-subtitle" style="padding: 0vw; margin:0vw; color: var(--color-pink-lightest);"> Tutorials for building AI agents </p>
-    </div>
-    
-    <!-- Button container -->
-    <div class="flex-col btn-flex">
-      <a href="./tutorials/" title="Tutorials" class="btn-main glimmer-effect">
-        <p> Get Started </p>
+  <div class="flex-row body-background-1" style="height: 100vh;">
+    <div class="flex-col title-flex" style="background-color: var(--color-pink-primary--transparent);">
+      <p class="main-title" style="margin-bottom: 0px; color: var(--color-pink-lightest);"> AnimaKit</p>
+      <p class="main-subtitle" style="margin: 0px;"> 
+        Using AI to advance
+      </p>
+      <p class="main-subtitle" style="margin: 0px;"> 
+        <span style="color: var(--color-blue-analog);">health</span> services. 
+      </p>
+      <a href="./projects/" title="Projects" class="btn-main glimmer-effect">
+        <p> Projects </p>
       </a>
     </div>
-    
-    <!-- Image container -->
-    <div class="flex-col" style="order:0; flex: 100%; overflow:hidden; padding: 0px; margin: 0px; height: 100%;">
-      <img src="assets/lxlgs/logo-0.png" style="width: 100%; height: 100%; object-fit: cover;" />
+    <div class="flex-col sparkle-container glass-membrane">
     </div>
   </div>
 </section>
 
-
-<section class="body-background-0">
 <!-- 2nd section -->
-<!-- Create cycling-text to use animated-text to cycle through text items -->
-<!-- Use btn-blue to link to tutorials landing  -->
-  <div class="full-screen">
-    <div class="img-wrapper">
-      <img src="assets/lxlgs/logo-1.png" alt="logo">
-    </div>
-    <div class="animated-text">
-      <!-- TODO: Do we want to keep the static text or just leave it out? -->
-      <!-- <span class="static-text">Learn how to</span> -->
-      <a href="./tutorials/" title="Tutorials" class="btn-blue glimmer-effect flex-col cycle-text-btn" >
-        <div>
-            <span id="cycling-text" class="bordered-text"><i class="mdi mdi-server" style="color: var(--color-pink-primary)"></i> Build tool servers</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- 3rd section -->
-<div class="page-wrapper" style="position: relative; padding: 0px; margin: 0px; height: 100vh;">
-<!-- Show a nice image -->
-  <section class="body-background-2 background-image">
-    <div class="flex-col" style="order:0; flex: 100%; overflow:hidden; padding: 0px; margin: 0px; height: 100%;">
-      <img src="assets/lxlgs/logo-2.png" style="width: 100%; height: 100%; object-fit: cover;"/>
-    </div>
+<div class="page-wrapper" style="height: 100vh;">
+  <section class="body-background-2 title-flex-2">
+    <p class="main-title" style="padding: 0px; margin: 0px; color: var(--color-pink-lightest); text-align: left;"> AI that 
+      <span style="color: var(--color-blue-analog);">works</span> 
+      for you.
+    </p>
+    <p class="main-subtitle" style="padding: 0px; margin-top:1rem; text-align: left;"> 
+      I'm a lifelong learner focused on implementing AI solutions to improve the healthcare industry. 
+    </p>
+    <p class="main-subtitle" style="padding: 0px; margin-top:1rem; text-align: left;"> 
+      Check out my projects for collaborations, or my tutorials for in-depth analyses of AI. 
+    </p>
   </section>
 
-
 <!-- Footer -->
-<!-- Use footer-item to link to github, about page, servers tutorials landing, and agents tutorials landing -->
   <footer class="body-background-2">
     <div class="footer-flex">
-      <div class="flex-row footer-menu-flex">
+      <div class="footer-menu-flex">
         <div class="flex-col footer-menu-text">
           <ul>
             <li class="footer-item">
@@ -1064,10 +902,10 @@ Handles resize events to recreate sparkles depending on new screen resolution
         <div class="flex-col footer-menu-text">
           <ul>
             <li class="footer-item">
-              <a href="./tutorials/servers/" title="Servers">Servers</a>
+              <a href="./projects/" title="Servers">Projects</a>
             </li>
             <li class="footer-item">
-              <a href="./tutorials/agents/" title="Agents">Agents</a>
+              <a href="./tutorials/" title="Agents">Tutorials</a>
             </li>
           </ul>
         </div>
@@ -1127,12 +965,12 @@ Handles resize events to recreate sparkles depending on new screen resolution
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="anima-kit" class="md-nav__button md-logo" aria-label="anima-kit" data-md-component="logo">
+    <a href="." title="AnimaKit AI" class="md-nav__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
       
   <img src="assets/lxlgs/logo-3.png" alt="logo">
 
     </a>
-    anima-kit
+    AnimaKit AI
   </label>
   
     <div class="md-nav__source">
@@ -1204,6 +1042,52 @@ Handles resize events to recreate sparkles depending on new screen resolution
   
   
   
+    <a href="projects/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
     <a href="tutorials/" class="md-nav__link">
       
   
@@ -1238,72 +1122,6 @@ Handles resize events to recreate sparkles depending on new screen resolution
   
   <span class="md-ellipsis">
     About
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="CONTRIBUTING/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Contributing
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="CODE_OF_CONDUCT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Code of Conduct
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="NOTICE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    License Notice
     
   </span>
   
@@ -1402,13 +1220,13 @@ Handles resize events to recreate sparkles depending on new screen resolution
         
         
           
-          <a href="tutorials/" class="md-footer__link md-footer__link--next" aria-label="Next: Tutorials Guide">
+          <a href="projects/" class="md-footer__link md-footer__link--next" aria-label="Next: Projects Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Tutorials Guide
+                Projects Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1429,7 +1247,7 @@ Handles resize events to recreate sparkles depending on new screen resolution
 <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2025 <a href="https://github.com/anima-kit">anima-kit</a>
+      Copyright &copy; 2025 <a href="https://github.com/anima-kit">AnimaKit AI</a>
     </div>
   
   

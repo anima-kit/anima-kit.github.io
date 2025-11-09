@@ -11,7 +11,7 @@ template: pages.html
 
 # :simple-searxng:{.icon-def-0} SearXNG with Docker and LangChain
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
 ![SearXNG LangChain Docker](assets/searxng/searxng-docker-langchain.png){ .img-def }
 
@@ -22,7 +22,7 @@ template: pages.html
 !!! tl-dr "TL;DR"
     Learn how to build and use a [metasearch engine][metasearch-engine]{.blank} on your local machine :material-laptop:{.icon-def-0}. Then, you can use this setup as a tool to give to [locally run AI agents][agents] :material-robot-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
 <a id="about"></a>
 
@@ -31,7 +31,7 @@ template: pages.html
 <div class="grid cards" markdown style="text-align: center; font-size: 2rem; width: 10rem; margin: 0 auto;">
 
 -   
-    :simple-searxng:{.icon-def-1} :simple-docker:{.icon-def-1} :simple-langchain:{.icon-def-1}
+    :simple-searxng:{.icon-def-1 style="color: var(--md-accent-fg-color)"} :simple-docker:{.icon-def-1 style="color: var(--md-accent-fg-color)"} :simple-langchain:{.icon-def-1 style="color: var(--md-accent-fg-color)"}
 
 </div>
 
@@ -65,7 +65,7 @@ Finally, before you start building you can also check out the [original repo][se
 
 Now, let's get building :material-account-hard-hat-outline:{.icon-def-0}!
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 90%;"> 
 
 ## :material-flag-checkered:{.icon-def-0} Getting Started
 
@@ -156,7 +156,7 @@ To setup and build the repo follow these steps:
     docker compose down
     ```
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 90%;">  
 
 ## :material-note-edit-outline:{.icon-def-0} Example Use Cases
 
@@ -176,7 +176,7 @@ The `run` method gives a single result which is a summary of all the aggregated 
 
 To start off, let's do a web search through the command line :material-arrow-down-bold-outline:{.icon-def-0}. 
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
 <a id="cl"></a>
 
@@ -236,7 +236,7 @@ Now that we know how to use the `run` method to get a summary of results :materi
 
 In the next example, I show how to do this by creating and running a custom script to get a list of results for a query :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
 <a id="rs"></a>
 
@@ -283,7 +283,7 @@ To do a web search, follow these steps:
 
 Again, all logs will be printed in the console and stored in :material-note-edit-outline:{.icon-def-0} `./searxng-docker.log`. The name of the Python script doesn't matter as long as you use the same name in [step 2][step-create] and [step 3][step-run]. 
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 Now, you have the tools to edit the script (or create an entirely new script) to get any query results you like :material-checkbox-marked-outline:{.icon-def-0}. For more structured queries, you can loop through getting a different number of results for different queries :material-refresh:{.icon-def-0} with something like the following:
 
@@ -309,7 +309,7 @@ To make sure our agents can utilize this up to date information, all we need to 
 
 Now that we understand how to use the code, let's open it up to check out the gears :material-cog-outline:{.icon-def-0} :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 90%;"> 
 
 <a id="proj-struct"></a>
 
@@ -380,13 +380,13 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 Ok, that's all the files :material-checkbox-marked-outline:{.icon-def-0}. Let's go diving :material-diving-scuba:{.icon-def-0}!
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 90%;"> 
 
 ## :material-file-code-outline:{.icon-def-0} Code Deep Dive
 
 Here, we're going to look at the relevant files in more detail :material-magnify:{.icon-def-0}. We're going to start with looking at the full files to see which parts of the code we'll want to learn, then we can further probe each of the important pieces to see how they work :material-map-marker-question-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
 <a id="searxng-utils"></a>
 
@@ -418,7 +418,7 @@ Similarly to the `ollama_utils.py` file in the [Ollama server tutorial][ollama-u
 
 Let's check these methods out :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 ---
 
@@ -452,7 +452,7 @@ Here, we see that we're using the `run` and `results` method of our `client` att
 
 Let's look at how we define the `client` attribute of the class more closely :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 ---
 
@@ -482,7 +482,7 @@ Now, it's generally good practice to make sure the SearXNG server can be reached
 
 Let's look at how we test the SearXNG server more closely :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 ---
 
@@ -528,7 +528,7 @@ And that's it :material-checkbox-marked-outline:{.icon-def-0}! Those are all the
 
 Now, how about creating the SearXNG server that we'll be pointing to in order to get results :material-arrow-down-bold-outline:{.icon-def-0}?
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
 <a id="docker-compose"></a>
 
@@ -550,7 +550,7 @@ Similarly to how we defined the Ollama container under the `services` section in
 
 In the snippet below, I show how to define the SearXNG service as well as the volumes and networks :material-arrow-down-bold-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 ---
 
@@ -588,7 +588,7 @@ In our case, when the server is deemed unhealthy :material-thermometer-alert:{.i
 
 That's it :material-checkbox-marked-outline:{.icon-def-0}! We've gone through all the code in this repo that's needed to understand how to setup a :simple-searxng:{.icon-def-0} SearXNG server in :simple-docker:{.icon-def-0} Docker and use it to search the web with the Requests and :simple-langchain:{.icon-def-0} LangChain libraries :material-creation-outline:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 90%;"> 
 
 ## :material-bookshelf:{.icon-def-0} Next Steps & Learning Resources
 
@@ -598,13 +598,13 @@ Continue learning how to build the rest of the servers by following along with a
 
 Just like all the other tutorials, :simple-github:{.icon-def-0} [all the source code is available][animakit] so you can plug and play any of tutorial code right away :material-controller-classic:{.icon-def-0}.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
 ## :material-link-variant:{.icon-def-0} Contributing 
 
 This tutorial is a work in progress. If you'd like to suggest or add improvements :material-notebook-edit-outline:{.icon-def-0}, fix bugs or typos :material-shield-bug-outline:{.icon-def-0}, ask questions to clarify :material-chat-question-outline:{.icon-def-0}, or discuss your understanding :material-wizard-hat:{.icon-def-0}, feel free to contribute through participating in the site :material-forum-outline:{.icon-def-0} [discussions][discussions]! Check out the :material-link-variant:{.icon-def-0} [contributing guidelines][contributing] to get started.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 
 <!-- FOOTNOTES -->

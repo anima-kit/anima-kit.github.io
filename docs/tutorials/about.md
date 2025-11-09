@@ -11,7 +11,7 @@ template: pages.html
 
 # :material-dna:{ .icon-def-0 } About
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
 !!! tl-dr "TL;DR"
     I like building AI projects and I want to learn more and contribute to the field :material-robot-excited-outline:{ .icon-def-0 }. So, I'm distilling what I've been learning and packaging it for anyone that wants to learn with me :material-wizard-hat:{ .icon-def-0 }.
@@ -45,7 +45,7 @@ Nothing quite like difficult life experiences to strengthen one's resolve, endur
 
 I sure did find my lodestone during this time :material-magnet-on:{ .icon-def-0 } :material-compass-outline:{ .icon-def-0 } and trying to contribute to the field of AI is a part of it. So, [let's go][tutorials]! :material-rocket-launch-outline:{ .icon-def-0 }   
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
 ## :material-flask-round-bottom:{ .icon-def-0 } Why these tutorials?
 
@@ -67,7 +67,7 @@ Now, my learning technique for this subject material has been to figure out how 
 
 But, when I started cleaning all the projects that I had accumulated over my course of learning :material-monitor-shimmer:{ .icon-def-0 }, I realized how confused *I still was* :material-head-question-outline:{ .icon-def-0 }. So, I started making tutorials with an audience of non-experts in mind :material-crowd:{ .icon-def-0 }. Because that's what I am, a non-expert trying to learn the field :material-puzzle-outline:{ .icon-def-0 }, and it was *definitely* what I was when I started learning and needed the tutorials of others to get a jump start :material-hand-heart:{ .icon-def-0 }.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
 ## :material-gift-open-outline:{ .icon-def-0 } What are the tutorials like?
 
@@ -77,7 +77,7 @@ The first part of each tutorial is then dedicated to step-by-step guides to get 
 
 It's probably pretty obvious by now that I like to use code that I can open up to check out the gears if I need to :material-cog-outline:{ .icon-def-0 }. So, much of the code that we'll use from other libraries will be available to view in all their full glory on :simple-github:{ .icon-def-0 } [Github][github]{.blank}. I also like to use libraries and platforms that are free to use :material-currency-usd-off:{ .icon-def-0 }. No need for a paywall. Just plug into your code and play :material-controller-classic-outline:{ .icon-def-0 }. 
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 ---
 
@@ -87,7 +87,7 @@ These projects :material-file-code-outline:{ .icon-def-0 }, these tutorials :mat
 
 So, if you want [code to build specialized AI agents][animakit] :material-file-code-outline:{ .icon-def-0 }, or if you want to learn [how the code for building agents works][agents] :material-wizard-hat:{ .icon-def-0 }, or you want [something somewhere in between][tutorials] :material-head-cog-outline:{ .icon-def-0 }, here's my knowledge! :material-hand-heart:{ .icon-def-0 }
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 
 <!-- FOOTNOTES -->

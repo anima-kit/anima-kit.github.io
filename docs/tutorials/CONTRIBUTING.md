@@ -1,8 +1,6 @@
 ---
 title: Contributing
 template: pages.html
-hide: 
-  - navigation
 ---
 
 

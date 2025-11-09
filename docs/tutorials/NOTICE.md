@@ -1,8 +1,6 @@
 ---
 title: License Notice
 template: pages.html
-hide: 
-  - navigation
 ---
 
 

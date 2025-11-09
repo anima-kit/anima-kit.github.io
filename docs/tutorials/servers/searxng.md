@@ -627,7 +627,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [code-run-results]: searxng.md#code-run-results
 [code-test-searxng]: searxng.md#code-test-searxng
 [command-line]: searxng.md#cl
-[contributing]: ../../CONTRIBUTING.md
+[contributing]: ../CONTRIBUTING.md
 [discussions]: https://github.com/anima-kit/anima-kit.github.io/discussions
 [docker]: https://www.docker.com/
 [docker-compose-full]: searxng.md#docker-compose-file

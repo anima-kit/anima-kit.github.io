@@ -1,8 +1,6 @@
 ---
 title: Code of Conduct
 template: pages.html
-hide: 
-  - navigation
 ---
 
 

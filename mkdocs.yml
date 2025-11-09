@@ -1,11 +1,11 @@
 ## Site
-site_name: anima-kit
+site_name: AnimaKit AI
 repo_name: "anima-kit/anima-kit.github.io"
 repo_url: https://github.com/anima-kit/anima-kit.github.io
 site_url: https://anima-kit.github.io/
-site_description: anima-kit | Learning AI, building demos, sharing results
+site_description: AnimaKit AI | Learning AI, building demos, sharing results
 site_author: Lauren Street
-copyright: Copyright &copy; 2025 <a href="https://github.com/anima-kit">anima-kit</a>
+copyright: Copyright &copy; 2025 <a href="https://github.com/anima-kit">AnimaKit AI</a>
 
 ## Theme
 theme:
@@ -109,15 +109,12 @@ extra:
     - icon: fontawesome/brands/github 
       link: https://github.com/anima-kit/
       name: Github
-
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/animakitai/
       name: LinkedIn
-
     - icon: fontawesome/brands/medium
       link: https://medium.com/@animakit/
       name: Medium
-
     - icon: fontawesome/brands/twitter
       link: https://x.com/animakit/
       name: Twitter
@@ -136,6 +133,16 @@ extra_javascript:
 ## Navigation
 nav:
   - Home: index.md
+  - Projects:
+    - Projects Guide: projects/index.md
+    - Medical:
+      - Medical Projects: projects/medical/index.md
+    - Agents:
+      - Agent Projects: projects/agents/index.md
+    - Servers:
+      - Server Projects: projects/servers/index.md
+    - Tutorials:
+      - Tutorials: tutorials/index.md
   - Learning:
     - Tutorials Guide: tutorials/index.md
     - Servers: 
@@ -154,7 +161,8 @@ nav:
       - RAG Guide: tutorials/rag/index.md
     - Odds and Ends:
       - Odds and Ends Guide: tutorials/misc/index.md
+    - About: tutorials/about.md
+    - Contributing: tutorials/CONTRIBUTING.md
+    - Code of Conduct: tutorials/CODE_OF_CONDUCT.md
+    - License Notice: tutorials/NOTICE.md
   - About: about.md
-  - Contributing: CONTRIBUTING.md
-  - Code of Conduct: CODE_OF_CONDUCT.md
-  - License Notice: NOTICE.md

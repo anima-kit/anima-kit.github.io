@@ -677,7 +677,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [code-agent]: ../agents/code-agent.md
 [code-best-practices]: ollama.md#code-best-practices
 [command-line]: ollama.md#cl
-[contributing]: ../../CONTRIBUTING.md
+[contributing]: ../CONTRIBUTING.md
 [deepseek]: https://ollama.com/library/deepseek-r1
 [discussions]: https://github.com/anima-kit/anima-kit.github.io/discussions
 [docker]: https://www.docker.com/

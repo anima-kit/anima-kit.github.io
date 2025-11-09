@@ -32,6 +32,7 @@
   --color-blue-dark: #1F446C;
   --color-blue-darker: #400047;
   --color-blue-darkest: #0E131A;
+  --color-blue-darkest--least-transparent: 	hsla(215, 30%, 8%, 0.5);
   --color-blue-light: #B0CFFF;
   --color-blue-light--least-transparent: hsla(216, 100%, 85%, 0.5);
   --color-blue-light-2: #E0ECFF;
@@ -52,9 +53,10 @@ MAIN THEMES
   --md-color--shade-0: var(--color-blue-darker);
   --md-color--shade-1: var(--color-blue-primary);
   --md-color--shade-2: var(--color-blue-lighter);
+  --md-color--shade-3: var(--color-blue-lightest--least-transparent);
   --md-default-bg-color: var(--color-blue-darkest);
-  --md-primary-bg-color: var(--md-default-bg-color);
-  --md-primary-fg-color: var(--color-blue-dark);
+  --md-primary-bg-color: var(--color-blue-lightest);
+  --md-primary-fg-color: var(--color-blue-darkest);
   --md-primary-fg-color--dark: var(--color-blue-secondary);
   --md-accent-fg-color: var(--color-blue-primary);
   --md-typeset-a-color: var(--color-blue-secondary) !important;
@@ -70,9 +72,10 @@ MAIN THEMES
   --md-color--shade-0: var(--color-blue-lighter);
   --md-color--shade-1: var(--color-blue-dark);
   --md-color--shade-2: var(--color-blue-darker);
-  --md-primary-bg-color: var(--color-blue-darkest);
+  --md-color--shade-3: var(--color-blue-darkest--least-transparent);
   --md-default-bg-color: var(--color-blue-lightest);
-  --md-primary-fg-color: var(--color-blue-light);
+  --md-primary-bg-color: var(--color-blue-darkest);
+  --md-primary-fg-color: var(--color-blue-lightest);
   --md-primary-fg-color--dark: var(--color-blue-secondary);
   --md-accent-fg-color: var(--color-blue-dark);
   --md-typeset-a-color: var(--color-blue-tertiary) !important;
@@ -381,6 +384,9 @@ HEADER
 */
 .md-header__title {
   font-size: 1.6rem;
+}
+.md-header {
+  border-bottom: 0.1rem dotted var(--md-color--shade-3);
 }
 
 

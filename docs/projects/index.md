@@ -3,11 +3,10 @@ title: Projects
 template: pages.html
 ---
 
-This page is currently under construction.
-
-<h1 style="text-align: center;">Coding Solutions</h1>
+<h1 style="color: var(--md-primary-bg-color); font-weight:600; text-align: center;">Coding Solutions</h1>
 
 !!! tl-dr "TL;DR"
+    Check out my projects below or keep scrolling for more information. :material-arrow-down-bold-outline:{ .md-icon }
 
 <hr class="md-icon", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
 

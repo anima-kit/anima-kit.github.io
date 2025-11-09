@@ -12,7 +12,7 @@ template: pages.html
 
 # :material-robot-happy-outline:{.icon-def-0} Code of Conduct
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
 ## :material-shield-sun-outline:{.icon-def-0} Our Pledge
 
@@ -74,7 +74,7 @@ Project maintainers have the right and responsibility :material-compass-outline:
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.0, available at [https://www.contributor-covenant.org/version/2/0/code_of_conduct.html][v2.0].
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 ---
 

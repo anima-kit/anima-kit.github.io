@@ -16,7 +16,7 @@ template: pages.html
 !!! tl-dr "TL;DR"
     Learn how to build the servers needed to power your agents :material-robot-outline:{ .icon-def-0 }. Dive into the tutorials below to check them out, or keep scrolling to learn more :material-arrow-down-bold-outline:{ .icon-def-0 }.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
 <div class="grid cards" markdown>
 
@@ -54,7 +54,7 @@ template: pages.html
 
 </div>
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
 <a id="servers-why"></a>
 
@@ -87,7 +87,7 @@ However, I found myself compelled to learn how to setup the servers I would need
 
 What I found was that hosting all the servers I needed was really easy once I understood how to use platforms like [Docker][docker]{.blank} :material-checkbox-marked-outline:{ .icon-def-0 }.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;">  
+<hr class="icon-def-1 primary-icon", style="width: 90%;">  
 
 ## :simple-docker:{ .icon-def-0 } Why are we using Docker?
 
@@ -107,7 +107,7 @@ A viable alternative that I hear great things about, but that I haven't tried to
 
 For the agent brain, we're going to use LMs served with :simple-ollama:{ .icon-def-0 } [Ollama][ollama]{.blank} and to enhance these LMs, we're going to get a :simple-searxng:{ .icon-def-0 } [SearXNG][searxng]{.blank} metasearch engine and a :simple-milvus:{ .icon-def-0 } [Milvus][milvus]{.blank} vectorstore up and running. All of these servers can be containerized in Docker and passed over to our agents with ease :material-checkbox-marked-outline:{ .icon-def-0 }.
 
-<hr class="icon-def-1", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="icon-def-1 primary-icon", style="width: 30%;">  
 
 Check out any of tutorials above to get started :material-arrow-up-bold-outline:{ .icon-def-0 }! To see how to pass all these servers over to our agents in order to create assistants that can grab us up to date information or information relevant to our own personal documents, check out the :material-robot-outline:{ .icon-def-0 } [agents tutorials][agents].
 

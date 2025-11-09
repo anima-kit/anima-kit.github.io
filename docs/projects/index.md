@@ -3,68 +3,52 @@ title: Projects
 template: pages.html
 ---
 
-<h1 style="color: var(--md-primary-bg-color); font-weight:600; text-align: center;">Coding Solutions</h1>
+<h1 style="font-weight:600; text-align: center;">Projects</h1>
 
-!!! tl-dr "TL;DR"
-    Check out my projects below or keep scrolling for more information. :material-arrow-down-bold-outline:{ .md-icon }
+!!! welcome "Hiya!"
+    Welcome to my portfolio site! Check out my projects below. :material-arrow-down-bold-outline:{ .md-icon }
 
-<hr class="md-icon", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 90%; margin: 0 auto;"> 
+<hr class="tertiary-icon", style="width: 90%;"> 
 
 <div class="grid cards" markdown>
 
--   <p style="text-align: center;">Medical</p>
+-   :material-heart-pulse:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> Medical </span>
 
     ---
 
-    Description.
+    Applying AI to solve real-world healthcare problems.
 
-    [:material-arrow-right-thin: Check out Medical][medical]
+    [:material-arrow-right-thin: Checkout Medical][medical]
 
--   <p style="text-align: center;">AI Agents</p>
-
-    ---
-
-    Description.
-
-    [:material-arrow-right-thin: Checkout AI Agents][agents]
-
--   <p style="text-align: center;">Servers</p>
+-   :material-robot-excited-outline:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> Agents </span>
 
     ---
 
-    Description.
+    Building specialized agents to help with various tasks.
 
-    [:material-arrow-right-thin: Check out Servers][servers]
+    [:material-arrow-right-thin: Checkout Agents][agents]
 
--   <p style="text-align: center;">Tutorials</p>
+-   :material-server:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> Servers </span>
 
     ---
 
-    Description.
+    Creating servers to power AI.
+
+    [:material-arrow-right-thin: Checkout Servers][servers]
+
+-   :material-bookshelf:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> Tutorials </span>
+
+    ---
+
+    Learning and teaching the fundamentals of coding AI.
 
     [:material-arrow-right-thin: Checkout Tutorials][tutorials]
 
 </div>
 
-<hr class="md-icon", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
-
-<h4 style="text-align: center;">Medical</h4>
-
-<hr class="md-icon", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
-
-<h4 style="text-align: center;">AI Agents</h4>
-
-<hr class="md-icon", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
-
-<h4 style="text-align: center;">Servers</h4>
-
-<hr class="md-icon", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 60%; margin: 0 auto;"> 
-
-<h4 style="text-align: center;">Tutorials</h4>
-
 ---
 
-<hr class="md-icon", style="border-top: 0.2rem dotted; border-bottom: transparent; width: 30%; margin: 0 auto;"> 
+<hr class="primary-icon", style="width: 30%;"> 
 
 
 <!-- LINKS -->

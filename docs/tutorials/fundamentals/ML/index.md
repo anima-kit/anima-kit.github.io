@@ -26,7 +26,7 @@ template: pages.html
 
     [:material-arrow-right-thin: Get started with Linear Regression Basics][linear-regression-basics]
 
--   :material-shape-plus:{ .icon-def-0 } Data Preprocessing
+-   :material-flask-round-bottom:{ .icon-def-0 } Data Preprocessing
 
     ---
 

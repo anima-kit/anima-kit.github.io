@@ -163,6 +163,7 @@ nav:
       - Machine Learning: 
         - Machine Learning Guide: tutorials/fundamentals/ML/index.md
         - Linear Regression: tutorials/fundamentals/ML/linear-regression-basics.md
+        - Data Preprocesing: tutorials/fundamentals/ML/data-preprocessing.md
     - About: tutorials/about.md
     - Contributing: tutorials/CONTRIBUTING.md
     - Code of Conduct: tutorials/CODE_OF_CONDUCT.md

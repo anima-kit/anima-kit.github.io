@@ -174,110 +174,17 @@ df = pd.read_csv(os.path.join(file_path, 'Energy_consumption.csv'))
 df.head()
 ```
 
-??? faq "See Output"
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe" style="background-color: hsla(var(--md-hue), 25%, 25%, 1)">
-    <thead>
-        <tr style="text-align: right;">
-        <th></th>
-        <th>Timestamp</th>
-        <th>Temperature</th>
-        <th>Humidity</th>
-        <th>SquareFootage</th>
-        <th>Occupancy</th>
-        <th>HVACUsage</th>
-        <th>LightingUsage</th>
-        <th>RenewableEnergy</th>
-        <th>DayOfWeek</th>
-        <th>Holiday</th>
-        <th>EnergyConsumption</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th>0</th>
-        <td>2022-01-01 00:00:00</td>
-        <td>25.139433</td>
-        <td>43.431581</td>
-        <td>1565.693999</td>
-        <td>5</td>
-        <td>On</td>
-        <td>Off</td>
-        <td>2.774699</td>
-        <td>Monday</td>
-        <td>No</td>
-        <td>75.364373</td>
-        </tr>
-        <tr>
-        <th>1</th>
-        <td>2022-01-01 01:00:00</td>
-        <td>27.731651</td>
-        <td>54.225919</td>
-        <td>1411.064918</td>
-        <td>1</td>
-        <td>On</td>
-        <td>On</td>
-        <td>21.831384</td>
-        <td>Saturday</td>
-        <td>No</td>
-        <td>83.401855</td>
-        </tr>
-        <tr>
-        <th>2</th>
-        <td>2022-01-01 02:00:00</td>
-        <td>28.704277</td>
-        <td>58.907658</td>
-        <td>1755.715009</td>
-        <td>2</td>
-        <td>Off</td>
-        <td>Off</td>
-        <td>6.764672</td>
-        <td>Sunday</td>
-        <td>No</td>
-        <td>78.270888</td>
-        </tr>
-        <tr>
-        <th>3</th>
-        <td>2022-01-01 03:00:00</td>
-        <td>20.080469</td>
-        <td>50.371637</td>
-        <td>1452.316318</td>
-        <td>1</td>
-        <td>Off</td>
-        <td>On</td>
-        <td>8.623447</td>
-        <td>Wednesday</td>
-        <td>No</td>
-        <td>56.519850</td>
-        </tr>
-        <tr>
-        <th>4</th>
-        <td>2022-01-01 04:00:00</td>
-        <td>23.097359</td>
-        <td>51.401421</td>
-        <td>1094.130359</td>
-        <td>9</td>
-        <td>On</td>
-        <td>Off</td>
-        <td>3.071969</td>
-        <td>Friday</td>
-        <td>No</td>
-        <td>70.811732</td>
-        </tr>
-    </tbody>
-    </table>
-    </div>
+<div class="center-table" markdown>
+
+| Timestamp | Temperature | Humidity | SquareFootage | Occupancy | HVACUsage | LightingUsage | RenewableEnergy | DayOfWeek | Holiday | EnergyConsumption |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2022-01-01 00:00:00 | 25.139433 | 43.431581 | 1565.693999 | 5 | On | Off | 2.774699 | Monday | No | 75.364373
+| 2022-01-01 01:00:00 | 27.731651 | 54.225919 | 1411.064918 | 1 | On | On | 21.831384 | Saturday | No | 83.401855 |
+| 2022-01-01 02:00:00 | 28.704277 | 58.907658 | 1755.715009 | 2 | Off | Off | 6.764672 | Sunday | No | 78.270888 | 
+| 2022-01-01 03:00:00 | 20.080469 | 50.371637 | 1452.316318 | 1 | Off | On | 8.623447 | Wednesday | No | 56.519850 |
+| 2022-01-01 04:00:00 | 23.097359 | 51.401421 | 1094.130359 | 9 | On | Off | 3.071969 | Friday | No | 70.811732
+
+</div>
 
 Now, we can see exactly what types of *features* we can potentially use to predict our *target*. For a given day and time, each of our potential features are recorded along with our target, `EnergyConsumption`. We're going to see how to use these features to predict the total energy consumed given different data values. What this means is that in order to predict the energy that will be consumed, we need to know the values of each feature that we use to create our model.
 
@@ -690,7 +597,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![png](assets/00-basics_54_0.png)
+![png](assets/00-basics_54_0.png){.img-def}
 
 We can see that our loss quickly converged to some value close to around $200$ epochs, while our predicted values don't quite line up with many of the actual values. The red, solid line here shows where the predicted and actual values coincide. The green filled region shows where the predicted values are off by $10\%$ from the actual values, while the dotted and dashed black lines show the averages of the actual and predicted values. We seem to have quite a large scatter around the perfect prediction line, with many of the points falling outside the $10\%$ range. Finally, our predicted mean is a bit off compared to the actual mean. I think our model could benefit greatly from some improvements!
 
@@ -710,7 +617,7 @@ plt.grid(True)
 plt.show()
 ```
 
-![png](assets/00-basics_56_0.png) 
+![png](assets/00-basics_56_0.png){.img-def}
 
 We can see the temperature has the most contribution to our predicted energy consumption, by far. In the next tutorial, we'll add in the rest of the features that we left out for this model, so we can see if any other features contribute nearly as much as the temperature. But, before we go adding other features, let's evaluate the ones we've already chosen a little bit more.  
 
@@ -740,7 +647,7 @@ plt.title('Feature Correlation Matrix')
 plt.show()
 ```
 
-![png](assets/00-basics_58_0.png)   
+![png](assets/00-basics_58_0.png){.img-def}
 
 We can see that the temperature and total energy consumed are highly, positively correlated, while the occupancy and renewable energy sources are somewhat, positively correlated with the target. The humidity has the most negative correlation with the target while none of the features seem to be too dependent on each other. 
 
@@ -788,7 +695,7 @@ plt.grid(True)
 plt.show()
 ```
 
-![png](assets/00-basics_60_0.png)
+![png](assets/00-basics_60_0.png){.img-def}
     
 We can see that the `Humidity`, `RenewableEnergy` , and `SquareFootage` features tend to have a small effect on predictions, as shuffling their values doesn't change the MSE that much. The temperature has a huge effect on predictions, while the occupancy has a mild effect. To make our model simpler, we can potentially drop the features that seem to have little effect (i.e. little weight and permutation importance with small correlation coefficients across the board). However, we still have quite a number of features that we left out. Perhaps some of the features that show little importance or correlation will change once we look at the entire feature set. 
 
@@ -797,3 +704,7 @@ We've briefly gone over supervised learning and started examining learning metho
 We did all this through a step-by-step guide on how to create and train a model from start to finish, and we also saw a little bit of the supporting math throughout our journey. 
 
 Stay tuned for the next tutorial, where we'll add the rest of the features that we left out. Do you think it will improve our model? What other features do you think could have a strong contribution to energy consumption?
+
+---
+
+<hr class="icon-def-1 primary-icon", style="width: 30%;"> 

@@ -47,8 +47,7 @@ theme:
     - scheme: default
       toggle:
         icon: material/brightness-3
-        name: Dark mode
-
+        name: Dark mode    
 
 ## Markdown
 markdown_extensions:
@@ -159,8 +158,12 @@ nav:
       - Code Agent: tutorials/agents/code-agent.md 
     - RAG: 
       - RAG Guide: tutorials/rag/index.md
-    - Odds and Ends:
-      - Odds and Ends Guide: tutorials/misc/index.md
+    - Fundamentals:
+      - Fundamentals Guide: tutorials/fundamentals/index.md
+      - Machine Learning: 
+        - Machine Learning Guide: tutorials/fundamentals/ML/index.md
+        - Linear Regression: tutorials/fundamentals/ML/linear-regression-basics.md
+        - Data Preprocesing: tutorials/fundamentals/ML/data-preprocessing.md
     - About: tutorials/about.md
     - Contributing: tutorials/CONTRIBUTING.md
     - Code of Conduct: tutorials/CODE_OF_CONDUCT.md

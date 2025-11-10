@@ -12,11 +12,19 @@ template: pages.html
 # :material-note-multiple:{ .icon-def-0 } Tutorials
 
 !!! tl-dr "TL;DR"
-    Learn how to build your own `AI agents` :material-robot-outline:{ .icon-def-0 } and interact with them via easy to use web UIs. Dive into the tutorials below or keep scrolling to learn more :material-arrow-down-bold-outline:{ .icon-def-0 }.
+    Learn `all about AI` including how to build your own `AI agents` :material-robot-outline:{ .icon-def-0 } and interact with them via easy to use web UIs. Dive into the tutorials below or keep scrolling to learn more :material-arrow-down-bold-outline:{ .icon-def-0 }.
 
 <hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
 <div class="grid cards" markdown>
+
+-   :material-shape-plus:{ .icon-def-0 } Fundamentals
+
+    ---
+
+    Learn about the fundamentals of AI including ML, DL, NLP, and generative models.
+
+    [:material-arrow-right-thin: Get started with Fundamentals][odds-ends]
 
 -   :material-server:{ .icon-def-0 } Servers
 
@@ -41,14 +49,6 @@ template: pages.html
     Learn advanced RAG techniques to enhance the information retrieval of your agents.
 
     [:material-arrow-right-thin: Get started with RAG][rag]
-
--   :material-shape-plus:{ .icon-def-0 } Odds and Ends
-
-    ---
-
-    Learn about other aspects of AI including deep learning, NLP, MCPs, and generative models.
-
-    [:material-arrow-right-thin: Get started with Odds and Ends][odds-ends]
 
 </div>
 
@@ -89,7 +89,7 @@ In the :material-server:{ .icon-def-0 } [servers series][servers], I discuss how
 
 For each of the tutorials, there will be a :simple-github:{ .icon-def-0 } [Github repo][animakit] with :material-file-code-outline:{ .icon-def-0 } `all the source code included`, so you can check out any of the tutorials as standalone lessons. However, they do tend to build off of each other nicely :material-stairs:{ .icon-def-0 }.
 
-I suggest starting with the :material-server:{ .icon-def-0 } [servers tutorials][servers] and working your way through to the :material-robot-excited-outline:{ .icon-def-0 } [agent examples][agents] after that. You can then check out more advanced techniques to get your agents to retrieve relevant information with the :material-bookshelf:{ .icon-def-0 } [RAG tutorials][rag]. While taking a break from any of these, you can also brush up on other aspects of AI with the :material-shape-plus:{ .icon-def-0 } [odds and ends section][odds-ends].
+I suggest starting with the :material-server:{ .icon-def-0 } [servers tutorials][servers] and working your way through to the :material-robot-excited-outline:{ .icon-def-0 } [agent examples][agents] after that. You can then check out more advanced techniques to get your agents to retrieve relevant information with the :material-bookshelf:{ .icon-def-0 } [RAG tutorials][rag]. While taking a break from any of these, you can also brush up your AI knowledge with the :material-shape-plus:{ .icon-def-0 } [fundamentals][odds-ends].
 
 Check out any of the tutorials above to get started :material-arrow-up-bold-outline:{ .icon-def-0 }. You can also keep reading to see what software you may need or want in order to follow along :material-arrow-down-bold-outline:{ .icon-def-0 }.
 
@@ -126,7 +126,7 @@ I made these lessons so that they could be used by a wide variety of people; whe
 [milvus]: https://milvus.io/
 [milvus-tutorial]: servers/milvus.md
 [neovim]: https://neovim.io/
-[odds-ends]: misc/index.md
+[odds-ends]: fundamentals/index.md
 [ollama]: https://ollama.com/
 [ollama-tutorial]: servers/ollama.md
 [pycharm]: https://www.jetbrains.com/pycharm/

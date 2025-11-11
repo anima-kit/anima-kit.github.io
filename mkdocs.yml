@@ -111,6 +111,9 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/animakitai/
       name: LinkedIn
+    - icon: fontawesome/brands/kaggle
+      link: https://www.kaggle.com/laurenstreet
+      name: Kaggle
     - icon: fontawesome/brands/medium
       link: https://medium.com/@animakit/
       name: Medium
@@ -134,16 +137,12 @@ nav:
   - Home: index.md
   - Projects:
     - Projects Guide: projects/index.md
-    - Medical:
-      - Medical Projects: projects/medical/index.md
-    - Agents:
-      - Agent Projects: projects/agents/index.md
-    - Servers:
-      - Server Projects: projects/servers/index.md
-    - Tutorials:
-      - Tutorials: tutorials/index.md
   - Learning:
     - Tutorials Guide: tutorials/index.md
+    - Fundamentals:
+      - Fundamentals Guide: tutorials/fundamentals/index.md
+      - Linear Regression: tutorials/fundamentals/linear-regression-basics.md
+      - Data Preprocesing: tutorials/fundamentals/data-preprocessing.md
     - Servers: 
       - Servers Guide: tutorials/servers/index.md
       - Ollama: tutorials/servers/ollama.md
@@ -158,12 +157,6 @@ nav:
       - Code Agent: tutorials/agents/code-agent.md 
     - RAG: 
       - RAG Guide: tutorials/rag/index.md
-    - Fundamentals:
-      - Fundamentals Guide: tutorials/fundamentals/index.md
-      - Machine Learning: 
-        - Machine Learning Guide: tutorials/fundamentals/ML/index.md
-        - Linear Regression: tutorials/fundamentals/ML/linear-regression-basics.md
-        - Data Preprocesing: tutorials/fundamentals/ML/data-preprocessing.md
     - About: tutorials/about.md
     - Contributing: tutorials/CONTRIBUTING.md
     - Code of Conduct: tutorials/CODE_OF_CONDUCT.md

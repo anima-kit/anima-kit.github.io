@@ -14,17 +14,20 @@
         <meta name="author" content="Lauren Street">
       
       
-        <link rel="canonical" href="https://anima-kit.github.io/tutorials/fundamentals/ML/data-preprocessing/">
+        <link rel="canonical" href="https://anima-kit.github.io/tutorials/fundamentals/data-preprocessing/">
       
       
         <link rel="prev" href="../linear-regression-basics/">
       
       
-        <link rel="next" href="../../../about/">
+        <link rel="next" href="../../servers/">
       
       
-      <link rel="icon" href="../../../../assets/lxlgs/logo-3.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+        
+      
+      
+      <link rel="icon" href="../../../assets/lxlgs/logo-3.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
 
@@ -35,10 +38,10 @@
   
 
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,15 +60,14 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.x/css/materialdesignicons.min.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
-    
     
     
   </head>
@@ -103,9 +105,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="AnimaKit AI" class="md-header__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
+    <a href="../../.." title="AnimaKit AI" class="md-header__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
       
-  <img src="../../../../assets/lxlgs/logo-3.png" alt="logo">
+  <img src="../../../assets/lxlgs/logo-3.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -227,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -248,7 +250,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../projects/" class="md-tabs__link">
+        <a href="../../../projects/" class="md-tabs__link">
           
   
   
@@ -270,7 +272,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -288,7 +290,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -329,9 +331,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="AnimaKit AI" class="md-nav__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
+    <a href="../../.." title="AnimaKit AI" class="md-nav__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
       
-  <img src="../../../../assets/lxlgs/logo-3.png" alt="logo">
+  <img src="../../../assets/lxlgs/logo-3.png" alt="logo">
 
     </a>
     AnimaKit AI
@@ -358,14 +360,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
       </a>
@@ -398,14 +405,19 @@
   
   
   
-    <a href="../../../../projects/" class="md-nav__link">
+    <a href="../../../projects/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
+    
+  
     Projects
+  
+
     
   </span>
+  
   
 
       
@@ -452,9 +464,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Learning
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -463,216 +480,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Learning
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Tutorials
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../../servers/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    Servers
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../../agents/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    Agents
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../../rag/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    RAG
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
-  
-  <span class="md-ellipsis">
-    Fundamentals
-    
-  </span>
+    Learning
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_5">
-            <span class="md-nav__icon md-icon"></span>
-            Fundamentals
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -688,9 +500,14 @@
   
   
   <span class="md-ellipsis">
-    Fundamentals Guide
+    
+  
+    Tutorials Guide
+  
+
     
   </span>
+  
   
 
       </a>
@@ -721,26 +538,35 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_5_2" id="__nav_3_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Machine Learning
+    
+  
+    Fundamentals
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
-            Machine Learning
+            
+  
+    Fundamentals
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -756,9 +582,14 @@
   
   
   <span class="md-ellipsis">
-    Machine Learning Guide
+    
+  
+    Fundamentals Guide
+  
+
     
   </span>
+  
   
 
       </a>
@@ -779,9 +610,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Linear Regression
+  
+
     
   </span>
+  
   
 
       </a>
@@ -811,9 +647,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Data Preprocesing
+  
+
     
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -824,9 +665,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Data Preprocesing
+  
+
     
   </span>
+  
   
 
       </a>
@@ -851,7 +697,9 @@
         <li class="md-nav__item">
   <a href="#linear-regression-with-preprocessing-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
-      Linear Regression with Preprocessing Pipeline
+      
+        Linear Regression with Preprocessing Pipeline
+      
     </span>
   </a>
   
@@ -860,7 +708,9 @@
         <li class="md-nav__item">
   <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup
+      
+        Setup
+      
     </span>
   </a>
   
@@ -870,7 +720,9 @@
           <li class="md-nav__item">
   <a href="#data" class="md-nav__link">
     <span class="md-ellipsis">
-      Data
+      
+        Data
+      
     </span>
   </a>
   
@@ -880,7 +732,9 @@
           <li class="md-nav__item">
   <a href="#get-dataset-from-kaggle" class="md-nav__link">
     <span class="md-ellipsis">
-      Get dataset from Kaggle
+      
+        Get dataset from Kaggle
+      
     </span>
   </a>
   
@@ -889,7 +743,9 @@
           <li class="md-nav__item">
   <a href="#extract-dataset" class="md-nav__link">
     <span class="md-ellipsis">
-      Extract dataset
+      
+        Extract dataset
+      
     </span>
   </a>
   
@@ -898,7 +754,9 @@
           <li class="md-nav__item">
   <a href="#create-dataframe" class="md-nav__link">
     <span class="md-ellipsis">
-      Create dataframe
+      
+        Create dataframe
+      
     </span>
   </a>
   
@@ -907,7 +765,9 @@
           <li class="md-nav__item">
   <a href="#split-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Split data
+      
+        Split data
+      
     </span>
   </a>
   
@@ -921,7 +781,9 @@
           <li class="md-nav__item">
   <a href="#model" class="md-nav__link">
     <span class="md-ellipsis">
-      Model
+      
+        Model
+      
     </span>
   </a>
   
@@ -930,7 +792,9 @@
           <li class="md-nav__item">
   <a href="#training" class="md-nav__link">
     <span class="md-ellipsis">
-      Training
+      
+        Training
+      
     </span>
   </a>
   
@@ -939,7 +803,9 @@
           <li class="md-nav__item">
   <a href="#evaluation" class="md-nav__link">
     <span class="md-ellipsis">
-      Evaluation
+      
+        Evaluation
+      
     </span>
   </a>
   
@@ -949,7 +815,9 @@
           <li class="md-nav__item">
   <a href="#metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      Metrics
+      
+        Metrics
+      
     </span>
   </a>
   
@@ -958,7 +826,9 @@
           <li class="md-nav__item">
   <a href="#plots" class="md-nav__link">
     <span class="md-ellipsis">
-      Plots
+      
+        Plots
+      
     </span>
   </a>
   
@@ -977,7 +847,9 @@
         <li class="md-nav__item">
   <a href="#preprocessing-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Preprocessing Example
+      
+        Preprocessing Example
+      
     </span>
   </a>
   
@@ -987,7 +859,9 @@
           <li class="md-nav__item">
   <a href="#prepare-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Prepare data
+      
+        Prepare data
+      
     </span>
   </a>
   
@@ -996,7 +870,9 @@
           <li class="md-nav__item">
   <a href="#train" class="md-nav__link">
     <span class="md-ellipsis">
-      Train
+      
+        Train
+      
     </span>
   </a>
   
@@ -1005,7 +881,9 @@
           <li class="md-nav__item">
   <a href="#evaluate" class="md-nav__link">
     <span class="md-ellipsis">
-      Evaluate
+      
+        Evaluate
+      
     </span>
   </a>
   
@@ -1033,8 +911,52 @@
 
               
             
-          </ul>
-        </nav>
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../servers/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servers
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -1043,6 +965,229 @@
             
               
                 
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../agents/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rag/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CODE_OF_CONDUCT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code of Conduct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NOTICE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Notice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
   
   
   
@@ -1053,108 +1198,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     About
+  
+
     
   </span>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CONTRIBUTING/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Contributing
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CODE_OF_CONDUCT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Code of Conduct
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../NOTICE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    License Notice
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    About
-    
-  </span>
   
 
       </a>
@@ -1193,7 +1244,9 @@
         <li class="md-nav__item">
   <a href="#linear-regression-with-preprocessing-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
-      Linear Regression with Preprocessing Pipeline
+      
+        Linear Regression with Preprocessing Pipeline
+      
     </span>
   </a>
   
@@ -1202,7 +1255,9 @@
         <li class="md-nav__item">
   <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup
+      
+        Setup
+      
     </span>
   </a>
   
@@ -1212,7 +1267,9 @@
           <li class="md-nav__item">
   <a href="#data" class="md-nav__link">
     <span class="md-ellipsis">
-      Data
+      
+        Data
+      
     </span>
   </a>
   
@@ -1222,7 +1279,9 @@
           <li class="md-nav__item">
   <a href="#get-dataset-from-kaggle" class="md-nav__link">
     <span class="md-ellipsis">
-      Get dataset from Kaggle
+      
+        Get dataset from Kaggle
+      
     </span>
   </a>
   
@@ -1231,7 +1290,9 @@
           <li class="md-nav__item">
   <a href="#extract-dataset" class="md-nav__link">
     <span class="md-ellipsis">
-      Extract dataset
+      
+        Extract dataset
+      
     </span>
   </a>
   
@@ -1240,7 +1301,9 @@
           <li class="md-nav__item">
   <a href="#create-dataframe" class="md-nav__link">
     <span class="md-ellipsis">
-      Create dataframe
+      
+        Create dataframe
+      
     </span>
   </a>
   
@@ -1249,7 +1312,9 @@
           <li class="md-nav__item">
   <a href="#split-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Split data
+      
+        Split data
+      
     </span>
   </a>
   
@@ -1263,7 +1328,9 @@
           <li class="md-nav__item">
   <a href="#model" class="md-nav__link">
     <span class="md-ellipsis">
-      Model
+      
+        Model
+      
     </span>
   </a>
   
@@ -1272,7 +1339,9 @@
           <li class="md-nav__item">
   <a href="#training" class="md-nav__link">
     <span class="md-ellipsis">
-      Training
+      
+        Training
+      
     </span>
   </a>
   
@@ -1281,7 +1350,9 @@
           <li class="md-nav__item">
   <a href="#evaluation" class="md-nav__link">
     <span class="md-ellipsis">
-      Evaluation
+      
+        Evaluation
+      
     </span>
   </a>
   
@@ -1291,7 +1362,9 @@
           <li class="md-nav__item">
   <a href="#metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      Metrics
+      
+        Metrics
+      
     </span>
   </a>
   
@@ -1300,7 +1373,9 @@
           <li class="md-nav__item">
   <a href="#plots" class="md-nav__link">
     <span class="md-ellipsis">
-      Plots
+      
+        Plots
+      
     </span>
   </a>
   
@@ -1319,7 +1394,9 @@
         <li class="md-nav__item">
   <a href="#preprocessing-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Preprocessing Example
+      
+        Preprocessing Example
+      
     </span>
   </a>
   
@@ -1329,7 +1406,9 @@
           <li class="md-nav__item">
   <a href="#prepare-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Prepare data
+      
+        Prepare data
+      
     </span>
   </a>
   
@@ -1338,7 +1417,9 @@
           <li class="md-nav__item">
   <a href="#train" class="md-nav__link">
     <span class="md-ellipsis">
-      Train
+      
+        Train
+      
     </span>
   </a>
   
@@ -1347,7 +1428,9 @@
           <li class="md-nav__item">
   <a href="#evaluate" class="md-nav__link">
     <span class="md-ellipsis">
-      Evaluate
+      
+        Evaluate
+      
     </span>
   </a>
   
@@ -1368,6 +1451,7 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -2187,13 +2271,13 @@
         
         
           
-          <a href="../../../about/" class="md-footer__link md-footer__link--next" aria-label="Next: About">
+          <a href="../../servers/" class="md-footer__link md-footer__link--next" aria-label="Next: Servers Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                About
+                Servers Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2252,6 +2336,14 @@
     
     
     
+    <a href="https://www.kaggle.com/laurenstreet" target="_blank" rel="noopener" title="Kaggle" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M304.2 501.5 158.4 320.3 298.2 185c2.6-2.7 1.7-10.5-5.3-10.5h-69.2c-3.5 0-7 1.8-10.5 5.3L80.9 313.5V7.5q0-7.5-7.5-7.5H21.5Q14 0 14 7.5v497q0 7.5 7.5 7.5h51.9q7.5 0 7.5-7.5v-109l30.8-29.3 110.5 140.6c3 3.5 6.5 5.3 10.5 5.3h66.9q5.25 0 6-3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
     <a href="https://medium.com/@animakit/" target="_blank" rel="noopener" title="Medium" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M369.4 32c43.4 0 78.6 35.2 78.6 78.6v83.8c-1.9-.1-3.8-.2-5.7-.2h-.4c-10 0-22.3 2.4-31.1 6.8-10 4.6-18.7 11.5-26 20.6-11.8 14.6-18.9 34.3-20.6 56.4-.1.7-.1 1.3-.2 2s-.1 1.2-.1 1.9c-.1 1.2-.1 2.4-.1 3.6 0 1.9-.1 3.8 0 5.8 1.2 50.1 28.2 90.2 76.3 90.2 2.7 0 5.3-.1 7.9-.4v20.4c0 43.4-35.2 78.6-78.6 78.6L78.6 480C35.2 480 0 444.8 0 401.4V110.6C0 67.2 35.2 32 78.6 32zM82.3 138.9l.3.1c13.2 3 19.8 7.4 19.8 23.4v187.2c0 16-6.7 20.4-19.9 23.4l-.3.1v2.8H135v-2.8l-.3-.1c-13.2-3-19.9-7.4-19.9-23.4V173.3l86.1 202.5h4.9l88.6-208.2v186.6c-1.1 12.6-7.8 16.5-19.7 19.2l-.3.1v2.7h91.9v-2.7l-.3-.1c-11.9-2.7-18.7-6.6-19.9-19.2l-.1-191.8h.1c0-16 6.7-20.4 19.9-23.4l.3-.1v-2.7h-72.2l-67 157.4-67-157.4H82.3zM448 340.3c-25.1-7.4-43-35.1-41.2-67.8h41.1v67.8zm-6.4-135.6c2.3 0 4.4.3 6.4.9V263h-40.2c1.5-33.6 13.6-57.9 33.8-58.3"/></svg>
     </a>
@@ -2278,18 +2370,19 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.footer", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.tooltips", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.tooltips", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../../javascripts/animations.js"></script>
+        <script src="../../../javascripts/animations.js"></script>
       
-        <script src="../../../../javascripts/ext-links.js"></script>
+        <script src="../../../javascripts/ext-links.js"></script>
       
     
   </body>

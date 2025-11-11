@@ -11,20 +11,28 @@ template: pages.html
 
 # :material-shape-plus:{ .icon-def-0 } Fundamentals
 
-!!! tl-dr "TL;DR"
-    Learn some of the `fundamental concepts` of AI with interactive notebooks. Dive into the tutorials below or keep scrolling to learn more :material-arrow-down-bold-outline:{ .icon-def-0 }.
+!!! welcome "Hiya"
+    Learn some of the `fundamental concepts` of AI with interactive notebooks :material-arrow-down-bold-outline:{ .icon-def-0 }.
 
 <hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
 <div class="grid cards" markdown>
 
--   :material-shape-plus:{ .icon-def-0 } Machine Learning
+-   :material-shape-plus:{ .icon-def-0 } Linear Regression Basics
 
     ---
 
-    Learn about supervised and unsupervised learning models in ML.
+    Start learning the basics of supervised learning with one of the simplest models.
 
-    [:material-arrow-right-thin: Get started with ML][ML]
+    [:material-arrow-right-thin: Get started with Linear Regression Basics][linear-regression-basics]
+
+-   :material-flask-round-bottom:{ .icon-def-0 } Data Preprocessing
+
+    ---
+
+    Learn how to preprocess data to improve our simple linear regression model.
+
+    [:material-arrow-right-thin: Get started with Data Preprocessing][data-preprocessing]
 
 -   :material-calendar-clock:{.md-icon} Stay Tuned...
 
@@ -34,13 +42,10 @@ template: pages.html
 
 </div>
 
-<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
-
-## :material-hammer-wrench:{ .icon-def-0 } ML
-
-:material-progress-wrench:{ .icon-def-0 } This is currently under construction.
+---
 
 <hr class="icon-def-1 primary-icon", style="width: 30%;">
 
 <!-- LINKS -->
-[ML]: ML/index.md
+[data-preprocessing]: data-preprocessing.md
+[linear-regression-basics]: linear-regression-basics.md

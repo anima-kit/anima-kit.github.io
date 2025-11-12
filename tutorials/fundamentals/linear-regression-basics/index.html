@@ -862,6 +862,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doc-extract-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Extraction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1472,23 +1500,7 @@
 \]</div>
 <p>where <span class="arithmatex">\(y_i\)</span> is the target variable (<code>Energy Consumption</code>) and <span class="arithmatex">\(x_{i1}, x_{i2}, \dots, x_{in}\)</span> are the features (<code>Temperature</code>, <code>Square Footage</code>, etc.) for the <span class="arithmatex">\(i\)</span>-th data point. The model parameters, <span class="arithmatex">\(\beta_0, \beta_1, \dots, \beta_n\)</span>, are to be learned by training our model. We're going to see how to create this function with a custom <code>LinearRegression</code> class using <a href="https://pytorch.org/">Pytorch</a>.</p>
 <hr />
-<p>To download the Kaggle dataset, you'll need a Kaggle account and API key. If you don't already have a key, it's really simple to setup:</p>
-<p><a id="kaggle-api-inst"></a></p>
-<ol>
-<li>Go to your <a href="https://www.kaggle.com/settings">Kaggle account settings</a>. Be sure to sign in if you haven't already done so. </li>
-<li>Scroll down until you see the API settings.</li>
-<li>
-<p>Click 'Create New Token' and save the <code>kaggle.json</code> file in the proper place:</p>
-<ul>
-<li>For Windows: <code>C:\Users\{username}\.kaggle\kaggle.json</code></li>
-<li>For Linux: <code>/home/{username}/.kaggle/kaggle.json</code></li>
-<li>For Mac: <code>/Users/{username}/.kaggle/kaggle.json</code></li>
-</ul>
-<p>where <code>{username}</code> is your system's user account name.</p>
-</li>
-</ol>
-<p>Now that you have your Kaggle API token setup, you'll be able to use it automatically within this notebook.</p>
-<hr />
+<p>To download the Kaggle dataset, you'll need a Kaggle account and API key. If you don't already have a key, checkout the [setup instructions][https://github.com/anima-kit/ai-notebooks/blob/main/README.md#-getting-started].</p>
 <p>So, let's get started! First, we're going to import all the libraries that we'll need, then we'll setup the data that we want to use to create our model. </p>
 <p>If you haven't already installed all the requirements, make sure to do this now:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>## Uncomment this cell and run if you haven&#39;t already installed all the required libraries
@@ -1510,7 +1522,7 @@
 <hr class="icon-def-1 primary-icon", style="width: 60%;">
 
 <h3 id="data">Data<a class="headerlink" href="#data" title="Anchor link to this section for reference">⚓︎</a></h3>
-<p>Here, we're going to download our dataset from Kaggle (see the <a href="#kaggle-api-inst">Kaggle API instructions</a> if you haven't already done so), then we'll create a <a href="https://pandas.pydata.org/">Pandas</a> dataframe to easily visualize and work with the data.</p>
+<p>Here, we're going to download our dataset, then we'll create a <a href="https://pandas.pydata.org/">Pandas</a> dataframe to easily visualize and work with the data.</p>
 <hr class="icon-def-1 primary-icon", style="width: 30%;">
 
 <h4 id="get-dataset-from-kaggle">Get dataset from Kaggle<a class="headerlink" href="#get-dataset-from-kaggle" title="Anchor link to this section for reference">⚓︎</a></h4>

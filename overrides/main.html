@@ -16,8 +16,9 @@
 <!-- Custom front matter -->
 {% block extrahead %}
 
-  <!-- Don't display header on this page -->
-  <style>.md-header {display: none;}</style>
+  {% if page.is_homepage %}
+    <style>.md-header {display: none;}</style>
+  {% endif %}
 
   <!-- Site image for social -->
   {% set image = config.site_url ~ 'assets/lxlgs/logo-4.png' %}

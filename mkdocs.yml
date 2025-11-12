@@ -100,6 +100,7 @@ markdown_extensions:
 ## Plugins
 plugins:
   - search
+  - blog
 
 
 ## Extra
@@ -161,4 +162,6 @@ nav:
     - Contributing: tutorials/CONTRIBUTING.md
     - Code of Conduct: tutorials/CODE_OF_CONDUCT.md
     - License Notice: tutorials/NOTICE.md
+  - Blog:
+    - blog/index.md
   - About: about.md

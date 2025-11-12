@@ -34,6 +34,14 @@ template: pages.html
 
     [:material-arrow-right-thin: Get started with Data Preprocessing][data-preprocessing]
 
+-   :material-file-document-multiple-outline:{ .icon-def-0 } Data Extraction
+
+    ---
+
+    Learn how to extract structured data from unstructured documents like PDFs and images.
+
+    [:material-arrow-right-thin: Get started with Data Extraction][data-extraction]
+
 -   :material-calendar-clock:{.md-icon} Stay Tuned...
 
     ---
@@ -47,5 +55,6 @@ template: pages.html
 <hr class="icon-def-1 primary-icon", style="width: 30%;">
 
 <!-- LINKS -->
+[data-extraction]: doc-extract-intro.md
 [data-preprocessing]: data-preprocessing.md
 [linear-regression-basics]: linear-regression-basics.md

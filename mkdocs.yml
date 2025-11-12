@@ -144,6 +144,7 @@ nav:
       - Fundamentals Guide: tutorials/fundamentals/index.md
       - Linear Regression: tutorials/fundamentals/linear-regression-basics.md
       - Data Preprocesing: tutorials/fundamentals/data-preprocessing.md
+      - Data Extraction: tutorials/fundamentals/doc-extract-intro.md
     - Servers: 
       - Servers Guide: tutorials/servers/index.md
       - Ollama: tutorials/servers/ollama.md

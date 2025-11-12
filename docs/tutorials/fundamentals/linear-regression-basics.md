@@ -62,23 +62,7 @@ where $y_i$ is the target variable (`Energy Consumption`) and $x_{i1}, x_{i2}, \
 ---
 
 
-To download the Kaggle dataset, you'll need a Kaggle account and API key. If you don't already have a key, it's really simple to setup:
-
-<a id="kaggle-api-inst"></a>
-
-1.  Go to your [Kaggle account settings](https://www.kaggle.com/settings). Be sure to sign in if you haven't already done so. 
-2.  Scroll down until you see the API settings.
-3.  Click 'Create New Token' and save the `kaggle.json` file in the proper place:
-    
-    - For Windows: `C:\Users\{username}\.kaggle\kaggle.json`
-    - For Linux: `/home/{username}/.kaggle/kaggle.json`
-    - For Mac: `/Users/{username}/.kaggle/kaggle.json`
-
-    where `{username}` is your system's user account name.
-
-Now that you have your Kaggle API token setup, you'll be able to use it automatically within this notebook.
-
----
+To download the Kaggle dataset, you'll need a Kaggle account and API key. If you don't already have a key, checkout the [setup instructions][https://github.com/anima-kit/ai-notebooks/blob/main/README.md#-getting-started].
 
 So, let's get started! First, we're going to import all the libraries that we'll need, then we'll setup the data that we want to use to create our model. 
 
@@ -111,7 +95,7 @@ Now that we've imported everything, let's setup our data.
 
 ### Data
 
-Here, we're going to download our dataset from Kaggle (see the [Kaggle API instructions](#kaggle-api-inst) if you haven't already done so), then we'll create a [Pandas](https://pandas.pydata.org/) dataframe to easily visualize and work with the data.
+Here, we're going to download our dataset, then we'll create a [Pandas](https://pandas.pydata.org/) dataframe to easily visualize and work with the data.
 
 <hr class="icon-def-1 primary-icon", style="width: 30%;">
 

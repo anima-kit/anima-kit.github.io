@@ -57,7 +57,7 @@ MAIN THEMES
   --md-default-bg-color: var(--color-blue-darkest);
   --md-primary-bg-color: var(--color-blue-lightest);
   --md-primary-fg-color: var(--color-blue-darkest);
-  --md-primary-fg-color--dark: var(--color-blue-secondary);
+  --md-primary-fg-color--dark: var(--color-blue-secondary-darker);
   --md-accent-fg-color: var(--color-blue-secondary);
   --md-typeset-a-color: var(--color-blue-primary) !important;
   --md-footer-fg-color: var(--md-typeset-a-color);

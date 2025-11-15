@@ -36,7 +36,7 @@ hide:
 
     ---
 
-    [![Ollama Docker](../tutorials/servers/assets/ollama/ollama-docker-python.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/ollama-docker "Ollama Docker")
+    [![Ollama Docker](../tutorials/applications/agents/servers/assets/ollama/ollama-docker-python.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/ollama-docker "Ollama Docker")
     
     Create a local <span class="text-color-green">Ollama</span> server to <span class="text-color-green">chat with LLMs</span>.
 
@@ -44,7 +44,7 @@ hide:
 
     ---
 
-    [![Milvus Docker](../tutorials/servers/assets/milvus/milvus-docker-python.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/milvus-docker "Milvus Docker")
+    [![Milvus Docker](../tutorials/applications/agents/servers/assets/milvus/milvus-docker-python.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/milvus-docker "Milvus Docker")
     
     Create a local <span class="text-color-green"> Milvus </span> server to store and query your <span class="text-color-green">personal data</span>.
 
@@ -52,7 +52,7 @@ hide:
 
     ---
 
-    [![SearXNG Docker](../tutorials/servers/assets/searxng/searxng-docker-langchain.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/searxng-docker "SearXNG Docker")
+    [![SearXNG Docker](../tutorials/applications/agents/servers/assets/searxng/searxng-docker-langchain.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/searxng-docker "SearXNG Docker")
     
     Create a local <span class="text-color-green"> SearXNG </span> server to perform <span class="text-color-green">metasearches</span>.
 

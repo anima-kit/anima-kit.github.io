@@ -832,7 +832,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [code-full-text-search]: milvus.md#code-full-text-search
 [code-insert]: milvus.md#code-insert
 [command-line]: milvus.md#cl
-[contributing]: ../CONTRIBUTING.md
+[contributing]: https://github.com/anima-kit/anima-kit.github.io/blob/main/CONTRIBUTING.md
 [cosine-similarity]: https://en.wikipedia.org/wiki/Cosine_similarity
 [cosine-similarity-score]: milvus.md#cosine-similarity-score
 [dense-vector]: https://milvus.io/docs/dense-vector.md

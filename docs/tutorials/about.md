@@ -95,7 +95,7 @@ So, if you want [code to build specialized AI agents][animakit] :material-file-c
 
 <!-- LINKS -->
 [a2c]: https://arxiv.org/pdf/1602.01783
-[agents]: agents/index.md
+[agents]: applications/agents/agents/index.md
 [animakit]: https://github.com/anima-kit
 [autogen]: https://github.com/microsoft/autogen
 [chatdev]: https://github.com/OpenBMB/ChatDev

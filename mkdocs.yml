@@ -138,6 +138,8 @@ extra_javascript:
 ## Navigation
 nav:
   - Home: index.md
+  - Blog:
+    - blog/index.md
   - Projects:
     - Projects Guide: projects/index.md
   - Learning:
@@ -146,25 +148,27 @@ nav:
       - Fundamentals Guide: tutorials/fundamentals/index.md
       - Linear Regression: tutorials/fundamentals/linear-regression-basics.md
       - Data Preprocesing: tutorials/fundamentals/data-preprocessing.md
-      - Data Extraction: tutorials/fundamentals/doc-extract-intro.md
-    - Servers: 
-      - Servers Guide: tutorials/servers/index.md
-      - Ollama: tutorials/servers/ollama.md
-      - SearXNG: tutorials/servers/searxng.md
-      - Milvus: tutorials/servers/milvus.md
-      - Multi-Server Setups: tutorials/servers/multi-server.md
-    - Agents:
-      - Agents Guide: tutorials/agents/index.md
-      - Chatbot: tutorials/agents/chatbot.md
-      - Agent with Memory: tutorials/agents/agent-memory.md
-      - Document Agent: tutorials/agents/doc-agent.md
-      - Code Agent: tutorials/agents/code-agent.md 
-    - RAG: 
-      - RAG Guide: tutorials/rag/index.md
+    - Research: 
+      - Research Guide: tutorials/research/index.md
+      - Medical AI: tutorials/research/medical-ai.md
+    - Applications:
+      - Applications Guide: tutorials/applications/index.md
+      - Agents:
+        - Outline: tutorials/applications/agents/index.md
+        - Servers: 
+          - Servers Guide: tutorials/applications/agents/servers/index.md
+          - Ollama: tutorials/applications/agents/servers/ollama.md
+          - SearXNG: tutorials/applications/agents/servers/searxng.md
+          - Milvus: tutorials/applications/agents/servers/milvus.md
+          - Multi-Server Setups: tutorials/applications/agents/servers/multi-server.md
+        - Agents:
+          - Agents Guide: tutorials/applications/agents/agents/index.md
+          - Chatbot: tutorials/applications/agents/agents/chatbot.md
+          - Agent with Memory: tutorials/applications/agents/agents/agent-memory.md
+          - Document Agent: tutorials/applications/agents/agents/doc-agent.md
+          - Code Agent: tutorials/applications/agents/agents/code-agent.md 
+      - Data Extraction: tutorials/applications/doc-extract-intro.md
+      - RAG: 
+        - RAG Guide: tutorials/applications/rag/index.md
     - About: tutorials/about.md
-    - Contributing: tutorials/CONTRIBUTING.md
-    - Code of Conduct: tutorials/CODE_OF_CONDUCT.md
-    - License Notice: tutorials/NOTICE.md
-  - Blog:
-    - blog/index.md
   - About: about.md

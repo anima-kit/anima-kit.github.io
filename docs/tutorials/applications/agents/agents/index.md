@@ -119,7 +119,7 @@ Check out any of the tutorials above to get started :material-arrow-up-bold-outl
 [milvus-tutorial]: ../servers/milvus.md
 [ollama]: https://ollama.com/
 [ollama-tutorial]: ../servers/ollama.md
-[rag]: ../rag/index.md
+[rag]: ../../rag/index.md
 [searxng]: https://github.com/searxng/searxng/
 [searxng-tutorial]: ../servers/searxng.md
 [servers]: ../servers/index.md

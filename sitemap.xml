@@ -29,39 +29,63 @@
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/tutorials/CODE_OF_CONDUCT/</loc>
-         <lastmod>2025-11-15</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/tutorials/CONTRIBUTING/</loc>
-         <lastmod>2025-11-15</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/tutorials/NOTICE/</loc>
-         <lastmod>2025-11-15</lastmod>
-    </url>
-    <url>
          <loc>https://anima-kit.github.io/tutorials/about/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/tutorials/agents/</loc>
+         <loc>https://anima-kit.github.io/tutorials/applications/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/tutorials/agents/agent-memory/</loc>
+         <loc>https://anima-kit.github.io/tutorials/applications/doc-extract-intro/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/tutorials/agents/chatbot/</loc>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/tutorials/agents/code-agent/</loc>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/tutorials/agents/doc-agent/</loc>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/agent-memory/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/chatbot/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/code-agent/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/doc-agent/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/milvus/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/multi-server/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/ollama/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/searxng/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/rag/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
@@ -73,35 +97,15 @@
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/tutorials/fundamentals/doc-extract-intro/</loc>
-         <lastmod>2025-11-15</lastmod>
-    </url>
-    <url>
          <loc>https://anima-kit.github.io/tutorials/fundamentals/linear-regression-basics/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/tutorials/rag/</loc>
+         <loc>https://anima-kit.github.io/tutorials/research/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/tutorials/servers/</loc>
-         <lastmod>2025-11-15</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/tutorials/servers/milvus/</loc>
-         <lastmod>2025-11-15</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/tutorials/servers/multi-server/</loc>
-         <lastmod>2025-11-15</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/tutorials/servers/ollama/</loc>
-         <lastmod>2025-11-15</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/tutorials/servers/searxng/</loc>
+         <loc>https://anima-kit.github.io/tutorials/research/medical-ai/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>

@@ -370,7 +370,7 @@ Here, we're going to look at the relevant files in more detail :material-magnify
 
         ```python title="milvus_utils.py skeleton" linenums="1" hl_lines="221-248"
         --8<--
-        docs/tutorials/servers/assets/milvus/milvus-utils-skeleton.py
+        docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-skeleton.py
         --8<--
         ``` 
 
@@ -378,7 +378,7 @@ Here, we're going to look at the relevant files in more detail :material-magnify
         
         ```python title="milvus_utils.py full" linenums="1" hl_lines="770-875"
         --8<--
-        docs/tutorials/servers/assets/milvus/milvus-utils-full.py
+        docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-full.py
         --8<--
         ```
 
@@ -404,7 +404,7 @@ We've already seen that the `create_collection` method can take in a collection 
 
 ```python title="create_collection method of milvus_utils.py" linenums="1" hl_lines="0" 
 --8<--
-docs/tutorials/servers/assets/milvus/milvus-utils-stripped.py:60:62,117:152
+docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.py:60:62,117:152
 --8<--
 ```
 
@@ -423,7 +423,7 @@ Let's look at the last three of these together :material-arrow-down-bold-outline
 
     ```python title="default field_params_list of create_collection method" linenums="1" hl_lines="0"
     --8<--
-    docs/tutorials/servers/assets/milvus/milvus-utils-stripped.py:7:8,37:58
+    docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.py:7:8,37:58
     --8<--
     ```
 
@@ -431,7 +431,7 @@ Let's look at the last three of these together :material-arrow-down-bold-outline
 
     ```python title="default embedding function of create_collection method" linenums="1" hl_lines="0" 
     --8<--
-    docs/tutorials/servers/assets/milvus/milvus-utils-stripped.py:5:6,28:35
+    docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.py:5:6,28:35
     --8<--
     ```
 
@@ -439,7 +439,7 @@ Let's look at the last three of these together :material-arrow-down-bold-outline
 
     ```python title="default index_params_list of create_collection method" linenums="1" hl_lines="0" 
     --8<--
-    docs/tutorials/servers/assets/milvus/milvus-utils-stripped.py:12:26
+    docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.py:12:26
     --8<--
     ```
 
@@ -501,7 +501,7 @@ Everytime we use the `client` attribute of the class, we're using the :simple-mi
 
 ```python title="Defining the client attribute of the MilvusClientInit class" linenums="1" hl_lines="0"
 --8<--
-docs/tutorials/servers/assets/milvus/milvus-utils-stripped.py:3:4,9:11,223:241
+docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.py:3:4,9:11,223:241
 --8<--
 ```
 
@@ -515,7 +515,7 @@ So, we can see that we've initialized a `MilvusClient` on the URI that was defin
         
         ```python title="_create_field method of the MilvusClientInit class" linenums="1" hl_lines="0"
         --8<--
-        docs/tutorials/servers/assets/milvus/milvus-utils-stripped.py:91:98
+        docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.py:91:98
         --8<--
         ```
 
@@ -523,7 +523,7 @@ So, we can see that we've initialized a `MilvusClient` on the URI that was defin
         
         ```python title="_create_index method of the MilvusClientInit class" linenums="1" hl_lines="0"
         --8<--
-        docs/tutorials/servers/assets/milvus/milvus-utils-stripped.py:100:107
+        docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.py:100:107
         --8<--
         ```
 
@@ -547,7 +547,7 @@ We've already seen that the `insert` method can take in a collection name and so
 
 ```python title="insert method of milvus_utils.py" linenums="1" hl_lines="0" 
 --8<--
-docs/tutorials/servers/assets/milvus/milvus-utils-stripped.py:162:177
+docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.py:162:177
 --8<--
 ```
 
@@ -569,7 +569,7 @@ We've already seen that the `full_text_search` method can take in a collection n
 
 ```python title="full_text_search method of milvus_utils.py" linenums="1" hl_lines="32-39" 
 --8<--
-docs/tutorials/servers/assets/milvus/milvus-utils-stripped.py:60:62,73:76,77:80,193:221
+docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.py:60:62,73:76,77:80,193:221
 --8<--
 ```
 

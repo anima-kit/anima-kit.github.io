@@ -400,7 +400,7 @@ Here, we're going to look at the relevant files in more detail :material-magnify
 
         ```python title="searxng_utils.py skeleton" linenums="1" hl_lines="77-85 89-99"
         --8<--
-        docs/tutorials/servers/assets/searxng/searxng-utils-skeleton.py
+        docs/tutorials/applications/agents/servers/assets/searxng/searxng-utils-skeleton.py
         --8<--
         ``` 
 
@@ -408,7 +408,7 @@ Here, we're going to look at the relevant files in more detail :material-magnify
         
         ```python title="searxng_utils.py full" linenums="1" hl_lines="215-276 280-344"
         --8<--
-        docs/tutorials/servers/assets/searxng/searxng-utils-full.py
+        docs/tutorials/applications/agents/servers/assets/searxng/searxng-utils-full.py
         --8<--
         ```
 
@@ -436,7 +436,7 @@ We've already seen that the `run` and `results` methods can take in a query, the
 
     ```python title="run method of searxng_utils.py" linenums="1" hl_lines="11-13" 
     --8<--
-    docs/tutorials/servers/assets/searxng/searxng-utils-stripped.py:12:14,60:70
+    docs/tutorials/applications/agents/servers/assets/searxng/searxng-utils-stripped.py:12:14,60:70
     --8<--
     ```
 
@@ -444,7 +444,7 @@ We've already seen that the `run` and `results` methods can take in a query, the
 
     ```python title="results method of searxng_utils.py" linenums="1" hl_lines="15-18" 
     --8<--
-    docs/tutorials/servers/assets/searxng/searxng-utils-stripped.py:12:14,15:17,72:84
+    docs/tutorials/applications/agents/servers/assets/searxng/searxng-utils-stripped.py:12:14,15:17,72:84
     --8<--
     ```
 
@@ -466,7 +466,7 @@ This method instantiates the LangChain [SearxSearchWrapper][searx-search-wrapper
 
 ```python title="__init__ method of searxng_utils.py" linenums="1" hl_lines="16" 
 --8<--
-docs/tutorials/servers/assets/searxng/searxng-utils-skeleton.py:6:7,9:11,19:29
+docs/tutorials/applications/agents/servers/assets/searxng/searxng-utils-skeleton.py:6:7,9:11,19:29
 --8<--
 ```
 
@@ -496,7 +496,7 @@ This method ensures the SearXNG server can be properly reached and exits the pro
 
 ```python title="_test_searxng method of searxng_utils.py" linenums="1" hl_lines="15 18 25 28" 
 --8<--
-docs/tutorials/servers/assets/searxng/searxng-utils-stripped.py:4:5,7:7,18:42
+docs/tutorials/applications/agents/servers/assets/searxng/searxng-utils-stripped.py:4:5,7:7,18:42
 --8<--
 ```
 
@@ -514,7 +514,7 @@ This retry mechanism works for *server errors* in which the server is available 
 
     ```python title="requests_search method of searxng_utils.py" linenums="1" hl_lines="0"
     --8<--
-    docs/tutorials/servers/assets/searxng/searxng-utils-stripped.py:5:5,7:7,12:14,44:58
+    docs/tutorials/applications/agents/servers/assets/searxng/searxng-utils-stripped.py:5:5,7:7,12:14,44:58
     --8<--
     ```
 
@@ -540,7 +540,7 @@ Now, how about creating the SearXNG server that we'll be pointing to in order to
 
     ```yaml title="docker-compose.yml (original file: https://github.com/searxng/searxng-docker/blob/master/docker-compose.yaml)" linenums="1" hl_lines="0"
     --8<--
-    docs/tutorials/servers/assets/searxng/docker-compose.yml
+    docs/tutorials/applications/agents/servers/assets/searxng/docker-compose.yml
     --8<--
     ```
 
@@ -560,7 +560,7 @@ In the snippet below, I show how to define the SearXNG service as well as the vo
 
 ```yaml title="docker-compose.yml piece (original file: https://github.com/searxng/searxng-docker/blob/master/docker-compose.yaml)" linenums="1" hl_lines="0"
 --8<--
-docs/tutorials/servers/assets/searxng/docker-compose-stripped.yml
+docs/tutorials/applications/agents/servers/assets/searxng/docker-compose-stripped.yml
 --8<--
 ```
 

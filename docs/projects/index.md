@@ -15,6 +15,22 @@ hide:
 
 <div class="grid cards" markdown>
 
+-   :material-note-multiple:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> Tutorials </span>
+
+    ---
+
+    [![Tutorials](assets/tutorials.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](../tutorials/index.md "Tutorials")
+
+    Learn <span class="text-color-green">all about AI</span> through <span class="text-color-green">in-depth</span> analyses and <span class="text-color-green">step-by-step</span> guides.
+
+-   :material-notebook-edit-outline:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> AI Notebooks </span>
+
+    ---
+
+    [![AINotebooks](assets/ai-notebooks.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/ai-notebooks "AI Notebooks")
+
+    Learn the <span class="text-color-green">fundamentals</span> of coding AI through <span class="text-color-green">interactive notebooks</span>.
+
 -   :material-file-code-outline:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> PyCoder </span>
 
     ---
@@ -23,14 +39,6 @@ hide:
     
     Interact with an agent to <span class="text-color-green"> manage Python codebases </span> on your <span class="text-color-green"> local </span> machine. 
     Create different user profiles and codebases by uploading <span class="text-color-green"> Python or Markdown </span> files, then <span class="text-color-green"> chat with an agent </span> about your code. 
-
--   :material-bookshelf:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> AI Notebooks </span>
-
-    ---
-
-    [![AINotebooks](assets/ai-notebooks.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/ai-notebooks "AI Notebooks")
-
-    Learn the <span class="text-color-green">fundamentals</span> of coding AI through <span class="text-color-green">interactive notebooks</span>.
 
 -   :simple-ollama:{.md-icon} :simple-docker:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> Ollama Docker </span>
 

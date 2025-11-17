@@ -385,7 +385,7 @@ Here, we're going to look at the relevant files in more detail :material-magnify
 
         ```python title="ollama_utils.py skeleton" linenums="1" hl_lines="96-120"
         --8<--
-        docs/tutorials/servers/assets/ollama/ollama-utils-skeleton.py
+        docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-skeleton.py
         --8<--
         ``` 
 
@@ -393,7 +393,7 @@ Here, we're going to look at the relevant files in more detail :material-magnify
         
         ```python title="ollama_utils.py full" linenums="1" hl_lines="276-357"
         --8<--
-        docs/tutorials/servers/assets/ollama/ollama-utils-full.py
+        docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-full.py
         --8<--
         ```
 
@@ -442,7 +442,7 @@ We've already seen that the `get_response` method can take in an LM name and a m
 
 ```python title="get_response method of OllamaClient" linenums="1" hl_lines="14 23-26 29 30"
 --8<--
-docs/tutorials/servers/assets/ollama/ollama-utils-stripped.py:7:12,75:98
+docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.py:7:12,75:98
 --8<--
 ```
 
@@ -470,7 +470,7 @@ This method makes sure the specified LM is available to the Ollama client :mater
     
 ```python title="_init_lm method of OllamaClient" linenums="1" hl_lines="10 14"
 --8<--
-docs/tutorials/servers/assets/ollama/ollama-utils-stripped.py:7:9,41:51
+docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.py:7:9,41:51
 --8<--
 ```
 
@@ -478,7 +478,7 @@ We first list the models available to the Ollama client using the `_list_pulled_
 
 ```python title="_pull_lm method of OllamaClient" linenums="1" hl_lines="11"
 --8<--
-docs/tutorials/servers/assets/ollama/ollama-utils-stripped.py:3:4,7:9,33:39
+docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.py:3:4,7:9,33:39
 --8<--
 ```
 
@@ -490,7 +490,7 @@ docs/tutorials/servers/assets/ollama/ollama-utils-stripped.py:3:4,7:9,33:39
 
     ```python title="_list_pulled_models method of OllamaClient" linenums="1"
     --8<--
-    docs/tutorials/servers/assets/ollama/ollama-utils-stripped.py:3:4,21:31
+    docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.py:3:4,21:31
     --8<--
     ``` 
 
@@ -514,7 +514,7 @@ The class attribute, `client`, is defined in the `__init__` method of the class:
 
 ```python title="__init__ method of OllamaClient" linenums="1" hl_lines="10"
 --8<--
-docs/tutorials/servers/assets/ollama/ollama-utils-skeleton.py:13:15,20:26
+docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-skeleton.py:13:15,20:26
 --8<--
 ```
 
@@ -524,7 +524,7 @@ We utilize the [Ollama Python library][ollama-python]{target="_blank"} by instan
 
 ```python title="_init_client method of OllamaClient" linenums="1" hl_lines="8"
 --8<--
-docs/tutorials/servers/assets/ollama/ollama-utils-stripped.py:5:6,13:19
+docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.py:5:6,13:19
 --8<--
 ```
 
@@ -550,7 +550,7 @@ For now, we're going to remove these tags and all the content within :material-t
 
 ```python title="_remove_think_tags method of ollama_utils.py" linenums="1" hl_lines="0"
 --8<--
-docs/tutorials/servers/assets/ollama/ollama-utils-stripped.py:1:2,53:73
+docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.py:1:2,53:73
 --8<--
 ```
 
@@ -598,7 +598,7 @@ Now, how exactly do we create the Ollama server that we'll be pointing to in ord
 
         ```yaml title="docker-compose-gpu.yml" linenums="1" hl_lines="22-23"
         --8<--
-        docs/tutorials/servers/assets/ollama/docker-compose-gpu.yml
+        docs/tutorials/applications/agents/servers/assets/ollama/docker-compose-gpu.yml
         --8<--
         ```
 
@@ -606,7 +606,7 @@ Now, how exactly do we create the Ollama server that we'll be pointing to in ord
         
         ```yaml title="docker-compose-cpu.yml" linenums="1"
         --8<--
-        docs/tutorials/servers/assets/ollama/docker-compose-cpu.yml
+        docs/tutorials/applications/agents/servers/assets/ollama/docker-compose-cpu.yml
         --8<--
         ```
 
@@ -620,7 +620,7 @@ Now, let's take a closer look at the files :material-arrow-down-bold-outline:{.i
 
     ```yaml title="docker-compose-gpu.yml piece" linenums="1" hl_lines="10-11"
     --8<--
-    docs/tutorials/servers/assets/ollama/docker-compose-gpu.yml:13:24,26:28
+    docs/tutorials/applications/agents/servers/assets/ollama/docker-compose-gpu.yml:13:24,26:28
     --8<--
     ```
 
@@ -628,7 +628,7 @@ Now, let's take a closer look at the files :material-arrow-down-bold-outline:{.i
 
     ```yaml title="docker-compose-cpu.yml piece" linenums="1"
     --8<--
-    docs/tutorials/servers/assets/ollama/docker-compose-cpu.yml:13:20,22:24
+    docs/tutorials/applications/agents/servers/assets/ollama/docker-compose-cpu.yml:13:20,22:24
     --8<--
     ```
 

@@ -17,10 +17,6 @@ template: pages.html
 
 ![Milvus Python Docker](assets/milvus/milvus-docker-python.png){ .img-def }
 
-![Milvus Docker Intro PNG](assets/milvus/milvus-docker-intro.png){.demo-img .png style="display:block;margin:auto;"}
-
-![Milvus Docker Intro GIF](assets/milvus/milvus-docker-intro.gif){.demo-img .gif style="display:none;margin:auto;"}
-
 !!! tl-dr "TL;DR"
     Learn how to build and use a [vector database][vectorstore]{.blank} server to store and search your documents on your local machine :material-laptop:{.icon-def-0}. Then, you can use this setup as a tool to give to [locally run AI agents][agents] :material-robot-outline:{.icon-def-0}.
 
@@ -80,6 +76,10 @@ Now, let's get building :material-account-hard-hat-outline:{.icon-def-0}!
 <hr class="icon-def-1 primary-icon", style="width: 90%;">  
 
 ## :material-flag-checkered:{.icon-def-0} Getting Started
+
+![Milvus Docker Intro PNG](assets/milvus/milvus-docker-intro.png){.demo-img .png style="display:block;margin:auto;"}
+
+![Milvus Docker Intro GIF](assets/milvus/milvus-docker-intro.gif){.demo-img .gif style="display:none;margin:auto;"}
 
 First, we're going to setup and build the repo to make sure that it works :material-wrench:{.icon-def-0}. Then, we can play around with the code and learn more about it :material-test-tube:{.icon-def-0}.
 

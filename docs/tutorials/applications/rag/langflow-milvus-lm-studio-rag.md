@@ -1,5 +1,5 @@
 ---
-title: Medical AI Trends
+title: Local RAG with Langflow
 template: pages.html
 ---
 
@@ -9,10 +9,6 @@ template: pages.html
   </a>
 </div>
 
-# :material-medication-outline:{ .icon-def-0 } Medical AI Trends
+# :simple-langflow:{ .icon-def-0 } Local RAG with Langflow
 
 :material-progress-wrench:{ .icon-def-0 } This page is currently under construction.
-
-<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
-
-!!! tl-dr "TL;DR"

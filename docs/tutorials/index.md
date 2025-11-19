@@ -18,6 +18,14 @@ template: pages.html
 
 <div class="grid cards" markdown>
 
+-   :material-robot-excited-outline:{ .icon-def-0 } Applications
+
+    ---
+
+    Apply AI in various contexts including RAG and specialized agents.
+
+    [:material-arrow-right-thin: Get started with Applications][applications]
+
 -   :material-shape-plus:{ .icon-def-0 } Fundamentals
 
     ---
@@ -33,14 +41,6 @@ template: pages.html
     Stay up to date with current AI trends.
 
     [:material-arrow-right-thin: Get started with Research][research]
-
--   :material-robot-excited-outline:{ .icon-def-0 } Applications
-
-    ---
-
-    Apply AI in various contexts with a focus on AI agents.
-
-    [:material-arrow-right-thin: Get started with Applications][applications]
 
 -   :material-calendar-clock:{.md-icon} Stay Tuned...
 

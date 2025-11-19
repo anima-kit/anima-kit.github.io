@@ -15,6 +15,8 @@ template: pages.html
 
 :material-fire:{.icon-def-0} Docling's [document extraction module](https://github.com/docling-project/docling/blob/main/docling/document_extractor.py) is super powerful. :material-fire:{.icon-def-0} 
 
+![Document Extraction with Docling](assets/docling.png){ .img-def }
+
 It uses the [NuExtract model](https://huggingface.co/numind/NuExtract-2.0-8B) to obtain structured data from unstructured documents (currently PDFs and images) through defining templates for the desired data. 
 
 By defining the data templates in clever ways, we can potentially extract lots of various information from a wide range of documents. This is exactly what we'll see as we go through the tutorials.

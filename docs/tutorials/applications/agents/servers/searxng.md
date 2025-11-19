@@ -15,10 +15,6 @@ template: pages.html
 
 ![SearXNG LangChain Docker](assets/searxng/searxng-docker-langchain.png){ .img-def }
 
-![SearXNG Docker Intro PNG](assets/searxng/searxng-docker-intro.png){.demo-img .png style="display:block;margin:auto;"}
-
-![SearXNG Docker Intro GIF](assets/searxng/searxng-docker-intro.gif){.demo-img .gif style="display:none;margin:auto;"}
-
 !!! tl-dr "TL;DR"
     Learn how to build and use a [metasearch engine][metasearch-engine]{.blank} on your local machine :material-laptop:{.icon-def-0}. Then, you can use this setup as a tool to give to [locally run AI agents][agents] :material-robot-outline:{.icon-def-0}.
 
@@ -68,6 +64,10 @@ Now, let's get building :material-account-hard-hat-outline:{.icon-def-0}!
 <hr class="icon-def-1 primary-icon", style="width: 90%;"> 
 
 ## :material-flag-checkered:{.icon-def-0} Getting Started
+
+![SearXNG Docker Intro PNG](assets/searxng/searxng-docker-intro.png){.demo-img .png style="display:block;margin:auto;"}
+
+![SearXNG Docker Intro GIF](assets/searxng/searxng-docker-intro.gif){.demo-img .gif style="display:none;margin:auto;"}
 
 First, we're going to setup and build the repo to make sure that it works :material-wrench:{.icon-def-0}. Then, we can play around with the code and learn more about it :material-test-tube:{.icon-def-0}. 
 

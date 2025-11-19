@@ -167,8 +167,9 @@ nav:
           - Agent with Memory: tutorials/applications/agents/agents/agent-memory.md
           - Document Agent: tutorials/applications/agents/agents/doc-agent.md
           - Code Agent: tutorials/applications/agents/agents/code-agent.md 
-      - Data Extraction: tutorials/applications/doc-extract-intro.md
       - RAG: 
         - RAG Guide: tutorials/applications/rag/index.md
+        - Data Extraction: tutorials/applications/rag/doc-extract-intro.md
+        - Local RAG with Langflow: tutorials/applications/rag/langflow-milvus-lm-studio-rag.md
     - About: tutorials/about.md
   - About: about.md

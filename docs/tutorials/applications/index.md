@@ -18,6 +18,14 @@ template: pages.html
 
 <div class="grid cards" markdown>
 
+-   :material-bookshelf:{ .icon-def-0 } RAG
+
+    ---
+
+    Learn advanced RAG techniques to enhance information retrieval.
+
+    [:material-arrow-right-thin: Get started with RAG][rag]
+
 -   :material-robot-excited-outline:{ .icon-def-0 } Agents
 
     ---
@@ -25,22 +33,6 @@ template: pages.html
     Create builds from simple chatbots to specialized agents.
 
     [:material-arrow-right-thin: Get started with agents][agents]
-
--   :material-robot-excited-outline:{ .icon-def-0 } Data Extraction
-
-    ---
-
-    Learn how to extract key data from various formats.
-
-    [:material-arrow-right-thin: Get started with Data Extraction][data-extraction]
-
--   :material-bookshelf:{ .icon-def-0 } RAG
-
-    ---
-
-    Learn advanced RAG techniques to enhance the information retrieval of your agents.
-
-    [:material-arrow-right-thin: Get started with RAG][rag]
 
 -   :material-calendar-clock:{.md-icon} Stay Tuned...
 
@@ -56,5 +48,4 @@ template: pages.html
 
 <!-- LINKS -->
 [agents]: agents/index.md
-[data-extraction]: doc-extract-intro.md
 [rag]: rag/index.md

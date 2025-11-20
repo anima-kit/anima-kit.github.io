@@ -12,7 +12,3 @@ template: pages.html
 # :material-medication-outline:{ .icon-def-0 } Medical AI Trends
 
 :material-progress-wrench:{ .icon-def-0 } This page is currently under construction.
-
-<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
-
-!!! tl-dr "TL;DR"

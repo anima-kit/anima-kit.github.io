@@ -13,7 +13,7 @@ template: pages.html
 
 <hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
-## Supervised Learning
+**Supervised Learning**
 
 In machine learning, we use *data* to create and train *models* which can then be used to make *predictions*. For supervised learning we need *labeled* data. This means we need to know not only the data values, but also what those values represent. 
 

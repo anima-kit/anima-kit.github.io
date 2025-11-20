@@ -24,7 +24,7 @@ template: pages.html
 
     Research current trends the healthcare sector.
 
-    [:material-arrow-right-thin: Get started with Medical AI][medical-ai]
+    [:material-arrow-right-thin: Get started with Medical AI][medical-ai]{data-preview}
 
 -   :material-calendar-clock:{.md-icon} Stay Tuned...
 

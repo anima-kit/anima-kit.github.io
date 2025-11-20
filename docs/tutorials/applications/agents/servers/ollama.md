@@ -20,9 +20,7 @@ template: pages.html
 
 <hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
-<a id="about"></a>
-
-## :material-map-marker-star-outline:{.icon-def-0} About This Project
+## :material-map-marker-star-outline:{.icon-def-0} About This Project {#about}
 
 <div class="grid cards" markdown style="text-align: center; font-size: 2rem; width: 10rem; margin: 0 auto;">
 
@@ -140,9 +138,7 @@ To setup and build the repo follow these steps:
 
 <hr class="icon-def-1 primary-icon", style="width: 90%;"> 
 
-<a id="examples"></a>
-
-## :material-note-edit-outline:{.icon-def-0} Example Use Cases
+## :material-note-edit-outline:{.icon-def-0} Example Use Cases {#examples}
 
 Now that the repo is built and working, let's play around with the code a bit :material-test-tube:{.icon-def-0}. 
 
@@ -158,9 +154,7 @@ To start off, let's interact with an LM through the command line :material-arrow
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="cl"></a>
-
-### :material-console:{.icon-def-0} Chatting with an LM through the Command Line 
+### :material-console:{.icon-def-0} Chatting with an LM through the Command Line {#cl}
 
 ??? vis-inst "Toggle for visual instructions"
 
@@ -218,9 +212,7 @@ In the next example below, I show how to do this by creating and running a custo
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="rs"></a>
-
-### :material-script-text-outline:{.icon-def-0} Chatting with an LM through Running Scripts
+### :material-script-text-outline:{.icon-def-0} Chatting with an LM through Running Scripts {#rs}
 
 ??? vis-inst "Toggle for visual instructions"
 
@@ -297,9 +289,7 @@ Now that we understand how to use the code, let's open it up to check out the ge
 
 <hr class="icon-def-1 primary-icon", style="width: 90%;"> 
 
-<a id="proj-struct"></a>
-
-## :material-view-quilt-outline:{.icon-def-0} Project Structure
+## :material-view-quilt-outline:{.icon-def-0} Project Structure {#proj-struct}
 
 Before we take a deep dive into the source code :material-diving-scuba:{.icon-def-0}, let's look at the repo structure to see what code we'll want to learn :material-magnify:{.icon-def-0}.
 
@@ -349,7 +339,7 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 <h4 style="text-align: left;">ollama_test.py</h4>
 
-> The `ollama_test.py` file basically does what we did when [running the script][running-scripts] in the :material-note-edit-outline:{.icon-def-0}`Example Use Cases` section, namely use the code in the `ollama_utils.py` file to get a response :material-checkbox-marked-outline:{ .icon-def-0 }. This is the script that we ran in [step 6][step-test] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to test that our Python methods were working.
+> The `ollama_test.py` file basically does what we did when [running the script][running-scripts]{data-preview} in the :material-note-edit-outline:{.icon-def-0}`Example Use Cases` section, namely use the code in the `ollama_utils.py` file to get a response :material-checkbox-marked-outline:{ .icon-def-0 }. This is the script that we ran in [step 6][step-test] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to test that our Python methods were working.
 
 ---
 
@@ -373,13 +363,9 @@ Here, we're going to look at the relevant files in more detail :material-magnify
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="ollama-utils"></a>
-
-### :simple-ollama:{.icon-def-0} File 1 | `ollama_utils.py`
+### :simple-ollama:{.icon-def-0} File 1 | `ollama_utils.py` {#ollama-utils}
 
 ??? vis-inst "Toggle file visibility"
-
-    <a id="ollama-utils-skeleton"></a>
 
     === "Skeleton"
 
@@ -426,19 +412,17 @@ Above, I show the `ollama_utils.py` file in all its full glory as well as in a s
 
 Notice that all but one of the methods in the class have `_` at the beginning of the name. All of the methods with `_` are *internal* methods :material-tag-hidden:{.icon-def-0}, meaning they were created to help the other methods in the class, but they're not suggested to be used outside of the class. 
 
-There is one, and only one, method that was created to be used outside of the class: the `get_response` method. This is what we used when [working in the command line][command-line] and [running scripts][running-scripts] in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section. Let's check this method out :material-arrow-down-bold-outline:{.icon-def-0}.
+There is one, and only one, method that was created to be used outside of the class: the `get_response` method. This is what we used when [working in the command line][command-line]{data-preview} and [running scripts][running-scripts]{data-preview} in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section. Let's check this method out :material-arrow-down-bold-outline:{.icon-def-0}.
 
 <hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
 ---
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.1 | `get_response`
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.1 | `get_response` {#get-response}
 
-: See [lines 96-120][ollama-utils-skeleton] of `ollama_utils.py`
+: See [lines 96-120][ollama-utils]{data-preview} of `ollama_utils.py`
 
 We've already seen that the `get_response` method can take in an LM name and a message then output a response :material-message-text-outline:{.icon-def-0}. Now, we can open up the method to see how this is all done :material-book-open-variant-outline:{.icon-def-0}.
-
-<a id="get-response"></a>
 
 ```python title="get_response method of OllamaClient" linenums="1" hl_lines="14 23-26 29 30"
 --8<--
@@ -446,7 +430,7 @@ docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.p
 --8<--
 ```
 
-As a brief overview, we're first initializing an LM with the `_init_lm` method on [line 14][get-response], then we're formatting the user message to properly work with our LM on [lines 18-21][get-response] :material-forum-outline:{.icon-def-0}. After that, we utilize the [Ollama Python library][ollama-python]{.blank} by using the `chat` method of our [Ollama Client][ollama-client]{.blank} to get a response on [lines 23-26][get-response]. Finally, we cleanup the response with the `_remove_think_tags` method on [line 29][get-response] and return the cleaned result on [line 30][get-response] :material-creation-outline:{.icon-def-0}. 
+As a brief overview, we're first initializing an LM with the `_init_lm` method on [line 14][get-response]{data-preview}, then we're formatting the user message to properly work with our LM on [lines 18-21][get-response]{data-preview} :material-forum-outline:{.icon-def-0}. After that, we utilize the [Ollama Python library][ollama-python]{.blank} by using the `chat` method of our [Ollama Client][ollama-client]{.blank} to get a response on [lines 23-26][get-response]{data-preview}. Finally, we cleanup the response with the `_remove_think_tags` method on [line 29][get-response]{data-preview} and return the cleaned result on [line 30][get-response]{data-preview} :material-creation-outline:{.icon-def-0}. 
 
 ??? bonus-code "Wasn't there another argument in `client.chat`?"
 
@@ -460,13 +444,11 @@ Let's look at each of these aspects in turn :material-arrow-down-bold-outline:{.
 
 ---
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.2 | `_init_lm`
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.2 | `_init_lm` {#init-lm}
 
-: See [line 14][get-response] of `get_response` and [lines 61-70][ollama-utils-skeleton] of `ollama_utils.py`
+: See [line 14][get-response]{data-preview} of `get_response` and [lines 61-70][ollama-utils]{data-preview} of `ollama_utils.py`
 
 This method makes sure the specified LM is available to the Ollama client :material-checkbox-marked-outline:{.icon-def-0}.
-
-<a id="init-lm"></a>
     
 ```python title="_init_lm method of OllamaClient" linenums="1" hl_lines="10 14"
 --8<--
@@ -474,7 +456,7 @@ docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.p
 --8<--
 ```
 
-We first list the models available to the Ollama client using the `_list_pulled_models` method on [line 10][init-lm] :material-format-list-bulleted-type:{.icon-def-0}. Then if the model isn't available, we pull it from the Ollama library using the `_pull_lm` method on [line 14][init-lm] :material-source-pull:{.icon-def-0}. This method is a simple wrapper of the `pull` method of our [Ollama Client][ollama-client]{.blank}:
+We first list the models available to the Ollama client using the `_list_pulled_models` method on [line 10][init-lm]{data-preview} :material-format-list-bulleted-type:{.icon-def-0}. Then if the model isn't available, we pull it from the Ollama library using the `_pull_lm` method on [line 14][init-lm]{data-preview} :material-source-pull:{.icon-def-0}. This method is a simple wrapper of the `pull` method of our [Ollama Client][ollama-client]{.blank}:
 
 ```python title="_pull_lm method of OllamaClient" linenums="1" hl_lines="11"
 --8<--
@@ -484,7 +466,7 @@ docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.p
 
 ??? bonus-code "How does `_list_pulled_models` work?"
 
-    The `_list_pulled_models` method ([line 10][init-lm] of `_init_lm` and [lines 39-48][ollama-utils-skeleton] of `ollama_utils.py`) is given by:
+    The `_list_pulled_models` method ([line 10][init-lm]{data-preview} of `_init_lm` and [lines 39-48][ollama-utils]{data-preview} of `ollama_utils.py`) is given by:
 
     <a id="list-pulled-models"></a>
 
@@ -502,11 +484,9 @@ Now that we know the LM will be available :material-checkbox-marked-outline:{.ic
 
 ---
 
-<a id="client.chat"></a>
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.3 | `client.chat` {#client.chat}
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.3 | `client.chat`
-
-: See [lines 23-26][get-response] of `get_response` and [line 26][ollama-utils-skeleton] of `ollama_utils.py`
+: See [lines 23-26][get-response]{data-preview} of `get_response` and [line 26][ollama-utils]{data-preview} of `ollama_utils.py`
 
 The class attribute, `client`, is defined in the `__init__` method of the class:
 
@@ -538,15 +518,13 @@ Now that we can get a response from our Ollama client :material-checkbox-marked-
 
 ---
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.4 | `_remove_think_tags`
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.4 | `_remove_think_tags` {#remove-think-tags}
 
-: See [line 29][get-response] of `get_response` and [lines 74-92][ollama-utils-skeleton] of `ollama_utils.py`
+: See [line 29][get-response]{data-preview} of `get_response` and [lines 74-92][ollama-utils]{data-preview} of `ollama_utils.py`
 
 The sole purpose of this method is to remove the `<think></think>` tags and all content within that some LMs output (including our default models [Qwen3][qwen3]{.blank} and [DeepSeek-R1][deepseek]{.blank}). These models have a :material-thought-bubble:{.icon-def-0} *thinking* :material-thought-bubble:{.icon-def-0} phase before they give a final response to a user message. All the content of this phase is wrapped in `<think></think>` tags to denote the purpose. 
 
 For now, we're going to remove these tags and all the content within :material-tag-remove-outline:{.icon-def-0}. However, in later tutorials we'll see how to output the *thinking* content separately from the *response* content in a pretty slick way using a :simple-gradio:{.icon-def-0} [Gradio][gradio]{target="_blank"} web UI :material-monitor-shimmer:{.icon-def-0}.
-
-<a id="remove-think-tags"></a>
 
 ```python title="_remove_think_tags method of ollama_utils.py" linenums="1" hl_lines="0"
 --8<--
@@ -554,7 +532,7 @@ docs/tutorials/applications/agents/servers/assets/ollama/ollama-utils-stripped.p
 --8<--
 ```
 
-When I first tried cleaning the output from these models, I started with something like [lines 9 and 19][remove-think-tags]. Let's look at this little part more closely:
+When I first tried cleaning the output from these models, I started with something like [lines 9 and 19][remove-think-tags]{data-preview}. Let's look at this little part more closely:
 
 <a id="remove-think-tags-piece"></a>
 
@@ -572,9 +550,9 @@ Here, we're using Python's [regular expression operations][re]{.blank} to find a
 
 This works great if the LM *always* outputs the thinking phase fully enclosed in the proper tags :material-checkbox-marked-outline:{.icon-def-0}. But, what if something messes up along the way and the LM accidentally drops one of the tags :material-tag-remove-outline:{.icon-def-0} or adds an extra one :material-tag-multiple-outline:{.icon-def-0}? This is *rare* but I've seen it, especially if the user message includes one of the `<think>` or `</think>` tags. So, we need to take into account situations in which the full `think_tag_pattern` isn't found :material-help-rhombus-outline:{.icon-def-0}. This will also take care of responses without any thinking phases at all :material-checkbox-marked-outline:{.icon-def-0}.
 
-We've already seen that responses with a fully enclosed thinking phase are taken care of with [lines 9 and 19][remove-think-tags], however we also want to make sure no tags remain by replacing any instances of `<think>` or `</think>` with empty strings on [line 21][remove-think-tags] :material-checkbox-marked-outline:{.icon-def-0}. 
+We've already seen that responses with a fully enclosed thinking phase are taken care of with [lines 9 and 19][remove-think-tags]{data-preview}, however we also want to make sure no tags remain by replacing any instances of `<think>` or `</think>` with empty strings on [line 21][remove-think-tags]{data-preview} :material-checkbox-marked-outline:{.icon-def-0}. 
 
-To take care of the rest, on [line 11][remove-think-tags] we check if the `think_tag_pattern` isn't found (i.e. one of the tags were dropped or added accidentally or the message has no thinking tags at all). On [line 14][remove-think-tags], we then follow the same procedure to clean the text as we did on [line 21][remove-think-tags] :material-creation-outline:{.icon-def-0}. 
+To take care of the rest, on [line 11][remove-think-tags]{data-preview} we check if the `think_tag_pattern` isn't found (i.e. one of the tags were dropped or added accidentally or the message has no thinking tags at all). On [line 14][remove-think-tags]{data-preview}, we then follow the same procedure to clean the text as we did on [line 21][remove-think-tags]{data-preview} :material-creation-outline:{.icon-def-0}. 
 
 This will sometimes result in some or all of the LM *thinking* phase being output with the final response, but I'd rather have too much than too little context :material-checkbox-marked-outline:{ .icon-def-0 }. Alternatively, I bet there's an approach somewhere out there that ensures only the final response is output :material-help-rhombus-outline:{.icon-def-0}.
 
@@ -586,13 +564,9 @@ Now, how exactly do we create the Ollama server that we'll be pointing to in ord
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="docker-compose"></a>
-
-### :simple-docker:{.icon-def-0} File 2 | `docker-compose.yml`
+### :simple-docker:{.icon-def-0} File 2 | `docker-compose.yml` {#docker-compose}
 
 ??? vis-inst "Toggle file visibility"
-
-    <a id="docker-compose-file"></a>
 
     === "GPU"
 
@@ -634,7 +608,7 @@ Now, let's take a closer look at the files :material-arrow-down-bold-outline:{.i
 
 These are typical :simple-docker:{.icon-def-0} Docker compose files starting with a definition of all the services (containers :material-cube-outline:{.icon-def-0}) that we want to build. In our case, we only want an :simple-ollama:{.icon-def-0} Ollama server, so we add that to the service definitions :material-checkbox-marked-outline:{.icon-def-0}. 
 
-We want to use the latest Docker image [found here][ollama-docker-image]{target="_blank"}, and we want to interact with the server by using our [localhost][localhost]{target="_blank"} network to send requests to port `11434` :material-send-check-outline:{.icon-def-0} (the designated port where the :simple-ollama:{.icon-def-0} Ollama API can be reached). This is [where we point][client-chat] when we initialize the `OllamaClient` class of the `ollama_utils.py` file and the URL that we pass to the [Ollama Client][ollama-client]{.blank} using the `Client` object :material-checkbox-marked-outline:{.icon-def-0}.
+We want to use the latest Docker image [found here][ollama-docker-image]{target="_blank"}, and we want to interact with the server by using our [localhost][localhost]{target="_blank"} network to send requests to port `11434` :material-send-check-outline:{.icon-def-0} (the designated port where the :simple-ollama:{.icon-def-0} Ollama API can be reached). This is [where we point][client-chat]{data-preview} when we initialize the `OllamaClient` class of the `ollama_utils.py` file and the URL that we pass to the [Ollama Client][ollama-client]{.blank} using the `Client` object :material-checkbox-marked-outline:{.icon-def-0}.
 
 Finally, in this demo we're going to store all of the Ollama data (like the models that we pull) in a local folder called :material-folder-outline:{.icon-def-0} `./ollama_data/`. However, in later tutorials we'll use :simple-docker:{.icon-def-0} Docker volumes for all our data [^docker-volumes].
 
@@ -666,7 +640,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 <!-- FOOTNOTES -->
 [^docker-files]: Usually, we would only have one :simple-docker:{.icon-def-0} Docker compose file that can handle different user preferences by using something like environment variables (we'll see how to do this when we get into the :simple-searxng:{.icon-def-0} [SearXNG server][searxng-tutorial] and :material-chat-processing-outline:{.icon-def-0} [chatbot][chatbot] tutorials). However, in our case :material-expansion-card-variant:{.icon-def-0} GPU support is built by adding two lines (see [lines 10-11][gpu-piece] of the GPU snippet) while :material-cpu-64-bit:{.icon-def-0} CPU support is built by omitting these two lines. I couldn't figure out a good way to dynamically add or omit these lines when building :material-head-question-outline:{.icon-def-0}, so I just resorted to using two different files.
 
-[^docker-volumes]: You can see how to setup using a Docker volume for this project in the [full Docker compose files][docker-compose-full].
+[^docker-volumes]: You can see how to setup using a Docker volume for this project in the [full Docker compose files][docker-compose]{data-preview}.
 
 
 <!-- LINKS -->
@@ -681,7 +655,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [deepseek]: https://ollama.com/library/deepseek-r1
 [discussions]: https://github.com/anima-kit/anima-kit.github.io/discussions
 [docker]: https://www.docker.com/
-[docker-compose-full]: ollama.md#docker-compose-file
+[docker-compose]: ollama.md#docker-compose
 [get-response]: ollama.md#get-response
 [gradio]: https://www.gradio.app/
 [gpu-piece]: ollama.md#GPU-piece
@@ -706,7 +680,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [ollama-options]: https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
 [ollama-python]: https://github.com/ollama/ollama-python/
 [ollama-url]: http://localhost:11434/
-[ollama-utils-skeleton]: ollama.md#ollama-utils-skeleton
+[ollama-utils]: ollama.md#ollama-utils
 [open-webui]: https://openwebui.com/
 [pytest]: https://docs.pytest.org/en/stable/#
 [pytest-order]: https://pypi.org/project/pytest-order/

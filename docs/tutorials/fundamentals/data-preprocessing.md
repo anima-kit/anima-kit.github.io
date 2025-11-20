@@ -13,7 +13,7 @@ template: pages.html
 
 <hr class="icon-def-1 tertiary-icon", style="width: 90%;">
 
-## Linear Regression with Preprocessing Pipeline
+**Linear Regression with Preprocessing Pipeline**
 
 Welcome to the second tutorial! [In the last session](linear-regression-basics.md), we briefly discussed supervised learning including the *regression* and *classification* problems. We then started our journey with a simple *linear regression* problem in which we trained a model to be able to predict the amount of energy that will be consumed given various factors.
 
@@ -21,7 +21,13 @@ We did this by first obtaining the data from Kaggle, splitting it into training 
 
 However, for our feature data, we only took the *continuous* variables in the dataset. From this we saw that the `Temperature` feature had the most contribution to the energy consumed, by far. Now, we're going to add in all the rest of the features that we previous left out, then we can see if any other features contribute nearly as much as the temperature. 
 
-So, let's get started! First, we're going to import all the libraries that we'll need. If you haven't already installed all the requirements, make sure to do this now:
+So, let's get started! 
+
+---
+
+## Setup
+
+First, we're going to import all the libraries that we'll need. If you haven't already installed all the requirements, make sure to do this now:
 
 
 ```python
@@ -49,8 +55,6 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder
 Now that we've imported everything, let's setup our data from Kaggle the same way we did [in the previous tutorial](linear-regression-basics.md).
 
 <hr class="icon-def-1 primary-icon", style="width: 90%;"> 
-
-## Setup
 
 Here, we're going to get our data from Kaggle (if you haven't already done so in the previous tutorial), then convert it to a Pandas dataframe and split it into training and testing sets. Then we'll define our `LinearRegression` model that we'll train on the data, and we'll create functions for training and evaluation. These definitions will be just the same as what we used in the previous tutorial, except now we'll convert some of our work into convienent methods. 
 

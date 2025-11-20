@@ -24,7 +24,7 @@ template: pages.html
 
     Start learning the basics of supervised learning with one of the simplest models.
 
-    [:material-arrow-right-thin: Get started with Linear Regression Basics][linear-regression-basics]
+    [:material-arrow-right-thin: Get started with Linear Regression Basics][linear-regression-basics]{data-preview}
 
 -   :material-flask-round-bottom:{ .icon-def-0 } Data Preprocessing
 
@@ -32,7 +32,7 @@ template: pages.html
 
     Learn how to preprocess data to improve our simple linear regression model.
 
-    [:material-arrow-right-thin: Get started with Data Preprocessing][data-preprocessing]
+    [:material-arrow-right-thin: Get started with Data Preprocessing][data-preprocessing]{data-preview}
 
 -   :material-calendar-clock:{.md-icon} Stay Tuned...
 
@@ -47,6 +47,5 @@ template: pages.html
 <hr class="icon-def-1 primary-icon", style="width: 30%;">
 
 <!-- LINKS -->
-[data-extraction]: doc-extract-intro.md
 [data-preprocessing]: data-preprocessing.md
 [linear-regression-basics]: linear-regression-basics.md

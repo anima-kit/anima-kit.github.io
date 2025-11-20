@@ -26,7 +26,7 @@ template: pages.html
 
     Power the decision making and response generation processes of your agents with LMs.
 
-    [:material-arrow-right-thin: Get started with Ollama][ollama-tutorial]
+    [:material-arrow-right-thin: Get started with Ollama][ollama-tutorial]{data-preview}
 
 -   :simple-searxng:{ .icon-def-0  } SearXNG
 
@@ -34,7 +34,7 @@ template: pages.html
 
     Enhance the knowledge store of your agents by giving them the ability to search the web.
 
-    [:material-arrow-right-thin: Get started with SearXNG][searxng-tutorial]
+    [:material-arrow-right-thin: Get started with SearXNG][searxng-tutorial]{data-preview}
 
 -   :simple-milvus:{ .icon-def-0  } Milvus
 
@@ -42,7 +42,7 @@ template: pages.html
 
     Create vectorstores [^vectorstore] for all of your documents that can be searched by your agents.
 
-    [:material-arrow-right-thin: Get started with Milvus][milvus-tutorial]
+    [:material-arrow-right-thin: Get started with Milvus][milvus-tutorial]{data-preview}
 
 -   :simple-docker:{ .icon-def-0  } Multi-Server Setup
 
@@ -50,15 +50,13 @@ template: pages.html
 
     Combine these servers together to create a one-stop server stack for all of your needs.
 
-    [:material-arrow-right-thin: Get started with multi-server setups][multi-server]
+    [:material-arrow-right-thin: Get started with multi-server setups][multi-server]{data-preview}
 
 </div>
 
 <hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
-<a id="servers-why"></a>
-
-## :material-generator-portable:{ .icon-def-0 } Why are we using servers?
+## :material-generator-portable:{ .icon-def-0 } Why are we using servers? {#servers-why}
 
 An AI agent requires methods to make decisions, generate responses, and in the best builds, use tools. 
 
@@ -109,7 +107,7 @@ For the agent brain, we're going to use LMs served with :simple-ollama:{ .icon-d
 
 <hr class="icon-def-1 primary-icon", style="width: 30%;">  
 
-Check out any of tutorials above to get started :material-arrow-up-bold-outline:{ .icon-def-0 }! To see how to pass all these servers over to our agents in order to create assistants that can grab us up to date information or information relevant to our own personal documents, check out the :material-robot-outline:{ .icon-def-0 } [agents tutorials][agents].
+Check out any of tutorials above to get started :material-arrow-up-bold-outline:{ .icon-def-0 }! To see how to pass all these servers over to our agents in order to create assistants that can grab us up to date information or information relevant to our own personal documents, check out the :material-robot-outline:{ .icon-def-0 } [agents tutorials][agents]{data-preview}.
 
 
 <!-- FOOTNOTES -->

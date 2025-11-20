@@ -20,9 +20,7 @@ template: pages.html
 
 <hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
-<a id="about"></a>
-
-## :material-map-marker-star-outline:{.icon-def-0} About This Project
+## :material-map-marker-star-outline:{.icon-def-0} About This Project {#about}
 
 <div class="grid cards" markdown style="text-align: center; font-size: 2rem; width: 10rem; margin: 0 auto;">
 
@@ -178,9 +176,7 @@ To start off, let's do a web search through the command line :material-arrow-dow
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="cl"></a>
-
-### :material-console:{.icon-def-0} Searxng the Web through the Command Line 
+### :material-console:{.icon-def-0} Searxng the Web through the Command Line {#cl}
 
 ??? vis-inst "Toggle for visual instructions"
 
@@ -238,9 +234,7 @@ In the next example, I show how to do this by creating and running a custom scri
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="rs"></a>
-
-### :material-script-text-outline:{.icon-def-0} Searxng the Web through Running Scripts
+### :material-script-text-outline:{.icon-def-0} Searxng the Web through Running Scripts {#rs}
 
 ??? vis-inst "Toggle for visual instructions"
 
@@ -311,9 +305,7 @@ Now that we understand how to use the code, let's open it up to check out the ge
 
 <hr class="icon-def-1 primary-icon", style="width: 90%;"> 
 
-<a id="proj-struct"></a>
-
-## :material-view-quilt-outline:{.icon-def-0} Project Structure
+## :material-view-quilt-outline:{.icon-def-0} Project Structure {#proj-struct}
 
 Before we take a deep dive into the source code :material-diving-scuba:{.icon-def-0}, let's look at the repo structure to see what code we'll want to learn :material-magnify:{.icon-def-0}.
 
@@ -372,7 +364,7 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
     
     Here, we also use the `logger.py` file to produce informative :material-chart-timeline:{.icon-def-0} and visually appealing :material-palette:{.icon-def-0} interactions, and the `requirements.txt` file to install all the necessary :simple-python:{.icon-def-0} Python libraries (see [step 4][step-requirements] of the :material-flag-checkered:{.icon-def-0} `Getting Started` section). Similarly, the `requirements-dev.txt` file can be used to install the necessary libraries for development :material-file-code-outline:{.icon-def-0}.
 
-    We use the `latency_test.py` file to check how quickly our methods are working :material-timer-check-outline:{.icon-def-0}, and just like in the [Ollama server tutorial][ollama-test], the `searxng_test.py` file basically does what we did when [running the script][running-scripts] in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section. This is the script that we ran in [step 6][step-test] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to test that our Python methods were working.
+    We use the `latency_test.py` file to check how quickly our methods are working :material-timer-check-outline:{.icon-def-0}, and just like in the [Ollama server tutorial][ollama-test], the `searxng_test.py` file basically does what we did when [running the script][running-scripts]{data-preview} in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section. This is the script that we ran in [step 6][step-test] of the :material-flag-checkered:{.icon-def-0}`Getting Started` section to test that our Python methods were working.
 
     The `tests/` folder also contains unit and integration tests for ensuring the code works properly :material-test-tube:{.icon-def-0}. To see how to use the testing suite, check out the [best practices note][ollama-code-best-practices] in the :simple-ollama:{.icon-def-0} Ollama server tutorial.
 
@@ -388,13 +380,9 @@ Here, we're going to look at the relevant files in more detail :material-magnify
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="searxng-utils"></a>
-
-### :simple-searxng:{.icon-def-0} File 1 | `searxng_utils.py`
+### :simple-searxng:{.icon-def-0} File 1 | `searxng_utils.py` {#searxng-utils}
 
 ??? vis-inst "Toggle file visibility"
-
-    <a id="searxng-utils-skeleton"></a>
 
     === "Skeleton"
 
@@ -414,7 +402,7 @@ Here, we're going to look at the relevant files in more detail :material-magnify
 
 Above, I show the `searxng_utils.py` file in all its full glory as well as in a skeleton version :material-bone:{.icon-def-0} which is all the code needed to work :material-power:{.icon-def-0} and almost none of the code for some crucial [best practices][ollama-code-best-practices].
 
-Similarly to the `ollama_utils.py` file in the [Ollama server tutorial][ollama-utils], we have both internal methods :material-tag-hidden:{.icon-def-0} and external methods. The methods of the class that we're going to use are the `run` and `results` methods (exactly what we used when [working in the command line][command-line] and [running scripts][running-scripts] in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section). The two methods are almost exactly identical, but the `results` method takes in an extra argument. 
+Similarly to the `ollama_utils.py` file in the [Ollama server tutorial][ollama-utils], we have both internal methods :material-tag-hidden:{.icon-def-0} and external methods. The methods of the class that we're going to use are the `run` and `results` methods (exactly what we used when [working in the command line][command-line]{data-preview} and [running scripts][running-scripts]{data-preview} in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section). The two methods are almost exactly identical, but the `results` method takes in an extra argument. 
 
 Let's check these methods out :material-arrow-down-bold-outline:{.icon-def-0}.
 
@@ -422,15 +410,11 @@ Let's check these methods out :material-arrow-down-bold-outline:{.icon-def-0}.
 
 ---
 
-<a id="run-results"></a>
+#### :material-map-marker-question-outline:{.icon-def-0} Methods 1.1 | `run` and `results` {#run-results}
 
-#### :material-map-marker-question-outline:{.icon-def-0} Methods 1.1 | `run` and `results`
-
-: See [lines 77-85][searxng-utils-skeleton] and [lines 89-99][searxng-utils-skeleton] of `searxng_utils.py`
+: See [lines 77-85][searxng-utils]{data-preview} and [lines 89-99][searxng-utils]{data-preview} of `searxng_utils.py`
 
 We've already seen that the `run` and `results` methods can take in a query, then output some search results. The `run` method ouputs a summary of all the aggregated results :material-newspaper-variant-outline:{.icon-def-0} while the `results` method outputs a list of detailed results based on the `num_results` argument :material-newspaper-variant-multiple-outline:{.icon-def-0}. Now, we can open up the methods to see how this is all done :material-book-open-variant-outline:{.icon-def-0}.
-
-<a id="code-run-results"></a>
 
 === "run"
 
@@ -448,7 +432,7 @@ We've already seen that the `run` and `results` methods can take in a query, the
     --8<--
     ```
 
-Here, we see that we're using the `run` and `results` method of our `client` attribute to get results (see [lines 11-13][code-run-results] of the `run` method and [lines 15-18][code-run-results] of the `results` method). All we need to do now is understand how the `client` attribute works (see [line 29][searxng-utils-skeleton] of the `searxng_utils.py` file) :material-checkbox-marked-outline:{.icon-def-0}. 
+Here, we see that we're using the `run` and `results` method of our `client` attribute to get results (see [lines 11-13][run-results]{data-preview} of the `run` method and [lines 15-18][run-results]{data-preview} of the `results` method). All we need to do now is understand how the `client` attribute works (see [line 29][searxng-utils]{data-preview} of the `searxng_utils.py` file) :material-checkbox-marked-outline:{.icon-def-0}. 
 
 Let's look at how we define the `client` attribute of the class more closely :material-arrow-down-bold-outline:{.icon-def-0}.
 
@@ -456,13 +440,11 @@ Let's look at how we define the `client` attribute of the class more closely :ma
 
 ---
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.2 | `__init__`
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.2 | `__init__` {#code-init}
 
-: See [lines 20-29][searxng-utils-skeleton] of `searxng_utils.py`
+: See [lines 20-29][searxng-utils]{data-preview} of `searxng_utils.py`
 
-This method instantiates the LangChain [SearxSearchWrapper][searx-search-wrapper]{.blank} which has the `run` and `results` methods that [we saw above][code-run-results] already built in. All we need to do is properly point to the SearXNG server that we created with Docker. 
-    
-<a id="code-init"></a>
+This method instantiates the LangChain [SearxSearchWrapper][searx-search-wrapper]{.blank} which has the `run` and `results` methods that [we saw above][run-results]{data-preview} already built in. All we need to do is properly point to the SearXNG server that we created with Docker. 
 
 ```python title="__init__ method of searxng_utils.py" linenums="1" hl_lines="16" 
 --8<--
@@ -470,15 +452,15 @@ docs/tutorials/applications/agents/servers/assets/searxng/searxng-utils-skeleton
 --8<--
 ```
 
-So, we can just invoke the `client.run` and `client.results` methods to create our own `run` ([lines 77-85][searxng-utils-skeleton]) and `results` ([lines 89-99][searxng-utils-skeleton]) methods :material-flash:{.icon-def-0}. It really is just this easy when [other people do all the work for you][searx-search-wrapper]{.blank}. We can just wrap up their code to be used in our custom setting :material-candy:{.icon-def-0}. 
+So, we can just invoke the `client.run` and `client.results` methods to create our own `run` ([lines 77-85][searxng-utils]{data-preview}) and `results` ([lines 89-99][searxng-utils]{data-preview}) methods :material-flash:{.icon-def-0}. It really is just this easy when [other people do all the work for you][searx-search-wrapper]{.blank}. We can just wrap up their code to be used in our custom setting :material-candy:{.icon-def-0}. 
 
 ??? bonus-code "Wasn't there another argument in the `__init__` method?"
 
-    Yep :material-robot-happy-outline:{ .icon-def-0 }. In the [full version][searxng-utils-skeleton] of `searxng_utils.py`, the `__init__` method has an extra `client` argument. I added this here to allow the user to define their own [SearxSearchWrapper][searx-search-wrapper]{.blank} with any arguments that they'd like :material-palette-outline:{.icon-def-0}. 
+    Yep :material-robot-happy-outline:{ .icon-def-0 }. In the [full version][searxng-utils]{data-preview} of `searxng_utils.py`, the `__init__` method has an extra `client` argument. I added this here to allow the user to define their own [SearxSearchWrapper][searx-search-wrapper]{.blank} with any arguments that they'd like :material-palette-outline:{.icon-def-0}. 
     
     It's also helpful to define the class this way when testing the code without access to the SearXNG server :material-server-off:{.icon-def-0}. In this case, we want to [mock][mock-testing]{.blank} the server and we can easily pass this mock through the `client` attribute :material-flash:{.icon-def-0}.
 
-Now, it's generally good practice to make sure the SearXNG server can be reached :material-check-network-outline:{.icon-def-0} as soon as we instantiate our class, otherwise the user might get a surprise error when trying to get search results :material-head-question-outline:{.icon-def-0}. This is exactly what we're doing when we use the `_test_searxng` method on [line 13][code-init].
+Now, it's generally good practice to make sure the SearXNG server can be reached :material-check-network-outline:{.icon-def-0} as soon as we instantiate our class, otherwise the user might get a surprise error when trying to get search results :material-head-question-outline:{.icon-def-0}. This is exactly what we're doing when we use the `_test_searxng` method on [line 13][code-init]{data-preview}.
 
 Let's look at how we test the SearXNG server more closely :material-arrow-down-bold-outline:{.icon-def-0}.
 
@@ -486,13 +468,11 @@ Let's look at how we test the SearXNG server more closely :material-arrow-down-b
 
 ---
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.3 | `_test_searxng`
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.3 | `_test_searxng` {#code-test-searxng}
 
-: See [lines 33-56][searxng-utils-skeleton] of `searxng_utils.py`
+: See [lines 33-56][searxng-utils]{data-preview} of `searxng_utils.py`
 
 This method ensures the SearXNG server can be properly reached and exits the program with an error if it can't :material-alert-octagon-outline:{.icon-def-0}.
-
-<a id="code-test-searxng"></a>
 
 ```python title="_test_searxng method of searxng_utils.py" linenums="1" hl_lines="15 18 25 28" 
 --8<--
@@ -500,15 +480,15 @@ docs/tutorials/applications/agents/servers/assets/searxng/searxng-utils-stripped
 --8<--
 ```
 
-Here, we loop through five consecutive tries of getting a successful response from the server :material-chat-question-outline:{.icon-def-0} using the [Requests][requests]{.blank} library ([lines 12-15][code-test-searxng]). If the status code is a success (i.e. 200), we exit the method successfully :material-checkbox-marked-outline:{.icon-def-0} and move on to defining our `client` attribute ([line 16][code-init] of the `__init__` method). If the status code isn't a success, we wait for a bit ([lines 24-25][code-test-searxng]), then try again until the fifth try. If we still don't get a success, we exit the program with an error ([line 28][code-test-searxng]) :material-alert-octagon-outline:{.icon-def-0}. This way, the user will know up front that there's going to be problems getting search results :material-head-alert-outline:{.icon-def-0}.
+Here, we loop through five consecutive tries of getting a successful response from the server :material-chat-question-outline:{.icon-def-0} using the [Requests][requests]{.blank} library ([lines 12-15][code-test-searxng]{data-preview}). If the status code is a success (i.e. 200), we exit the method successfully :material-checkbox-marked-outline:{.icon-def-0} and move on to defining our `client` attribute ([line 16][code-init]{data-preview} of the `__init__` method). If the status code isn't a success, we wait for a bit ([lines 24-25][code-test-searxng]{data-preview}), then try again until the fifth try. If we still don't get a success, we exit the program with an error ([line 28][code-test-searxng]{data-preview}) :material-alert-octagon-outline:{.icon-def-0}. This way, the user will know up front that there's going to be problems getting search results :material-head-alert-outline:{.icon-def-0}.
 
-This retry mechanism works for *server errors* in which the server is available for requests, but it somehow isn't able to perform the request properly (like the website doesn't exist or it's taking too long to reply) :material-help-network-outline:{.icon-def-0}. However, if we have more serious issues like we can't even connect to the server :material-server-off:{.icon-def-0}, we want to let the user know this immediately without going through the whole retry logic ([lines 20-21][code-test-searxng]) :material-flash:{.icon-def-0}.
+This retry mechanism works for *server errors* in which the server is available for requests, but it somehow isn't able to perform the request properly (like the website doesn't exist or it's taking too long to reply) :material-help-network-outline:{.icon-def-0}. However, if we have more serious issues like we can't even connect to the server :material-server-off:{.icon-def-0}, we want to let the user know this immediately without going through the whole retry logic ([lines 20-21][code-test-searxng]{data-preview}) :material-flash:{.icon-def-0}.
 
 <a id="requests-search"></a>
 
 ??? bonus-code "How does the `requests_search` method work?"
 
-    The `requests_search` method ([lines 60-73][searxng-utils-skeleton] of `searxng_utils.py`) uses the [Requests][requests]{.blank} library to get the entire HTML output of the search request :material-code-block-tags:{.icon-def-0}. Results are also obtained this way in LangChain's [SearxSearchWrapper][searx-search-wrapper-source]{.blank} (see the `_searx_api_query` method and how it's used in the `run` and `results` methods), but with a lot of extra formatting, error handling, and cleaning to promote more useful results :material-creation-outline:{.icon-def-0}. Might as well stand on the shoulders of giants :material-image-filter-hdr-outline:{.icon-def-0} and utilize the work that's been gifted to us :material-gift-open-outline:{.icon-def-0}. However, I wanted to add this method for learning purposes :material-wizard-hat:{.icon-def-0}.
+    The `requests_search` method ([lines 60-73][searxng-utils]{data-preview} of `searxng_utils.py`) uses the [Requests][requests]{.blank} library to get the entire HTML output of the search request :material-code-block-tags:{.icon-def-0}. Results are also obtained this way in LangChain's [SearxSearchWrapper][searx-search-wrapper-source]{.blank} (see the `_searx_api_query` method and how it's used in the `run` and `results` methods), but with a lot of extra formatting, error handling, and cleaning to promote more useful results :material-creation-outline:{.icon-def-0}. Might as well stand on the shoulders of giants :material-image-filter-hdr-outline:{.icon-def-0} and utilize the work that's been gifted to us :material-gift-open-outline:{.icon-def-0}. However, I wanted to add this method for learning purposes :material-wizard-hat:{.icon-def-0}.
 
     <a id="code-requests-search"></a>
 
@@ -520,7 +500,7 @@ This retry mechanism works for *server errors* in which the server is available 
 
     Here, we're formatting the query to work properly with the [Requests][requests]{.blank} library on [line 12][code-requests-search], then we're using the GET method to get our results from the SearXNG server URL defined in our Docker setup ([lines 15-19][code-requests-search]). Finally, we return the `text` attribute of the result ([line 20][code-requests-search]) :material-newspaper:{.icon-def-0}. 
 
-    As an aside, when playing around with the Requests library I learned that you can feed this `params` dictionary basically any Python object as the `query` :material-shape-plus:{.icon-def-0} and Requests will use Python's [urllib][urllib]{.blank} to parse it into a [URL encoded string][url-encode]{.blank}. By adding a `query` validation in the `requests_search` method, the user now knows exactly what they can pass to the method (see [lines 181-185][searxng-utils-skeleton] of the full version of the `searxng_utils.py` file) :material-checkbox-marked-outline:{.icon-def-0}.
+    As an aside, when playing around with the Requests library I learned that you can feed this `params` dictionary basically any Python object as the `query` :material-shape-plus:{.icon-def-0} and Requests will use Python's [urllib][urllib]{.blank} to parse it into a [URL encoded string][url-encode]{.blank}. By adding a `query` validation in the `requests_search` method, the user now knows exactly what they can pass to the method (see [lines 181-185][searxng-utils]{data-preview} of the full version of the `searxng_utils.py` file) :material-checkbox-marked-outline:{.icon-def-0}.
  
 ---
 
@@ -530,13 +510,9 @@ Now, how about creating the SearXNG server that we'll be pointing to in order to
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="docker-compose"></a>
-
-### :simple-docker:{.icon-def-0} File 2 | `docker-compose.yml`
+### :simple-docker:{.icon-def-0} File 2 | `docker-compose.yml` {#docker-compose}
 
 ??? vis-inst "Toggle file visibility"
-
-    <a id="code-docker-compose"></a>
 
     ```yaml title="docker-compose.yml (original file: https://github.com/searxng/searxng-docker/blob/master/docker-compose.yaml)" linenums="1" hl_lines="0"
     --8<--
@@ -564,13 +540,13 @@ docs/tutorials/applications/agents/servers/assets/searxng/docker-compose-strippe
 --8<--
 ```
 
-The SearXNG container ([lines 9-34][docker-compose-piece]) is defined similarly to how we defined our :simple-ollama:{.icon-def-0} [Ollama container][ollama-docker-compose] with the image, name, volume, and port that we want to use. In this case, we want to interact with the server by using our [localhost][localhost]{.blank} network to send requests to port `8080` (the designated port that's chosen by default in the [searxng-docker repo][searxng-docker]{.blank}) [^port-8080]. This is [where we point][code-init] when we initialize the `SearxngClient` class of the `searxng_utils.py` file :material-access-point-check:{.icon-def-0} and the URL that we pass to LangChain's [SearxSearchWrapper][searx-search-wrapper]{.blank} :material-search-web:{.icon-def-0}.
+The SearXNG container ([lines 9-34][docker-compose-piece]) is defined similarly to how we defined our :simple-ollama:{.icon-def-0} [Ollama container][ollama-docker-compose] with the image, name, volume, and port that we want to use. In this case, we want to interact with the server by using our [localhost][localhost]{.blank} network to send requests to port `8080` (the designated port that's chosen by default in the [searxng-docker repo][searxng-docker]{.blank}) [^port-8080]. This is [where we point][code-init]{data-preview} when we initialize the `SearxngClient` class of the `searxng_utils.py` file :material-access-point-check:{.icon-def-0} and the URL that we pass to LangChain's [SearxSearchWrapper][searx-search-wrapper]{.blank} :material-search-web:{.icon-def-0}.
 
 ---
 
 Now, there are some new techniques here that we didn't use when building the [Ollama server][ollama-docker-compose] :material-flask-plus-outline:{.icon-def-0}. First, when we set up our Ollama server we didn't need it to interact with any other servers in our Docker network :material-server-network-outline:{.icon-def-0}. However, here we need our SearXNG and Redis containers to talk to each other, so we define a proper network for container communication :material-chat-alert-outline:{.icon-def-0}. 
 
-We also *definitely* need our Caddy and SearXNG services to communicate with each other :material-chat-processing-outline:{.icon-def-0}, but they do so in a different way :material-shape-plus:{.icon-def-0}. Since we set the `network_mode` to `host` for our Caddy service (see [line 38][code-docker-compose] of the full Docker compose file), it's directly ported to our [localhost][localhost]{.blank} network and so the service can communicate with SearXNG directly through the URL we set: [http://localhost:8080][searxng-url]{.blank} :material-checkbox-marked-outline:{.icon-def-0}.
+We also *definitely* need our Caddy and SearXNG services to communicate with each other :material-chat-processing-outline:{.icon-def-0}, but they do so in a different way :material-shape-plus:{.icon-def-0}. Since we set the `network_mode` to `host` for our Caddy service (see [line 38][docker-compose]{data-preview} of the full Docker compose file), it's directly ported to our [localhost][localhost]{.blank} network and so the service can communicate with SearXNG directly through the URL we set: [http://localhost:8080][searxng-url]{.blank} :material-checkbox-marked-outline:{.icon-def-0}.
 
 Besides the network, we also want to define Docker volumes to handle all of our configuration and data storage. In the code snippet, we can see how the Docker network ([lines 37-38][docker-compose-piece]) :material-server-network:{.icon-def-0} and volumes ([lines 41-45][docker-compose-piece]) :material-database-outline:{.icon-def-0} are defined with ease, while the SearXNG service is defined to use the proper volume and network ([lines 15 and 20][docker-compose-piece]). The other volume definition on [line 19][docker-compose-piece] tells Docker where to find all of our SearXNG settings in the `./searxng` folder :material-palette-outline:{.icon-def-0}. 
 
@@ -621,10 +597,10 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [chatbot]: ../agents/chatbot.md
 [code-agent]: ../agents/code-agent.md
 [code-best-practices]: ollama.md#code-best-practices
-[code-docker-compose]: searxng.md#code-docker-compose
+[docker-compose]: searxng.md#docker-compose
 [code-init]: searxng.md#code-init
 [code-requests-search]: searxng.md#code-requests-search
-[code-run-results]: searxng.md#code-run-results
+[run-results]: searxng.md#run-results
 [code-test-searxng]: searxng.md#code-test-searxng
 [command-line]: searxng.md#cl
 [contributing]: https://github.com/anima-kit/anima-kit.github.io/blob/main/CONTRIBUTING.md
@@ -685,7 +661,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [searxng-github-ak-searxng]: https://github.com/anima-kit/searxng-docker/tree/main/searxng
 [searxng-tutorial]: http://anima-kit.github.io/tutorials/servers/searxng/
 [searxng-url]: http://localhost:8080
-[searxng-utils-skeleton]: searxng.md#searxng-utils-skeleton
+[searxng-utils]: searxng.md#searxng-utils
 [secrets]: https://docs.python.org/3/library/secrets.html
 [servers]: index.md
 [servers-why]: index.md#servers-why

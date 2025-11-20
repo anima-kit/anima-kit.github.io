@@ -18,7 +18,7 @@ template: pages.html
 ![Milvus Python Docker](assets/milvus/milvus-docker-python.png){ .img-def }
 
 !!! tl-dr "TL;DR"
-    Learn how to build and use a [vector database][vectorstore]{.blank} server to store and search your documents on your local machine :material-laptop:{.icon-def-0}. Then, you can use this setup as a tool to give to [locally run AI agents][agents] :material-robot-outline:{.icon-def-0}.
+    Learn how to build and use a [vector database][vectorstore]{.blank} server to store and search your documents on your local machine :material-laptop:{.icon-def-0}. Then, you can use this setup as a tool to give to [locally run AI agents][agents]{data-preview} :material-robot-outline:{.icon-def-0}.
 
 <hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
 
@@ -33,13 +33,13 @@ template: pages.html
 
 Here, we're going to setup a :simple-milvus:{.icon-def-0} [Milvus][milvus]{.blank} server in :simple-docker:{.icon-def-0} [Docker][docker]{.blank} for using the [vectorstore][vectorstore]{.blank} on our local machines :material-laptop:{.icon-def-0}. We'll see how to add some example data to the vectorstore :material-file-document-plus-outline:{.icon-def-0} and then how to search the database for a given query :material-archive-search-outline:{.icon-def-0}. Once our Milvus server is setup properly, we can also check out some useful information about our client sessions by navigating to [http://localhost:9091/webui][milvus-webui]{.blank}.
 
-The code we learn and use here will serve as the foundation for an indispensable tool to give to our agents, allowing them to obtain information about our personal data :material-calendar-account-outline:{.icon-def-0}. To see what sorts of agents we'll build to use this tool and others, check out the :material-robot-outline:{.icon-def-0} [agents tutorials][agents].
+The code we learn and use here will serve as the foundation for an indispensable tool to give to our agents, allowing them to obtain information about our personal data :material-calendar-account-outline:{.icon-def-0}. To see what sorts of agents we'll build to use this tool and others, check out the :material-robot-outline:{.icon-def-0} [agents tutorials][agents]{data-preview}.
 
 ---
 
-[As previously mentioned][servers-why], the way we're going to build agents is by first building local servers for all the gadgets that our agents will need :material-hammer-wrench:{.icon-def-0}. Then, we can learn how to pass these gadgets over to our agents with :simple-langchain:{.icon-def-0} [LangChain][langchain]{.blank} and :simple-langgraph:{.icon-def-0} [LangGraph][langgraph]{.blank}.  
+[As previously mentioned][servers-why]{data-preview}, the way we're going to build agents is by first building local servers for all the gadgets that our agents will need :material-hammer-wrench:{.icon-def-0}. Then, we can learn how to pass these gadgets over to our agents with :simple-langchain:{.icon-def-0} [LangChain][langchain]{.blank} and :simple-langgraph:{.icon-def-0} [LangGraph][langgraph]{.blank}.  
 
-We've gone over how to create an :simple-ollama:{.icon-def-0} [Ollama server][ollama-tutorial] to chat with LMs and a :simple-searxng:{.icon-def-0} [SearXNG server][searxng-tutorial] to search the web. Now, we're going to follow the same sort of process to create the :simple-milvus:{.icon-def-0} [Milvus][milvus]{.blank} server. We'll learn how to setup and use the provided :simple-python:{.icon-def-0} Python code, built on the [PyMilvus][pymilvus]{.blank} library, to interact with the server then dive into the code to see how it all works :material-diving-scuba:{.icon-def-0}. This time, we'll also dive into the math behind the search process to better understand our results :material-calculator-variant-outline:{.icon-def-0}.
+We've gone over how to create an :simple-ollama:{.icon-def-0} [Ollama server][ollama-tutorial]{data-preview} to chat with LMs and a :simple-searxng:{.icon-def-0} [SearXNG server][searxng-tutorial]{data-preview} to search the web. Now, we're going to follow the same sort of process to create the :simple-milvus:{.icon-def-0} [Milvus][milvus]{.blank} server. We'll learn how to setup and use the provided :simple-python:{.icon-def-0} Python code, built on the [PyMilvus][pymilvus]{.blank} library, to interact with the server then dive into the code to see how it all works :material-diving-scuba:{.icon-def-0}. This time, we'll also dive into the math behind the search process to better understand our results :material-calculator-variant-outline:{.icon-def-0}.
 
 ---
 
@@ -55,7 +55,7 @@ Besides full-text searches, another type of search is the `semantic search`. The
 
 ---
 
-Using :simple-milvus:{.icon-def-0} [Milvus][milvus]{.blank} as a vectorstore to perform these types of searches is an obvious choice :material-checkbox-marked-outline:{.icon-def-0}. As we'll see here and in the [document agent tutorial][doc-agent], it's a powerhouse for storing and searching data :material-home-lightning-bolt-outline:{.icon-def-0}. As for all the various types of searches that we discussed above, [Milvus already has a lot of these][milvus-docs]{.blank} primed and ready for us to use :material-flash:{.icon-def-0}. 
+Using :simple-milvus:{.icon-def-0} [Milvus][milvus]{.blank} as a vectorstore to perform these types of searches is an obvious choice :material-checkbox-marked-outline:{.icon-def-0}. As we'll see here and in the [document agent tutorial][doc-agent]{data-preview}, it's a powerhouse for storing and searching data :material-home-lightning-bolt-outline:{.icon-def-0}. As for all the various types of searches that we discussed above, [Milvus already has a lot of these][milvus-docs]{.blank} primed and ready for us to use :material-flash:{.icon-def-0}. 
 
 With Milvus, we could choose to do either a full-text or a semantic search, depending on our preferences :material-palette-outline:{.icon-def-0}. We could also perform a [hybrid search][hybrid-search]{.blank}, meaning we can query the data on both sparse and dense vectors at the same time, performing a :material-key-chain:{.icon-def-0} full-text search (exact keyword) and a :material-molecule:{.icon-def-0} semantic search (complex relationships) simultaneously while utilizing ranking algorithms to further increase the relevancy of our results :material-head-check-outline:{.icon-def-0}.
 
@@ -65,7 +65,7 @@ The Milvus server will also utilize a :simple-minio:{.icon-def-0} [MinIO][minio]
 
 There are a couple of alternatives that I tried for storing and searching data, both of which bridge nicely with :simple-langchain:{.icon-def-0} [LangChain][langchain]{.blank}. If Milvus doesn't fit your needs, you can also check out [FAISS][faiss]{.blank} or [Chroma][chroma]{.blank}.
 
-For a refresher on how to use :simple-docker:{.icon-def-0} [Docker][docker]{.blank} to build an LM server that can power the decision making and response generating aspects of our agents, check out the :simple-ollama:{.icon-def-0} [Ollama server][ollama-tutorial] tutorial. To see how to build a [metasearch engine][metasearch-engine]{.blank} tool to search the web, check out the :simple-searxng:{.icon-def-0} [SearXNG server][searxng-tutorial] tutorial. For an idea of what types of agents we'll build with our servers, check out the :material-robot-excited-outline:{.icon-def-0} [agents tutorials][agents].
+For a refresher on how to use :simple-docker:{.icon-def-0} [Docker][docker]{.blank} to build an LM server that can power the decision making and response generating aspects of our agents, check out the :simple-ollama:{.icon-def-0} [Ollama server][ollama-tutorial]{data-preview} tutorial. To see how to build a [metasearch engine][metasearch-engine]{.blank} tool to search the web, check out the :simple-searxng:{.icon-def-0} [SearXNG server][searxng-tutorial]{data-preview} tutorial. For an idea of what types of agents we'll build with our servers, check out the :material-robot-excited-outline:{.icon-def-0} [agents tutorials][agents]{data-preview}.
 
 ---
 
@@ -150,7 +150,7 @@ Now that the repo is built and working, let's play around with the code a bit :m
 
 ---
 
-When we built our :simple-ollama:{.icon-def-0} [Ollama][ollama-tutorial] and :simple-searxng:{.icon-def-0} [SearXNG][searxng-tutorial] servers, we demonstrated that the servers could be reached and properly invoked by using the provided Python methods :material-checkbox-marked-outline:{.icon-def-0}. We did this by first instantiating the classes that held the methods to use, then executed the proper commands in the command line :material-console:{.icon-def-0} and by running scripts :material-script-text-outline:{.icon-def-0}.
+When we built our :simple-ollama:{.icon-def-0} [Ollama][ollama-tutorial]{data-preview} and :simple-searxng:{.icon-def-0} [SearXNG][searxng-tutorial]{data-preview} servers, we demonstrated that the servers could be reached and properly invoked by using the provided Python methods :material-checkbox-marked-outline:{.icon-def-0}. We did this by first instantiating the classes that held the methods to use, then executed the proper commands in the command line :material-console:{.icon-def-0} and by running scripts :material-script-text-outline:{.icon-def-0}.
 
 ---
 
@@ -158,15 +158,13 @@ In this case, the main class to interact with the Milvus server is the `MilvusCl
 
 We can create collections to hold our data using the :material-archive-outline:{.icon-def-0} `create_collection` method and delete these collections with the :material-archive-off-outline:{.icon-def-0} `drop_collection` method. We can list all available collections with the :material-list-box-outline:{.icon-def-0} `list_collections` method, and we can add data to or remove data from a collection using the :material-file-document-plus-outline:{.icon-def-0} `insert` and  :material-file-document-remove-outline:{.icon-def-0} `delete` methods. Finally, we can search a collection for a given query using the :material-archive-search-outline:{.icon-def-0} `full_text_search` method.
 
-For this tutorial, we'll represent our data with `sparse vectors` which can then be used to search for particular keywords :material-key-chain:{.icon-def-0}. [When we build our document agent][doc-agent], we'll see how to add in additional `dense vectors` to represent our data. In this case, we'll be able to use both `sparse` and `dense` embeddings to perform [hybrid searches][hybrid-search]{.blank} for both particular keywords and data based on complex, semantic connections to the query :material-molecule:{.icon-def-0}.
+For this tutorial, we'll represent our data with `sparse vectors` which can then be used to search for particular keywords :material-key-chain:{.icon-def-0}. [When we build our document agent][doc-agent]{data-preview}, we'll see how to add in additional `dense vectors` to represent our data. In this case, we'll be able to use both `sparse` and `dense` embeddings to perform [hybrid searches][hybrid-search]{.blank} for both particular keywords and data based on complex, semantic connections to the query :material-molecule:{.icon-def-0}.
 
 To start off learning how to use the code, let's manage and search a vectorstore through the command line :material-arrow-down-bold-outline:{.icon-def-0}.
 
 ---
 
-<a id="cl"></a>
-
-### :material-console:{.icon-def-0} Data Management and Search through the Command Line
+### :material-console:{.icon-def-0} Data Management and Search through the Command Line {#cl}
 
 ??? vis-inst "Toggle for visual instructions"
 
@@ -236,9 +234,7 @@ In the next example, I show how to make these customizations by creating and run
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="rs"></a>
-
-### :material-script-text-outline:{.icon-def-0} Data Management and Search through Running Scripts
+### :material-script-text-outline:{.icon-def-0} Data Management and Search through Running Scripts {#rs}
 
 ??? vis-inst "Toggle for visual instructions"
 
@@ -304,7 +300,7 @@ Again, all logs will be printed in the console and stored in :material-note-edit
 
 <hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
-Notice these searches are *full-text*, meaning the data is searched for exact keywords :material-key-chain:{.icon-def-0}. We can improve this search by performing a semantic search simultaneously, picking up on more subtle relationships between the data :material-molecule:{.icon-def-0}. This is exactly what we'll do in the [document agent tutorial][doc-agent] :material-bookshelf:{.icon-def-0} :material-magnify:{.icon-def-0} :material-robot-excited-outline:{.icon-def-0}.
+Notice these searches are *full-text*, meaning the data is searched for exact keywords :material-key-chain:{.icon-def-0}. We can improve this search by performing a semantic search simultaneously, picking up on more subtle relationships between the data :material-molecule:{.icon-def-0}. This is exactly what we'll do in the [document agent tutorial][doc-agent]{data-preview} :material-bookshelf:{.icon-def-0} :material-magnify:{.icon-def-0} :material-robot-excited-outline:{.icon-def-0}.
 
 Now that we understand how to use the code, let's open it up to check out the gears :material-cog-outline:{.icon-def-0} :material-arrow-down-bold-outline:{.icon-def-0}.
 
@@ -336,15 +332,15 @@ Before we take a deep dive into the source code :material-diving-scuba:{.icon-de
 
 <h4 style="text-align: left;">milvus_types.py</h4>
 
-> This file performs type validation for the methods in the `milvus_utils.py` file :material-shape-plus:{.icon-def-0}. What this means is that the arguments and results of the methods are checked to make sure they have the correct Python type using [Pydantic][pydantic]{.blank} (see [lines 211-213 & 223-225][milvus-utils-skeleton] of the full version of the `milvus_utils.py` file for an example of how this file is used). This trick is quite helpful for ridding your code of potential bugs related to recieving the wrong types of objects :material-shield-bug-outline:{.icon-def-0}. I won't go into this file in detail, but you can [check it out][milvus-types-ak] if you're interested in learning :material-wizard-hat:{.icon-def-0}.
+> This file performs type validation for the methods in the `milvus_utils.py` file :material-shape-plus:{.icon-def-0}. What this means is that the arguments and results of the methods are checked to make sure they have the correct Python type using [Pydantic][pydantic]{.blank} (see [lines 211-213 & 223-225][milvus-utils]{data-preview} of the full version of the `milvus_utils.py` file for an example of how this file is used). This trick is quite helpful for ridding your code of potential bugs related to recieving the wrong types of objects :material-shield-bug-outline:{.icon-def-0}. I won't go into this file in detail, but you can [check it out][milvus-types-ak] if you're interested in learning :material-wizard-hat:{.icon-def-0}.
 
 ??? bonus-code "How do all the files work?"
 
-    For a refresher on the `logger.py`, `requirements*.txt`, `latency_test.py`, and `milvus_test.py` files as well as the `tests/` folder, check out the :simple-ollama:{.icon-def-0} [Ollama][ollama-project-structure] and :simple-searxng:{.icon-def-0} [SearXNG][searxng-bonus-all-files] tutorials.
+    For a refresher on the `logger.py`, `requirements*.txt`, `latency_test.py`, and `milvus_test.py` files as well as the `tests/` folder, check out the :simple-ollama:{.icon-def-0} [Ollama][ollama-project-structure]{data-preview} and :simple-searxng:{.icon-def-0} [SearXNG][searxng-bonus-all-files] tutorials.
 
     ---
 
-    We've also seen the :simple-docker:{.icon-def-0} Docker compose file for the [Ollama][ollama-docker-compose] and [SearXNG][searxng-docker-compose] tutorials. Here, this file doesn't contain much we haven't seen yet. Similarly to the [SearXNG server][searxng-docker-compose], we define multiple services for :simple-milvus:{.icon-def-0} Milvus as well as the supporting servers, :simple-minio:{.icon-def-0} MinIO and :simple-etcd:{.icon-def-0} etcd. We also perform some new tricks for healthchecks and ensure that the Milvus server can't be started without its supporting servers :material-thermometer-check:{.icon-def-0}. I won't go into details for these, but you can [check out the file][docker-compose-ak] to see what I mean. 
+    We've also seen the :simple-docker:{.icon-def-0} Docker compose file for the [Ollama][ollama-docker-compose]{data-preview} and [SearXNG][searxng-docker-compose]{data-preview} tutorials. Here, this file doesn't contain much we haven't seen yet. Similarly to the [SearXNG server][searxng-docker-compose]{data-preview}, we define multiple services for :simple-milvus:{.icon-def-0} Milvus as well as the supporting servers, :simple-minio:{.icon-def-0} MinIO and :simple-etcd:{.icon-def-0} etcd. We also perform some new tricks for healthchecks and ensure that the Milvus server can't be started without its supporting servers :material-thermometer-check:{.icon-def-0}. I won't go into details for these, but you can [check out the file][docker-compose-ak] to see what I mean. 
 
 ---
 
@@ -358,13 +354,9 @@ Here, we're going to look at the relevant files in more detail :material-magnify
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="milvus-utils"></a>
-
-### :simple-milvus:{.icon-def-0} File 1 | `milvus_utils.py`
+### :simple-milvus:{.icon-def-0} File 1 | `milvus_utils.py` {#milvus-utils}
 
 ??? vis-inst "Toggle file visibility"
-
-    <a id="milvus-utils-skeleton"></a>
 
     === "Skeleton"
 
@@ -384,7 +376,7 @@ Here, we're going to look at the relevant files in more detail :material-magnify
 
 Above, I show the `milvus_utils.py` file in all its full glory as well as in a skeleton version :material-bone:{.icon-def-0} which is all the code needed to work :material-power:{.icon-def-0} and almost none of the code for some crucial [best practices][ollama-code-best-practices].
 
-Compared to the `ollama_utils.py` file in the [Ollama server tutorial][ollama-utils] and the `searxng_utils.py` in the [SearXNG server tutorial][searxng-utils], many more of the methods in the `MilvusClientInit` class are external methods to be used outside the class. However, the main methods that we're going to use are the `create_collection`, `insert`, and `full_text_search` methods. These are what we used when [working in the command line][command-line] and [running scripts][running-scripts] in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section. 
+Compared to the `ollama_utils.py` file in the [Ollama server tutorial][ollama-utils]{data-preview} and the `searxng_utils.py` in the [SearXNG server tutorial][searxng-utils]{data-preview}, many more of the methods in the `MilvusClientInit` class are external methods to be used outside the class. However, the main methods that we're going to use are the `create_collection`, `insert`, and `full_text_search` methods. These are what we used when [working in the command line][command-line]{data-preview} and [running scripts][running-scripts]{data-preview} in the :material-note-edit-outline:{.icon-def-0} `Example Use Cases` section. 
 
 Before we start, you can also :simple-milvus:{.icon-def-0} [checkout the guide][full-text-search]{.blank} that much of this code is based on. 
 
@@ -394,13 +386,11 @@ Now, let's check these methods out :material-arrow-down-bold-outline:{.icon-def-
 
 ---
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.1 | `create_collection`
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.1 | `create_collection` {#code-create-collection}
 
-: See [lines 141-175][milvus-utils-skeleton] of `milvus_utils.py`
+: See [lines 141-175][milvus-utils]{data-preview} of `milvus_utils.py`
 
 We've already seen that the `create_collection` method can take in a collection name, then create a Milvus collection that can be used to store and search data. Now, we can open up the method to see how this is all done :material-book-open-variant-outline:{.icon-def-0}.
-
-<a id="code-create-collection"></a>
 
 ```python title="create_collection method of milvus_utils.py" linenums="1" hl_lines="0" 
 --8<--
@@ -410,10 +400,10 @@ docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.p
 
 Before discussing how the method works, let's discuss the default values that go into it. These include the:
 
--  `collection_name` ([lines 2 and 7][code-create-collection]) which is just a string defining the name of the collection,
--  `field_params_list` ([line 8][code-create-collection]) defining the fields with which to represent our data,
--  `func_bm25` ([line 9][code-create-collection]) defining the embedding function to use for an additional representation of the data,
--  `index_params_list` ([line 10][code-create-collection]) defining the fields to use for searching and the index type for quick retrieval. 
+-  `collection_name` ([lines 2 and 7][code-create-collection]{data-preview}) which is just a string defining the name of the collection,
+-  `field_params_list` ([line 8][code-create-collection]{data-preview}) defining the fields with which to represent our data,
+-  `func_bm25` ([line 9][code-create-collection]{data-preview}) defining the embedding function to use for an additional representation of the data,
+-  `index_params_list` ([line 10][code-create-collection]{data-preview}) defining the fields to use for searching and the index type for quick retrieval. 
 
 Let's look at the last three of these together :material-arrow-down-bold-outline:{.icon-def-0}. 
 
@@ -465,7 +455,7 @@ In other words, we start with a list of `text` entries :material-text-box-multip
 
         This is how we turn text fields into sparse vectors and how we score documents to obtain results with the `full_text_search` method :material-function-variant:{.icon-def-0}. 
         
-        This uses the [BM25 method][bm25]{.blank} that's [built into Milvus][milvus-metrics]{.blank}. For more details about how this function works see the :material-calculator-variant-outline:{.icon-def-0} [math deep dive][math-dive] section.
+        This uses the [BM25 method][bm25]{.blank} that's [built into Milvus][milvus-metrics]{.blank}. For more details about how this function works see the :material-calculator-variant-outline:{.icon-def-0} [math deep dive][math-dive]{data-preview} section.
 
     === "index_params_list"
 
@@ -477,13 +467,13 @@ In other words, we start with a list of `text` entries :material-text-box-multip
         
         :simple-milvus:{.icon-def-0} Milvus stores data in `growing segements` which, after reaching some size, are indexed according to the user's choice of indices :material-palette:{.icon-def-0}. So, the text fields are turned into sparse vectors with BM25 and this information is stored in a `growing segment`. Then, when the segment gets large enough the sparse vectors are indexed in an inverted format that allows for quicker fetching of relevant documents :material-flash:{.icon-def-0}. However, we don't want to index every segment before they reach a particular size, because we would then use up too much memory for too small a gain in speed :material-scale-unbalanced:{.icon-def-0}.   
         
-        We let Milvus know that we want to use the BM25 metric for evaluation and we tack on some extra parameters for further customization. We can see that we're setting the \(k_1\) and \(b\) constants from the :material-function-variant:{.icon-def-0} [BM25 scoring function][math-bm25]. 
+        We let Milvus know that we want to use the BM25 metric for evaluation and we tack on some extra parameters for further customization. We can see that we're setting the \(k_1\) and \(b\) constants from the :material-function-variant:{.icon-def-0} [BM25 scoring function][math-bm25]{data-preview}. 
         
         We're also using the [DAAT_MAXSCORE][full-text-search]{.blank} algorithm to allow for faster evaluation time by filtering out documents that can't possibly score higher than the current highest score evaluated :material-checkbox-marked-outline:{.icon-def-0}. I believe it also does some sorting of the query terms by how much they can possibly contribute to the document scores (i.e. terms that will give very high scores are scored first and terms that will give very low scores are deemed non-essential and thrown out) :material-tag-remove-outline:{.icon-def-0}.
 
-After initializing the schema to use for the collection ([lines 14-16][code-create-collection] of the `create_collection` method), we add each of the fields in the `field_params_list` to the schema using the :material-tag-plus-outline:{.icon-def-0} `_create_field` method ([lines 20-21][code-create-collection]). We then add the `func_bm25` to the schema functions using the :material-function-variant:{.icon-def-0} `schema.add_function` method ([lines 25-26][code-create-collection]). 
+After initializing the schema to use for the collection ([lines 14-16][code-create-collection]{data-preview} of the `create_collection` method), we add each of the fields in the `field_params_list` to the schema using the :material-tag-plus-outline:{.icon-def-0} `_create_field` method ([lines 20-21][code-create-collection]{data-preview}). We then add the `func_bm25` to the schema functions using the :material-function-variant:{.icon-def-0} `schema.add_function` method ([lines 25-26][code-create-collection]{data-preview}). 
 
-We also initialize the index parameters list to use for searching the collection ([line 30][code-create-collection]) and we add each of the indices in the `index_params_list` using the :material-archive-search-outline:{.icon-def-0} `_create_index` method ([lines 31-32][code-create-collection]). Finally, we create the collection with the `client.create_collection` method ([lines 35-39][code-create-collection]) :material-checkbox-marked-outline:{.icon-def-0}.
+We also initialize the index parameters list to use for searching the collection ([line 30][code-create-collection]{data-preview}) and we add each of the indices in the `index_params_list` using the :material-archive-search-outline:{.icon-def-0} `_create_index` method ([lines 31-32][code-create-collection]{data-preview}). Finally, we create the collection with the `client.create_collection` method ([lines 35-39][code-create-collection]{data-preview}) :material-checkbox-marked-outline:{.icon-def-0}.
 
 Let's discuss how the schema and index parameters are initialized and the collection is created through the `client` attribute of the `MilvusClientInit` class. :material-arrow-down-bold-outline:{.icon-def-0}.
 
@@ -491,13 +481,11 @@ Let's discuss how the schema and index parameters are initialized and the collec
 
 ---
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.2 | `_init_client`
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.2 | `_init_client` {#code-client}
 
-: See [lines 101-108][milvus-utils-skeleton] of `milvus_utils.py`
+: See [lines 101-108][milvus-utils]{data-preview} of `milvus_utils.py`
 
 Everytime we use the `client` attribute of the class, we're using the :simple-milvus:{.icon-def-0} `MilvusClient` that we initiated with the `_init_client` method.
-
-<a id="code-client"></a>
 
 ```python title="Defining the client attribute of the MilvusClientInit class" linenums="1" hl_lines="0"
 --8<--
@@ -527,9 +515,9 @@ So, we can see that we've initialized a `MilvusClient` on the URI that was defin
         --8<--
         ```
 
-    For the `_create_field` method, we use the `schema.add_field` method which takes in all the necessary inputs that are needed for a given field :material-tag-outline:{.icon-def-0}. So, we define these with the `field_params_list`, then we pass these params to the `add_field` method (see [lines 20-21][code-create-collection] of the `create_collection` method) :material-checkbox-marked-outline:{.icon-def-0}. 
+    For the `_create_field` method, we use the `schema.add_field` method which takes in all the necessary inputs that are needed for a given field :material-tag-outline:{.icon-def-0}. So, we define these with the `field_params_list`, then we pass these params to the `add_field` method (see [lines 20-21][code-create-collection]{data-preview} of the `create_collection` method) :material-checkbox-marked-outline:{.icon-def-0}. 
 
-    The `_create_index` method works exactly the same way, except it uses the `index_params.add_index` method :material-archive-search-outline:{.icon-def-0}. Just like before, we define all the inputs we need for each of the indices in the `index_params_list`, then pass these params to the `add_index` method (see [lines 31-32][code-create-collection] of the `create_collection` method) :material-checkbox-marked-outline:{.icon-def-0}. 
+    The `_create_index` method works exactly the same way, except it uses the `index_params.add_index` method :material-archive-search-outline:{.icon-def-0}. Just like before, we define all the inputs we need for each of the indices in the `index_params_list`, then pass these params to the `add_index` method (see [lines 31-32][code-create-collection]{data-preview} of the `create_collection` method) :material-checkbox-marked-outline:{.icon-def-0}. 
 
 Now that we understand how collections are defined and created with the `create_collection` method :material-checkbox-marked-outline:{.icon-def-0}. Let's check out how data is inserted with the `insert` method :material-arrow-down-bold-outline:{.icon-def-0}.
 
@@ -537,13 +525,11 @@ Now that we understand how collections are defined and created with the `create_
 
 ---
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.3 | `insert`
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.3 | `insert` {#code-insert}
 
-: See [lines 188-202][milvus-utils-skeleton] of `milvus_utils.py` 
+: See [lines 188-202][milvus-utils]{data-preview} of `milvus_utils.py` 
 
 We've already seen that the `insert` method can take in a collection name and some data then add this data to the appropriate collection. Now, we can open up the method to see how this is all done :material-book-open-variant-outline:{.icon-def-0}.
-
-<a id="code-insert"></a>
 
 ```python title="insert method of milvus_utils.py" linenums="1" hl_lines="0" 
 --8<--
@@ -551,7 +537,7 @@ docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.p
 --8<--
 ```
 
-When we recall [how the `client` attribute of the class is defined][code-client], we can see that this method is just a wrapper of the `MilvusClient` method with the same name :material-candy:{.icon-def-0}. We want to insert some given data into the given collection, and we want to wait for a bit before moving on to ensure the data is inserted before trying any searches :material-checkbox-marked-outline:{.icon-def-0}. 
+When we recall [how the `client` attribute of the class is defined][code-client]{data-preview}, we can see that this method is just a wrapper of the `MilvusClient` method with the same name :material-candy:{.icon-def-0}. We want to insert some given data into the given collection, and we want to wait for a bit before moving on to ensure the data is inserted before trying any searches :material-checkbox-marked-outline:{.icon-def-0}. 
 
 Ok, that one was simple :material-flash:{.icon-def-0}. Now, that we know how to create a collection and insert data into the collection, let's see how to do the full-text search :material-arrow-down-bold-outline:{.icon-def-0}. 
 
@@ -559,13 +545,11 @@ Ok, that one was simple :material-flash:{.icon-def-0}. Now, that we know how to 
 
 --- 
 
-#### :material-map-marker-question-outline:{.icon-def-0} Method 1.4 | `full_text_search`
+#### :material-map-marker-question-outline:{.icon-def-0} Method 1.4 | `full_text_search` {#code-full-text-search}
 
-: See [lines 221-248][milvus-utils-skeleton] of `milvus_utils.py`
+: See [lines 221-248][milvus-utils]{data-preview} of `milvus_utils.py`
 
 We've already seen that the `full_text_search` method can take in a collection name, a list of queries, and a maximum number of results, then output a list of dictionaries showing the most relevant results. Now, we can open up the method to see how this is all done :material-book-open-variant-outline:{.icon-def-0}.
-
-<a id="code-full-text-search"></a>
 
 ```python title="full_text_search method of milvus_utils.py" linenums="1" hl_lines="32-39" 
 --8<--
@@ -573,7 +557,7 @@ docs/tutorials/applications/agents/servers/assets/milvus/milvus-utils-stripped.p
 --8<--
 ```
 
-Here, we define the `full_text_search` method with some default values for the collection name, the list of queries we want to search for, and the maximum number of results to retrieve. We tell Milvus we want to do a search on the `sparse` vector fields ([lines 21 & 35][code-full-text-search]) and we want the results to be returned with the `text` fields ([lines 22 & 36][code-full-text-search]) :material-checkbox-marked-outline:{.icon-def-0}. 
+Here, we define the `full_text_search` method with some default values for the collection name, the list of queries we want to search for, and the maximum number of results to retrieve. We tell Milvus we want to do a search on the `sparse` vector fields ([lines 21 & 35][code-full-text-search]{data-preview}) and we want the results to be returned with the `text` fields ([lines 22 & 36][code-full-text-search]{data-preview}) :material-checkbox-marked-outline:{.icon-def-0}. 
 
 We also define an extra search parameter, the `drop_ratio_search` which is some number between zero and one defining the fraction of documents to drop before searching :material-file-document-remove-outline:{.icon-def-0}. In our case, we tell Milvus to drop \(20\%\) of the candidates. Higher values means our search will be faster but less accurate :material-flash:{.icon-def-0}.
 
@@ -585,17 +569,13 @@ To get an idea of how documents are scored and retrieved using this method, let'
 
 <hr class="icon-def-1 primary-icon", style="width: 90%;"> 
 
-<a id="math-dive"></a>
-
-## :material-calculator-variant-outline:{.icon-def-0} Math Deep Dive
+## :material-calculator-variant-outline:{.icon-def-0} Math Deep Dive {#math-dive}
 
 Here, we're going to look at the relevant math in more detail :material-magnify:{.icon-def-0}. 
 
 <hr class="icon-def-1 primary-icon", style="width: 60%;"> 
 
-<a id="math-bm25"></a>
-
-### :material-function-variant:{.icon-def-0} BM25
+### :material-function-variant:{.icon-def-0} BM25 {#math-bm25}
 
 This [scoring function][bm25]{.blank} was the 25th (and best performing) version of the algorithms tested for the Okapi Information System at London's City University back in the late 1900s and has been widely used since for exact keyword searches :material-key-chain:{.icon-def-0}.
         
@@ -715,11 +695,9 @@ Now that we understand these terms :material-checkbox-marked-outline:{.icon-def-
 
 ---
 
-#### :material-exponent:{.icon-def-0} Function 1.3 | Final Form of BM25
+#### :material-exponent:{.icon-def-0} Function 1.3 | Final Form of BM25 {#score-bm25}
 
 The BM25 scoring function is given by:
-
-<a id="score-bm25"></a>
 
 \[
     \text{score}(d, Q) = \sum^{m}_{i=1} \text{IDF}(q_i) \frac{\text{TF}(q_i, d) \left(k_1 + 1\right)}{\text{TF}(q_i, d) + k_1 \text{DLN}(d)}
@@ -751,11 +729,11 @@ To wrap it all up, for very large TF:
 
 ---
 
-Now, recall the [limits we examined for the IDF][table-idf]. The [scoring function][score-bm25] depends on the IDF linearly for a given term. So, ignoring the TF contribution (which is capped off to \(k_1+1\)), if most of the documents contain the term :material-numeric-9-plus-box-multiple-outline:{.icon-def-0}, the score is very small, and if none of the documents contain the term :material-numeric-0-box-outline:{.icon-def-0}, the score becomes some positive number that grows with the total number of documents. 
+Now, recall the [limits we examined for the IDF][table-idf]. The [scoring function][score-bm25]{data-preview} depends on the IDF linearly for a given term. So, ignoring the TF contribution (which is capped off to \(k_1+1\)), if most of the documents contain the term :material-numeric-9-plus-box-multiple-outline:{.icon-def-0}, the score is very small, and if none of the documents contain the term :material-numeric-0-box-outline:{.icon-def-0}, the score becomes some positive number that grows with the total number of documents. 
 
 This means if the document being scored contains terms in our query that don't appear in the other documents very often, it's bound to be relevant. But, if the document contains terms in the our query that almost all documents have, it may not be that relevant :material-checkbox-marked-outline:{.icon-def-0}. 
 
-Now, recall the [limits we examined for the DLN][table-dln]. As the length of the document being scored becomes much longer than the average length :material-text-long:{.icon-def-0}, the [DLN term in the denominator][score-bm25] becomes larger and larger, causing the score to be smaller. While, as the length becomes much shorter than the average :material-text-short:{.icon-def-0}, the DLN term is just some number between zero and one and won't affect the score very much. 
+Now, recall the [limits we examined for the DLN][table-dln]. As the length of the document being scored becomes much longer than the average length :material-text-long:{.icon-def-0}, the [DLN term in the denominator][score-bm25]{data-preview} becomes larger and larger, causing the score to be smaller. While, as the length becomes much shorter than the average :material-text-short:{.icon-def-0}, the DLN term is just some number between zero and one and won't affect the score very much. 
 
 It seems then, that this term is mostly used to *penalize* documents that are much longer than the average length. We don't want the scores for these terms to blow up just because they're much longer and contain many more words (i.e. TF is potentially larger compared to shorter documents) :material-checkbox-marked-outline:{.icon-def-0}.
 
@@ -783,7 +761,7 @@ In our case, the vectors that we want to compare are just the sparse vectors tha
 
 When we add a document to Milvus, it first does a lot of preprocessing behind the scenes, including [tokenization][tokenization]{.blank} and [stop word removal][stop-word]{.blank}. From this preprocessing, it obtains the set of all [tokens][tokens]{.blank} within the document and the TF value for each token is obtained :material-clipboard-list-outline:{.icon-def-0}. The sparse vector for the document is then created from these TF values and stored.
 
-When a user then invokes the full-text search with a query :material-archive-search-outline:{.icon-def-0}, the query goes through similar preprocessing to obtain the search tokens and a sparse vector representation from the TF values of a given document is obtained. This *query vector* is then combined with the IDF values according to the [BM25 score][score-bm25] and compared to the *stored vector* of the document using the [cosine-similarity score][cosine-similarity-score] :material-angle-acute:{.icon-def-0}. 
+When a user then invokes the full-text search with a query :material-archive-search-outline:{.icon-def-0}, the query goes through similar preprocessing to obtain the search tokens and a sparse vector representation from the TF values of a given document is obtained. This *query vector* is then combined with the IDF values according to the [BM25 score][score-bm25]{data-preview} and compared to the *stored vector* of the document using the [cosine-similarity score][cosine-similarity-score] :material-angle-acute:{.icon-def-0}. 
 
 Notice that when Milvus gives us results from the full-text search, it includes a `distance` parameter :material-vector-line:{.icon-def-0}. This is just the [cosine-similarity score][cosine-similarity-score] between the *query vector* combined with the IDF and the *stored vector* of the document. As expected, higher distances pertain to more relevant documents (both cosine-similarity and IDF increase with increasing relevance) :material-podium-silver:{.icon-def-0}.
 
@@ -795,9 +773,9 @@ And that's it :material-checkbox-marked-outline:{.icon-def-0}! We've gone throug
 
 ## :material-bookshelf:{.icon-def-0} Next Steps & Learning Resources
 
-If you've followed along with the :material-server:{.icon-def-0} [servers][servers] tutorials up to this point, we've finished building all the individual servers that we'll need in order to start our agent builds :material-robot-excited-outline:{.icon-def-0}. However, there is one final (and very simple tutorial) to show :simple-docker:{.icon-def-0} [how to combine all the servers][multi-server-tutorial] covered in the series. This last tutorial will show how to build the complete server stack that we'll use for our specialized agent builds :material-checkbox-marked-outline:{.icon-def-0}. 
+If you've followed along with the :material-server:{.icon-def-0} [servers][servers]{data-preview} tutorials up to this point, we've finished building all the individual servers that we'll need in order to start our agent builds :material-robot-excited-outline:{.icon-def-0}. However, there is one final (and very simple tutorial) to show :simple-docker:{.icon-def-0} [how to combine all the servers][multi-server-tutorial]{data-preview} covered in the series. This last tutorial will show how to build the complete server stack that we'll use for our specialized agent builds :material-checkbox-marked-outline:{.icon-def-0}. 
 
-Continue learning how to build the final server stack by choosing the :material-server:{.icon-def-0} [last tutorial in the servers series][multi-server-tutorial], learn how pass this :simple-milvus:{.icon-def-0} Milvus server to an agent and interact with it through a :simple-gradio:{.icon-def-0} [Gradio][gradio]{.blank} web UI in the :material-bookshelf:{.icon-def-0} [document agent][doc-agent] tutorial, or checkout other agent builds in the rest of the :material-robot-excited-outline:{.icon-def-0} [agents][agents] tutorials. 
+Continue learning how to build the final server stack by choosing the :material-server:{.icon-def-0} [last tutorial in the servers series][multi-server-tutorial]{data-preview}, learn how pass this :simple-milvus:{.icon-def-0} Milvus server to an agent and interact with it through a :simple-gradio:{.icon-def-0} [Gradio][gradio]{.blank} web UI in the :material-bookshelf:{.icon-def-0} [document agent][doc-agent]{data-preview} tutorial, or checkout other agent builds in the rest of the :material-robot-excited-outline:{.icon-def-0} [agents][agents]{data-preview} tutorials. 
 
 Just like all the other tutorials, :simple-github:{.icon-def-0} [all the source code is available][animakit] so you can plug and play any of tutorial code right away :material-controller-classic:{.icon-def-0}.
 
@@ -815,7 +793,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 
 [^dense-vectors]: Where most available dimensions are naught for *sparse* vectors, *dense* vectors are more spread across the dimensions in complex ways :material-vector-polygon:{.icon-def-0}. This is good for modeling complex relationships between data and for finding relevant data that may not necessarily contain the exact keywords in the query :material-molecule:{.icon-def-0}.
 
-[^milvus-customization]: We can also customize the fields that describe our data :material-tag-outline:{.icon-def-0}, the index parameters that describe how we search our data :material-magnify:{.icon-def-0}, and the functions with which we embed our data :material-function-variant:{.icon-def-0}. I leave these examples for a future tutorial where we learn how to give a LangChain agent the ability to do [hybrid searches on our documents][doc-agent] :material-bookshelf:{.icon-def-0}.
+[^milvus-customization]: We can also customize the fields that describe our data :material-tag-outline:{.icon-def-0}, the index parameters that describe how we search our data :material-magnify:{.icon-def-0}, and the functions with which we embed our data :material-function-variant:{.icon-def-0}. I leave these examples for a future tutorial where we learn how to give a LangChain agent the ability to do [hybrid searches on our documents][doc-agent]{data-preview} :material-bookshelf:{.icon-def-0}.
 
 
 <!-- LINKS -->
@@ -864,7 +842,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [milvus-metrics]: https://milvus.io/docs/metric.md
 [milvus-types-ak]: https://github.com/anima-kit/milvus-docker/blob/main/validators/milvus_types.py
 [milvus-url]: http://localhost:19530
-[milvus-utils-skeleton]: milvus.md#milvus-utils-skeleton
+[milvus-utils]: milvus.md#milvus-utils
 [milvus-webui]: http://127.0.0.1:9091/webui/
 [minio]: https://www.min.io/
 [mock-testing]: https://en.wikipedia.org/wiki/Mock_object
@@ -896,7 +874,7 @@ This tutorial is a work in progress. If you'd like to suggest or add improvement
 [searxng-docker-compose]: searxng.md#docker-compose
 [searxng-project-structure]: searxng.md#proj-struct
 [searxng-test]: searxng.md#searxng-test
-[searxng-tutorial]: http://anima-kit.github.io/tutorials/servers/searxng/
+[searxng-tutorial]: searxng.md
 [searxng-utils]: searxng.md#searxng-utils
 [servers]: index.md
 [servers-why]: index.md#servers-why

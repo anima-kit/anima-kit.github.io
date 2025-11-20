@@ -24,7 +24,7 @@ hide:
 
     ---
 
-    [![Data Extraction](assets/docling.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](doc-extract-intro.md "Data Extraction")
+    [![Data Extraction](assets/docling.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](doc-extract-intro.md "Data Extraction"){data-preview}
     
     Learn how to extract <span class="text-color-green">specific data</span> from <span class="text-color-green">receipts</span> using <span class="text-color-green">Docling</span> and <span class="text-color-green">NuExtract</span> with a <span class="text-color-green">Kaggle</span> dataset.
 
@@ -32,7 +32,7 @@ hide:
 
     ---
 
-    [![Local RAG with Langflow](assets/langflow-milvus-lm-studio.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](langflow-milvus-lm-studio-rag.md "Local RAG with Langflow")
+    [![Local RAG with Langflow](assets/langflow-milvus-lm-studio.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](langflow-milvus-lm-studio-rag.md "Local RAG with Langflow"){data-preview}
     
     Learn how to locally process <span class="text-color-green">documents</span> and <span class="text-color-green">retrieve</span> information using <span class="text-color-green">Langflow</span>, <span class="text-color-green">Milvus</span> and <span class="text-color-green">LM Studio</span>.
     

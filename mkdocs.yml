@@ -19,17 +19,16 @@ theme:
     code: Roboto Mono
   features:
     - navigation.footer
-    # TODO: Wanted to use nagivation.index, but get page error:
-    # The label's for attribute doesn't match any element id. 
-    # This might prevent the browser from correctly autofilling the form and accessibility tools from working correctly.
-    # To fix this issue, make sure the label's for attribute references the correct id of a form field.
-    # Violating node:
-    # md-nav__title 
-    #- navigation.indexes
+    - navigation.indexes
     - navigation.prune
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.expand
+    - navigation.path
     - content.tooltips
     - content.code.copy
     - content.code.annotate
@@ -95,6 +94,20 @@ markdown_extensions:
     custom_checkbox: true
 - pymdownx.arithmatex:
     generic: true
+- material.extensions.preview:
+    configurations:
+      - targets:
+          include:
+            - projects/*
+            - tutorials/index.md
+            - tutorials/applications/index.md
+            - tutorials/applications/agents/index.md
+            - tutorials/applications/agents/servers/index.md
+            - tutorials/applications/agents/agents/index.md
+            - tutorials/applications/rag/index.md
+            - tutorials/fundamentals/index.md
+            - tutorials/research/index.md
+            - blog/*
 
 
 ## Plugins

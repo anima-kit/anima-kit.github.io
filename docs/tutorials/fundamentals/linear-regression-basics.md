@@ -33,7 +33,7 @@ As we progress through the tutorials, we'll see how to improve our regression mo
 
 One of the simplest models to learn and work with is the *linear regression* model. In this tutorial, we're going to see how this model works and how to train it on example data through a step-by-step guide with interactive code so we can see exactly what's happening.
 
-The data we're going to use is a [Kaggle dataset](https://www.kaggle.com/datasets) for [daily energy consumption](https://www.kaggle.com/datasets/mrsimple07/energy-consumption-prediction) which has data like:
+The data we're going to use is a [Kaggle dataset](https://www.kaggle.com/datasets){.blank} for [daily energy consumption](https://www.kaggle.com/datasets/mrsimple07/energy-consumption-prediction){.blank} which has data like:
 
 <div class="center-table" markdown>
 
@@ -57,7 +57,7 @@ The linear regression model is given by:
     y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_n x_{in}
 \]
 
-where $y_i$ is the target variable (`Energy Consumption`) and $x_{i1}, x_{i2}, \dots, x_{in}$ are the features (`Temperature`, `Square Footage`, etc.) for the $i$-th data point. The model parameters, $\beta_0, \beta_1, \dots, \beta_n$, are to be learned by training our model. We're going to see how to create this function with a custom `LinearRegression` class using [Pytorch](https://pytorch.org/).
+where $y_i$ is the target variable (`Energy Consumption`) and $x_{i1}, x_{i2}, \dots, x_{in}$ are the features (`Temperature`, `Square Footage`, etc.) for the $i$-th data point. The model parameters, $\beta_0, \beta_1, \dots, \beta_n$, are to be learned by training our model. We're going to see how to create this function with a custom `LinearRegression` class using [Pytorch](https://pytorch.org/){.blank}.
 
 ---
 
@@ -95,7 +95,7 @@ Now that we've imported everything, let's setup our data.
 
 ### Data
 
-Here, we're going to download our dataset, then we'll create a [Pandas](https://pandas.pydata.org/) dataframe to easily visualize and work with the data.
+Here, we're going to download our dataset, then we'll create a [Pandas](https://pandas.pydata.org/){.blank} dataframe to easily visualize and work with the data.
 
 <hr class="icon-def-1 primary-icon", style="width: 30%;">
 
@@ -213,7 +213,7 @@ Target range: [53.26, 99.20]
 ```
     
 
-Now, we'll split our entire dataset into our training and testing sets with the built in [scikit-learn](https://scikit-learn.org/stable/) method. We'll take 80% of the data for training and the other 20% for testing, and we'll split the data randomly.
+Now, we'll split our entire dataset into our training and testing sets with the built in [scikit-learn](https://scikit-learn.org/stable/){.blank} method. We'll take 80% of the data for training and the other 20% for testing, and we'll split the data randomly.
 
 ```python
 ## Split the data into training and testing sets
@@ -230,7 +230,7 @@ Training set size: 800
 Testing set size: 200
 ```
     
-Now that we have our separate sets, we need to do a bit of preprocessing so that none of our features dominate our model purely based on how they're measured. For example, look at the features that we used from [our dataframe](#create-dataframe). The `SquareFootage` is much larger than the other features and the `RenewableEnergy` feature has a large variance. We can take care of these problems by scaling all the features and the target variable using scikit-learn's [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) which obtains new values using:
+Now that we have our separate sets, we need to do a bit of preprocessing so that none of our features dominate our model purely based on how they're measured. For example, look at the features that we used from [our dataframe](#create-dataframe). The `SquareFootage` is much larger than the other features and the `RenewableEnergy` feature has a large variance. We can take care of these problems by scaling all the features and the target variable using scikit-learn's [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html){.blank} which obtains new values using:
 
 \[
     \text{new value} = (\text{original value} - \mu)/\sigma
@@ -238,9 +238,9 @@ Now that we have our separate sets, we need to do a bit of preprocessing so that
 
 where $\mu$ is the mean and $\sigma$ is the standard deviation of the feature (or target) values. 
 
-Here, we calculate the $\mu$ and $\sigma$ for each feature column in the training set and obtain new values for both the training and testing sets. We transform the testing set using the *training set* $\mu$ and $\sigma$ to prevent [data leakage](https://www.kaggle.com/code/alexisbcook/data-leakage), which is where we give the model information about the test set before training. Recall that we split our entire dataset into training and testing sets because we didn't want our model to know about the test set until it was trained and evalauted on the test set.
+Here, we calculate the $\mu$ and $\sigma$ for each feature column in the training set and obtain new values for both the training and testing sets. We transform the testing set using the *training set* $\mu$ and $\sigma$ to prevent [data leakage](https://www.kaggle.com/code/alexisbcook/data-leakage){.blank}, which is where we give the model information about the test set before training. Recall that we split our entire dataset into training and testing sets because we didn't want our model to know about the test set until it was trained and evalauted on the test set.
 
-We scale the target variables in the same way so that everything is on a nice, level playing field. Scaling our data in this way also converts all of our data into [NumPy](https://numpy.org/) arrays which is a convenient, little side-effect.
+We scale the target variables in the same way so that everything is on a nice, level playing field. Scaling our data in this way also converts all of our data into [NumPy](https://numpy.org/){.blank} arrays which is a convenient, little side-effect.
 
 ```python
 ## Standardize the features
@@ -441,13 +441,13 @@ And that's it, our model is trained! Now, we should see how it does on our testi
 
 ### Evaluation example
 
-Here, we're going to make predictions for our testing set using our newly trained model. We can see how well the model performs on the test set by defining some *metrics*. First, we'll checkout the [Root Mean Squared Error (RMSE)](https://en.wikipedia.org/wiki/Root_mean_square_deviation), which measures the difference between *actual* values and *predicted* values (and is just the square root of the MSE):
+Here, we're going to make predictions for our testing set using our newly trained model. We can see how well the model performs on the test set by defining some *metrics*. First, we'll checkout the [Root Mean Squared Error (RMSE)](https://en.wikipedia.org/wiki/Root_mean_square_deviation){.blank}, which measures the difference between *actual* values and *predicted* values (and is just the square root of the MSE):
 
 $$
 \text{RMSE} = \sqrt{\frac{1}{m} \sum_{i=1}^m \left( y_i - y_{i,\text{pred}} \right)^2}
 $$
 
-We'll also see the [R-squared ($R^2$)](https://en.wikipedia.org/wiki/Coefficient_of_determination) value which is a measure of how much our model features explain differences in our target. The closer we get to $R^2=1$, the more our model features can explain how our target changes. The closer we get to $R^2=0$, the more other factors besides our model features contribute to differences in the target. The $R^2$ value is given by,
+We'll also see the [R-squared ($R^2$)](https://en.wikipedia.org/wiki/Coefficient_of_determination){.blank} value which is a measure of how much our model features explain differences in our target. The closer we get to $R^2=1$, the more our model features can explain how our target changes. The closer we get to $R^2=0$, the more other factors besides our model features contribute to differences in the target. The $R^2$ value is given by,
 
 $$
 R^2 = 1 - \frac{\text{SS}_\text{res}}{\text{SS}_\text{tot}} = 1 - \frac{\sum_{i=1}^m \left(y_i - y_{i,\text{pred}}\right)^2}{\sum_{i=1}^m \left(y_i - \bar{y}\right)^2}
@@ -523,7 +523,7 @@ Final Model Equation:
 y = 0.6947 * Temperature + -0.0665 * Humidity + -0.0203 * SquareFootage + 0.1713 * Occupancy + 0.1055 * RenewableEnergy + -0.0000
 ```    
 
-So, we see that the `Temperature` feature by far has the most contribution to the energy consumption and that as the temperature increases, so does the predicted energy consumption. If you check out [the dataset](https://www.kaggle.com/datasets/mrsimple07/energy-consumption-prediction) on Kaggle, you'll notice that all the feature data was simulated while the target value was calculated using some formula. I'm not sure what this formula was, but it seemed to depend heavily on temperature.
+So, we see that the `Temperature` feature by far has the most contribution to the energy consumption and that as the temperature increases, so does the predicted energy consumption. If you check out [the dataset](https://www.kaggle.com/datasets/mrsimple07/energy-consumption-prediction){.blank} on Kaggle, you'll notice that all the feature data was simulated while the target value was calculated using some formula. I'm not sure what this formula was, but it seemed to depend heavily on temperature.
 
 Now, let's look at some plots to visualize how our training did.
 
@@ -605,7 +605,7 @@ plt.show()
 
 We can see the temperature has the most contribution to our predicted energy consumption, by far. In the next tutorial, we'll add in the rest of the features that we left out for this model, so we can see if any other features contribute nearly as much as the temperature. But, before we go adding other features, let's evaluate the ones we've already chosen a little bit more.  
 
-We can check to see how much each of the features are *correlated* with each other and with the target. To do this we'll use the built in Pandas dataframe method to calculate the [Pearson correlation coefficient](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html) $\left(r_{\alpha\beta}\right)$ between all features and the target. This measures the dependence of one variable on another. When the coefficient is equal to one $\left(r_{\alpha\beta}= 1\right)$, the two variables $\left(\alpha\right.$ and $\left.\beta\right)$ are perfectly, positively correlated - as one increases by some amount the other will *increase* by the same amount. When $r_{\alpha\beta}=- 1$, the two variables are perfectly, negatively correlated - as one increases by some amount the other will *decrease* by the same amount. And if $r_{\alpha\beta}=0$, the two variables are independent of each other - changing one variable has no effect on the other.
+We can check to see how much each of the features are *correlated* with each other and with the target. To do this we'll use the built in Pandas dataframe method to calculate the [Pearson correlation coefficient](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html){.blank} $\left(r_{\alpha\beta}\right)$ between all features and the target. This measures the dependence of one variable on another. When the coefficient is equal to one $\left(r_{\alpha\beta}= 1\right)$, the two variables $\left(\alpha\right.$ and $\left.\beta\right)$ are perfectly, positively correlated - as one increases by some amount the other will *increase* by the same amount. When $r_{\alpha\beta}=- 1$, the two variables are perfectly, negatively correlated - as one increases by some amount the other will *decrease* by the same amount. And if $r_{\alpha\beta}=0$, the two variables are independent of each other - changing one variable has no effect on the other.
 
 This correlation coefficient between the variables $\alpha$ and $\beta$ is given by:
 
@@ -635,7 +635,7 @@ plt.show()
 
 We can see that the temperature and total energy consumed are highly, positively correlated, while the occupancy and renewable energy sources are somewhat, positively correlated with the target. The humidity has the most negative correlation with the target while none of the features seem to be too dependent on each other. 
 
-It seems that perhaps we can get rid of the `SquareFootage` feature as it has little correlation with the target or other features. But, let's checkout the [permutation importance](https://www.kaggle.com/code/dansbecker/permutation-importance) for each of the features to confirm our suspicion. This will be another measure of how important the feature is to predicting the target. How does it work?
+It seems that perhaps we can get rid of the `SquareFootage` feature as it has little correlation with the target or other features. But, let's checkout the [permutation importance](https://www.kaggle.com/code/dansbecker/permutation-importance){.blank} for each of the features to confirm our suspicion. This will be another measure of how important the feature is to predicting the target. How does it work?
 
 First, we calculate the [MSE](#loss-function) for predictions made with the test set, this will be our reference point. Then, for each feature, we shuffle all the values around while keeping all other features the same. Finally, we calculate the MSE for this set of features and compare it to our baseline MSE. When predictions of the target depend heavily on a feature, shuffling its values should cause the model to make much worse predictions. These sorts of features will give large, *positive* permutation importances. On the other hand, if a feature has no effect on predictions, shuffling the values shouldn't really change the predictions very much, resulting in small, positive or negative importances. Finally, if including a feature causes a model to make significantly worse predictions, shuffling its values should give us a large, *negative* permutation importance.
 

@@ -28,7 +28,7 @@ hide:
     
     Learn how to extract <span class="text-color-green">specific data</span> from <span class="text-color-green">receipts</span> using <span class="text-color-green">Docling</span> and <span class="text-color-green">NuExtract</span> with a <span class="text-color-green">Kaggle</span> dataset.
 
--   :simple-langflow:{ .icon-def-0 } Local RAG with Langflow
+-   :simple-langflow:{ .icon-def-0 } Local RAG
 
     ---
 

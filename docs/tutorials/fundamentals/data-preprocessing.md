@@ -402,7 +402,7 @@ Here, we're going to extract the relevant data from the `Timestamp` feature (`Mo
 
 ### Prepare data
 
-First, let's look at the time data. We can easily extract the day, month, and hour of the timestamp using Python's [datetime](https://docs.python.org/3/library/datetime.html) module. Notice that the year is the same for all timestamps, so we can safely ignore it here.
+First, let's look at the time data. We can easily extract the day, month, and hour of the timestamp using Python's [datetime](https://docs.python.org/3/library/datetime.html){.blank} module. Notice that the year is the same for all timestamps, so we can safely ignore it here.
 
 ```python
 ## Extract day, month, and hour from timestamp then add to our dataframe
@@ -511,7 +511,7 @@ Training set size: 800
 Test set size: 200  
 ```
     
-Now, we can use scikit-learn's [ColumnTransformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) to easily define all the preprocessing steps that need to be taken to prepare our feature data. We define a `StandardScaler` for the numerical features just as we did in the previous tutorial, and we define a `OneHotEncoder` to one-hot encode all the categorical features while dropping the first category that appears for each feature.
+Now, we can use scikit-learn's [ColumnTransformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html){.blank} to easily define all the preprocessing steps that need to be taken to prepare our feature data. We define a `StandardScaler` for the numerical features just as we did in the previous tutorial, and we define a `OneHotEncoder` to one-hot encode all the categorical features while dropping the first category that appears for each feature.
 
 Recall from the previous tutorial that we scaled our training data and used the resulting values to scale our test data in order to prevent data leakage. Here, we'll do the same thing - we preprocess the train data and use the results for the test data.
 

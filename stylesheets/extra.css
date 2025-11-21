@@ -179,7 +179,7 @@ ADMONITIONS
 /*VISUAL INSTRUCTIONS*/
 .md-typeset .admonition.vis-inst,
 .md-typeset details.vis-inst {
-	border: 2px dotted var(--md-typeset-a-color);
+	border: 0px dotted var(--md-typeset-a-color);
   border-radius: 10px;
   font-size: var(--admonition-details--font-size);
   font-family: var(--admonition-font-family);

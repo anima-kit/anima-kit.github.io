@@ -23,7 +23,7 @@ On the surface, :simple-langflow:{.icon-def-0} [Langflow][langflow]{.blank} is a
 
 But even though Langflow can easily be used without creating any code, it can also be treated as a *very-much-code* platform for endless customization :material-palette-outline:{.icon-def-0}. One of my favorite functionalities is the :material-code-tags:{.icon-def-0} `Code` button on top of each `component` which allows the user to view and modify the underlying code on-the-fly. You can see exactly what's going on and customize your build to fit your specific needs :material-hammer-wrench:{.icon-def-0}. We'll see how to do this by editing some of the default `components` for specific use cases. 
 
-We're going to build a simple :material-bookshelf:{.icon-def-0} RAG :material-chat-processing-outline:{.icon-def-0} system with which we can process and store many types of documents (40+ types of files can be uploaded :material-shape-plus:{.icon-def-0}) with various PDFs and web pages discussing current and future medical AI as examples :material-medication-outline:{.icon-def-0}. 
+We're going to build a simple :material-bookshelf:{.icon-def-0} RAG :material-chat-processing-outline:{.icon-def-0} system with which we can process and store many types of documents (40+ types of files can be uploaded :material-shape-plus:{.icon-def-0} - thanks in large part to [Docling][docling]) with various PDFs and web pages discussing current and future medical AI as examples :material-medication-outline:{.icon-def-0}. 
 
 For more tutorials on this particular subject, you can also check out [Langflow's RAG tutorial][langflow-rag-tutorial]{.blank} and [Milvus's Langflow tutorial][milvus-langflow-tutorial]{.blank}. 
 
@@ -138,7 +138,11 @@ First, let's inspect the outputs for the `File` component and the `Split Text fo
 
     ![LM Studio Inspect Output](assets/langflow-inspect-output.png)
 
-Notice that they have different metadata, with the `File` component including the `file_path` while the `Split Text for PDFs` component includes the `source` instead. This is because I edited Langflow's default `Split Text` code. 
+Most documents that are fed into the `File` component are likely to be processed with [Docling][docling] by default (the PDFs we add will be). This component then spits out the processed content along with a `file_path` tag. The content of web pages fed into the `URL` component are processed using [LangChain's RecursiveURLLoader][langchain-recursive-url].
+
+When the data output from the `File` component passes through the `Split Text` component, the content from each data piece should be split up into smaller sections and new data pieces should be added *with the same metadata*.
+
+However, notice that the output for the `File` and `Split Text for PDFs` components have different metadata, with the `File` component including the `file_path` while the `Split Text for PDFs` component includes the `source` instead. This is because I edited Langflow's default `Split Text` code. 
 
 You can checkout the edited code by clicking the :material-code-tags:{.icon-def-0} `Code` button or by selecting the component, then pressing `Space`.
 
@@ -233,36 +237,36 @@ class MilvusVectorStoreComponent(LCVectorStoreComponent):
     ]
 
 def search_documents(self) -> list[Data]:
-        vector_store = self.build_vector_store()
-        if self.search_query and isinstance(self.search_query, str) and self.search_query.strip():
-            ### ORIGINAL:
-            #docs = vector_store.similarity_search(
-            #    query=self.search_query,
-            #    k=self.number_of_results,
-            #)
-            
-            ### CHANGED: Lauren Street 2025/11/19
-            ### Do similarity search:
-            ###     without expression if no sources added
-            ###     with expression 'source == source_name_1' OR 'source == source_name_2' ... OR 'source == source_name_n' 
-            ###         for n added sources
-            if self.files==['']:
-                docs = vector_store.similarity_search(
-                    query=self.search_query,
-                    k=self.number_of_results,
-                )
-            else:
-                expr_in = ' OR '.join(f'source=="{file}"' for file in self.files)
-                docs = vector_store.similarity_search(
-                    query=self.search_query,
-                    k=self.number_of_results,
-                    expr=expr_in
-                )
+    vector_store = self.build_vector_store()
+    if self.search_query and isinstance(self.search_query, str) and self.search_query.strip():
+        ### ORIGINAL:
+        #docs = vector_store.similarity_search(
+        #    query=self.search_query,
+        #    k=self.number_of_results,
+        #)
+        
+        ### CHANGED: Lauren Street 2025/11/19
+        ### Do similarity search:
+        ###     without expression if no sources added
+        ###     with expression 'source == source_name_1' OR 'source == source_name_2' ... OR 'source == source_name_n' 
+        ###         for n added sources
+        if self.files==['']:
+            docs = vector_store.similarity_search(
+                query=self.search_query,
+                k=self.number_of_results,
+            )
+        else:
+            expr_in = ' OR '.join(f'source=="{file}"' for file in self.files)
+            docs = vector_store.similarity_search(
+                query=self.search_query,
+                k=self.number_of_results,
+                expr=expr_in
+            )
 
-            data = docs_to_data(docs)
-            self.status = data
-            return data
-        return []
+        data = docs_to_data(docs)
+        self.status = data
+        return data
+    return []
 ```
 
 Here, we're adding a filter `expression` to the `similarity_search` method so that if the user includes any `files` as input, the search will be filtered to only fetch those files. 
@@ -289,9 +293,11 @@ And that's it! :material-creation-outline:{.icon-def-0} I hope I showed you how 
 [chroma]: https://www.trychroma.com/
 [docker]: https://www.docker.com/
 [docker-compose]: https://docs.docker.com/compose
+[docling]: https://www.docling.ai/
 [etcd]: https://etcd.io/
 [langchain]: https://www.langchain.com/
 [langchain-milvus]: https://docs.langchain.com/oss/python/integrations/vectorstores/milvus
+[langchain-recursive-url]: https://docs.langchain.com/oss/python/integrations/document_loaders/recursive_url
 [langflow]: https://www.langflow.org/
 [langflow-install]: https://github.com/langflow-ai/langflow?tab=readme-ov-file#%EF%B8%8F--langflow-desktop
 [langflow-rag-tutorial]: https://docs.langflow.org/chat-with-rag

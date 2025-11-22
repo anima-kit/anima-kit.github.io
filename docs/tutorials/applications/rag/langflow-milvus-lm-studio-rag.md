@@ -49,7 +49,7 @@ To showcase Langflow's capabilities, we'll use a `flow` that I created for this 
 
     > LM Studio should come packaged with a default embedding which we'll use in this example, so you only need to download an LLM. I used `qwen3-30b`.
 
-    ??? vis-inst "Visuals"
+    ???+ vis-inst "Visuals"
 
         ![LM Studio Download Models](assets/lm-studio-download-models.gif)
 
@@ -57,14 +57,13 @@ To showcase Langflow's capabilities, we'll use a `flow` that I created for this 
 
     > You can load the models that you want to test, but when you store your data and invoke the LLM, the models should be loaded automatically.
 
-    ??? vis-inst "Visuals"
+    ???+ vis-inst "Visuals"
 
         ![LM Studio Start Server](assets/lm-studio-server.gif)
 
 1.  Clone my repo and setup the Python environment:
     
-    > We'll use one of the `flows` in Langflow and the Docker Compose file for building and running Milvus.
-    > Then, we'll create a virtual Python environment in which to work.
+    > We're cloning this repo to use the included `rag-milvus-lm-studio.json` in Langflow and the `milvus.yml` for building and running Milvus in Docker.
 
     ```
     git clone https://github.com/anima-kit/langflows.git
@@ -90,7 +89,10 @@ To showcase Langflow's capabilities, we'll use a `flow` that I created for this 
     uv pip install -U langflow
     ```
 
-1.  Run Langflow
+1.  Run Langflow:
+
+    > This will start the Langflow server on your local machine.
+
     ```
     uv run langflow run
     ```
@@ -101,27 +103,183 @@ To showcase Langflow's capabilities, we'll use a `flow` that I created for this 
 
     > This should open the `flow` with all the necessary components. In the `1st` section, you can upload PDFs, parse through PDFs and web pages, and store all the information in Milvus. In the `2nd` section, you can chat with an LLM about the PDFs and web pages that you added.
 
-    ??? vis-inst "Visuals"
+    ???+ vis-inst "Visuals"
 
         ![Langflow Add Flow](assets/langflow-add-flow.gif)
 
 1.  Add some PDFs and web pages to Milvus:
 
-    ??? vis-inst "Visuals"
+    > These are the PDFs and web pages about which we'll chat with an LLM. I added lots of medical AI examples for you to test.
+
+    ???+ vis-inst "Visuals"
 
         ![Langflow Add Documents](assets/langflow-add-documents.gif)
 
 1.  Start the `Playgroud` to chat.
 
-    ??? vis-inst "Visuals"
+    > Now you can test out chatting with an LLM about your documents.
+
+    ???+ vis-inst "Visuals"
 
         ![Langflow Play](assets/langflow-play.gif)
 
 And that's it! :material-creation-outline:{.icon-def-0} Now, you can add whichever documents or web pages you'd like and chat about them with an LLM, all on your local machine. :material-laptop:{.icon-def-0}
 
+
+<hr class="icon-def-1 primary-icon", style="width: 60%;"> 
+
+## :material-note-edit-outline:{.icon-def-0} Examples Use Cases
+
+Now that we understand how to add `flow` templates and test them in Langflow's `playground`, let's see how we can further customize our `flows`. Of course, we can add or remove whichever built in `components` we'd like, but we can also *modify the default components* or *create completely new components*. Here, I'll show how we can modify the default `Split Text` and `Milvus` components. 
+
+First, let's inspect the outputs for the `File` component and the `Split Text for PDFs` component. You can do this by clicking `Inspect Output` at the bottom right hand corner.
+
+???+ vis-inst "Visuals"
+
+    ![LM Studio Inspect Output](assets/langflow-inspect-output.png)
+
+Notice that they have different metadata, with the `File` component including the `file_path` while the `Split Text for PDFs` component includes the `source` instead. This is because I edited Langflow's default `Split Text` code. 
+
+You can checkout the edited code by clicking the :material-code-tags:{.icon-def-0} `Code` button or by selecting the component, then pressing `Space`.
+
+???+ vis-inst "Visuals"
+
+    ![LM Studio Inspect Output](assets/langflow-code.png)
+
+Let's take a closer look at what I edited for the `Split Text for PDFs` component:
+
+```python title="changed code for Split Text component" linenums="1"
+def _docs_to_data(self, docs) -> list[Data]:
+    for doc in docs:
+        ### CHANGED: Lauren Street 2025/11/19
+        ### Added metadata editing to include `source` as file path basename and `text` as content
+        doc.metadata['source'] = basename(doc.metadata['file_path'])
+        del doc.metadata['file_path']
+
+    ### Original code
+    return [Data(text=doc.page_content, data=doc.metadata) for doc in docs]
+```
+
+Originally, the code didn't include lines 2-6. But, I wanted each of the documents that I added to have a `source` tag as the basename of the file added.  
+
 ---
 
-Stay tuned for the next section of this tutorial, where we'll discuss how to edit the code behind some of these examples `components`. :material-hammer-wrench:{.icon-def-0}
+See how easy it is to edit a default component in order to get particular behaviors? :material-creation-outline:{.icon-def-0}
+
+<hr class="icon-def-1 primary-icon", style="width: 30%;">
+
+Now, let's look at one more example. The default `Milvus` component searches documents by using the `similarity_search` method of [Langchain's Milvus module][langchain-milvus]. We can see this by checking out the code:
+
+```python title="building Milvus vectorstore in Langflow" linenums="1"
+def build_vector_store(self):
+    try:
+        from langchain_milvus.vectorstores import Milvus as LangchainMilvus
+    except ImportError as e:
+        msg = "Could not import Milvus integration package. Please install it with `pip install langchain-milvus`."
+        raise ImportError(msg) from e
+    self.connection_args.update(uri=self.uri, token=self.password)
+    milvus_store = LangchainMilvus(
+        embedding_function=self.embedding,
+        collection_name=self.collection_name,
+        collection_description=self.collection_description,
+        connection_args=self.connection_args,
+        consistency_level=self.consistency_level,
+        index_params=self.index_params,
+        search_params=self.search_params,
+        drop_old=self.drop_old,
+        auto_id=True,
+        primary_field=self.primary_field,
+        text_field=self.text_field,
+        vector_field=self.vector_field,
+        timeout=self.timeout,
+    )
+
+    # Convert DataFrame to Data if needed using parent's method
+    self.ingest_data = self._prepare_ingest_data()
+
+    documents = []
+    for _input in self.ingest_data or []:
+        if isinstance(_input, Data):
+            documents.append(_input.to_lc_document())
+        else:
+            documents.append(_input)
+
+    if documents:
+        milvus_store.add_documents(documents)
+
+    return milvus_store
+```
+
+Langchain's Milvus vectorstore has a lot potential customizations. For example, one thing we can do is add a filter to the search so that only certain documents are fetched. This is exactly what I did by editing the default `Milvus` component to create the `Milvus with Expression Filter` component. Let's check the code out:
+
+```python title="editing Milvus component to include source filter" linenums="1"
+class MilvusVectorStoreComponent(LCVectorStoreComponent):
+    """Milvus vector store with search capabilities."""
+
+    ...
+
+    inputs = [
+
+        ...
+
+        ### CHANGED: Lauren Street 2025/11/19
+        ### Add list of strings input for particular sources to retrieve
+        StrInput(
+            name="files", 
+            display_name="Files", 
+            value="",
+            is_list=True,
+        ),
+    ]
+
+def search_documents(self) -> list[Data]:
+        vector_store = self.build_vector_store()
+        if self.search_query and isinstance(self.search_query, str) and self.search_query.strip():
+            ### ORIGINAL:
+            #docs = vector_store.similarity_search(
+            #    query=self.search_query,
+            #    k=self.number_of_results,
+            #)
+            
+            ### CHANGED: Lauren Street 2025/11/19
+            ### Do similarity search:
+            ###     without expression if no sources added
+            ###     with expression 'source == source_name_1' OR 'source == source_name_2' ... OR 'source == source_name_n' 
+            ###         for n added sources
+            if self.files==['']:
+                docs = vector_store.similarity_search(
+                    query=self.search_query,
+                    k=self.number_of_results,
+                )
+            else:
+                expr_in = ' OR '.join(f'source=="{file}"' for file in self.files)
+                docs = vector_store.similarity_search(
+                    query=self.search_query,
+                    k=self.number_of_results,
+                    expr=expr_in
+                )
+
+            data = docs_to_data(docs)
+            self.status = data
+            return data
+        return []
+```
+
+Here, we're adding a filter `expression` to the `similarity_search` method so that if the user includes any `files` as input, the search will be filtered to only fetch those files. 
+
+Let's see if it works:
+
+???+ vis-inst "Visuals"
+
+    ![Milvus Filter Expression](assets/milvus-expr-filter.gif)
+
+Great! Now, we can filter our searches to include whichever sources we want. We can select a few for focused research or select them all for getting a general understanding. 
+
+And now you might see why the little :material-code-tags:{.icon-def-0} `Code` button on top of each `component` is my favorite Langflow attribute. We can easily drag-and-drop the default `components` to create a system, then customize them to better fit our needs. We can also create `completely new components` if the default components aren't enough to build off of. 
+
+---
+
+And that's it! :material-creation-outline:{.icon-def-0} I hope I showed you how easy it is to create and play with your own AI systems in Langflow. Happy building! :material-robot-excited-outline:{.icon-def-0}
 
 <hr class="icon-def-1 primary-icon", style="width: 30%;"> 
 
@@ -133,6 +291,7 @@ Stay tuned for the next section of this tutorial, where we'll discuss how to edi
 [docker-compose]: https://docs.docker.com/compose
 [etcd]: https://etcd.io/
 [langchain]: https://www.langchain.com/
+[langchain-milvus]: https://docs.langchain.com/oss/python/integrations/vectorstores/milvus
 [langflow]: https://www.langflow.org/
 [langflow-install]: https://github.com/langflow-ai/langflow?tab=readme-ov-file#%EF%B8%8F--langflow-desktop
 [langflow-rag-tutorial]: https://docs.langflow.org/chat-with-rag

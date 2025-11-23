@@ -25,6 +25,8 @@ But even though Langflow can easily be used without creating any code, it can al
 
 We're going to build a simple :material-bookshelf:{.icon-def-0} RAG :material-chat-processing-outline:{.icon-def-0} system with which we can process and store many types of documents (40+ types of files can be uploaded :material-shape-plus:{.icon-def-0} - thanks in large part to [Docling][docling]) with various PDFs and web pages discussing current and future medical AI as examples :material-medication-outline:{.icon-def-0}. 
 
+![Langflow Medical AI Preview](assets/langflow-medical-ai-preview.gif)
+
 For more tutorials on this particular subject, you can also check out [Langflow's RAG tutorial][langflow-rag-tutorial]{.blank} and [Milvus's Langflow tutorial][milvus-langflow-tutorial]{.blank}. 
 
 ---

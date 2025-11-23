@@ -21,6 +21,10 @@
          <lastmod>2025-11-23</lastmod>
     </url>
     <url>
+         <loc>https://anima-kit.github.io/blog/2025/11/23/local-rag-with-langflow-milvus-and-lm-studio/</loc>
+         <lastmod>2025-11-23</lastmod>
+    </url>
+    <url>
          <loc>https://anima-kit.github.io/projects/</loc>
          <lastmod>2025-11-23</lastmod>
     </url>
@@ -117,19 +121,43 @@
          <lastmod>2025-11-23</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/blog/category/extraction/</loc>
-         <lastmod>2025-11-23</lastmod>
-    </url>
-    <url>
          <loc>https://anima-kit.github.io/blog/category/docling/</loc>
          <lastmod>2025-11-23</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/blog/category/numind/</loc>
+         <loc>https://anima-kit.github.io/blog/category/langchain/</loc>
+         <lastmod>2025-11-23</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/langflow/</loc>
+         <lastmod>2025-11-23</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/lm-studio/</loc>
+         <lastmod>2025-11-23</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/milvus/</loc>
+         <lastmod>2025-11-23</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/rag/</loc>
          <lastmod>2025-11-23</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/weekly-log/</loc>
+         <lastmod>2025-11-23</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/extraction/</loc>
+         <lastmod>2025-11-23</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/kaggle/</loc>
+         <lastmod>2025-11-23</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/numind/</loc>
          <lastmod>2025-11-23</lastmod>
     </url>
     <url>

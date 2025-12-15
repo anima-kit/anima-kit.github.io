@@ -9,34 +9,34 @@
         <meta name="author" content="Lauren Street">
       
       
-        <link rel="canonical" href="https://anima-kit.github.io/tutorials/applications/agents/agents/code-agent/">
+        <link rel="canonical" href="https://anima-kit.github.io/tutorials/applications/mcp/mcp-web-crawl/">
       
       
-        <link rel="prev" href="../doc-agent/">
+        <link rel="prev" href="../mcp-basics/">
       
       
-        <link rel="next" href="../../../../about/">
+        <link rel="next" href="../../agents/">
       
       
         
       
       
-      <link rel="icon" href="../../../../../assets/lxlgs/logo-3.png">
+      <link rel="icon" href="../../../../assets/lxlgs/logo-3.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
 
   <!-- Set title to page title | If none use site name -->
   
-    <title>Code Agent</title>
+    <title>Web Crawl MCP</title>
   
   
 
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,11 +55,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.x/css/materialdesignicons.min.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -72,7 +72,7 @@
 
     
     
-  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -101,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#code-agent" class="md-skip">
+        <a href="#web-crawl-mcp" class="md-skip">
           Skip to content
         </a>
       
@@ -117,9 +117,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="AnimaKit AI" class="md-header__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
+    <a href="../../../.." title="AnimaKit AI" class="md-header__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
       
-  <img src="../../../../../assets/lxlgs/logo-3.png" alt="logo">
+  <img src="../../../../assets/lxlgs/logo-3.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -136,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Code Agent
+              Web Crawl MCP
             
           </span>
         </div>
@@ -241,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -262,7 +262,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../blog/" class="md-tabs__link">
+        <a href="../../../../blog/" class="md-tabs__link">
           
   
   
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../projects/" class="md-tabs__link">
+        <a href="../../../../projects/" class="md-tabs__link">
           
   
   
@@ -308,7 +308,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link">
           
   
   
@@ -328,7 +328,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../about/" class="md-tabs__link">
+      <a href="../../../../about/" class="md-tabs__link">
         
   
   
@@ -369,9 +369,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="AnimaKit AI" class="md-nav__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
+    <a href="../../../.." title="AnimaKit AI" class="md-nav__button md-logo" aria-label="AnimaKit AI" data-md-component="logo">
       
-  <img src="../../../../../assets/lxlgs/logo-3.png" alt="logo">
+  <img src="../../../../assets/lxlgs/logo-3.png" alt="logo">
 
     </a>
     AnimaKit AI
@@ -398,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -453,7 +453,7 @@
   
   
   
-    <a href="../../../../../blog/" class="md-nav__link">
+    <a href="../../../../blog/" class="md-nav__link">
       
   
   
@@ -510,7 +510,7 @@
   
   
   
-    <a href="../../../../../projects/" class="md-nav__link">
+    <a href="../../../../projects/" class="md-nav__link">
       
   
   
@@ -579,7 +579,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   
@@ -651,7 +651,7 @@
   
   
   
-    <a href="../../../../fundamentals/" class="md-nav__link">
+    <a href="../../../fundamentals/" class="md-nav__link">
       
   
   
@@ -711,7 +711,7 @@
   
   
   
-    <a href="../../../../research/" class="md-nav__link">
+    <a href="../../../research/" class="md-nav__link">
       
   
   
@@ -776,7 +776,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -848,7 +848,7 @@
   
   
   
-    <a href="../../../rag/" class="md-nav__link">
+    <a href="../../rag/" class="md-nav__link">
       
   
   
@@ -879,6 +879,8 @@
                 
   
   
+    
+  
   
   
     
@@ -900,18 +902,17 @@
     
     
       
-        
-        
-      
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-  
-    <a href="../../../mcp/" class="md-nav__link">
-      
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -925,227 +926,21 @@
   
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Agents
-  
-
-    
-  </span>
-  
-  
-
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_4_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Agents
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../servers/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Servers
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4_3" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Agents
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_4_4_3" id="__nav_4_4_4_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_4_4_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_4_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Agents
+    MCP
   
 
           </label>
@@ -1160,70 +955,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../chatbot/" class="md-nav__link">
+      <a href="../mcp-basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chatbot
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agent-memory/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Agent with Memory
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../doc-agent/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Document Agent
+    MCP Basics
   
 
     
@@ -1260,7 +999,7 @@
   <span class="md-ellipsis">
     
   
-    Code Agent
+    Web Crawl MCP
   
 
     
@@ -1283,8 +1022,62 @@
 
               
             
-          </ul>
-        </nav>
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../agents/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -1306,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -1341,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/" class="md-nav__link">
+      <a href="../../../../about/" class="md-nav__link">
         
   
   
@@ -1406,7 +1199,7 @@
   
   
     <li class="md-path__item">
-      <a href="../../../../.." class="md-path__link">
+      <a href="../../../.." class="md-path__link">
         
   <span class="md-ellipsis">
     Home
@@ -1424,7 +1217,7 @@
     
     
       <li class="md-path__item">
-        <a href="../../../../" class="md-path__link">
+        <a href="../../../" class="md-path__link">
           
   <span class="md-ellipsis">
     Learning
@@ -1442,7 +1235,7 @@
     
     
       <li class="md-path__item">
-        <a href="../../../" class="md-path__link">
+        <a href="../../" class="md-path__link">
           
   <span class="md-ellipsis">
     Applications
@@ -1460,28 +1253,10 @@
     
     
       <li class="md-path__item">
-        <a href="../../" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Agents
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
         <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    Agents
+    MCP
   </span>
 
         </a>
@@ -1509,7 +1284,7 @@
   </a>
 </div>
 
-<h1 id="code-agent"><span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8zm4 18H6V4h7v5h5zm-8.46-4.35 2.09 2.09L10.35 19 7 15.65l3.35-3.35 1.28 1.26zm7.46 0L13.65 19l-1.27-1.26 2.09-2.09-2.09-2.09 1.27-1.26z"></path></svg></span> Code Agent<a class="headerlink" href="#code-agent" title="Anchor link to this section for reference">⚓︎</a></h1>
+<h1 id="web-crawl-mcp"><span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2v5.08A5.5 5.5 0 0 0 12 7a5.5 5.5 0 0 0-1 .08V2m5.9 13a5 5 0 0 1-.17.55L20 17.42V22h-2v-3.42l-2.26-1.29a4.94 4.94 0 0 1-7.48 0L6 18.58V22H4v-4.58l3.27-1.87A5 5 0 0 1 7.1 15H5.3l-2.75 1.83-1.1-1.66L4.7 13h2.4a5 5 0 0 1 .27-.88l-1.56-1-3.57.88-.48-2 4.43-1.08 2.31 1.53a5 5 0 0 1 7 0l2.27-1.53L22.24 10l-.48 2-3.57-.89-1.56 1a5 5 0 0 1 .27.89h2.4l3.25 2.16-1.1 1.66L18.7 15M11 14a1 1 0 1 0-1 1 1 1 0 0 0 1-1m4 0a1 1 0 1 0-1 1 1 1 0 0 0 1-1"></path></svg></span> Web Crawl <abbr title="Model Context Protocol">MCP</abbr><a class="headerlink" href="#web-crawl-mcp" title="Anchor link to this section for reference">⚓︎</a></h1>
 <p><span class="twemoji icon-def-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2.03v2.02c4.39.54 7.5 4.53 6.96 8.92-.46 3.64-3.32 6.53-6.96 6.96v2c5.5-.55 9.5-5.43 8.95-10.93-.45-4.75-4.22-8.5-8.95-8.97m-2 .03c-1.95.19-3.81.94-5.33 2.2L7.1 5.74c1.12-.9 2.47-1.48 3.9-1.68zM4.26 5.67A9.9 9.9 0 0 0 2.05 11h2c.19-1.42.75-2.77 1.64-3.9zM2.06 13c.2 1.96.97 3.81 2.21 5.33l1.42-1.43A8 8 0 0 1 4.06 13zm5.04 5.37-1.43 1.37A10 10 0 0 0 11 22v-2a8 8 0 0 1-3.9-1.63m9.72-3.18-4.11-4.11c.41-1.04.18-2.26-.68-3.11-.9-.91-2.25-1.09-3.34-.59l1.94 1.94-1.35 1.36-1.99-1.95c-.54 1.09-.29 2.44.59 3.35.86.86 2.08 1.08 3.12.68l4.11 4.1c.18.19.45.19.63 0l1.04-1.03c.22-.18.22-.5.04-.64"></path></svg></span> This page is currently under construction.</p>
 
 
@@ -1553,7 +1328,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../doc-agent/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Document Agent">
+          <a href="../mcp-basics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MCP Basics">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -1563,20 +1338,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Document Agent
+                MCP Basics
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../../about/" class="md-footer__link md-footer__link--next" aria-label="Next: About">
+          <a href="../../agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Outline">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                About
+                Outline
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1667,18 +1442,18 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.footer", "navigation.indexes", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "navigation.path", "content.tooltips", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.footer", "navigation.indexes", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "navigation.path", "content.tooltips", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../../../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../../../javascripts/animations.js"></script>
+        <script src="../../../../javascripts/animations.js"></script>
       
-        <script src="../../../../../javascripts/ext-links.js"></script>
+        <script src="../../../../javascripts/ext-links.js"></script>
       
     
   

@@ -26,6 +26,14 @@ template: pages.html
 
     [:material-arrow-right-thin: Get started with RAG][rag]
 
+-   :material-bookshelf:{ .icon-def-0 } MCP
+
+    ---
+
+    Learn how to create MCP servers to give your agents useful tools and context.
+
+    [:material-arrow-right-thin: Get started with MCP][mcp]
+
 -   :material-robot-excited-outline:{ .icon-def-0 } Agents
 
     ---
@@ -48,4 +56,5 @@ template: pages.html
 
 <!-- LINKS -->
 [agents]: agents/index.md
+[mcp]: mcp/index.md
 [rag]: rag/index.md

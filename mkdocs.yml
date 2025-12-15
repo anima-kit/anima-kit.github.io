@@ -101,6 +101,7 @@ markdown_extensions:
             - tutorials/applications/agents/index.md
             - tutorials/applications/agents/servers/index.md
             - tutorials/applications/agents/agents/index.md
+            - tutorials/applications/mcp/index.md
             - tutorials/applications/rag/index.md
             - tutorials/fundamentals/index.md
             - tutorials/research/index.md
@@ -168,6 +169,10 @@ nav:
         - RAG Guide: tutorials/applications/rag/index.md
         - Data Extraction: tutorials/applications/rag/doc-extract-intro.md
         - Local RAG: tutorials/applications/rag/langflow-milvus-lm-studio-rag.md
+      - MCP:
+        - MCP Guide: tutorials/applications/mcp/index.md
+        - MCP Basics: tutorials/applications/mcp/mcp-basics.md
+        - Web Crawl MCP: tutorials/applications/mcp/mcp-web-crawl.md
       - Agents:
         - Outline: tutorials/applications/agents/index.md
         - Servers: 

@@ -1,68 +1,49 @@
 # 🤖 anima-kit | Learning AI, building demos, sharing results
 
-![image](docs/assets/lxlgs/logo-3-back.png)
-
 ## 🔖 About This Project 
 
 > TL;DR
-Learn how to build your own AI agents  and interact with them via easy to use web UIs.
+Learn how to build AI systems with an emphasis on local development.
 
-This documentation site contains various tutorials and resources for learning how to build AI agents with [LangChain][langchain] and [LangGraph][langgraph] as well as [Gradio][gradio] web UIs to facilitate interactions. It also covers how to build local servers in [Docker][docker] to power agents and their tools, including an [Ollama][ollama] server for LMs, a [SearXNG][searxng] server for a metasearch engine tool, and a [Milvus][milvus] server for a vectorstore. 
-
-For more details about how to build agents and other easily digestible modules, [check it out here][animakit].
+For more details about how to build AI and other easily digestible modules, [check it out here][animakit].
 
 ## 🏁 Getting Started 
 
-There are various directions you can take in navigating these tutorials, as each one can be its own standalone lesson.
+There are various directions you can take in navigating this site:
 
-- [Learn how to build local servers][servers] to power both the tools for your agents and their decision making and response generating processes.
+- [Checkout my tutorials][tutorials].
   
-  - An [Ollama server][ollama-tutorial] to host the LMs needed for your agents to make decisions and generate information 
-  - A [SearXNG server][searxng-tutorial] to host a metasearch engine that can be used as a tool for your agents to search the web
-  - A [Milvus server][milvus-tutorial] to host a vectorstore that can be used as a tool for your agents to retrieve information from your personal docs
-  - A [multi-server][multi-server] stack that combines the servers you need all in one place
+  Many different tutorials covering AI agents, local servers to power them, complex RAG techniques, MCPs, and AI fundamentals.
+  Take the code and use it, dive into the code and try to understand it, or just learn about AI; these tutorials were made for you!
 
-- [Learn how to build chatbots and specialized agents][agents] as well as easy to use web UIs that make interactions a lot more intuitive. 
+- [Checkout my blog][blog]. 
 
-  - A simple [chatbot][chatbot] without any memory or tools
-  - An [agent that can remember][agent-memory] past conversation history
-  - A [document agent][doc-agent] that can retrieve information from Markdown files
-  - A [code agent][code-agent] that can retrieve information from both Markdown and Python files and is specialized for coding tasks. 
-
-
-- [Learn advanced RAG techniques][rag] to improve the information retrieval of your agents.
-
-- [Learn about various aspects of AI][odds-ends] including deep learning, natural language processing, MCPs, and generative models.
-
-Take the code and use it, dive into the code and try to understand it, or just learn about AI; [these tutorials][tutorials] were made for you (and me 😊)!
-
-## 🏯 Project Structure
-
-```
-├── docs/               # All main documentation files
-├── includes/           # Abbreviation definitions for acronyms, etc.
-├── overrides/          # Overrides of default pages
-├── third-party/        # Third-party licenses and code for attribution
-├── mkdocs.yml          # Main documentation configurations
-└── requirements.txt    # Required Python libraries
-```
+  A brief overview of what's been added to the site recently.
 
 ## ⚙️ Tech 
 
 This site was made using [Material for MKDocs][material]. The tutorials use various third-party software and libraries including:
 
 - [Caddy][caddy]: Reverse proxy for SearXNG server
+- [Crawl4ai][crawl4ai]: Web crawling library to integrate with agents and RAG
 - [Docker][docker]: Building and running local servers
+- [Docling][docling]: Document processing to integrat with agents and RAG
+- [FastMCP][fastmcp]: Building MCP servers
 - [Gradio][gradio]: Building web UIs
+- [Kaggle][kaggle]: For obtaining/using datasets and sharing AI notebooks
 - [LangChain][langchain]: Lots of various uses pertaining to creating tools, chatbots, and agents
+- [Langflow][langflow]: Low/No-code building of AI systems
 - [LangGraph][langgraph]: Lots of various uses pertaining to creating agents
+- [LM Studio][lm-studio]: Local LLM and embedding model hosting
 - [Milvus][milvus]: Local vectorstore setup and run in Docker
 - [Ollama][ollama]: Local LM server setup and run in Docker
 - [Ollama Python library][ollama-python]: Interacting with the Ollama server via a local Python environment
 - [PyMilvus][pymilvus]: Interacting with the Milvus server via a local Python environment
+- [PyTorch][pytorch]: For building AI systems
 - [Requests][requests]: Interacting with the SearXNG server via a local Python environment
 - [SearXNG][searxng]: Metasearch engine source code
 - [searxng-docker][searxng-docker]: Local metasearch engine setup and run in Docker
+- [scikit-learn][scikit-learn]: For building AI systems
 - [Valkey][valkey] (acting through the [Redis][redis] API): Data storage for SearXNG server
 
 ## 🔗 Contributing 
@@ -78,17 +59,24 @@ This site is [licensed under MIT][license]. However, some of the third-party lib
 [agent-memory]: http://anima-kit.github.io/tutorials/agents/agent-memory/
 [agents]: http://anima-kit.github.io/tutorials/agents/
 [animakit]: https://anima-kit.github.io/
+[blog]: https://anima-kit.github.io/blog/
 [caddy]: https://caddyserver.com/
 [chatbot]: http://anima-kit.github.io/tutorials/agents/chatbot/
 [code-agent]: http://anima-kit.github.io/tutorials/agents/code-agent
 [contributing]: CONTRIBUTING.md
+[crawl4ai]: https://docs.crawl4ai.com/
 [discussions]: https://github.com/anima-kit/anima-kit.github.io/discussions
 [doc-agent]: http://anima-kit.github.io/tutorials/agents/doc-agent/
 [docker]: https://www.docker.com/
+[docling]: https://www.docling.ai/
+[fastmcp]: https://gofastmcp.com/getting-started/welcome
 [gradio]: https://www.gradio.app/
+[kaggle]: https://www.kaggle.com/
 [langchain]: https://www.langchain.com/
+[langflow]: https://www.langflow.org/
 [langgraph]: https://www.langchain.com/langgraph/
 [license]: LICENSE
+[lm-studio]: https://lmstudio.ai/
 [material]: https://squidfunk.github.io/mkdocs-material/
 [milvus]: https://milvus.io/
 [milvus-tutorial]: http://anima-kit.github.io/tutorials/servers/milvus/ 
@@ -100,8 +88,10 @@ This site is [licensed under MIT][license]. However, some of the third-party lib
 [ollama-tutorial]: https://anima-kit.github.io/tutorials/servers/ollama/
 [pymilvus]: https://github.com/milvus-io/pymilvus
 [python]: https://www.python.org/
+[pytorch]: https://pytorch.org/
 [rag]: http://anima-kit.github.io/tutorials/rag/
 [requests]: https://requests.readthedocs.io/en/latest/
+[scikit-learn]: http://scikit-learn.org/stable/
 [searxng]: https://github.com/searxng/searxng
 [searxng-docker]: https://github.com/searxng/searxng-docker
 [searxng-tutorial]: http://anima-kit.github.io/tutorials/servers/searxng/

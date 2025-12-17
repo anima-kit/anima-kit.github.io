@@ -9,13 +9,13 @@
         <meta name="author" content="Lauren Street">
       
       
-        <link rel="canonical" href="https://anima-kit.github.io/blog/category/milvus/">
+        <link rel="canonical" href="https://anima-kit.github.io/blog/category/fastmcp/">
       
       
-        <link rel="prev" href="../mcp/">
+        <link rel="prev" href="../extraction/">
       
       
-        <link rel="next" href="../numind/">
+        <link rel="next" href="../general/">
       
       
         
@@ -27,7 +27,7 @@
     
   <!-- Set title to page title | If none use site name -->
   
-    <title>Milvus</title>
+    <title>FastMCP</title>
   
 
     
@@ -80,7 +80,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="">
   <meta property="og:description" content="AnimaKit AI | Learning AI, building demos, sharing results">
-  <meta property="og:url" content="https://anima-kit.github.io/blog/category/milvus/">
+  <meta property="og:url" content="https://anima-kit.github.io/blog/category/fastmcp/">
   <meta property="og:image" content="https://anima-kit.github.io/assets/lxlgs/logo-4.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1080">
@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#milvus" class="md-skip">
+        <a href="#fastmcp" class="md-skip">
           Skip to content
         </a>
       
@@ -151,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Milvus
+              FastMCP
             
           </span>
         </div>
@@ -713,12 +713,23 @@
                 
   
   
-  
     
   
   
-    <li class="md-nav__item">
-      <a href="../fastmcp/" class="md-nav__link">
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -734,6 +745,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -923,23 +935,12 @@
                 
   
   
-    
-  
   
     
-      
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../milvus/" class="md-nav__link">
         
   
   
@@ -955,7 +956,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1277,7 +1277,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="milvus">Milvus<a class="headerlink" data-preview="" href="#milvus" title="Anchor link to this section for reference">⚓︎</a></h1>
+        <h1 id="fastmcp">FastMCP<a class="headerlink" data-preview="" href="#fastmcp" title="Anchor link to this section for reference">⚓︎</a></h1>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -1294,22 +1294,21 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2025-11-23 00:00:00+00:00">November 23, 2025</time></li>
+          <time datetime="2025-12-17 00:00:00+00:00">December 17, 2025</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="../docling/" class="md-meta__link">Docling</a>, 
-              <a href="../langchain/" class="md-meta__link">LangChain</a>, 
-              <a href="../langflow/" class="md-meta__link">Langflow</a>, 
+              <a href="./" class="md-meta__link">FastMCP</a>, 
               <a href="../lm-studio/" class="md-meta__link">LM Studio</a>, 
-              <a href="./" class="md-meta__link">Milvus</a></li>
+              <a href="../mcp/" class="md-meta__link">MCP</a>, 
+              <a href="../weekly-log/" class="md-meta__link">Weekly Log</a></li>
         
         
           
           <li class="md-meta__item">
             
-              2 min read
+              1 min read
             
           </li>
         
@@ -1319,12 +1318,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="local-rag-with-langflow-milvus-and-lm-studio"><a class="toclink" data-preview="" href="../../2025/11/23/local-rag-with-langflow-milvus-and-lm-studio/">Local <abbr title="Retrieval Augmented Generation">RAG</abbr> with Langflow, Milvus, and <abbr title="Language Model">LM</abbr> Studio</a></h2>
-<p>Had a lot of fun playing around with <a href="https://www.langflow.org/">Langflow</a>, <a href="https://milvus.io/">Milvus</a>, and <a href="https://lmstudio.ai/"><abbr title="Language Model">LM</abbr> Studio</a> this week. <span class="twemoji md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h1v14a4 4 0 0 0 4 4 4 4 0 0 0 4-4V4h1V2zm4 14c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m2-4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m1-5h-4V4h4z"></path></svg></span> <span class="twemoji md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 14h-1c0-3.87-3.13-7-7-7h-1V5.73A2 2 0 1 0 10 4c0 .74.4 1.39 1 1.73V7h-1c-3.87 0-7 3.13-7 7H2c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h1v1a2 2 0 0 0 2 2h14c1.11 0 2-.89 2-2v-1h1c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1m-1 3h-2v3H5v-3H3v-1h2v-2c0-2.76 2.24-5 5-5h4c2.76 0 5 2.24 5 5v2h2zm-10.3-3c.4.39.4 1.05 0 1.45l-.73.73-1.47 1.47-2.2-2.2c-.4-.4-.4-1.06 0-1.45.41-.42 1.06-.42 1.47 0l.73.72.73-.72c.41-.42 1.06-.42 1.47 0m7 0c.4.39.4 1.05 0 1.45l-.73.73-1.47 1.47-2.2-2.2c-.4-.4-.4-1.06 0-1.45.41-.42 1.06-.42 1.47 0l.73.72.73-.72c.41-.42 1.06-.42 1.47 0"></path></svg></span></p>
+    <h2 id="mcp-basics-with-fastmcp-and-lm-studio"><a class="toclink" data-preview="" href="../../2025/12/17/mcp-basics-with-fastmcp-and-lm-studio/"><abbr title="Model Context Protocol">MCP</abbr> basics with FastMCP and <abbr title="Language Model">LM</abbr> Studio</a></h2>
+<p>I recently added a tutorial describing the basics of <abbr title="Model Context Protocol">MCP</abbr>, how to create local servers with <a href="https://gofastmcp.com/getting-started/welcome">FastMCP</a>, and how to interact with these servers in <a href="https://lmstudio.ai/"><abbr title="Language Model">LM</abbr> Studio</a>. <span class="twemoji md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.85 0a4.16 4.16 0 0 0-2.95 1.217L1.456 10.66a.835.835 0 0 0 0 1.18.835.835 0 0 0 1.18 0l9.442-9.442a2.49 2.49 0 0 1 3.541 0 2.49 2.49 0 0 1 0 3.541L8.59 12.97l-.1.1a.835.835 0 0 0 0 1.18.835.835 0 0 0 1.18 0l.1-.098 7.03-7.034a2.49 2.49 0 0 1 3.542 0l.049.05a2.49 2.49 0 0 1 0 3.54l-8.54 8.54a1.96 1.96 0 0 0 0 2.755l1.753 1.753a.835.835 0 0 0 1.18 0 .835.835 0 0 0 0-1.18l-1.753-1.753a.266.266 0 0 1 0-.394l8.54-8.54a4.185 4.185 0 0 0 0-5.9l-.05-.05a4.16 4.16 0 0 0-2.95-1.218c-.2 0-.401.02-.6.048a4.17 4.17 0 0 0-1.17-3.552A4.16 4.16 0 0 0 13.85 0m0 3.333a.84.84 0 0 0-.59.245L6.275 10.56a4.186 4.186 0 0 0 0 5.902 4.186 4.186 0 0 0 5.902 0L19.16 9.48a.835.835 0 0 0 0-1.18.835.835 0 0 0-1.18 0l-6.985 6.984a2.49 2.49 0 0 1-3.54 0 2.49 2.49 0 0 1 0-3.54l6.983-6.985a.835.835 0 0 0 0-1.18.84.84 0 0 0-.59-.245"></path></svg></span> <span class="twemoji md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h1v14a4 4 0 0 0 4 4 4 4 0 0 0 4-4V4h1V2zm4 14c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m2-4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m1-5h-4V4h4z"></path></svg></span></p>
 
     
       <nav class="md-post__action">
-        <a href="../../2025/11/23/local-rag-with-langflow-milvus-and-lm-studio/">
+        <a href="../../2025/12/17/mcp-basics-with-fastmcp-and-lm-studio/">
           Continue reading
         </a>
       </nav>
@@ -1368,7 +1367,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../mcp/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MCP">
+          <a href="../extraction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Extraction">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -1378,20 +1377,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                MCP
+                Extraction
               </div>
             </div>
           </a>
         
         
           
-          <a href="../numind/" class="md-footer__link md-footer__link--next" aria-label="Next: NuMind">
+          <a href="../general/" class="md-footer__link md-footer__link--next" aria-label="Next: General">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                NuMind
+                General
               </div>
             </div>
             <div class="md-footer__button md-icon">

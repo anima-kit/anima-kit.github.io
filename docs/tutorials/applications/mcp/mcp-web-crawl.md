@@ -11,4 +11,10 @@ template: pages.html
 
 # :material-spider-thread:{ .icon-def-0 } Web Crawl MCP
 
+<hr class="icon-def-1 tertiary-icon", style="width: 90%;"> 
+
+:material-wizard-hat:{.icon-def-0} Learn the fundamentals of web crawling and how to create your own MCP server to give to your local agents. :material-laptop:{.icon-def-0} 
+
+![MCP Web Crawl](assets/mcp-web-crawl.png){ .img-def }
+
 :material-progress-wrench:{ .icon-def-0 } This page is currently under construction.

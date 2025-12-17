@@ -31,6 +31,22 @@ hide:
 
     Learn the <span class="text-color-green">fundamentals</span> of coding AI through <span class="text-color-green">interactive notebooks</span>.
 
+-   :simple-langflow:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> Langflows </span>
+
+    ---
+
+    [![Langflows](../tutorials/applications/rag/assets/langflow-milvus-lm-studio.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/langflows "Langflows")
+
+    Learn how to create <span class="text-color-green">AI systems</span> in an easy to use <span class="text-color-green">low/no-code platform</span>.
+
+-   :simple-modelcontextprotocol:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> MCP basics </span>
+
+    ---
+
+    [![MCP Basics](../tutorials/applications/mcp/assets/mcp-basics.png){ .img-def align=left style="width: 60%; margin-top: 0px;"}](https://github.com/anima-kit/mcp-basics "MCP Basics")
+
+    Learn the <span class="text-color-green">fundamentals</span> of <span class="text-color-green">MCP</span> through creating and testing various <span class="text-color-green">local servers</span>.
+
 -   :material-file-code-outline:{.md-icon} <span style="font-weight:550; font-size:1.1rem;"> PyCoder </span>
 
     ---

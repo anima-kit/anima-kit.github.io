@@ -11,6 +11,8 @@
 *[DL]: Deep Learning
 *[DLN]: Document Length Normalization
 
+*[EdTech]: Educational Technology
+
 *[GOAT]: Greatest Of All Time
 *[GPU]: Graphics Processing Unit
 *[GPUs]: Graphics Processing Units

@@ -13,10 +13,6 @@
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/blog/2025/01/04/learning-the-building-blocks-behind-khan-academys-platform/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
          <loc>https://anima-kit.github.io/blog/2025/11/12/hiya/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
@@ -30,6 +26,10 @@
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/2025/12/17/mcp-basics-with-fastmcp-and-lm-studio/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/2026/01/04/learning-the-building-blocks-behind-khan-academys-platform/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
@@ -133,7 +133,39 @@
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
+         <loc>https://anima-kit.github.io/blog/archive/2026/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
          <loc>https://anima-kit.github.io/blog/archive/2025/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/edtech/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/go/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/gqlgen/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/graphql/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/khan-academy/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/react/</loc>
+         <lastmod>2026-01-05</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/weekly-log/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
@@ -146,10 +178,6 @@
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/mcp/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/blog/category/weekly-log/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
     <url>
@@ -190,30 +218,6 @@
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/general/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/blog/category/edtech/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/blog/category/go/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/blog/category/gqlgen/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/blog/category/graphql/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/blog/category/khan-academy/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://anima-kit.github.io/blog/category/react/</loc>
          <lastmod>2026-01-05</lastmod>
     </url>
 </urlset>

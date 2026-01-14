@@ -18,6 +18,14 @@ template: pages.html
 
 <div class="grid cards" markdown>
 
+-   :material-web:{ .icon-def-0 } Web Apps
+
+    ---
+
+    Learn how to create web apps to interact with your AI systems.
+
+    [:material-arrow-right-thin: Get started with Web Apps][web-apps]
+
 -   :material-bookshelf:{ .icon-def-0 } RAG
 
     ---
@@ -58,3 +66,4 @@ template: pages.html
 [agents]: agents/index.md
 [mcp]: mcp/index.md
 [rag]: rag/index.md
+[web-apps]: web-apps/index.md

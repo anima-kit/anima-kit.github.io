@@ -3,6 +3,7 @@
 *[BM25]: Best Matching 25
 
 *[CL]: Command Line
+*[CORS]: Cross-Origin Resource Sharing
 *[CPU]: Central Processing Unit
 *[CPUs]: Central Processing Units
 

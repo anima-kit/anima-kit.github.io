@@ -103,6 +103,7 @@ markdown_extensions:
             - tutorials/applications/agents/agents/index.md
             - tutorials/applications/mcp/index.md
             - tutorials/applications/rag/index.md
+            - tutorials/applications/web-apps/index.md
             - tutorials/fundamentals/index.md
             - tutorials/research/index.md
             - blog/*
@@ -165,6 +166,9 @@ nav:
       - Medical AI: tutorials/research/medical-ai.md
     - Applications:
       - Applications Guide: tutorials/applications/index.md
+      - Web Apps:
+        - Web Apps Guide: tutorials/applications/web-apps/index.md
+        - Go + Next Basics: tutorials/applications/web-apps/go-next-basics.md
       - RAG: 
         - RAG Guide: tutorials/applications/rag/index.md
         - Data Extraction: tutorials/applications/rag/doc-extract-intro.md

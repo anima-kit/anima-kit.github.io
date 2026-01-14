@@ -2,222 +2,250 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://anima-kit.github.io/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/about/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/2025/11/12/hiya/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/2025/11/15/information-extraction-with-docling-and-numind/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/2025/11/23/local-rag-with-langflow-milvus-and-lm-studio/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/2025/12/17/mcp-basics-with-fastmcp-and-lm-studio/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/2026/01/04/learning-the-building-blocks-behind-khan-academys-platform/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/2026/01/14/creating-a-template-for-simple-web-apps-using-go-and-next/</loc>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/projects/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/agent-memory/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/chatbot/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/code-agent/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/agents/doc-agent/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/milvus/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/multi-server/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/ollama/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/agents/servers/searxng/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/mcp/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/mcp/mcp-basics/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/mcp/mcp-web-crawl/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/rag/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/rag/doc-extract-intro/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/applications/rag/langflow-milvus-lm-studio-rag/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/web-apps/</loc>
+         <lastmod>2026-01-14</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/tutorials/applications/web-apps/go-next-basics/</loc>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/fundamentals/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/fundamentals/data-preprocessing/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/fundamentals/linear-regression-basics/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/research/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/tutorials/research/medical-ai/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/archive/2026/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/archive/2025/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/blog/category/edtech/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <loc>https://anima-kit.github.io/blog/category/apollo/</loc>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/go/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/gqlgen/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/graphql/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
-         <loc>https://anima-kit.github.io/blog/category/khan-academy/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <loc>https://anima-kit.github.io/blog/category/next/</loc>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/react/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/tailwind/</loc>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/weekly-log/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/web-apps/</loc>
+         <lastmod>2026-01-14</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/edtech/</loc>
+         <lastmod>2026-01-14</lastmod>
+    </url>
+    <url>
+         <loc>https://anima-kit.github.io/blog/category/khan-academy/</loc>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/fastmcp/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/lm-studio/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/mcp/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/docling/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/langchain/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/langflow/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/milvus/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/rag/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/extraction/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/kaggle/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/numind/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/welcome/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
     <url>
          <loc>https://anima-kit.github.io/blog/category/general/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-14</lastmod>
     </url>
 </urlset>
